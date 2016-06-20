@@ -8,8 +8,6 @@ cache:
   directories:
   - $HOME/calibre-bin
 sudo: false
-before_install:
-  - git submodule update --init --recursive
 before_script:
   - export PATH=$PATH:$HOME/calibre-bin/calibre
   - >
