@@ -1,0 +1,62 @@
+{
+  "gitbook": "^2.3.0",
+  "title": "GeoServer in action",
+  "description": "GeoServer in action workshop materials",
+  "language": "de",
+  "variables": {
+    "workshopName": "GeoServer in action",
+    "workshopUrl": "http://terrestris.github.io/geoserver-in-action-ws/",
+    "workshopDownloadUrl": "http://terrestris.github.io/geoserver-in-action-ws/geoserver-in-action-ws.zip",
+    "workshopPdfUrl": "http://terrestris.github.io/geoserver-in-action-ws/geoserver-in-action-ws.pdf",
+    "workshopEpubUrl": "http://terrestris.github.io/geoserver-in-action-ws/geoserver-in-action-ws.epub",
+    "geoServerPhysicalPath": "/usr/local/lib/geoserver-2.8.3/",
+    "geoServerBaseUrl": "http://localhost/geoserver",
+    "geoServerUser": "admin",
+    "geoServerPassword": "geoserver",
+    "geoServerVersion": "2.8.3",
+    "extWorkshopMaterialsUrl": "http://terrestris.github.io/geoserver-in-action-ws/en/extjs/materials.tar.gz",
+    "extWorkshopMaterialsFileName": "materials.tar.gz",
+    "extWorkshopFolderName": "ext-workshop",
+    "extWorkshopUrl": "http://0.0.0.0:8000",
+    "authors": [{
+      "name": "Nils Bühner",
+      "mail": "buehner@terrestris.de"
+    }, {
+      "name": "Daniel Koch",
+      "mail": "koch@terrestris.de"
+    }]
+  },
+  "links": {
+    "sidebar": {
+    }
+  },
+  "plugins": [
+    "advanced-emoji",
+    "edit-link",
+    "exercises-tmp-fixed-6",
+    "expandable-chapters",
+    "image-captions",
+    "include-codeblock",
+    "richquotes",
+    "sectionx"
+  ],
+  "pluginsConfig": {
+    "edit-link": {
+      "base": "https://github.com/terrestris/geoserver-in-action-ws/edit/master/src",
+      "label": "Edit…"
+    },
+    "image-captions": {
+      "caption": "_CAPTION_"
+    },
+    "richquotes": {
+      "task": {
+        "alert": "info",
+        "picto": "fa-file-code-o"
+      },
+      "exercise": {
+        "alert": "info",
+        "picto": "fa-file-code-o"
+      }
+    }
+  }
+}
