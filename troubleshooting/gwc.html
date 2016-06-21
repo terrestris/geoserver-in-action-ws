@@ -1,0 +1,677 @@
+<!DOCTYPE HTML>
+<html lang="de" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Layer cachen mit GWC | GeoServer in action</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-advanced-emoji/emoji-website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/exercises.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-image-captions/image-captions.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-richquotes/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-sectionx/sectionx.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../troubleshooting/datadir.html" />
+    
+    
+    <link rel="prev" href="../troubleshooting/logging.html" />
+    
+
+        
+    </head>
+    <body>
+        <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+        
+    <div class="book"
+        data-level="4.2"
+        data-chapter-title="Layer cachen mit GWC"
+        data-filepath="troubleshooting/gwc.md"
+        data-basepath=".."
+        data-revision="Tue Jun 21 2016 07:31:09 GMT+0000 (UTC)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Einleitung
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="environment/index.html">
+            
+                
+                    <a href="../environment/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Vorarbeiten und generelle Informationen
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="basics/index.html">
+            
+                
+                    <a href="../basics/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Basiswissen GeoServer
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="basics/folderstructure.html">
+            
+                
+                    <a href="../basics/folderstructure.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Ordnerstruktur des GeoServers
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="basics/compilesource.html">
+            
+                
+                    <a href="../basics/compilesource.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Installieren von Erweiterungen
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="basics/installextensions.html">
+            
+                
+                    <a href="../basics/installextensions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        Kompilieren des Quellcodes mit maven
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="rest/index.html">
+            
+                
+                    <a href="../rest/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        REST-Schnittstelle
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="rest/read.html">
+            
+                
+                    <a href="../rest/read.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        Katalog auslesen
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="rest/create.html">
+            
+                
+                    <a href="../rest/create.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        Katalogeinträge erzeugen
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="rest/edit.html">
+            
+                
+                    <a href="../rest/edit.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        Katalogeinträge editieren
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="rest/delete.html">
+            
+                
+                    <a href="../rest/delete.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        Katalogeinträge entfernen
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="troubleshooting/index.html">
+            
+                
+                    <a href="../troubleshooting/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Tipps, Tricks &amp; Troubleshooting
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="troubleshooting/logging.html">
+            
+                
+                    <a href="../troubleshooting/logging.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        Protokollierung
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.2" data-path="troubleshooting/gwc.html">
+            
+                
+                    <a href="../troubleshooting/gwc.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        Layer cachen mit GWC
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="troubleshooting/datadir.html">
+            
+                
+                    <a href="../troubleshooting/datadir.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        GeoServer-Datenverzeichnis auslagern
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="troubleshooting/gui.html">
+            
+                
+                    <a href="../troubleshooting/gui.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                        Einstellungen in der GeoServer GUI
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="troubleshooting/jvm.html">
+            
+                
+                    <a href="../troubleshooting/jvm.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.</b>
+                        
+                        Java Virtual Machine (JVM) tunen
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Veröffentlicht mit GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >GeoServer in action</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="layer-cachen-mit-gwc">Layer cachen mit GWC</h1>
+<p>Die h&#xE4;ufigste Anforderung an einen GeoServer ist das Bereitstellen einer
+OGC-konformen WMS Schnittstelle und damit das Ausgeben von Kartenmaterial im
+Rasterformat. Aus diesem Grund kann das Cachen dieser Anfragen einen entschiedenen
+Einfluss auf die Performance des Servers haben und sollte nach M&#xF6;glichkeit auf
+jedem (produktiven) System vorgenommen werden. F&#xFC;r das Cachen von Kartenkacheln
+existieren eine Vielzahl guter OpenSource Caching-Engines, wir werden an dieser
+Stelle jedoch den standardm&#xE4;&#xDF;ig im GeoServer integrierten GeoWebCache (GWC) nutzen,
+der als Proxy zwischen Client und GeoServer fungiert (siehe Abbildung).</p>
+<figure id="fig4.2.1"><img src="../assets/gwc.png" alt="Funktions&#xFC;bersicht des GWC als Proxy, &lt;http://geowebcache.org/docs/current/_images/how_it_works.png&gt;"><figcaption>Funktions&#xFC;bersicht des GWC als Proxy, <http: geowebcache.org="" docs="" current="" _images="" how_it_works.png=""></http:></figcaption></figure>
+<p>Prinzipiell bietet der GWC zwei Methoden zum Anlegen der Kartenkacheln:</p>
+<ol>
+<li><strong>On-The-Fly-Prozessierung</strong>: Wird ein GWC-Layer erstmalig von einem Client
+ angefordert, werden die entsprechenden Kartenkacheln einmalig live gerendert
+ und anschlie&#xDF;end in einem GWC-Datenverzeichnis abgelegt. Der n&#xE4;chste Aufruf
+ des Layers im gleichen Kartenausschnitt erh&#xE4;lt nun eine (deutlich schnellere)
+ Antwort aus dem Cache.</li>
+<li><strong>Vorrechnen von Kartenkacheln</strong>: Die Kacheln eines Layers werden in einer
+ definierten Bounding Box und in definierten Zoomstufen entlang eines Gridsets
+ vorberechnet und abgelegt. Im Gegensatz zur On-The-Fly Berechnung ben&#xF6;tigt
+ diese Methode je nach verf&#xFC;gbarer Ressourcen eine deutliche h&#xF6;here Rechenzeit,
+ jedoch erhalten alle Clients eine direkte Antwort aus dem Cache, sodass die
+ gef&#xFC;hlte Performance f&#xFC;r den Enduser h&#xF6;her ist.</li>
+</ol>
+<p>Wir werden im Folgenden nicht alle Konfigurationsm&#xF6;glichkeiten des GWC kennenlernen
+k&#xF6;nnen und aus diesem Grund werden wir uns auf die grundlegende Konfiguration am
+Beispiel der On-The-Fly-Prozessierung beschr&#xE4;nken und beispielhaft einen Cache
+f&#xFC;r den Layer topp:states vorbereiten.</p>
+<p>Auf der OSGeoLive werden die vorgerechneten Kartenkacheln im Verzeichnis
+<code>{{ book.geoServerPhysicalPath }}/data_dir/gwc/</code> abgelegt. Navigieren Sie zun&#xE4;chst
+im Terminal (<a href="../assets/terminal_icon.png"></a>) zu diesem Verzeichnis und lassen
+Sie sich den Inhalt mit dem Befehl <code>ls -lh</code> (oder einer vergleichbaren Operation)
+anzeigen. Die Ausgabe sollte dabei in etwa wie folgt aussehen und aktuell nur
+die globale Konfigurationsdatei geowebcache.xml f&#xFC;r den GWC sowie ein leeres
+tempor&#xE4;res Verzeichnis enthalten.</p>
+<pre><code class="lang-bash">-rw-rw-r-- <span class="hljs-number">1</span> root users <span class="hljs-number">4</span>,<span class="hljs-number">8</span>K Jan <span class="hljs-number">14</span> <span class="hljs-number">19</span>:<span class="hljs-number">58</span> geowebcache.xml
+drwxrwxr-x <span class="hljs-number">2</span> root users    <span class="hljs-number">3</span> Jan <span class="hljs-number">14</span> <span class="hljs-number">19</span>:<span class="hljs-number">58</span> tmp/
+</code></pre>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-4x fa-edit"></strong>
+<p></p>
+<p>Das Verzeichnis <code>gwc/</code> wird per default auf root-Ebene im GeoServer Datenverzeichnis
+angelegt. Soll dieses ge&#xE4;ndert werden, sollte der folgende Eintrag in die web.xml
+des GeoServers eingetragen werden (Dabei unbedingt die Berechtigungen des neuen
+Ordners beachten!):</p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">context-param</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">param-name</span>&gt;</span>GEOWEBCACHE_CACHE_DIR<span class="hljs-tag">&lt;/<span class="hljs-title">param-name</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">param-value</span>&gt;</span>/dir/to/gwc_cache/<span class="hljs-tag">&lt;/<span class="hljs-title">param-value</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">context-param</span>&gt;</span>
+</code></pre>
+</blockquote>
+<p>Wie wir aus dem obigen Ordnerliste entnehmen k&#xF6;nnen, existiert zum aktuellen
+Zeitpunkt noch kein Verzeichnis mit vorberechneten Kartenkacheln, weshalb wir im
+Folgenden die notwendigen Schritte zum Anlegen eines GWC-Layers vollziehen werden:</p>
+<ol>
+<li>&#xD6;ffnen Sie in der <a href="http://localhost/geoserver" target="_blank">GeoServer GUI</a> unter |gui1| die Konfiguration
+ f&#xFC;r den Layer states und w&#xE4;hlen Sie dort den Reiter Kartenkachel-Cache.</li>
+<li>Um einen gecachten Layer zu erzeugen, muss die erste Checkbox Erzeuge einen
+ gecachten Layer f&#xFC;r diesen Layer aktiviert sein (F&#xFC;r den ausgew&#xE4;hlten Layer
+ bereits eingestellt).</li>
+<li><p>&#xDC;berpr&#xFC;fen Sie nun die weiteren Einstellungen und passen Sie diese ggf. an
+ Ihre Bed&#xFC;rfnisse an:</p>
+<ul>
+<li><p><strong>Metatile-Faktor</strong>: Metatiles sind gr&#xF6;&#xDF;ere Kartenkacheln (Tiles), aus
+  denen die zu speichernden Kacheln herausgeschnitten werden. Der Faktor gibt
+  hierbei die Gr&#xF6;&#xDF;e der Metatiles an, ein Faktor von 3x3 bedeutet, dass die
+  Bildbreite der Zielkachel um den Faktor drei erh&#xF6;ht wird und sich damit f&#xFC;r
+  eine Kachelgr&#xF6;&#xDF;e von 256px eine Metatile-Kachelgr&#xF6;&#xDF;e von 768px ergibt (siehe Abbildung).</p>
+<p>  <img src="../assets/gwc_metatile.png" alt="Mit Metatiles wird die Zielkachel (TILE) aus einer gr&#xF6;&#xDF;eren Kachel (METATILE) herausgeschnitten, &lt;http://geowebcache.org/docs/current/_images/metatile.png&gt;"></p>
+<p>  Metatiles werden in erster Linie ben&#xF6;tigt, um doppelte Kartenbeschriftungen
+  (z.B. von Stra&#xDF;enlayern) in zwei aneinanderliegenden Kacheln zu vermeiden.</p>
+</li>
+<li><strong>Kachel-Umrandung</strong>: Zus&#xE4;tzlicher Rahmen (in px), der um eine Kachel
+  angefordert werden soll. Nur sinnvoll, wenn in Verbindung mit der Vernwendung
+  von Metatiles Problemen bei der Darstellung von Labels und/oder Features
+  am Kachelrand auftreten.</li>
+<li><strong>Bildformat f&#xFC;r Kacheln</strong>: Das Standard Bildformat f&#xFC;r die Kacheln. Dieses
+  Format sollte unbedingt in Abh&#xE4;ngigkeit Ihrer Clients bzw. des dort definierten
+  Anfrage-Bildformats f&#xFC;r die gecachten Layer gew&#xE4;hlt werden, andernfalls
+  kann der Cache nicht genutzt werden!</li>
+<li><strong>STYLES</strong>: Existieren f&#xFC;r den Layer mehrere Stile, die im Client gewechselt
+  werden k&#xF6;nnen und somit gecacht werden sollten, m&#xFC;ssen diese hier ausgew&#xE4;hlt
+  werden. In aller Regel wird es jedoch gen&#xFC;gen, ausschlie&#xDF;lich den
+  Standard-Layerstil (LAYER DEFAULT) als Wert zu setzen.</li>
+<li><p><strong>Verf&#xFC;gbare Rastergitters&#xE4;tze</strong>: Das Gitternetz definiert das Netz, &#xFC;ber
+  das die gespeicherten Kacheln abgefragt werden und definiert damit den
+  r&#xE4;umlichen Index der Einzelkacheln. Die Einzelkachel im rechteckigen Grid
+  ist dabei &#xFC;ber ein x,y,z Koordinatentripel identifizierbar (siehe Abbildung).
+  Die x,y Koordinaten bestimmen die horizontale/vertikale Position, die
+  z-Koordinate das Zoomlevel. Ein Grid ist dabei stets f&#xFC;r genau ein
+  Koordinatensystem g&#xFC;ltig. W&#xE4;hlen Sie hier die Projektion bzw. das Grid,
+  in dem der Layer gecacht werden soll.</p>
+<p>  <img src="../assets/gwc_image_pyramid.png" alt="Gridset eines Tile-Layers, &lt;http://3.bp.blogspot.com/_0_xIiXP5xuY/S5pEpCjenaI/AAAAAAAAAKY/PDKTGZ6vzGI/s1600-h/Image_Pyramid.gif&gt;"></p>
+<p>  <strong>Hinweis</strong>: Die Standardeinstellungen f&#xFC;r einen neuen gecachten Layer k&#xF6;nnen Sie
+  unter dem Men&#xFC;eintrag |gui2| anpassen.</p>
+</li>
+</ul>
+</li>
+<li><p>Im n&#xE4;chsten Schritt werden wir pr&#xFC;fen, ob der Layer korrekt gecacht wird und
+die HTTP-Response Header eines GWC-Layers analysieren. &#xD6;ffnen Sie hierzu die
+GWC Layervorschau unter |gui3| und w&#xE4;hlen Sie dort unter dem Layereintrag topp:states
+in der Combobox Vorschau den Wert EPSG:900913/png. Nachdem die Vorschau in einem
+neuen Tab/Fenster ge&#xF6;ffnet wurde, &#xF6;ffnen wir &#xFC;ber <code>F12</code> die Entwicklerkonsole
+des Browsers und navigieren in dieser zum Reiter Netzwerkanalyse (siehe Abbildung).
+ <strong>Wichtig:</strong> Nach Aktivieren der Konsole bzw. der Netzwerkanalyse muss die
+ aktuelle Seite ggf. neu geladen werden!</p>
+<p><img src="../assets/developer_tools.png" alt=""></p>
+</li>
+<li>Leeren Sie die Netzwerk-&#xDC;bersicht (|empty_network_tab| unten rechts in der
+Entwicklerkonsole) und zoomen Sie (einmalig!) zu einem beliebigen Kartenausschnitt.</li>
+<li><p>Im Reiter Netzwerkanalyse erscheinen alle Requests des Kartenclients an den
+GeoServer. W&#xE4;hlen Sie aus dieser Liste einen beliebigen WMS-Request aus und
+&#xF6;ffnen Sie im rechten Bereich den Reiter Kopfzeilen (siehe Abbildung):</p>
+<p><img src="../assets/gwc_response_headers.png" alt=""></p>
+<p>Die Ansicht zeigt neben den Anfragekopfzeilen des Clients auch die
+ Antwortkopfzeilen des Servers. F&#xFC;r uns sind die Folgenden Headerinformationen
+ von Relevanz:</p>
+<ul>
+<li><code>geowebcache-cache-result</code>: Wurde die Kachel aus dem Cache ausgeliefert, wird
+  der Wert HIT, andernfalls MISS ausgegeben. Das obige Beispiel sollte MISS
+  ausgeben, da zum aktuellen Zeitpunkt kein Cache vorhanden ist.</li>
+<li><code>geowebcache-crs</code>: Das Koordinatensystem der Kachel.</li>
+<li><code>geowebcache-gridset</code>: Der Name des zu Grunde liegenden Gridsets.</li>
+<li><code>geowebcache-tile-bounds</code>: Die BoundingBox der Kachel.</li>
+<li><code>geowebcache-tile-index</code>: Der Index der Kachel (X,Y,Z) im Gridset.</li>
+</ul>
+</li>
+<li><p>Nachdem die obige Beispiel-Kachel erstmalig angefordert wurde, wird der GWC
+diese Kachel im Cache ablegen und k&#xFC;nftige Requests werden die Antwort aus
+selbigem erhalten. Um dies zu &#xFC;berpr&#xFC;fen werden wir nun die o.g. Kachel neu
+laden, indem wir in der Entwicklerkonsole das Kontextmen&#xFC; aufrufen und In
+neuem Tab &#xF6;ffnen ausw&#xE4;hlen (siehe Abbildung).</p>
+<p><img src="../assets/open_in_new_tab.png" alt=""></p>
+</li>
+<li>&#xD6;ffnen Sie in dem neuen Fenster/Tab erneut die Entwicklerkonsole &#xFC;ber <code>F12</code>
+und aktivieren Sie den Reiter Netzwerkanalyse. Betrachten Sie nun den
+Response-Header <code>geowebcache-cache-result</code>. Was f&#xE4;llt Ihnen auf?</li>
+<li><p>Navigieren Sie abschlie&#xDF;end - falls nicht mehr ge&#xF6;ffnet - im Terminal zum
+GWC-Verzeichnis (<code>/usr/local/lib/geoserver-2.8.3/data_dir/gwc/</code>) und pr&#xFC;fen
+Sie dort den (neuen) Ordner <code>topp_states</code>, in dem der GWC die Kacheln aus selbigem
+Layer abgelegt hat. Die obige Kachel l&#xE4;sst sich dabei anhand der
+Header-Informationen <code>geowebcache-gridset</code> und <code>geowebcache-tile-index</code>
+eindeutig identifizieren:</p>
+<pre><code class="lang-undefined">topp_states/ (Layername)
+   |
+   +-- EPSG_900913_07/ (Gridset + Zoomstufe)
+         |
+         +-- 01_04/ (inter berechnete Notation auf Basis von Gridset + Zoomstufe)
+               |
+               +-- 0031_0079.png (Kachelindex)
+</code></pre>
+</li>
+</ol>
+<p>Sie haben in diesem Kapitel erfolgreich die Basiskonfiguration f&#xFC;r einen GWC-Layer
+vorgenommen und Methoden kennengelernt, selbige Layer &#xFC;ber die Entwicklerkonsole
+im Browser zu analysieren. Fahren Sie nun mit dem <a href="datadir.html">n&#xE4;chsten Kapitel</a>
+(Datenverzeichnis auslagern) fort.</p>
+<p><strong>Zusatzinformation: Vorrechnen der Kartenkacheln</strong></p>
+<p>In der Praxis wird es in aller Regel unter gegebenen Ressourcen notwendig sein,
+den Layercache f&#xFC;r h&#xE4;ufig angeforderte Layer im Voraus zu berechnen. Die folgende
+Liste f&#xFC;hrt die notwendingen Schritte am Beispiel des Layers topp:states in
+Kurzform auf. Weiterf&#xFC;hrende Informationen finden Sie in der <a href="http://geowebcache.org/docs/current/webinterface/index.html" target="_blank">GWC Dokumentation</a>.</p>
+<ol>
+<li>&#xD6;ffnen Sie die die GWC Administrationsoberfl&#xE4;che &#xFC;ber <a href="http://localhost/geoserver/gwc&amp;gt" target="_blank">http://localhost/geoserver/gwc&amp;gt</a>;
+ und w&#xE4;hlen Sie unter A list of all the layers and automatic demos den Eintrag
+ Seed this Layer unterhalb von Layer topp:states aus. In diesem Dialog kann
+ &#xFC;ber die oberen beiden Auswahlboxen gepr&#xFC;ft werden, ob f&#xFC;r den aktuell
+ ausgew&#xE4;hlten Layer bereits ein Task l&#xE4;uft oder geplant ist. Falls gew&#xFC;nscht,
+ kann dieser abgebrochen werden.</li>
+<li>Um einen neuen Task zu starten, sind folgende Einstellungen notwendig:</li>
+<li><strong>Number of tasks to use:</strong> Anzahl der Threads f&#xFC;r diesen Seed. Um den
+ Server (und damit die Reaktionsgeschwindigkeit des GeoServers) in einer
+ produktiven Umgebung nicht zu sehr mit dem Rechenvorgang zu belasten, sollte
+ hier der minimale Wert (01) gew&#xE4;hlt werden. Ist der GeoServer (noch) nicht
+ produktiv kann ein h&#xF6;herer Wert gew&#xE4;hlt werden.</li>
+<li><strong>Type of operation:</strong> Auswahl der Seed-Operation. Reseed generiert alle Kacheln
+neu, Seed nur die fehlenden und Truncate l&#xF6;scht alle existierenden Kacheln.
+F&#xFC;r die obigen Layer empfiehlt sich die Operation Reseed.</li>
+<li><strong>Grid Set:</strong> Auswahl des Projektionssystems bzw. des Gridsets.</li>
+<li><strong>Format:</strong> Auswahl des Bildformats.</li>
+<li><strong>Zoom start:</strong> Auswahl der kleinsten Zoomstufe (kleiner Ma&#xDF;stab).</li>
+<li><strong>Zoom stop:</strong> Auswahl der h&#xF6;chsten Zoomstufe (gro&#xDF;er Ma&#xDF;stab). Eine h&#xF6;here
+Zahl repr&#xE4;sentiert eine detailliertere Kartenansicht. Je h&#xF6;her der Wert, desto
+h&#xF6;her auch der Rechenaufwand und der belegte Speicher!</li>
+<li><strong>Bounding box:</strong> Optionaler Parameter zur Angabe des BoundingBox. Falls keine
+Werte angegeben werden, werden die Angaben des Layers selbst genutzt. Diese
+sollten in aller Regel korrekt sein, sodass hier keine Angabe erforderlich ist.
+Ausnahme: Nur ein begrenztes Gebiet soll gecacht werden.</li>
+<li>Nachdem alle Einstellungen vorgenommen wurden, wird der (Re-)Seed &#xFC;ber den
+Button &quot;Submit&quot; gestartet.</li>
+</ol>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-4x fa-edit"></strong>
+<p></p>
+<p>Die obigen Schritte zum Anlegen eines Layercache sind auch &#xFC;ber eine REST-API m&#xF6;glich. Informationen und gute Beispiele zu dieser API finden Sie unter <a href="http://docs.geoserver.org/stable/en/user/geowebcache/rest/index.html" target="_blank">http://docs.geoserver.org/stable/en/user/geowebcache/rest/index.html</a></p>
+</blockquote>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../troubleshooting/logging.html" class="navigation navigation-prev " aria-label="Previous page: Protokollierung"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../troubleshooting/datadir.html" class="navigation navigation-next " aria-label="Next page: GeoServer-Datenverzeichnis auslagern"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-edit-link/plugin.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/ace/ace.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/ace/theme-tomorrow.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/ace/mode-javascript.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/exercises.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+    
+
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sectionx/sectionx.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"edit-link":{"base":"https://github.com/terrestris/geoserver-in-action-ws/edit/master/src","label":"Edit…"},"image-captions":{"caption":"_CAPTION_","variable_name":"_pictures"},"richquotes":{"task":{"alert":"info","picto":"fa-file-code-o"},"exercise":{"alert":"info","picto":"fa-file-code-o"}},"advanced-emoji":{"embedEmojis":false},"exercises-tmp-fixed-6":{},"expandable-chapters":{},"include-codeblock":{},"sectionx":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

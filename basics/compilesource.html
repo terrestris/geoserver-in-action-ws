@@ -1,0 +1,557 @@
+<!DOCTYPE HTML>
+<html lang="de" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Installieren von Erweiterungen | GeoServer in action</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-advanced-emoji/emoji-website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/exercises.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-image-captions/image-captions.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-richquotes/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-sectionx/sectionx.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../basics/installextensions.html" />
+    
+    
+    <link rel="prev" href="../basics/folderstructure.html" />
+    
+
+        
+    </head>
+    <body>
+        <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+        
+    <div class="book"
+        data-level="2.2"
+        data-chapter-title="Installieren von Erweiterungen"
+        data-filepath="basics/compilesource.md"
+        data-basepath=".."
+        data-revision="Tue Jun 21 2016 07:31:09 GMT+0000 (UTC)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Einleitung
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="environment/index.html">
+            
+                
+                    <a href="../environment/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Vorarbeiten und generelle Informationen
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="basics/index.html">
+            
+                
+                    <a href="../basics/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Basiswissen GeoServer
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="basics/folderstructure.html">
+            
+                
+                    <a href="../basics/folderstructure.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Ordnerstruktur des GeoServers
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.2" data-path="basics/compilesource.html">
+            
+                
+                    <a href="../basics/compilesource.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        Installieren von Erweiterungen
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="basics/installextensions.html">
+            
+                
+                    <a href="../basics/installextensions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        Kompilieren des Quellcodes mit maven
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="rest/index.html">
+            
+                
+                    <a href="../rest/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        REST-Schnittstelle
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="rest/read.html">
+            
+                
+                    <a href="../rest/read.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        Katalog auslesen
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="rest/create.html">
+            
+                
+                    <a href="../rest/create.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        Katalogeinträge erzeugen
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="rest/edit.html">
+            
+                
+                    <a href="../rest/edit.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        Katalogeinträge editieren
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="rest/delete.html">
+            
+                
+                    <a href="../rest/delete.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        Katalogeinträge entfernen
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="troubleshooting/index.html">
+            
+                
+                    <a href="../troubleshooting/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Tipps, Tricks &amp; Troubleshooting
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="troubleshooting/logging.html">
+            
+                
+                    <a href="../troubleshooting/logging.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        Protokollierung
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="troubleshooting/gwc.html">
+            
+                
+                    <a href="../troubleshooting/gwc.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        Layer cachen mit GWC
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="troubleshooting/datadir.html">
+            
+                
+                    <a href="../troubleshooting/datadir.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        GeoServer-Datenverzeichnis auslagern
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="troubleshooting/gui.html">
+            
+                
+                    <a href="../troubleshooting/gui.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                        Einstellungen in der GeoServer GUI
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="troubleshooting/jvm.html">
+            
+                
+                    <a href="../troubleshooting/jvm.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.</b>
+                        
+                        Java Virtual Machine (JVM) tunen
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Veröffentlicht mit GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >GeoServer in action</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="kompilieren-auf-basis-des-quellcodes">Kompilieren auf Basis des Quellcodes</h1>
+<p>In diesem Abschnitt wird gezeigt wie sich der Quellcode des GeoServers bzw.
+einzelner Module mit dem <em>Build-Management-Tool</em> <a href="http://maven.apache.org/" target="_blank">Maven</a>
+kompilieren l&#xE4;sst. Maven wird von der GeoServer-Community f&#xFC;r die Erstellung und
+Verwaltung der Software eingesetzt. Anschlie&#xDF;end k&#xF6;nnten Sie z.B. den Original-Code
+f&#xFC;r spezielle Anwendungsf&#xE4;lle anpassen (oder erweitern) und eine derart
+modifizierte GeoServer-Version einsetzen.</p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-4x fa-edit"></strong>
+<p></p>
+<p>Maven ist eine auf Java basierende OpenSource-Software zur standardisierten Erstellung und Verwaltung von (Java-)Programmen. Ausgehend von einer Validierung der Quelldateien, &#xFC;ber das Kompilieren, Testen, Verpacken bis hin zum Installieren der Software bietet Maven Unterst&#xFC;tzung f&#xFC;r den gesamten Lebenszyklus einer Software. Leider k&#xF6;nnen wir an dieser Stelle nicht n&#xE4;her auf Maven eingehen, da dies den Rahmen des Workshops sprengen w&#xFC;rde. Einen Einstieg in die Maven-Welt finden Sie z.B. unter <a href="http://maven.apache.org/guides/" target="_blank">http://maven.apache.org/guides/</a>.</p>
+</blockquote>
+<p>Bevor wir konkrete Maven-Befehle aufrufen, um sogenannte <em>Maven-Artefakte</em> zu
+erzeugen (welche in unserem Falle Java-Kompilaten, also .jar-Dateien, entsprechen)
+wollen wir zun&#xE4;chst aufzeigen wie Sie grunds&#xE4;tzlich mit dem GeoServer-Quellcode
+und Maven arbeiten k&#xF6;nnen.</p>
+<p>Anschlie&#xDF;end werden wir exemplarisch den Quellcode der <a href="http://inspire.ec.europa.eu/" target="_blank">INSPIRE</a>-Erweiterung des GeoServers mit Maven kompilieren und auf dem GeoServer installieren.</p>
+<h2 id="geoserverquellcode-und-maven">GeoServer-Quellcode und Maven</h2>
+<p>Der GeoServer-Quellcode wird mit <a href="http://git-scm.com/" target="_blank">git</a> verwaltet. <em>Git</em> ist eine freie Software zur verteilen Versionsverwaltung von Dateien, mit dem z.B. auch der Linux-Kernel verwaltet wird. Den Quellcode des GeoServers finden Sie hier:</p>
+<p><a href="https://github.com/geoserver/geoserver" target="_blank">https://github.com/geoserver/geoserver</a></p>
+<p>Wenn Sie sich dort in den Ordner src/extension/inspire durchklicken, k&#xF6;nnen Sie feststellen, dass es in jedem dieser drei Ordner eine Datei pom.xml gibt. <em>POM</em> steht f&#xFC;r Project Object Model und es handelt sich hier um die Konfigurationsdateien f&#xFC;r Maven, in denen z.B. Abh&#xE4;ngigkeiten zu anderen Bibliotheken definiert sind.</p>
+<p>Jede Datei pom.xml repr&#xE4;sentiert dabei ein eigenes Maven-Modul. Die pom.xml im Ordner src/ ist die zentrale Maven-Konfigurationsdatei auf h&#xF6;chster Ebene, also des GeoServers als Gesamtsystem. Die pom.xml im Ordner src/extension/ definiert ein Maven-Submodul <em>extension</em>, die pom.xml in src/extension/inspire/ ist wiederum ein Submodul von <em>extension</em>.</p>
+<p>Wenn Sie auf dem Terminal unterwegs sind und in ein Verzeichnis navigieren, das eine pom.xml enth&#xE4;lt, k&#xF6;nnen Sie dort Maven-Befehle ausf&#xFC;hren. Der Befehl mvn package w&#xFC;rde z.B. das entsprechende Artefakt bauen und in einen Unterordner target/ ablegen.</p>
+<p>Details zur Verwendung von Maven mit dem GeoServer finden Sie unter <a href="http://docs.geoserver.org/latest/en/developer/maven-guide/index.html" target="_blank">http://docs.geoserver.org/latest/en/developer/maven-guide/index.html</a>.</p>
+<h2 id="kompilieren-der-inspireerweiterung">Kompilieren der INSPIRE-Erweiterung</h2>
+<p>Wir werden nun die INSPIRE-Erweiterung des GeoServers auf Basis des Quellcodes selber kompilieren. Anschlie&#xDF;end kann die Erweiterung analog zum vorigen Abschnitt\<basics.installextensions\> im GeoServer installiert werden.</basics.installextensions\></p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-4x fa-edit"></strong>
+<p></p>
+<p>Das Herunterladen des (gesamten) GeoServer-Quellcodes und insbesondere das (erstmalige) Ausf&#xFC;hren bestimmter Maven-Befehle kann u.U. sehr lange dauern. Im Falle von Maven ist dies darauf zur&#xFC;ckzuf&#xFC;hren, dass Maven zun&#xE4;chst alle ben&#xF6;tigten Abh&#xE4;ngigkeiten aufl&#xF6;st und diese anschlie&#xDF;end aus &#xF6;ffentlich verf&#xFC;gbaren Maven-<em>Repositories</em> in ein lokales Maven-<em>Repository</em> auf ihrem Rechner herunterl&#xE4;dt bzw. installiert. Um diesen Prozess zu beschleunigen hat das Script, welches Sie zu Beginn des Workshops ausgef&#xFC;hrt haben, bereits vorbereitende Ma&#xDF;nahmen getroffen.</p>
+</blockquote>
+<p>Zu Beginn des Workshops haben Sie ein Skript ausgef&#xFC;hrt, welches gewisse Vorbereitungen getroffen hat, damit die Paketierung der INSPIRE-Erweiterung bei der erstmaligen Ausf&#xFC;hrung der Maven-Befehle nur wenige Sekunden statt vieler Minuten dauert.</p>
+<p>Sie sollten in Ihrem Home-Verzeichnis /home/user ein Verzeichnis src/ vorfinden, in welchem sich <strong>ausschlie&#xDF;lich</strong> der Quellcode der INSPIRE-Erweiterung (in Version @geoserver_version@) befindet. Das Skript hat dar&#xFC;berhinaus alle (im n&#xE4;chsten Schritt) ben&#xF6;tigten Abh&#xE4;ngigkeiten in ihr lokales Maven-Repository ~/.m2 vorinstalliert, welche Maven ansonsten selbst installieren (und was entsprechend l&#xE4;nger dauern) w&#xFC;rde.</p>
+<p>Wechseln Sie nun in das Verzeichnis mit der pom.xml und dem Quellcode der INSPIRE-Erweiterung:</p>
+<blockquote>
+<p>~~ {.sourceCode .text}
+cd ~/src/extension/inspire/
+~~</p>
+</blockquote>
+<p>Wir k&#xF6;nnen nun den Maven-Befehl ausf&#xFC;hren, mit dem sich die INSPIRE-Erweiterung (auf Basis des aktuellen Quellcodes) paketieren l&#xE4;sst:</p>
+<blockquote>
+<p>~~ {.sourceCode .text}
+mvn package
+~~</p>
+</blockquote>
+<p>Sie k&#xF6;nnen die Paketierung auch beschleunigen, indem Sie auf das Ausf&#xFC;hren von Tests verzichten:</p>
+<blockquote>
+<p>~~ {.sourceCode .text}
+mvn package -DskipTests
+~~</p>
+</blockquote>
+<p>Ebenso k&#xF6;nnten Sie nur die Tests ausf&#xFC;hren:</p>
+<blockquote>
+<p>~~ {.sourceCode .text}
+mvn test
+~~</p>
+</blockquote>
+<p>Es ist auch m&#xF6;glich auf der Ebene des <em>extension</em>-Moduls die INSPIRE-Erweiterung zu <em>bauen</em>. Hierzu muss zun&#xE4;chst in das <em>extension</em>-Verzeichnis gewechselt werden, um dort den mvn package-Befehl unter Verwendung eines bestimmten Profils zu verwenden:</p>
+<blockquote>
+<p>~~~~ {.sourceCode .text}
+cd ~/src/extension/</p>
+<pre><code class="lang-undefined">~~~~ {.sourceCode .text}
+mvn package -P inspire -DskipTests
+</code></pre>
+</blockquote>
+<p>Wenn einer der mvn package-Befehle erfolgreich durchgelaufen ist, finden Sie im Verzeichnis ~/src/extension/inspire/target/ das erzeugte Kompilat (gs-inspire-@geoserver_version@.jar), welches wie im vorigen Abschnitt\<basics.installextensions\> auf dem GeoServer installiert werden kann.</basics.installextensions\></p>
+<blockquote>
+<p>~~ {.sourceCode .text}
+sudo cp \
+  ~/src/extension/inspire/target/gs-inspire-@geoserver_version@.jar \
+  /usr/local/lib/geoserver-@geoserver_version@/webapps/geoserver/WEB-INF/lib
+~~</p>
+</blockquote>
+<p>Sobald dies geschehen ist (GeoServer-Neustart nicht vergessen!), erscheint bei der WMS-Konfiguration in der GeoServer-Weboberfl&#xE4;che ein zus&#xE4;tzlicher Bereich <em>INSPIRE</em> (unten).</p>
+<figure id="fig2.2.1"><img src="inspire_success.png" alt="GeoServer-Weboberfl&#xE4;che (Bereich *WMS*) nach der INSPIRE-Installation"><figcaption>GeoServer-Weboberfl&#xE4;che (Bereich *WMS*) nach der INSPIRE-Installation</figcaption></figure>
+<p>Im folgenden Abschnitt\<rest\> werden werden Sie die GeoServer-REST-Schnittstelle kennenlernen, mit der sich viele Dinge, die Sie &#xFC;ber die Weboberfl&#xE4;che konfigurieren k&#xF6;nnen, auf programmatischem Wege ausf&#xFC;hren k&#xF6;nnen.</rest\></p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../basics/folderstructure.html" class="navigation navigation-prev " aria-label="Previous page: Ordnerstruktur des GeoServers"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../basics/installextensions.html" class="navigation navigation-next " aria-label="Next page: Kompilieren des Quellcodes mit maven"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-edit-link/plugin.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/ace/ace.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/ace/theme-tomorrow.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/ace/mode-javascript.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/exercises.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+    
+
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sectionx/sectionx.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"edit-link":{"base":"https://github.com/terrestris/geoserver-in-action-ws/edit/master/src","label":"Edit…"},"image-captions":{"caption":"_CAPTION_","variable_name":"_pictures"},"richquotes":{"task":{"alert":"info","picto":"fa-file-code-o"},"exercise":{"alert":"info","picto":"fa-file-code-o"}},"advanced-emoji":{"embedEmojis":false},"exercises-tmp-fixed-6":{},"expandable-chapters":{},"include-codeblock":{},"sectionx":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
