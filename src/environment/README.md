@@ -36,7 +36,7 @@ Um das Skript zu starten, führen Sie bitte den folgenden Befehl auf dem Termina
 ([](../assets/terminal_icon.png) im unteren Systempanel) aus:
 
 <pre><code class="bash">curl \
-  {{ book.workshopUrl }}_static/setup_geoserver_workshop.sh | \
+  {{ book.workshopUrl }}materials/setup_geoserver_workshop.sh | \
   sudo bash
 </code></pre>
 
