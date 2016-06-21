@@ -9,15 +9,12 @@
     "workshopDownloadUrl": "http://terrestris.github.io/geoserver-in-action-ws/geoserver-in-action-ws.zip",
     "workshopPdfUrl": "http://terrestris.github.io/geoserver-in-action-ws/geoserver-in-action-ws.pdf",
     "workshopEpubUrl": "http://terrestris.github.io/geoserver-in-action-ws/geoserver-in-action-ws.epub",
-    "geoServerPhysicalPath": "/usr/local/lib/geoserver-2.8.3/",
+    "workshopMaterialsDownloadUrl": "http://terrestris.github.io/geoserver-in-action-ws/materials.tar.gz",
+    "geoServerPhysicalPath": "/usr/local/lib/geoserver-2.8.2/",
     "geoServerBaseUrl": "http://localhost/geoserver",
     "geoServerUser": "admin",
     "geoServerPassword": "geoserver",
-    "geoServerVersion": "2.8.3",
-    "extWorkshopMaterialsUrl": "http://terrestris.github.io/geoserver-in-action-ws/en/extjs/materials.tar.gz",
-    "extWorkshopMaterialsFileName": "materials.tar.gz",
-    "extWorkshopFolderName": "ext-workshop",
-    "extWorkshopUrl": "http://0.0.0.0:8000",
+    "geoServerVersion": "2.8.2",
     "authors": [{
       "name": "Nils Bühner",
       "mail": "buehner@terrestris.de"
