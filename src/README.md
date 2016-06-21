@@ -1,7 +1,6 @@
 ![](assets/geoserver-logo.png)
 
-GeoServer in action
-===================
+# GeoServer in action
 
 Herzlich Willkommen beim **GeoServer in action** Workshop auf der FOSSGIS 2016
 in Salzburg.
@@ -29,9 +28,8 @@ Einrichtung von Workspaces, Stores, Styles und Layern über die REST-Schnittstel
 * [Tipps, Tricks & Troubleshooting](troubleshooting/README.md)
 Performance-Optimierung, Protokollierung, Debugging und hilfreiche Tipps
 
-Autoren
--------
+# Autoren
 
-Daniel Koch: koch [at] terrestris [dot] de
-
-Nils Bühner: buehner [at] terrestris [dot] de
+{% for author in book.authors %}
+  - {{ author.name }} ([{{ author.mail }}](mailto:{{ author.mail }}))
+{% endfor %}
