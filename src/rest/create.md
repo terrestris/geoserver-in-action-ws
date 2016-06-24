@@ -10,8 +10,7 @@ REST anlegen.
 Öffnen Sie das Terminal (falls noch nicht geschehen) und geben Sie den folgenden
 Befehl zum Erstellen eines neuen Workspaces namens `fossgis` ein:
 
-```bash
-curl \
+<pre><xmp style="margin:0; font-size: .85em;">curl \
   -v \
   -u admin:geoserver \
   -XPOST \
@@ -20,7 +19,7 @@ curl \
         <name>fossgis</name>
       </workspace>" \
    {{ book.geoServerBaseUrl }}/rest/workspaces
-```
+</xmp></pre>
 
 Der obige Aufruf unterscheidet sich in zwei wesentlichen Punkten von den bisherigen
 Read-Operationen: Wir nutzen für das Erstellen einer neuen Ressource im Gegensatz
@@ -29,8 +28,7 @@ zur HTTP-Operation `GET` die Operation `POST` und schicken einen `XML` Content
 REST-API. Die Adresse haben wir durch die bisherigen Schritte identifizieren
 können. Nach Aufruf des Befehls sollte im Terminal folgende Ausgabe erscheinen:
 
-```
-* Hostname was NOT found in DNS cache
+<pre><code>* Hostname was NOT found in DNS cache
 *   Trying 127.0.0.1...
 * Connected to localhost (127.0.0.1) port 8082 (#0)
 * Server auth using Basic with user 'admin'
@@ -51,7 +49,7 @@ können. Nach Aufruf des Befehls sollte im Terminal folgende Ausgabe erscheinen:
 < Transfer-Encoding: chunked
 <
 * Connection #0 to host localhost left intact
-```
+</code></pre>
 
 An dieser Stelle sind zwei Informationen für uns entscheidend:  
 1. `HTTP/1.1 201 Created`: Der Aufruf wurde erfolgreich bearbeitet und die
@@ -65,14 +63,13 @@ Wir können nun überprüfen, ob der Arbeitsbereich tatsächlich angelegt wurde,
   Menüeintrag `Arbeitsbereiche` alle vorhandenen Arbeitsbereiche auflisten oder
 - *über die REST-API* eine Auflistung aller Arbeitsbereiche anfordern (im `XML`-Format):
 
-```bash
-curl \
+<pre><xmp style="margin:0; font-size: .85em;">curl \
   -v \
   -u admin:geoserver \
   -XGET \
   -H "Accept: text/xml" \
    {{ book.geoServerBaseUrl }}/rest/workspaces
-```
+</xmp></pre>
 
 In beiden Fällen werden wir erkennen, dass ein neuer Arbeitsbereich namens
 fossgis vorhanden ist.
@@ -90,8 +87,7 @@ folgenden DB-Verbindungsparametern:
 - **Benutzer**: user (`user`)
 - **Passwort**: user (`passwd`)
 
-```bash
-curl \
+<pre><xmp style="margin:0; font-size: .85em;">curl \
   -v \
   -u admin:geoserver \
   -XPOST \
@@ -108,7 +104,7 @@ curl \
       </connectionParameters>
       </dataStore>" \
    {{ book.geoServerBaseUrl }}/rest/workspaces/fossgis/datastores
-```
+</xmp></pre>
 
 > **note**
 >
@@ -120,25 +116,23 @@ Die erfolgreiche Anlage des Datenspeichers wird uns erneut über den Statuscode
 `HTTP/1.1 201 Created` bestätigt und kann wiederum über die [GUI]({{ book.geoServerBaseUrl }})
 oder das Auslesen über die API kontrolliert werden:
 
-```bash
-curl \
+<pre><xmp style="margin:0; font-size: .85em;">curl \
   -v \
   -u admin:geoserver \
   -XGET \
   -H "Accept: text/xml" \
   {{ book.geoServerBaseUrl }}/rest/workspaces/fossgis/datastores/natural_earth.xml
-```
+</xmp></pre>
 
 Die Antwort sollte wie folgt aussehen:
 
-```xml
-<dataStore>
+<pre><xmp style="margin:0; font-size: .85em;"><dataStore>
   <name>natural_earth</name>
   <type>PostGIS</type>
   <enabled>true</enabled>
   <workspace>
     <name>fossgis</name>
-    <atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="alternate" href="@geoserver_url@/rest/workspaces/fossgis.xml" type="application/xml"/>
+    <atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="alternate" href="{{ book.geoServerBaseUrl }}/rest/workspaces/fossgis.xml" type="application/xml"/>
   </workspace>
   <connectionParameters>
     <entry key="port">5432</entry>
@@ -149,12 +143,12 @@ Die Antwort sollte wie folgt aussehen:
     <entry key="database">natural_earth2</entry>
     <entry key="namespace">http://fossgis</entry>
   </connectionParameters>
-  <__default>false</__default>
+  <\_\_default>false</\_\_default>
   <featureTypes>
-    <atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="alternate" href="@geoserver_url@/rest/workspaces/fossgis/datastores/natural_earth/featuretypes.xml" type="application/xml"/>
+    <atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="alternate" href="{{ book.geoServerBaseUrl }}/rest/workspaces/fossgis/datastores/natural_earth/featuretypes.xml" type="application/xml"/>
   </featureTypes>
 </dataStore>
-```
+</xmp></pre>
 
 ## Stil erstellen und hochladen
 
@@ -163,8 +157,7 @@ Schritt einen neuen Stil mit dem Namen `states_provinces` im Arbeitsbereich `fos
 anlegen, der die Stildatei (SLD, *Styled Layer Descriptor*) `states_provinces.sld`
 assoziiert. Führen Sie dazu zunächst den folgenden Befehl aus:
 
-```bash
-curl \
+<pre><xmp style="margin:0; font-size: .85em;">curl \
   -v \
   -u admin:geoserver \
   -XPOST \
@@ -174,7 +167,7 @@ curl \
         <filename>states_provinces.sld</filename>
       </style>" \
   {{ book.geoServerBaseUrl }}/rest/workspaces/fossgis/styles
-```
+</xmp></pre>
 
 Erneut wird uns die erfolgreiche Anlage mit dem Status `HTTP/1.1 201 Created`
 bestätigt und wir prüfen dies wiederum über die [GUI]({{ book.geoServerBaseUrl }})
@@ -183,15 +176,14 @@ Nachdem die Ressource im GeoServer publiziert wurde, können wir über REST den 
 selbst (*states\_provinces.sld*) an die Ressource binden. Hierzu können wir die
 HTTP-Operation `PUT` nutzen, um eine Datei auf den Server zu kopieren:
 
-```bash
-curl \
+<pre><xmp style="margin:0; font-size: .85em;">curl \
   -v \
   -u admin:geoserver \
   -XPUT \
   -H "Content-type: application/vnd.ogc.sld+xml" \
   -d @states_provinces.sld \
   {{ book.geoServerBaseUrl }}/rest/workspaces/fossgis/styles/states_provinces
-```
+</xmp></pre>
 
 **Wichtig:** Der obige Befehl setzt zwei Dinge voraus:
 1. Es existiert eine SLD-Datei mit dem Namen *states\_provinces.sld* und einem
@@ -210,8 +202,7 @@ aus unserem neuen Datenspeichers natural\_earth. Als Beispiel werden wir die Tab
 *ne\_10m\_admin\_1\_states\_provinces\_shp* mit dem folgenden Befehl im Arbeitsbereich
 fossgis veröffentlichen:
 
-```bash
-curl \
+<pre><xmp style="margin:0; font-size: .85em;">curl \
   -v \
   -u admin:geoserver \
   -XPOST \
@@ -223,24 +214,22 @@ curl \
         <enabled>true</enabled>
       </featureType>" \
   {{ book.geoServerBaseUrl }}/rest/workspaces/fossgis/datastores/natural_earth/featuretypes
-```
+</xmp></pre>
 
 Und erneut begrüßt uns nach erfolgreichem Hinzufügen der Ressource die Statusmeldung
 `HTTP/1.1 201 Created` und selbstverständlich können wir an dieser Stelle erneut das
 Ergebnis über die [GUI]({{ book.geoServerBaseUrl }}) oder die REST-API begutachten:
 
-```bash
-curl \
+<pre><xmp style="margin:0; font-size: .85em;">curl \
   -v \
   -u admin:geoserver \
   -XGET \
   {{ book.geoServerBaseUrl }}/rest/workspaces/fossgis/datastores/natural_earth/featuretypes/states_provinces.xml
-```
+</xmp></pre>
 
 Die XML-Repräsentation des Layers ist demnach wie folgt (gekürzt):
 
-```xml
-<featureType>
+<pre><xmp style="margin:0; font-size: .85em;"><featureType>
   <name>states_provinces</name>
   <nativeName>ne_10m_admin_1_states_provinces_shp</nativeName>
   <namespace>
@@ -315,7 +304,7 @@ Die XML-Repräsentation des Layers ist demnach wie folgt (gekürzt):
     </attribute>
   </attributes>
 <featureType>
-```
+</xmp></pre>
 
 Bereits zu diesem Zeitpunkt können wir den Layer über die Layervorschau des GeoServers
 oder über einen beliebigen Client (z.B. QGIS) aufrufen. Öffnen Sie hierzu die
@@ -331,8 +320,7 @@ Startansicht der Vorschau sollte dabei in etwa der folgenden Abbildung entsprech
 Vergessen wir jedoch nicht unseren Layerstil states\_provinces aus den vorherigen
 Kapiteln, den wir im Folgenden dem Layer states\_provinces zuweisen wollen:
 
-```bash
-curl \
+<pre><xmp style="margin:0; font-size: .85em;">curl \
   -v \
   -u admin:geoserver \
   -XPUT \
@@ -344,7 +332,7 @@ curl \
         </defaultStyle>
       </layer>" \
   {{ book.geoServerBaseUrl }}/rest/layers/fossgis:states_provinces
-```
+</xmp></pre>
 
 Bestätigt durch den Status `HTTP/1.1 200 OK` können wir die Layervorschau erneut
 aufrufen und werden sehen, dass der neue Stil (hellgraue Landesflächen, dunkelgraue

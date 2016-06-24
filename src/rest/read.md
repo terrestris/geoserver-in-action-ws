@@ -91,8 +91,7 @@ vorhandenen Arbeitsbereiche im HTML-Format). Das Format der Response ist jedoch
 auch über cURL steuerbar. Hierzu muss lediglich der *Accept* Header des Requests
 von *text/html* auf *text/json* bzw. *text/xml* gesetzt werden.
 
-```html
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<pre><xmp style="margin:0; font-size: .85em;"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <title>GeoServer Configuration</title>
@@ -112,7 +111,7 @@ Workspaces
 </ul>
 </body>
 </html>
-```
+</xmp></pre>
 
 Nachdem wir die grundlegenden Funktionen zum Auslesen der Katalogeinstellungen
 kennengelernt haben, können Sie mit dem Kapitel [Katalogeinträge erzeugen](create.md) fortfahren.

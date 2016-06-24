@@ -7,8 +7,7 @@ kann uns auch hier die REST-API in wiederkehrenden Prozeduren zur Seite stehen.
 Als Beispiel werden wir mit dem folgenden cURL das standardmäßige Ausgabeprojektionssystem
 des Layers `states_provinces` zu EPSG:900913 ändern:
 
-```bash
-curl \
+<pre><xmp style="margin:0; font-size: .85em;">curl \
   -v \
   -u admin:geoserver \
   -XPUT \
@@ -19,14 +18,13 @@ curl \
         <projectionPolicy>REPROJECT_TO_DECLARED</projectionPolicy>
       </featureType>" \
   {{ book.geoServerBaseUrl }}/rest/workspaces/fossgis/datastores/natural_earth/featuretypes/states_provinces
-```
+</xmp></pre>
 
 Nachdem dieser Schritt mit `HTTP/1.1 200 OK` bestätigt wurde, können wir anschließend
 automatisch über REST die neue native Bounding Box des Layers mit dem Parameter
 recalculate=nativebbox,latlonbbox berechnen lassen:
 
-```bash
-curl \
+<pre><xmp style="margin:0; font-size: .85em;">curl \
   -v \
   -u admin:geoserver \
   -XPUT \
@@ -35,7 +33,7 @@ curl \
         <enabled>true</enabled>
       </featureType>" \
   {{ book.geoServerBaseUrl }}/rest/workspaces/fossgis/datastores/natural_earth/featuretypes/states_provinces?recalculate=nativebbox,latlonbbox
-```
+</xmp></pre>
 
 Betrachten wir nun den Layer in der Layerübersicht des GeoServers (![layer\_icon](../assets/gui3.png))
 sehen wir, dass der Layer - wie zu erwarten - mit dem angegebenen Koordinatensystem

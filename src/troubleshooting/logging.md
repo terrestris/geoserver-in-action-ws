@@ -3,7 +3,7 @@
 Bei jeglichen Fehlern, die sich auf den GeoServer zurückführen lassen (wie z.B.
 keine oder falsche Antwort eines Kartendienstes) ist das Protokoll die erste
 Anlaufstelle. Das GeoServer Protokoll lässt sich dabei entweder direkt über
-die GUI oder aus dem Dateisystem (@geoserver\_path@data\_dir/logs) aufrufen.
+die GUI oder aus dem Dateisystem ({{ book.geoServerPhysicalPath }}data\_dir/logs) aufrufen.
 Rein informativen Protokollmeldungen steht dabei das Kürzel INFO vor. Bei
 schwerwiegenden Fehlern findet sich dort jedoch das Kürzel ERROR.
 
@@ -44,9 +44,8 @@ Dazu führen müssen die folgenden Schritte ausgeführt werden.
 3. Speichern Sie die Einstellungen (unten).
 4. Öffnen Sie die Konsole und führen Sie den folgenden Befehl aus:
 
-```bash
-less +F {{ book.geoServerPhysicalPath }}/data/logs/geoserver.log
-```
+<pre><xmp style="margin:0; font-size: .85em;">less +F {{ book.geoServerPhysicalPath }}/data/logs/geoserver.log
+</xmp></pre>
 
 > **note**
 >

@@ -13,9 +13,8 @@ Um das Datenverzeichnis auszulagern, führen Sie die folgenden Schritte durch:
    (data\_dir/) in ein neues Verzeichnis (gs\_data\_dir/) in unserem Home-Verzeichnis,
    welches anschließend als Datenverzeichnis des GeoServers verwendet werden soll:
 
-```bash
-cp -r {{ book.geoServerPhysicalPath}}data_dir/ /home/user/gs_data_dir
-```
+<pre><xmp style="margin:0; font-size: .85em;">cp -r {{ book.geoServerPhysicalPath}}data_dir/ /home/user/gs_data_dir
+</xmp></pre>
 
 2. Das Datenverzeichnis des GeoServers wird über die Umgebungsvariable (GEOSERVER\_DATA\_DIR)
   gesteuert. Bei einer klassischen WAR-Installation, etwa auf einem Tomcat, kann
@@ -24,9 +23,8 @@ cp -r {{ book.geoServerPhysicalPath}}data_dir/ /home/user/gs_data_dir
   bitte den folgenden Befehl aus, um das Skript startup.sh mit dem Texteditor
   *medit* und den benötigten root-Rechten zu öffnen:
 
-```bash
-sudo medit {{ book.geoServerPhysicalPath}}bin/startup.sh
-```
+<pre><xmp style="margin:0; font-size: .85em;">sudo medit {{ book.geoServerPhysicalPath}}bin/startup.sh
+</xmp></pre>
 
 3. Fügen Sie an den Anfang der Datei folgende Zuweisung ein, um das in Schritt 1
    erstellte Verzeichnis als GeoServer-Datenverzeichnis zu verwenden (und

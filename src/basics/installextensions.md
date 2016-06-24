@@ -34,16 +34,14 @@ Führen Sie die folgenden Schritte aus, um diese Erweiterung zu installieren:
 3. Wechseln Sie im Terminal in das im vorigen [Abschnitt](./folderstructure.md)
    erläuterte Verzeichnis zur Installation von Erweiterungen:
 
-```bash
-cd {{ book.geoServerPhysicalPath }}webapps/geoserver/WEB-INF/lib/
-```
+<pre><xmp style="margin:0; font-size: .85em;">cd {{ book.geoServerPhysicalPath }}webapps/geoserver/WEB-INF/lib/
+</xmp></pre>
 
 1. Da Sie root-Rechte benötigen, um in das lib-Verzeichnis schreiben zu können,
    muss der folgende Befehl zum Entpacken des Archivs mit sudo ausgeführt werden:
 
-```bash
-sudo unzip /home/user/Downloads/geoserver-{{ book.geoServerVersion }}-wps-plugin.zip
-```
+<pre><xmp style="margin:0; font-size: .85em;">sudo unzip /home/user/Downloads/geoserver-{{ book.geoServerVersion }}-wps-plugin.zip
+</xmp></pre>
 
 1. Wenn die jar-Dateien erfolgreich in das lib-Verzeichnis entpackt wurden, muss
    der GeoServer wieder gestartet werden. Dazu klicken Sie auf **Start GeoServer**

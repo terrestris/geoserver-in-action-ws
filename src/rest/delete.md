@@ -8,23 +8,21 @@ zum Entfernen eines Layers (**Hinweis**: Durch den Befehl wird der oben erzeugte
 
 Zunächst entfernen wir den Layer:
 
-```bash
-curl \
+<pre><xmp style="margin:0; font-size: .85em;">curl \
   -v \
   -u admin:geoserver \
   -XDELETE \
   {{ book.geoServerBaseUrl }}/rest/layers/fossgis:states_provinces
-```
+</xmp></pre>
 
 Und anschließend den FeatureType des Datenspeichers:
 
-```bash
-curl \
+<pre><xmp style="margin:0; font-size: .85em;">curl \
   -v \
   -u admin:geoserver \
   -XDELETE \
   {{ book.geoServerBaseUrl }}/rest/workspaces/fossgis/datastores/natural_earth/featuretypes/states_provinces
-```
+</xmp></pre>
 
 In dem obigen Beispiel wird der FeatureType states\_provinces durch den gleichnamigen
 Layer referenziert, wodurch die zweischrittige Lösung notwendig ist. Das alleinige
@@ -32,13 +30,12 @@ Ausführen des zweiten Befehls würde in diesem Fall die Fehlermeldung *feature 
 referenced by layer(s)* provozieren. Um automatisch alle referenzierten Objekte
 (z.B. auch Gruppenlayer) zu entfernen, sollte der Parameter recurse=true gesetzt werden:
 
-```bash
-curl \
+<pre><xmp style="margin:0; font-size: .85em;">curl \
   -v \
   -u admin:geoserver \
   -XDELETE \
   {{ book.geoServerBaseUrl }}/rest/workspaces/fossgis/datastores/natural_earth/featuretypes/states_provinces?recurse=true
-```
+</xmp></pre>
 
 Wurden die Ressourcen erfolgreich entfernt, wird der Status `HTTP/1.1 200 OK` ausgegeben.
 

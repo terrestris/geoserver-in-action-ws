@@ -31,7 +31,7 @@ Beispiel der On-The-Fly-Prozessierung beschränken und beispielhaft einen Cache
 für den Layer topp:states vorbereiten.
 
 Auf der OSGeoLive werden die vorgerechneten Kartenkacheln im Verzeichnis
-`{{ book.geoServerPhysicalPath }}/data_dir/gwc/` abgelegt. Navigieren Sie zunächst
+<pre>{{ book.geoServerPhysicalPath }}data_dir/gwc/</pre> abgelegt. Navigieren Sie zunächst
 im Terminal ([](../assets/terminal_icon.png)) zu diesem Verzeichnis und lassen
 Sie sich den Inhalt mit dem Befehl `ls -lh` (oder einer vergleichbaren Operation)
 anzeigen. Die Ausgabe sollte dabei in etwa wie folgt aussehen und aktuell nur
