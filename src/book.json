@@ -23,17 +23,11 @@
       "mail": "koch@terrestris.de"
     }]
   },
-  "links": {
-    "sidebar": {
-    }
-  },
   "plugins": [
     "advanced-emoji",
     "edit-link",
-    "exercises-tmp-fixed-6",
     "expandable-chapters",
     "image-captions",
-    "include-codeblock",
     "richquotes",
     "sectionx"
   ],
