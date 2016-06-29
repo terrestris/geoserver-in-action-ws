@@ -1,7 +1,7 @@
 #!/bin/bash
 
 HOME_DIR=~
-WORKSHOP_DOWNLOAD_BASE_URL=http://terrestris.github.io/geoserver-in-action-ws/materials
+WORKSHOP_DOWNLOAD_BASE_URL=https://raw.githubusercontent.com/terrestris/geoserver-in-action-ws/master/src/materials
 GEOSERVER_VERSION=2.8.2
 M2_FILES_URL=$WORKSHOP_DOWNLOAD_BASE_URL/local_maven_repo.tar.gz
 INSPIRE_SRC_URL=$WORKSHOP_DOWNLOAD_BASE_URL/inspire_extension_source.tar.gz

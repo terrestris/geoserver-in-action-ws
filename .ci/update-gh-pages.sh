@@ -50,6 +50,8 @@ rm -Rf *.zip *.tar.gz *.pdf *.epub *.html *.json gitbook/ materials/ assets/ bas
 # copy the src dir from previous build folder
 cp -r $SRC_DIR/geoserver-in-action-ws/* .
 
+rm -Rf materials/
+
 cp $SRC_DIR/*.pdf .
 cp $SRC_DIR/*.epub .
 cp $SRC_DIR/*.zip .
