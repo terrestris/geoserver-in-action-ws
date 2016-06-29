@@ -25,10 +25,6 @@
         
     
         
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/exercises.css">
-        
-    
-        
         <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-expandable-chapters/expandable-chapters.css">
         
     
@@ -65,7 +61,7 @@
         
     
     
-    <link rel="next" href="../basics/compilesource.html" />
+    <link rel="next" href="../basics/installextensions.html" />
     
     
     <link rel="prev" href="../basics/index.html" />
@@ -74,14 +70,14 @@
         
     </head>
     <body>
-        <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+        
         
     <div class="book"
         data-level="2.1"
         data-chapter-title="Ordnerstruktur des GeoServers"
         data-filepath="basics/folderstructure.md"
         data-basepath=".."
-        data-revision="Tue Jun 21 2016 08:03:55 GMT+0000 (UTC)"
+        data-revision="Wed Jun 29 2016 15:51:27 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -156,10 +152,10 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2" data-path="basics/compilesource.html">
+        <li class="chapter " data-level="2.2" data-path="basics/installextensions.html">
             
                 
-                    <a href="../basics/compilesource.html">
+                    <a href="../basics/installextensions.html">
                 
                         <i class="fa fa-check"></i>
                         
@@ -171,10 +167,10 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3" data-path="basics/installextensions.html">
+        <li class="chapter " data-level="2.3" data-path="basics/compilesource.html">
             
                 
-                    <a href="../basics/installextensions.html">
+                    <a href="../basics/compilesource.html">
                 
                         <i class="fa fa-check"></i>
                         
@@ -404,8 +400,9 @@
                         <h1 id="ordnerstruktur-des-geoservers">Ordnerstruktur des GeoServers</h1>
 <p>Im Folgenden wird die Ordnerstruktur des GeoServers erl&#xE4;utert. Ausgangspunkt
 ist das GeoServer-Verzeichnis:</p>
-<pre><code class="lang-bash">{{ book.geoServerPhysicalPath }}
-</code></pre>
+<pre><xmp style="margin:0; font-size: .85em;">/usr/local/lib/geoserver-2.8.2/
+</xmp></pre>
+
 <p>Dabei sind die folgenden Unterordner von besonderer Bedeutung:</p>
 <table>
 <thead>
@@ -421,15 +418,7 @@ ist das GeoServer-Verzeichnis:</p>
 </tr>
 <tr>
 <td>data_dir/</td>
-<td>Konfiguration der GeoServer-Daten (z.B. <em>Arbeitsbereiche, Datenquellen, Layer oder Stile</em>).</td>
-</tr>
-<tr>
-<td></td>
-<td>F&#xFC;r Produktivsysteme wird (durch Konfiguration des GeoServers) grunds&#xE4;tzlich empfohlen ein</td>
-</tr>
-<tr>
-<td></td>
-<td><em>DATA_DIR</em> au&#xDF;erhalb der Webapplikation zu verwenden, da sich der GeoServer auf diese Weise zu neueren Versionen updaten l&#xE4;sst ohne dass die Konfigurationsdaten verloren gehen. Details gibt es <a href="http://docs.geoserver.org/latest/en/user/datadirectory/index.html" target="_blank">hier</a>.</td>
+<td>Konfiguration der GeoServer-Daten (z.B. <em>Arbeitsbereiche, Datenquellen, Layer oder Stile</em>). F&#xFC;r Produktivsysteme wird (durch Konfiguration des GeoServers) grunds&#xE4;tzlich empfohlen ein <em>DATA_DIR</em> au&#xDF;erhalb der Webapplikation zu verwenden, da sich der GeoServer auf diese Weise zu neueren Versionen updaten l&#xE4;sst ohne dass die Konfigurationsdaten verloren gehen. Details gibt es <a href="http://docs.geoserver.org/latest/en/user/datadirectory/index.html" target="_blank">hier</a>.</td>
 </tr>
 <tr>
 <td>data_dir/logs/</td>
@@ -447,8 +436,8 @@ ist das GeoServer-Verzeichnis:</p>
 In anderen Umgebungen (z.B. auf einem Tomcat mit klassischer .war-Datei-Installation)
 kann die Struktur abweichen.</p>
 </blockquote>
-<p>Im folgenden Abschnitt\<basics.installextensions\> wird erkl&#xE4;rt wie sich die
-Funktionalit&#xE4;t des GeoServers durch das Einbinden zus&#xE4;tzlicher Module erweitern l&#xE4;sst.</basics.installextensions\></p>
+<p>Im <a href="installextensions.html">folgenden Abschnitt</a> wird erkl&#xE4;rt wie sich die
+Funktionalit&#xE4;t des GeoServers durch das Einbinden zus&#xE4;tzlicher Module erweitern l&#xE4;sst.</p>
 
                     
                     </section>
@@ -462,7 +451,7 @@ Funktionalit&#xE4;t des GeoServers durch das Einbinden zus&#xE4;tzlicher Module 
         <a href="../basics/index.html" class="navigation navigation-prev " aria-label="Previous page: Basiswissen GeoServer"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../basics/compilesource.html" class="navigation navigation-next " aria-label="Next page: Installieren von Erweiterungen"><i class="fa fa-angle-right"></i></a>
+        <a href="../basics/installextensions.html" class="navigation navigation-next " aria-label="Next page: Installieren von Erweiterungen"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
@@ -472,22 +461,6 @@ Funktionalit&#xE4;t des GeoServers durch das Einbinden zus&#xE4;tzlicher Module 
 
     
     <script src="../gitbook/plugins/gitbook-plugin-edit-link/plugin.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/ace/ace.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/ace/theme-tomorrow.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/ace/mode-javascript.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/exercises.js"></script>
     
 
     
@@ -520,7 +493,7 @@ Funktionalit&#xE4;t des GeoServers durch das Einbinden zus&#xE4;tzlicher Module 
 
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"edit-link":{"base":"https://github.com/terrestris/geoserver-in-action-ws/edit/master/src","label":"Edit…"},"image-captions":{"caption":"_CAPTION_","variable_name":"_pictures"},"richquotes":{"task":{"alert":"info","picto":"fa-file-code-o"},"exercise":{"alert":"info","picto":"fa-file-code-o"}},"advanced-emoji":{"embedEmojis":false},"exercises-tmp-fixed-6":{},"expandable-chapters":{},"include-codeblock":{},"sectionx":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    var config = {"edit-link":{"base":"https://github.com/terrestris/geoserver-in-action-ws/edit/master/src","label":"Edit…"},"image-captions":{"caption":"_CAPTION_","variable_name":"_pictures"},"richquotes":{"task":{"alert":"info","picto":"fa-file-code-o"},"exercise":{"alert":"info","picto":"fa-file-code-o"}},"advanced-emoji":{"embedEmojis":false},"expandable-chapters":{},"sectionx":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>

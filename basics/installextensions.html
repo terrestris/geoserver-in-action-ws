@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Kompilieren des Quellcodes mit maven | GeoServer in action</title>
+        <title>Installieren von Erweiterungen | GeoServer in action</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.7">
@@ -22,10 +22,6 @@
     
         
         <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-advanced-emoji/emoji-website.css">
-        
-    
-        
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/exercises.css">
         
     
         
@@ -65,23 +61,23 @@
         
     
     
-    <link rel="next" href="../rest/index.html" />
+    <link rel="next" href="../basics/compilesource.html" />
     
     
-    <link rel="prev" href="../basics/compilesource.html" />
+    <link rel="prev" href="../basics/folderstructure.html" />
     
 
         
     </head>
     <body>
-        <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+        
         
     <div class="book"
-        data-level="2.3"
-        data-chapter-title="Kompilieren des Quellcodes mit maven"
+        data-level="2.2"
+        data-chapter-title="Installieren von Erweiterungen"
         data-filepath="basics/installextensions.md"
         data-basepath=".."
-        data-revision="Tue Jun 21 2016 08:03:55 GMT+0000 (UTC)"
+        data-revision="Wed Jun 29 2016 15:51:27 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -156,10 +152,10 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2" data-path="basics/compilesource.html">
+        <li class="chapter active" data-level="2.2" data-path="basics/installextensions.html">
             
                 
-                    <a href="../basics/compilesource.html">
+                    <a href="../basics/installextensions.html">
                 
                         <i class="fa fa-check"></i>
                         
@@ -171,10 +167,10 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.3" data-path="basics/installextensions.html">
+        <li class="chapter " data-level="2.3" data-path="basics/compilesource.html">
             
                 
-                    <a href="../basics/installextensions.html">
+                    <a href="../basics/compilesource.html">
                 
                         <i class="fa fa-check"></i>
                         
@@ -409,7 +405,7 @@ Daten aus bestimmten SQL-Datenbanken beziehen (z.B. MySQL oder Oracle). Ebenso
 gibt es Erweiterungen, die es erm&#xF6;glichen <em>Excel</em> (und weitere) als Ausgabeformat
 zu unterst&#xFC;tzen.</p>
 <h2 id="&#xFC;bersicht-&#xFC;ber-verf&#xFC;gbare-erweiterungen">&#xDC;bersicht &#xFC;ber verf&#xFC;gbare Erweiterungen</h2>
-<p>Auf <a href="http://geoserver.org/release/2.8.3/" target="_blank">http://geoserver.org/release/2.8.3/</a> finden Sie im Bereich
+<p>Auf <a href="http://geoserver.org/release/2.8.2/" target="_blank">http://geoserver.org/release/2.8.2/</a> finden Sie im Bereich
 <em>Extensions</em> eine Auflistung zahlreicher Erweiterungen, die als stabile betrachtet
 werden und im Rahmen eines Release-Prozesses bereitgestellt werden. Dar&#xFC;berhinaus
 gibt es noch <em>Community-Extensions</em>, die einen experimentellen oder instabilen
@@ -418,30 +414,32 @@ Status haben und kein Teil des offiziellen <em>Release</em>-Prozesses sind.</p>
 <a href="http://www.opengeospatial.org/standards/wps" target="_blank">WPS</a> steht f&#xFC;r <em>Web Processing Service</em>
 und ist (wie WMS und WFS) ein Standard des OGC, in dem Regeln f&#xFC;r das Anfragen
 und Antworten von (r&#xE4;umlichen) Prozessen, definiert sind.</p>
-<figure id="fig2.3.1"><img src="../assets/gs_extensions.png" alt="GeoServer-Erweiterungen. Rot markiert ist die WPS-Erweiterung."><figcaption>GeoServer-Erweiterungen. Rot markiert ist die WPS-Erweiterung.</figcaption></figure>
+<figure id="fig2.2.1"><img src="../assets/gs_extensions.png" alt="GeoServer-Erweiterungen. Rot markiert ist die WPS-Erweiterung."><figcaption>GeoServer-Erweiterungen. Rot markiert ist die WPS-Erweiterung.</figcaption></figure>
 <h2 id="installieren-der-wpserweiterung">Installieren der WPS-Erweiterung</h2>
 <p>F&#xFC;hren Sie die folgenden Schritte aus, um diese Erweiterung zu installieren:</p>
 <ol>
 <li>Stoppen Sie den Geoserver durch einen Doppelklick auf <strong>Stop GeoServer</strong> im
- Ordner <strong>Web Services</strong> auf Ihrem Desktop.</li>
-<li>Laden Sie die WPS-Erweiterung von hier \<files geoserver-2.8.3-wps-plugin.zip\="">
- (oder der offiziellen Release-Seite) herunter. W&#xE4;hlen Sie bitte <em>Datei speichern</em>
- und nicht <em>&#xD6;ffnen mit</em>!</files></li>
-<li>Wechseln Sie im Terminal in das im vorigen Abschnitt\<basics.folderstructure\>
- erl&#xE4;uterte Verzeichnis zur Installation von Erweiterungen:</basics.folderstructure\></li>
+Ordner <strong>Web Services</strong> auf Ihrem Desktop.</li>
+<li>Laden Sie die WPS-Erweiterung von hier <a href="http://terrestris.github.io/geoserver-in-action-ws/materials/geoserver-2.8.2-wps-plugin.zip" target="_blank">http://terrestris.github.io/geoserver-in-action-ws/materials/geoserver-2.8.2-wps-plugin.zip</a>
+(oder der offiziellen Release-Seite) herunter. W&#xE4;hlen Sie bitte <em>Datei speichern</em>
+und nicht <em>&#xD6;ffnen mit</em>!</li>
+<li>Wechseln Sie im Terminal in das im vorigen <a href="folderstructure.html">Abschnitt</a>
+erl&#xE4;uterte Verzeichnis zur Installation von Erweiterungen:</li>
 </ol>
-<pre><code class="lang-bash"><span class="hljs-built_in">cd</span> {{ book.geoServerPhysicalPath }}webapps/geoserver/WEB-INF/lib/
-</code></pre>
+<pre><xmp style="margin:0; font-size: .85em;">cd /usr/local/lib/geoserver-2.8.2/webapps/geoserver/WEB-INF/lib/
+</xmp></pre>
+
 <ol>
 <li>Da Sie root-Rechte ben&#xF6;tigen, um in das lib-Verzeichnis schreiben zu k&#xF6;nnen,
- muss der folgende Befehl zum Entpacken des Archivs mit sudo ausgef&#xFC;hrt werden:</li>
+muss der folgende Befehl zum Entpacken des Archivs mit sudo ausgef&#xFC;hrt werden:</li>
 </ol>
-<pre><code class="lang-bash">sudo unzip /home/user/Downloads/geoserver-{{ book.geoServerVersion }}-wps-plugin.zip
-</code></pre>
+<pre><xmp style="margin:0; font-size: .85em;">sudo unzip /home/user/Downloads/geoserver-2.8.2-wps-plugin.zip
+</xmp></pre>
+
 <ol>
 <li>Wenn die jar-Dateien erfolgreich in das lib-Verzeichnis entpackt wurden, muss
- der GeoServer wieder gestartet werden. Dazu klicken Sie auf <strong>Start GeoServer</strong>
- im Ordner <strong>Web Services</strong> auf dem Desktop.</li>
+der GeoServer wieder gestartet werden. Dazu klicken Sie auf <strong>Start GeoServer</strong>
+im Ordner <strong>Web Services</strong> auf dem Desktop.</li>
 </ol>
 <p>Sobald der GeoServer hochgefahren ist, k&#xF6;nnen wir in seiner Weboberfl&#xE4;che &#xFC;berpr&#xFC;fen,
 ob die Installation der WPS-Erweiterung erfolgreich war. Dazu loggen wir uns
@@ -449,7 +447,7 @@ zun&#xE4;chst mit den Zugangsdaten admin:geoserver ein. Anschlie&#xDF;end muss i
 auf der linken Seite (im unteren Bereich) auf Demos geklickt werden. Hier findet
 sich nun ein Eintrag WPS Request-Builder, den es an dieser Stelle zuvor nicht
 gegeben hat.</p>
-<figure id="fig2.3.2"><img src="../assets/wps_vorher_nachher.png" alt="GeoServer-Weboberfl&#xE4;che (Bereich *Demo*) vor und nach der WPS-Installation"><figcaption>GeoServer-Weboberfl&#xE4;che (Bereich *Demo*) vor und nach der WPS-Installation</figcaption></figure>
+<figure id="fig2.2.2"><img src="../assets/wps_vorher_nachher.png" alt="GeoServer-Weboberfl&#xE4;che (Bereich *Demo*) vor und nach der WPS-Installation"><figcaption>GeoServer-Weboberfl&#xE4;che (Bereich *Demo*) vor und nach der WPS-Installation</figcaption></figure>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-4x fa-edit"></strong>
 <p></p>
 <p>Wenn Sie auf WPS Request-Builder klicken und dort den ersten verf&#xFC;gbaren
@@ -470,10 +468,10 @@ Ergebnis <em>550.0</em> erhalten.</p>
         </div>
 
         
-        <a href="../basics/compilesource.html" class="navigation navigation-prev " aria-label="Previous page: Installieren von Erweiterungen"><i class="fa fa-angle-left"></i></a>
+        <a href="../basics/folderstructure.html" class="navigation navigation-prev " aria-label="Previous page: Ordnerstruktur des GeoServers"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../rest/index.html" class="navigation navigation-next " aria-label="Next page: REST-Schnittstelle"><i class="fa fa-angle-right"></i></a>
+        <a href="../basics/compilesource.html" class="navigation navigation-next " aria-label="Next page: Kompilieren des Quellcodes mit maven"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
@@ -483,22 +481,6 @@ Ergebnis <em>550.0</em> erhalten.</p>
 
     
     <script src="../gitbook/plugins/gitbook-plugin-edit-link/plugin.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/ace/ace.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/ace/theme-tomorrow.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/ace/mode-javascript.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/exercises.js"></script>
     
 
     
@@ -531,7 +513,7 @@ Ergebnis <em>550.0</em> erhalten.</p>
 
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"edit-link":{"base":"https://github.com/terrestris/geoserver-in-action-ws/edit/master/src","label":"Edit…"},"image-captions":{"caption":"_CAPTION_","variable_name":"_pictures"},"richquotes":{"task":{"alert":"info","picto":"fa-file-code-o"},"exercise":{"alert":"info","picto":"fa-file-code-o"}},"advanced-emoji":{"embedEmojis":false},"exercises-tmp-fixed-6":{},"expandable-chapters":{},"include-codeblock":{},"sectionx":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    var config = {"edit-link":{"base":"https://github.com/terrestris/geoserver-in-action-ws/edit/master/src","label":"Edit…"},"image-captions":{"caption":"_CAPTION_","variable_name":"_pictures"},"richquotes":{"task":{"alert":"info","picto":"fa-file-code-o"},"exercise":{"alert":"info","picto":"fa-file-code-o"}},"advanced-emoji":{"embedEmojis":false},"expandable-chapters":{},"sectionx":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>

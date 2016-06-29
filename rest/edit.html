@@ -25,10 +25,6 @@
         
     
         
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/exercises.css">
-        
-    
-        
         <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-expandable-chapters/expandable-chapters.css">
         
     
@@ -74,14 +70,14 @@
         
     </head>
     <body>
-        <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+        
         
     <div class="book"
         data-level="3.3"
         data-chapter-title="Katalogeinträge editieren"
         data-filepath="rest/edit.md"
         data-basepath=".."
-        data-revision="Tue Jun 21 2016 08:03:55 GMT+0000 (UTC)"
+        data-revision="Wed Jun 29 2016 15:51:27 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -156,10 +152,10 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2" data-path="basics/compilesource.html">
+        <li class="chapter " data-level="2.2" data-path="basics/installextensions.html">
             
                 
-                    <a href="../basics/compilesource.html">
+                    <a href="../basics/installextensions.html">
                 
                         <i class="fa fa-check"></i>
                         
@@ -171,10 +167,10 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3" data-path="basics/installextensions.html">
+        <li class="chapter " data-level="2.3" data-path="basics/compilesource.html">
             
                 
-                    <a href="../basics/installextensions.html">
+                    <a href="../basics/compilesource.html">
                 
                         <i class="fa fa-check"></i>
                         
@@ -407,31 +403,33 @@ Administration des GeoServers das Editieren bestehender Ressourcen. Selbstverst&
 kann uns auch hier die REST-API in wiederkehrenden Prozeduren zur Seite stehen.
 Als Beispiel werden wir mit dem folgenden cURL das standardm&#xE4;&#xDF;ige Ausgabeprojektionssystem
 des Layers <code>states_provinces</code> zu EPSG:900913 &#xE4;ndern:</p>
-<pre><code class="lang-bash">curl \
+<pre><xmp style="margin:0; font-size: .85em;">curl \
   -v \
   -u admin:geoserver \
   -XPUT \
-  -H <span class="hljs-string">&quot;Content-type: text/xml&quot;</span> \
-  <span class="hljs-operator">-d</span> <span class="hljs-string">&quot;&lt;featureType&gt;
-        &lt;enabled&gt;true&lt;/enabled&gt;
-        &lt;srs&gt;EPSG:900913&lt;/srs&gt;
-        &lt;projectionPolicy&gt;REPROJECT_TO_DECLARED&lt;/projectionPolicy&gt;
-      &lt;/featureType&gt;&quot;</span> \
-  {{ book.geoServerBaseUrl }}/rest/workspaces/fossgis/datastores/natural_earth/featuretypes/states_provinces
-</code></pre>
+  -H "Content-type: text/xml" \
+  -d "<featuretype>
+        <enabled>true</enabled>
+        <srs>EPSG:900913</srs>
+        <projectionpolicy>REPROJECT_TO_DECLARED</projectionpolicy>
+      </featuretype>" \
+  http://localhost/geoserver/rest/workspaces/fossgis/datastores/natural_earth/featuretypes/states_provinces
+</xmp></pre>
+
 <p>Nachdem dieser Schritt mit <code>HTTP/1.1 200 OK</code> best&#xE4;tigt wurde, k&#xF6;nnen wir anschlie&#xDF;end
 automatisch &#xFC;ber REST die neue native Bounding Box des Layers mit dem Parameter
 recalculate=nativebbox,latlonbbox berechnen lassen:</p>
-<pre><code class="lang-bash">curl \
+<pre><xmp style="margin:0; font-size: .85em;">curl \
   -v \
   -u admin:geoserver \
   -XPUT \
-  -H <span class="hljs-string">&quot;Content-type: text/xml&quot;</span> \
-  <span class="hljs-operator">-d</span> <span class="hljs-string">&quot;&lt;featureType&gt;
-        &lt;enabled&gt;true&lt;/enabled&gt;
-      &lt;/featureType&gt;&quot;</span> \
-  {{ book.geoServerBaseUrl }}/rest/workspaces/fossgis/datastores/natural_earth/featuretypes/states_provinces?recalculate=nativebbox,latlonbbox
-</code></pre>
+  -H "Content-type: text/xml" \
+  -d "<featuretype>
+        <enabled>true</enabled>
+      </featuretype>" \
+  http://localhost/geoserver/rest/workspaces/fossgis/datastores/natural_earth/featuretypes/states_provinces?recalculate=nativebbox,latlonbbox
+</xmp></pre>
+
 <p>Betrachten wir nun den Layer in der Layer&#xFC;bersicht des GeoServers (<img src="../assets/gui3.png" alt="layer\_icon">)
 sehen wir, dass der Layer - wie zu erwarten - mit dem angegebenen Koordinatensystem
 EPSG:900913 und einer Bounding Box im entsprechenden Koordinatensystem konfiguriert
@@ -472,22 +470,6 @@ dieses Moduls erl&#xE4;utern, wie Sie Ressourcen entfernen k&#xF6;nnen.</p>
     
 
     
-    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/ace/ace.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/ace/theme-tomorrow.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/ace/mode-javascript.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/exercises.js"></script>
-    
-
-    
     <script src="../gitbook/plugins/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
     
 
@@ -517,7 +499,7 @@ dieses Moduls erl&#xE4;utern, wie Sie Ressourcen entfernen k&#xF6;nnen.</p>
 
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"edit-link":{"base":"https://github.com/terrestris/geoserver-in-action-ws/edit/master/src","label":"Edit…"},"image-captions":{"caption":"_CAPTION_","variable_name":"_pictures"},"richquotes":{"task":{"alert":"info","picto":"fa-file-code-o"},"exercise":{"alert":"info","picto":"fa-file-code-o"}},"advanced-emoji":{"embedEmojis":false},"exercises-tmp-fixed-6":{},"expandable-chapters":{},"include-codeblock":{},"sectionx":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    var config = {"edit-link":{"base":"https://github.com/terrestris/geoserver-in-action-ws/edit/master/src","label":"Edit…"},"image-captions":{"caption":"_CAPTION_","variable_name":"_pictures"},"richquotes":{"task":{"alert":"info","picto":"fa-file-code-o"},"exercise":{"alert":"info","picto":"fa-file-code-o"}},"advanced-emoji":{"embedEmojis":false},"expandable-chapters":{},"sectionx":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>

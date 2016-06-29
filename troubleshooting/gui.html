@@ -25,10 +25,6 @@
         
     
         
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/exercises.css">
-        
-    
-        
         <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-expandable-chapters/expandable-chapters.css">
         
     
@@ -74,14 +70,14 @@
         
     </head>
     <body>
-        <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+        
         
     <div class="book"
         data-level="4.4"
         data-chapter-title="Einstellungen in der GeoServer GUI"
         data-filepath="troubleshooting/gui.md"
         data-basepath=".."
-        data-revision="Tue Jun 21 2016 08:03:55 GMT+0000 (UTC)"
+        data-revision="Wed Jun 29 2016 15:51:27 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -156,10 +152,10 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2" data-path="basics/compilesource.html">
+        <li class="chapter " data-level="2.2" data-path="basics/installextensions.html">
             
                 
-                    <a href="../basics/compilesource.html">
+                    <a href="../basics/installextensions.html">
                 
                         <i class="fa fa-check"></i>
                         
@@ -171,10 +167,10 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3" data-path="basics/installextensions.html">
+        <li class="chapter " data-level="2.3" data-path="basics/compilesource.html">
             
                 
-                    <a href="../basics/installextensions.html">
+                    <a href="../basics/compilesource.html">
                 
                         <i class="fa fa-check"></i>
                         
@@ -406,35 +402,35 @@
 konfigurieren. Wir wollen in diesem Abschnitt kurz auf hilfreiche Optionen hinweisen:</p>
 <ul>
 <li><strong>Vektordaten aus Datenbanken</strong>: Bei Datenbank-Quellen, die sehr viele (z.B.
-  mehrere Millionen) Features enthalten, k&#xF6;nnen die Verbindungsparameter (f&#xFC;r
-  den Datenbankzugriff) einen entscheidenden Einfluss auf die Performance des
-  GeoServers haben. Details zu den Parametern finden Sie <a href="http://docs.geoserver.org/stable/en/user/data/database/connection-pooling.html" target="_blank">hier</a>.</li>
+mehrere Millionen) Features enthalten, k&#xF6;nnen die Verbindungsparameter (f&#xFC;r
+den Datenbankzugriff) einen entscheidenden Einfluss auf die Performance des
+GeoServers haben. Details zu den Parametern finden Sie <a href="http://docs.geoserver.org/stable/en/user/data/database/connection-pooling.html" target="_blank">hier</a>.</li>
 </ul>
 <figure id="fig4.4.1"><img src="../assets/db_connections.png" alt="Verbindungs-Einstellungen (PostGIS) bei Vektordatenspeicher"><figcaption>Verbindungs-Einstellungen (PostGIS) bei Vektordatenspeicher</figcaption></figure>
 <ul>
 <li>Der GeoServer verwendet die <strong>Java Advanced Imaging (JAI)</strong>-Bibliothek zur
-  Bildmanipulation (z.B. zum Erzeugen der Kacheln, die ausgeliefert werden). Im
-  Bereich <em>JAI</em> der Weboberfl&#xE4;che k&#xF6;nnen verschiedene Parameter eingestellt werden,
-  die <a href="http://docs.geoserver.org/stable/en/user/webadmin/server/JAI.html" target="_blank">hier</a>
-  dokumentiert sind.</li>
+Bildmanipulation (z.B. zum Erzeugen der Kacheln, die ausgeliefert werden). Im
+Bereich <em>JAI</em> der Weboberfl&#xE4;che k&#xF6;nnen verschiedene Parameter eingestellt werden,
+die <a href="http://docs.geoserver.org/stable/en/user/webadmin/server/JAI.html" target="_blank">hier</a>
+dokumentiert sind.</li>
 <li>Wenn Sie &#xFC;ber den GeoServer <strong>sehr viele</strong> verschiedene (Vektor-)Layer bereitstellen,
-  sollte der Wert <strong>Gr&#xF6;&#xDF;e des Feature Type Caches</strong> mindestens so gro&#xDF; sein wie
-  die Anzahl der bereitgestellten Feature Types. Ansonsten kann es zwischenzeitlich
-  zu sp&#xFC;rbar l&#xE4;ngeren Antwortzeiten bei WFS-Anfragen kommen. Der Wert kann in
-  der Weboberfl&#xE4;che im Bereich <em>Einstellungen -&gt; Global</em> konfiguriert werden.</li>
+sollte der Wert <strong>Gr&#xF6;&#xDF;e des Feature Type Caches</strong> mindestens so gro&#xDF; sein wie
+die Anzahl der bereitgestellten Feature Types. Ansonsten kann es zwischenzeitlich
+zu sp&#xFC;rbar l&#xE4;ngeren Antwortzeiten bei WFS-Anfragen kommen. Der Wert kann in
+der Weboberfl&#xE4;che im Bereich <em>Einstellungen -&gt; Global</em> konfiguriert werden.</li>
 <li>Sollten Sie einen &#xF6;ffentlich zug&#xE4;nglichen GeoServer verwalten, ist es dringend
-  zu empfehlen, dass sie <strong>WFS-T(ransaktionen) ausstellen</strong>, falls diese schreibende
-  Funktionalit&#xE4;t nicht erlaubt ist bzw. ben&#xF6;tigt wird. Dazu m&#xFC;ssen Sie den
-  Radio-Button im Bereich <em>Dienste -&gt; WFS -&gt; Dienstg&#xFC;te</em> von &quot;Vollst&#xE4;ndig&quot; auf
-  &quot;Basis&quot; wechseln. Anderenfalls w&#xE4;re es denkbar, dass Ihre Daten unerw&#xFC;nscht
-  per WFS-T von Dritten manipuliert werden.</li>
+zu empfehlen, dass sie <strong>WFS-T(ransaktionen) ausstellen</strong>, falls diese schreibende
+Funktionalit&#xE4;t nicht erlaubt ist bzw. ben&#xF6;tigt wird. Dazu m&#xFC;ssen Sie den
+Radio-Button im Bereich <em>Dienste -&gt; WFS -&gt; Dienstg&#xFC;te</em> von &quot;Vollst&#xE4;ndig&quot; auf
+&quot;Basis&quot; wechseln. Anderenfalls w&#xE4;re es denkbar, dass Ihre Daten unerw&#xFC;nscht
+per WFS-T von Dritten manipuliert werden.</li>
 <li>Sehr hilfreich kann das Anlegen von <strong>SQL-Views</strong> (auf Ebene des Geoservers und
-  nicht der Datenbank(!)) sein. Diese Funktionalit&#xE4;t erreichen Sie, wenn Sie
-  im Bereich <em>Daten -&gt; Layer -&gt; Layer hinzuf&#xFC;gen</em> eine Vektor-Datenbankquelle
-  ausw&#xE4;hlen und dort <em>SQL View konfigurieren</em> klicken. N&#xFC;tzlich ist insbesondere
-  die M&#xF6;glichkeit die SQL-Views zu parametrisieren, etwa um bestimmte Features
-   durch entsprechende Parameter herauszufilter. Ausf&#xFC;hrliche Informationen
-   dazu finden Sie <a href="http://docs.geoserver.org/stable/en/user/data/database/sqlview.html" target="_blank">hier</a>.</li>
+nicht der Datenbank(!)) sein. Diese Funktionalit&#xE4;t erreichen Sie, wenn Sie
+im Bereich <em>Daten -&gt; Layer -&gt; Layer hinzuf&#xFC;gen</em> eine Vektor-Datenbankquelle
+ausw&#xE4;hlen und dort <em>SQL View konfigurieren</em> klicken. N&#xFC;tzlich ist insbesondere
+die M&#xF6;glichkeit die SQL-Views zu parametrisieren, etwa um bestimmte Features
+ durch entsprechende Parameter herauszufilter. Ausf&#xFC;hrliche Informationen
+ dazu finden Sie <a href="http://docs.geoserver.org/stable/en/user/data/database/sqlview.html" target="_blank">hier</a>.</li>
 </ul>
 <p>Der letzte <a href="jvm.html">Abschnitt</a> zeigt wie Sie die <em>Java Virtual Machine (JVM)</em> f&#xFC;r
 den GeoServer tunen k&#xF6;nnen.</p>
@@ -461,22 +457,6 @@ den GeoServer tunen k&#xF6;nnen.</p>
 
     
     <script src="../gitbook/plugins/gitbook-plugin-edit-link/plugin.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/ace/ace.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/ace/theme-tomorrow.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/ace/mode-javascript.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/exercises.js"></script>
     
 
     
@@ -509,7 +489,7 @@ den GeoServer tunen k&#xF6;nnen.</p>
 
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"edit-link":{"base":"https://github.com/terrestris/geoserver-in-action-ws/edit/master/src","label":"Edit…"},"image-captions":{"caption":"_CAPTION_","variable_name":"_pictures"},"richquotes":{"task":{"alert":"info","picto":"fa-file-code-o"},"exercise":{"alert":"info","picto":"fa-file-code-o"}},"advanced-emoji":{"embedEmojis":false},"exercises-tmp-fixed-6":{},"expandable-chapters":{},"include-codeblock":{},"sectionx":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    var config = {"edit-link":{"base":"https://github.com/terrestris/geoserver-in-action-ws/edit/master/src","label":"Edit…"},"image-captions":{"caption":"_CAPTION_","variable_name":"_pictures"},"richquotes":{"task":{"alert":"info","picto":"fa-file-code-o"},"exercise":{"alert":"info","picto":"fa-file-code-o"}},"advanced-emoji":{"embedEmojis":false},"expandable-chapters":{},"sectionx":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>

@@ -25,10 +25,6 @@
         
     
         
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/exercises.css">
-        
-    
-        
         <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-expandable-chapters/expandable-chapters.css">
         
     
@@ -74,14 +70,14 @@
         
     </head>
     <body>
-        <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+        
         
     <div class="book"
         data-level="3.4"
         data-chapter-title="Katalogeinträge entfernen"
         data-filepath="rest/delete.md"
         data-basepath=".."
-        data-revision="Tue Jun 21 2016 08:03:55 GMT+0000 (UTC)"
+        data-revision="Wed Jun 29 2016 15:51:27 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -156,10 +152,10 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2" data-path="basics/compilesource.html">
+        <li class="chapter " data-level="2.2" data-path="basics/installextensions.html">
             
                 
-                    <a href="../basics/compilesource.html">
+                    <a href="../basics/installextensions.html">
                 
                         <i class="fa fa-check"></i>
                         
@@ -171,10 +167,10 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3" data-path="basics/installextensions.html">
+        <li class="chapter " data-level="2.3" data-path="basics/compilesource.html">
             
                 
-                    <a href="../basics/installextensions.html">
+                    <a href="../basics/compilesource.html">
                 
                         <i class="fa fa-check"></i>
                         
@@ -407,35 +403,38 @@
 zum Entfernen eines Layers (<strong>Hinweis</strong>: Durch den Befehl wird der oben erzeugte
     Layer states_provinces aus dem Arbeitsbereich fossgis gel&#xF6;scht!):</p>
 <p>Zun&#xE4;chst entfernen wir den Layer:</p>
-<pre><code class="lang-bash">curl \
+<pre><xmp style="margin:0; font-size: .85em;">curl \
   -v \
   -u admin:geoserver \
   -XDELETE \
-  {{ book.geoServerBaseUrl }}/rest/layers/fossgis:states_provinces
-</code></pre>
+  http://localhost/geoserver/rest/layers/fossgis:states_provinces
+</xmp></pre>
+
 <p>Und anschlie&#xDF;end den FeatureType des Datenspeichers:</p>
-<pre><code class="lang-bash">curl \
+<pre><xmp style="margin:0; font-size: .85em;">curl \
   -v \
   -u admin:geoserver \
   -XDELETE \
-  {{ book.geoServerBaseUrl }}/rest/workspaces/fossgis/datastores/natural_earth/featuretypes/states_provinces
-</code></pre>
+  http://localhost/geoserver/rest/workspaces/fossgis/datastores/natural_earth/featuretypes/states_provinces
+</xmp></pre>
+
 <p>In dem obigen Beispiel wird der FeatureType states_provinces durch den gleichnamigen
 Layer referenziert, wodurch die zweischrittige L&#xF6;sung notwendig ist. Das alleinige
 Ausf&#xFC;hren des zweiten Befehls w&#xFC;rde in diesem Fall die Fehlermeldung <em>feature type
 referenced by layer(s)</em> provozieren. Um automatisch alle referenzierten Objekte
 (z.B. auch Gruppenlayer) zu entfernen, sollte der Parameter recurse=true gesetzt werden:</p>
-<pre><code class="lang-bash">curl \
+<pre><xmp style="margin:0; font-size: .85em;">curl \
   -v \
   -u admin:geoserver \
   -XDELETE \
-  {{ book.geoServerBaseUrl }}/rest/workspaces/fossgis/datastores/natural_earth/featuretypes/states_provinces?recurse=<span class="hljs-literal">true</span>
-</code></pre>
+  http://localhost/geoserver/rest/workspaces/fossgis/datastores/natural_earth/featuretypes/states_provinces?recurse=true
+</xmp></pre>
+
 <p>Wurden die Ressourcen erfolgreich entfernt, wird der Status <code>HTTP/1.1 200 OK</code> ausgegeben.</p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-4x fa-edit"></strong>
 <p></p>
 <p>M&#xF6;chten Sie sich - auf Grundlage der Beispiele dieses Workshops oder Ihrer eigenen Daten - weiter mit der REST-API besch&#xE4;ftigen, finden Sie in der offiziellen Dokumentation viele Hinweise und gute Beispiele:</p>
-<p><a href="http://docs.geoserver.org/stable/en/user/rest/" target="_blank">http://docs.geoserver.org/stable/en/user/rest/</a></p>
+<p><a href="http://docs.geoserver.org/stable/en/user/rest/" target="_blank"><a href="http://docs.geoserver.org/stable/en/user/rest/" target="_blank">http://docs.geoserver.org/stable/en/user/rest/</a></a></p>
 </blockquote>
 <p>Sie haben das Modul REST-Schnittstelle erfolgreich beendet, Sie k&#xF6;nnen
 nun mit <a href="../troubleshooting/index.html">Modul Tipps, Tricks &amp; Troubleshooting</a> fortfahren.</p>
@@ -462,22 +461,6 @@ nun mit <a href="../troubleshooting/index.html">Modul Tipps, Tricks &amp; Troubl
 
     
     <script src="../gitbook/plugins/gitbook-plugin-edit-link/plugin.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/ace/ace.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/ace/theme-tomorrow.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/ace/mode-javascript.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/exercises.js"></script>
     
 
     
@@ -510,7 +493,7 @@ nun mit <a href="../troubleshooting/index.html">Modul Tipps, Tricks &amp; Troubl
 
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"edit-link":{"base":"https://github.com/terrestris/geoserver-in-action-ws/edit/master/src","label":"Edit…"},"image-captions":{"caption":"_CAPTION_","variable_name":"_pictures"},"richquotes":{"task":{"alert":"info","picto":"fa-file-code-o"},"exercise":{"alert":"info","picto":"fa-file-code-o"}},"advanced-emoji":{"embedEmojis":false},"exercises-tmp-fixed-6":{},"expandable-chapters":{},"include-codeblock":{},"sectionx":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    var config = {"edit-link":{"base":"https://github.com/terrestris/geoserver-in-action-ws/edit/master/src","label":"Edit…"},"image-captions":{"caption":"_CAPTION_","variable_name":"_pictures"},"richquotes":{"task":{"alert":"info","picto":"fa-file-code-o"},"exercise":{"alert":"info","picto":"fa-file-code-o"}},"advanced-emoji":{"embedEmojis":false},"expandable-chapters":{},"sectionx":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>

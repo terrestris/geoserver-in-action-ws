@@ -25,10 +25,6 @@
         
     
         
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/exercises.css">
-        
-    
-        
         <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-expandable-chapters/expandable-chapters.css">
         
     
@@ -74,14 +70,14 @@
         
     </head>
     <body>
-        <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+        
         
     <div class="book"
         data-level="3.1"
         data-chapter-title="Katalog auslesen"
         data-filepath="rest/read.md"
         data-basepath=".."
-        data-revision="Tue Jun 21 2016 08:03:55 GMT+0000 (UTC)"
+        data-revision="Wed Jun 29 2016 15:51:27 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -156,10 +152,10 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2" data-path="basics/compilesource.html">
+        <li class="chapter " data-level="2.2" data-path="basics/installextensions.html">
             
                 
-                    <a href="../basics/compilesource.html">
+                    <a href="../basics/installextensions.html">
                 
                         <i class="fa fa-check"></i>
                         
@@ -171,10 +167,10 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3" data-path="basics/installextensions.html">
+        <li class="chapter " data-level="2.3" data-path="basics/compilesource.html">
             
                 
-                    <a href="../basics/installextensions.html">
+                    <a href="../basics/compilesource.html">
                 
                         <i class="fa fa-check"></i>
                         
@@ -432,13 +428,12 @@ der aktuellen GeoServer Configuration API bietet (siehe Abbildung).</p>
 Browser (z.B. des Eintrags <em>workspaces</em>) navigiert den Browser zur eindeutigen
 URL <a href="http://localhost/geoserver/rest/workspaces" target="_blank">http://localhost/geoserver/rest/workspaces</a>. Der Aufbau der Liste (bei Auswahl eines
 Arbeitsbereichs) folgt dabei der logischen Struktur des GeoServer-Katalogs:</p>
-<pre><code class="lang-undefined">workspace
+<pre><code>workspace
   |
   +--datastore
     |
     +--featuretype
-</code></pre>
-<h2 id="geoserver-configuration-api-formate">GeoServer Configuration API Formate</h2>
+</code></pre><h2 id="geoserver-configuration-api-formate">GeoServer Configuration API Formate</h2>
 <p>Die obigen Aktionen im Browser rufen einen Endpunkt standardm&#xE4;&#xDF;ig im <em>HTML</em>-Format
 auf. Der GeoServer unterst&#xFC;tzt dar&#xFC;berhinaus die Formate <em>JSON</em> (JavaScript Object
 Notation) und <em>XML</em> (Extensible Markup Language), die insbesondere bei der
@@ -480,27 +475,28 @@ und wird entsprechend die selbe Antwort im HTML-Format liefern (siehe Output all
 vorhandenen Arbeitsbereiche im HTML-Format). Das Format der Response ist jedoch
 auch &#xFC;ber cURL steuerbar. Hierzu muss lediglich der <em>Accept</em> Header des Requests
 von <em>text/html</em> auf <em>text/json</em> bzw. <em>text/xml</em> gesetzt werden.</p>
-<pre><code class="lang-html"><span class="hljs-doctype">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">html</span> <span class="hljs-attribute">xmlns</span>=<span class="hljs-value">&quot;http://www.w3.org/1999/xhtml&quot;</span> <span class="hljs-attribute">xml:lang</span>=<span class="hljs-value">&quot;en&quot;</span> <span class="hljs-attribute">lang</span>=<span class="hljs-value">&quot;en&quot;</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>GeoServer Configuration<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;ROBOTS&quot;</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">&quot;NOINDEX, NOFOLLOW&quot;</span>/&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+<pre><xmp style="margin:0; font-size: .85em;"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>GeoServer Configuration</title>
+  <meta name="ROBOTS" content="NOINDEX, NOFOLLOW">
+</head>
+<body>
 Workspaces
-<span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot; {{ book.geoServerBaseUrl }}/rest/workspaces/it.geosolutions.html&quot;</span>&gt;</span>it.geosolutions<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot; {{ book.geoServerBaseUrl }}/rest/workspaces/cite.html&quot;</span>&gt;</span>cite<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span> [default] <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot; {{ book.geoServerBaseUrl }}/rest/workspaces/tiger.html&quot;</span>&gt;</span>tiger<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot; {{ book.geoServerBaseUrl }}/rest/workspaces/sde.html&quot;</span>&gt;</span>sde<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot; {{ book.geoServerBaseUrl }}/rest/workspaces/topp.html&quot;</span>&gt;</span>topp<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot; {{ book.geoServerBaseUrl }}/rest/workspaces/sf.html&quot;</span>&gt;</span>sf<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot; {{ book.geoServerBaseUrl }}/rest/workspaces/nurc.html&quot;</span>&gt;</span>nurc<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot; {{ book.geoServerBaseUrl }}/rest/workspaces/cartaro.html&quot;</span>&gt;</span>cartaro<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
-</code></pre>
+<ul>
+  <li><a href=" http://localhost/geoserver/rest/workspaces/it.geosolutions.html" target="_blank">it.geosolutions</a></li>
+  <li><a href=" http://localhost/geoserver/rest/workspaces/cite.html" target="_blank">cite</a> [default] </li>
+  <li><a href=" http://localhost/geoserver/rest/workspaces/tiger.html" target="_blank">tiger</a></li>
+  <li><a href=" http://localhost/geoserver/rest/workspaces/sde.html" target="_blank">sde</a></li>
+  <li><a href=" http://localhost/geoserver/rest/workspaces/topp.html" target="_blank">topp</a></li>
+  <li><a href=" http://localhost/geoserver/rest/workspaces/sf.html" target="_blank">sf</a></li>
+  <li><a href=" http://localhost/geoserver/rest/workspaces/nurc.html" target="_blank">nurc</a></li>
+  <li><a href=" http://localhost/geoserver/rest/workspaces/cartaro.html" target="_blank">cartaro</a></li>
+</ul>
+</body>
+</html>
+</xmp></pre>
+
 <p>Nachdem wir die grundlegenden Funktionen zum Auslesen der Katalogeinstellungen
 kennengelernt haben, k&#xF6;nnen Sie mit dem Kapitel <a href="create.html">Katalogeintr&#xE4;ge erzeugen</a> fortfahren.</p>
 
@@ -526,22 +522,6 @@ kennengelernt haben, k&#xF6;nnen Sie mit dem Kapitel <a href="create.html">Katal
 
     
     <script src="../gitbook/plugins/gitbook-plugin-edit-link/plugin.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/ace/ace.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/ace/theme-tomorrow.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/ace/mode-javascript.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/exercises.js"></script>
     
 
     
@@ -574,7 +554,7 @@ kennengelernt haben, k&#xF6;nnen Sie mit dem Kapitel <a href="create.html">Katal
 
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"edit-link":{"base":"https://github.com/terrestris/geoserver-in-action-ws/edit/master/src","label":"Edit…"},"image-captions":{"caption":"_CAPTION_","variable_name":"_pictures"},"richquotes":{"task":{"alert":"info","picto":"fa-file-code-o"},"exercise":{"alert":"info","picto":"fa-file-code-o"}},"advanced-emoji":{"embedEmojis":false},"exercises-tmp-fixed-6":{},"expandable-chapters":{},"include-codeblock":{},"sectionx":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    var config = {"edit-link":{"base":"https://github.com/terrestris/geoserver-in-action-ws/edit/master/src","label":"Edit…"},"image-captions":{"caption":"_CAPTION_","variable_name":"_pictures"},"richquotes":{"task":{"alert":"info","picto":"fa-file-code-o"},"exercise":{"alert":"info","picto":"fa-file-code-o"}},"advanced-emoji":{"embedEmojis":false},"expandable-chapters":{},"sectionx":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>

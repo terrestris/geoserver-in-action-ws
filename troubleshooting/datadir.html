@@ -25,10 +25,6 @@
         
     
         
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/exercises.css">
-        
-    
-        
         <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-expandable-chapters/expandable-chapters.css">
         
     
@@ -74,14 +70,14 @@
         
     </head>
     <body>
-        <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+        
         
     <div class="book"
         data-level="4.3"
         data-chapter-title="GeoServer-Datenverzeichnis auslagern"
         data-filepath="troubleshooting/datadir.md"
         data-basepath=".."
-        data-revision="Tue Jun 21 2016 08:03:55 GMT+0000 (UTC)"
+        data-revision="Wed Jun 29 2016 15:51:27 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -156,10 +152,10 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2" data-path="basics/compilesource.html">
+        <li class="chapter " data-level="2.2" data-path="basics/installextensions.html">
             
                 
-                    <a href="../basics/compilesource.html">
+                    <a href="../basics/installextensions.html">
                 
                         <i class="fa fa-check"></i>
                         
@@ -171,10 +167,10 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3" data-path="basics/installextensions.html">
+        <li class="chapter " data-level="2.3" data-path="basics/compilesource.html">
             
                 
-                    <a href="../basics/installextensions.html">
+                    <a href="../basics/compilesource.html">
                 
                         <i class="fa fa-check"></i>
                         
@@ -410,31 +406,32 @@ separat gesichert werden m&#xFC;ssen.</p>
 <p>Um das Datenverzeichnis auszulagern, f&#xFC;hren Sie die folgenden Schritte durch:</p>
 <ol>
 <li>Wir kopieren das bestehende Datenverzeichnis aus der GeoServer-Installation
- (data_dir/) in ein neues Verzeichnis (gs_data_dir/) in unserem Home-Verzeichnis,
- welches anschlie&#xDF;end als Datenverzeichnis des GeoServers verwendet werden soll:</li>
+(data_dir/) in ein neues Verzeichnis (gs_data_dir/) in unserem Home-Verzeichnis,
+welches anschlie&#xDF;end als Datenverzeichnis des GeoServers verwendet werden soll:</li>
 </ol>
-<pre><code class="lang-bash">cp -r {{ book.geoServerPhysicalPath}}data_dir/ /home/user/gs_data_dir
-</code></pre>
+<pre><xmp style="margin:0; font-size: .85em;">cp -r /usr/local/lib/geoserver-2.8.2/data_dir/ /home/user/gs_data_dir
+</xmp></pre>
+
 <ol>
 <li>Das Datenverzeichnis des GeoServers wird &#xFC;ber die Umgebungsvariable (GEOSERVER_DATA_DIR)
- gesteuert. Bei einer klassischen WAR-Installation, etwa auf einem Tomcat, kann
- dieser Wert in der Datei (web.xml) gesetzt werden. Im Falle der OSGeoLive m&#xFC;ssen
- wir diese Variable jedoch im Startup-Skript des GeoServers setzen. F&#xFC;hren Sie
- bitte den folgenden Befehl aus, um das Skript startup.sh mit dem Texteditor
- <em>medit</em> und den ben&#xF6;tigten root-Rechten zu &#xF6;ffnen:</li>
+gesteuert. Bei einer klassischen WAR-Installation, etwa auf einem Tomcat, kann
+dieser Wert in der Datei (web.xml) gesetzt werden. Im Falle der OSGeoLive m&#xFC;ssen
+wir diese Variable jedoch im Startup-Skript des GeoServers setzen. F&#xFC;hren Sie
+bitte den folgenden Befehl aus, um das Skript startup.sh mit dem Texteditor
+<em>medit</em> und den ben&#xF6;tigten root-Rechten zu &#xF6;ffnen:</li>
 </ol>
-<pre><code class="lang-bash">sudo medit {{ book.geoServerPhysicalPath}}bin/startup.sh
-</code></pre>
+<pre><xmp style="margin:0; font-size: .85em;">sudo medit /usr/local/lib/geoserver-2.8.2/bin/startup.sh
+</xmp></pre>
+
 <ol>
 <li>F&#xFC;gen Sie an den Anfang der Datei folgende Zuweisung ein, um das in Schritt 1
- erstellte Verzeichnis als GeoServer-Datenverzeichnis zu verwenden (und
- speichern Sie anschlie&#xDF;end die Datei):</li>
+erstellte Verzeichnis als GeoServer-Datenverzeichnis zu verwenden (und
+speichern Sie anschlie&#xDF;end die Datei):</li>
 </ol>
-<pre><code class="lang-undefined">GEOSERVER_DATA_DIR=/home/user/gs_data_dir
-</code></pre>
-<ol>
+<pre><code>GEOSERVER_DATA_DIR=/home/user/gs_data_dir
+</code></pre><ol>
 <li>Starten Sie den GeoServer neu und beobachten Sie anschlie&#xDF;end im Abschnitt
- <em>Serverstatus</em>, wie sich der Pfad des Datenverzeichnisses ver&#xE4;ndert hat.</li>
+<em>Serverstatus</em>, wie sich der Pfad des Datenverzeichnisses ver&#xE4;ndert hat.</li>
 </ol>
 <p><img src="../assets/data_dir.png" alt=""></p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-4x fa-edit"></strong>
@@ -470,22 +467,6 @@ Probleml&#xF6;sung und Performanceoptimierung f&#xFC;r den GeoServer im Produkti
     
 
     
-    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/ace/ace.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/ace/theme-tomorrow.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/ace/mode-javascript.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/exercises.js"></script>
-    
-
-    
     <script src="../gitbook/plugins/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
     
 
@@ -515,7 +496,7 @@ Probleml&#xF6;sung und Performanceoptimierung f&#xFC;r den GeoServer im Produkti
 
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"edit-link":{"base":"https://github.com/terrestris/geoserver-in-action-ws/edit/master/src","label":"Edit…"},"image-captions":{"caption":"_CAPTION_","variable_name":"_pictures"},"richquotes":{"task":{"alert":"info","picto":"fa-file-code-o"},"exercise":{"alert":"info","picto":"fa-file-code-o"}},"advanced-emoji":{"embedEmojis":false},"exercises-tmp-fixed-6":{},"expandable-chapters":{},"include-codeblock":{},"sectionx":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    var config = {"edit-link":{"base":"https://github.com/terrestris/geoserver-in-action-ws/edit/master/src","label":"Edit…"},"image-captions":{"caption":"_CAPTION_","variable_name":"_pictures"},"richquotes":{"task":{"alert":"info","picto":"fa-file-code-o"},"exercise":{"alert":"info","picto":"fa-file-code-o"}},"advanced-emoji":{"embedEmojis":false},"expandable-chapters":{},"sectionx":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>

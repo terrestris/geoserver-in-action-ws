@@ -25,10 +25,6 @@
         
     
         
-        <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/exercises.css">
-        
-    
-        
         <link rel="stylesheet" href="gitbook/plugins/gitbook-plugin-expandable-chapters/expandable-chapters.css">
         
     
@@ -72,14 +68,14 @@
         
     </head>
     <body>
-        <script src="gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+        
         
     <div class="book"
         data-level="0"
         data-chapter-title="Einleitung"
         data-filepath="README.md"
         data-basepath="."
-        data-revision="Tue Jun 21 2016 08:03:55 GMT+0000 (UTC)"
+        data-revision="Wed Jun 29 2016 15:51:27 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -154,10 +150,10 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2" data-path="basics/compilesource.html">
+        <li class="chapter " data-level="2.2" data-path="basics/installextensions.html">
             
                 
-                    <a href="./basics/compilesource.html">
+                    <a href="./basics/installextensions.html">
                 
                         <i class="fa fa-check"></i>
                         
@@ -169,10 +165,10 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3" data-path="basics/installextensions.html">
+        <li class="chapter " data-level="2.3" data-path="basics/compilesource.html">
             
                 
-                    <a href="./basics/installextensions.html">
+                    <a href="./basics/compilesource.html">
                 
                         <i class="fa fa-check"></i>
                         
@@ -412,18 +408,26 @@ werden Sie eine Reihe von Aufgaben l&#xF6;sen, um ein bestimmtes Ziel zu erreich
 Jedes Modul baut iterativ Ihre Wissensbasis auf.</p>
 <p>Die folgenden Module werden in diesem Workshop behandelt:</p>
 <ul>
-<li><a href="environment/index.html">Vorarbeiten und generelle Informationen</a>
-  Grundlegende Informationen zur Workshop-Umgebung (OSGeoLive, Pfade, URLs, Credentials) und notwendige Installationen (maven)</li>
-<li><a href="basics/index.html">Basiswissen GeoServer</a>
-  Basiswissen Geoserver, Kompilieren auf Basis des Source-Codes mit maven, Installation von Plugins und Extensions</li>
-<li><a href="rest/index.html">REST-Schnittstelle</a>
-  Einrichtung von Workspaces, Stores, Styles und Layern &#xFC;ber die REST-Schnittstelle</li>
-<li><a href="troubleshooting/index.html">Tipps, Tricks &amp; Troubleshooting</a>
-  Performance-Optimierung, Protokollierung, Debugging und hilfreiche Tipps</li>
+<li><p><a href="environment/index.html">Vorarbeiten und generelle Informationen</a>
+Grundlegende Informationen zur Workshop-Umgebung (OSGeoLive, Pfade, URLs, Credentials) und notwendige Installationen (maven)</p>
+</li>
+<li><p><a href="basics/index.html">Basiswissen GeoServer</a>
+Basiswissen Geoserver, Kompilieren auf Basis des Source-Codes mit maven, Installation von Plugins und Extensions</p>
+</li>
+<li><p><a href="rest/index.html">REST-Schnittstelle</a>
+Einrichtung von Workspaces, Stores, Styles und Layern &#xFC;ber die REST-Schnittstelle</p>
+</li>
+<li><p><a href="troubleshooting/index.html">Tipps, Tricks &amp; Troubleshooting</a>
+Performance-Optimierung, Protokollierung, Debugging und hilfreiche Tipps</p>
+</li>
 </ul>
-<h2 id="autoren">Autoren</h2>
-<p>Daniel Koch: koch [at] terrestris [dot] de</p>
-<p>Nils B&#xFC;hner: buehner [at] terrestris [dot] de</p>
+<h1 id="autoren">Autoren</h1>
+<ul>
+<li><p>Nils B&#xFC;hner (<a href="mailto:buehner@terrestris.de" target="_blank">buehner@terrestris.de</a>)</p>
+</li>
+<li><p>Daniel Koch (<a href="mailto:koch@terrestris.de" target="_blank">koch@terrestris.de</a>)</p>
+</li>
+</ul>
 
                     
                     </section>
@@ -445,22 +449,6 @@ Jedes Modul baut iterativ Ihre Wissensbasis auf.</p>
 
     
     <script src="gitbook/plugins/gitbook-plugin-edit-link/plugin.js"></script>
-    
-
-    
-    <script src="gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/ace/ace.js"></script>
-    
-
-    
-    <script src="gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/ace/theme-tomorrow.js"></script>
-    
-
-    
-    <script src="gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/ace/mode-javascript.js"></script>
-    
-
-    
-    <script src="gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/exercises.js"></script>
     
 
     
@@ -493,7 +481,7 @@ Jedes Modul baut iterativ Ihre Wissensbasis auf.</p>
 
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"edit-link":{"base":"https://github.com/terrestris/geoserver-in-action-ws/edit/master/src","label":"Edit…"},"image-captions":{"caption":"_CAPTION_","variable_name":"_pictures"},"richquotes":{"task":{"alert":"info","picto":"fa-file-code-o"},"exercise":{"alert":"info","picto":"fa-file-code-o"}},"advanced-emoji":{"embedEmojis":false},"exercises-tmp-fixed-6":{},"expandable-chapters":{},"include-codeblock":{},"sectionx":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    var config = {"edit-link":{"base":"https://github.com/terrestris/geoserver-in-action-ws/edit/master/src","label":"Edit…"},"image-captions":{"caption":"_CAPTION_","variable_name":"_pictures"},"richquotes":{"task":{"alert":"info","picto":"fa-file-code-o"},"exercise":{"alert":"info","picto":"fa-file-code-o"}},"advanced-emoji":{"embedEmojis":false},"expandable-chapters":{},"sectionx":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>

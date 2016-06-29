@@ -25,10 +25,6 @@
         
     
         
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/exercises.css">
-        
-    
-        
         <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-expandable-chapters/expandable-chapters.css">
         
     
@@ -74,14 +70,14 @@
         
     </head>
     <body>
-        <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+        
         
     <div class="book"
         data-level="3.2"
         data-chapter-title="Katalogeinträge erzeugen"
         data-filepath="rest/create.md"
         data-basepath=".."
-        data-revision="Tue Jun 21 2016 08:03:55 GMT+0000 (UTC)"
+        data-revision="Wed Jun 29 2016 15:51:27 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -156,10 +152,10 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2" data-path="basics/compilesource.html">
+        <li class="chapter " data-level="2.2" data-path="basics/installextensions.html">
             
                 
-                    <a href="../basics/compilesource.html">
+                    <a href="../basics/installextensions.html">
                 
                         <i class="fa fa-check"></i>
                         
@@ -171,10 +167,10 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3" data-path="basics/installextensions.html">
+        <li class="chapter " data-level="2.3" data-path="basics/compilesource.html">
             
                 
-                    <a href="../basics/installextensions.html">
+                    <a href="../basics/compilesource.html">
                 
                         <i class="fa fa-check"></i>
                         
@@ -409,23 +405,24 @@ REST anlegen.</p>
 <h2 id="arbeitsbereich-erstellen">Arbeitsbereich erstellen</h2>
 <p>&#xD6;ffnen Sie das Terminal (falls noch nicht geschehen) und geben Sie den folgenden
 Befehl zum Erstellen eines neuen Workspaces namens <code>fossgis</code> ein:</p>
-<pre><code class="lang-bash">curl \
+<pre><xmp style="margin:0; font-size: .85em;">curl \
   -v \
   -u admin:geoserver \
   -XPOST \
-  -H <span class="hljs-string">&quot;Content-type: text/xml&quot;</span> \
-  <span class="hljs-operator">-d</span> <span class="hljs-string">&quot;&lt;workspace&gt;
-        &lt;name&gt;fossgis&lt;/name&gt;
-      &lt;/workspace&gt;&quot;</span> \
-   {{ book.geoServerBaseUrl }}/rest/workspaces
-</code></pre>
+  -H "Content-type: text/xml" \
+  -d "<workspace>
+        <name>fossgis</name>
+      </workspace>" \
+   http://localhost/geoserver/rest/workspaces
+</xmp></pre>
+
 <p>Der obige Aufruf unterscheidet sich in zwei wesentlichen Punkten von den bisherigen
 Read-Operationen: Wir nutzen f&#xFC;r das Erstellen einer neuen Ressource im Gegensatz
 zur HTTP-Operation <code>GET</code> die Operation <code>POST</code> und schicken einen <code>XML</code> Content
 <code>&lt;workspace&gt;...&lt;/workspace&gt;</code> an eine eindeutige URL der
 REST-API. Die Adresse haben wir durch die bisherigen Schritte identifizieren
 k&#xF6;nnen. Nach Aufruf des Befehls sollte im Terminal folgende Ausgabe erscheinen:</p>
-<pre><code class="lang-undefined">* Hostname was NOT found in DNS cache
+<pre><code>* Hostname was NOT found in DNS cache
 *   Trying 127.0.0.1...
 * Connected to localhost (127.0.0.1) port 8082 (#0)
 * Server auth using Basic with user &apos;admin&apos;
@@ -440,33 +437,35 @@ k&#xF6;nnen. Nach Aufruf des Befehls sollte im Terminal folgende Ausgabe erschei
 * upload completely sent off: 69 out of 69 bytes
 &lt; HTTP/1.1 201 Created
 &lt; Date: Tue, 24 Feb 2015 10:03:56 GMT
-&lt; Location: {{ book.geoServerBaseUrl }}/rest/workspaces/fossgis
+&lt; Location: http://localhost/geoserver/rest/workspaces/fossgis
 * Server Noelios-Restlet-Engine/1.0..8 is not blacklisted
 &lt; Server: Noelios-Restlet-Engine/1.0..8
 &lt; Transfer-Encoding: chunked
 &lt;
 * Connection #0 to host localhost left intact
 </code></pre>
-<p>An dieser Stelle sind zwei Informationen f&#xFC;r uns entscheidend:</p>
+
+<p>An dieser Stelle sind zwei Informationen f&#xFC;r uns entscheidend:  </p>
 <ol>
 <li><code>HTTP/1.1 201 Created</code>: Der Aufruf wurde erfolgreich bearbeitet und die
- Ressource erstellt.</li>
+Ressource erstellt.</li>
 <li><code>http://localhost/geoserver/rest/workspaces/fossgis</code>: Die (eindeutige) URL
- unseres neuen Arbeitsbereichs.</li>
+unseres neuen Arbeitsbereichs.</li>
 </ol>
 <p>Wir k&#xF6;nnen nun &#xFC;berpr&#xFC;fen, ob der Arbeitsbereich tats&#xE4;chlich angelegt wurde, indem wir</p>
 <ul>
 <li><em>klassisch</em> die <a href="http://localhost/geoserver" target="_blank">GeoServer GUI</a> &#xF6;ffnen und dort &#xFC;ber den
-  Men&#xFC;eintrag <code>Arbeitsbereiche</code> alle vorhandenen Arbeitsbereiche auflisten oder</li>
+Men&#xFC;eintrag <code>Arbeitsbereiche</code> alle vorhandenen Arbeitsbereiche auflisten oder</li>
 <li><em>&#xFC;ber die REST-API</em> eine Auflistung aller Arbeitsbereiche anfordern (im <code>XML</code>-Format):</li>
 </ul>
-<pre><code class="lang-bash">curl \
+<pre><xmp style="margin:0; font-size: .85em;">curl \
   -v \
   -u admin:geoserver \
   -XGET \
-  -H <span class="hljs-string">&quot;Accept: text/xml&quot;</span> \
-   {{ book.geoServerBaseUrl }}/rest/workspaces
-</code></pre>
+  -H "Accept: text/xml" \
+   http://localhost/geoserver/rest/workspaces
+</xmp></pre>
+
 <p>In beiden F&#xE4;llen werden wir erkennen, dass ein neuer Arbeitsbereich namens
 fossgis vorhanden ist.</p>
 <h2 id="datenspeicher-erstellen">Datenspeicher erstellen</h2>
@@ -481,144 +480,151 @@ folgenden DB-Verbindungsparametern:</p>
 <li><strong>Benutzer</strong>: user (<code>user</code>)</li>
 <li><strong>Passwort</strong>: user (<code>passwd</code>)</li>
 </ul>
-<pre><code class="lang-bash">curl \
+<pre><xmp style="margin:0; font-size: .85em;">curl \
   -v \
   -u admin:geoserver \
   -XPOST \
-  -H <span class="hljs-string">&quot;Content-type: text/xml&quot;</span> \
-  <span class="hljs-operator">-d</span> <span class="hljs-string">&quot;&lt;dataStore&gt;
-      &lt;name&gt;natural_earth&lt;/name&gt;
-      &lt;connectionParameters&gt;
-        &lt;host&gt;localhost&lt;/host&gt;
-        &lt;port&gt;5432&lt;/port&gt;
-        &lt;database&gt;natural_earth2&lt;/database&gt;
-        &lt;user&gt;user&lt;/user&gt;
-        &lt;passwd&gt;user&lt;/passwd&gt;
-        &lt;dbtype&gt;postgis&lt;/dbtype&gt;
-      &lt;/connectionParameters&gt;
-      &lt;/dataStore&gt;&quot;</span> \
-   {{ book.geoServerBaseUrl }}/rest/workspaces/fossgis/datastores
-</code></pre>
+  -H "Content-type: text/xml" \
+  -d "<datastore>
+      <name>natural_earth</name>
+      <connectionparameters>
+        <host>localhost</host>
+        <port>5432</port>
+        <database>natural_earth2</database>
+        <user>user</user>
+        <passwd>user</passwd>
+        <dbtype>postgis</dbtype>
+      </connectionparameters>
+      </datastore>" \
+   http://localhost/geoserver/rest/workspaces/fossgis/datastores
+</xmp></pre>
+
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-4x fa-edit"></strong>
 <p></p>
 <p>Die hier genutzte Datenbank <em>natural_earth2</em> ist auf der OSGeoLive vorinstalliert
 und entstammt dem Natural Earth Projekt. Weiterf&#xFC;hrende Informationen zum Datensatz
-sowie die Daten selbst finden Sie unter <a href="http://www.naturalearthdata.com/" target="_blank">http://www.naturalearthdata.com/</a>.</p>
+sowie die Daten selbst finden Sie unter <a href="http://www.naturalearthdata.com/" target="_blank"><a href="http://www.naturalearthdata.com/" target="_blank">http://www.naturalearthdata.com/</a></a>.</p>
 </blockquote>
 <p>Die erfolgreiche Anlage des Datenspeichers wird uns erneut &#xFC;ber den Statuscode
 <code>HTTP/1.1 201 Created</code> best&#xE4;tigt und kann wiederum &#xFC;ber die <a href="http://localhost/geoserver" target="_blank">GUI</a>
 oder das Auslesen &#xFC;ber die API kontrolliert werden:</p>
-<pre><code class="lang-bash">curl \
+<pre><xmp style="margin:0; font-size: .85em;">curl \
   -v \
   -u admin:geoserver \
   -XGET \
-  -H <span class="hljs-string">&quot;Accept: text/xml&quot;</span> \
-  {{ book.geoServerBaseUrl }}/rest/workspaces/fossgis/datastores/natural_earth.xml
-</code></pre>
+  -H "Accept: text/xml" \
+  http://localhost/geoserver/rest/workspaces/fossgis/datastores/natural_earth.xml
+</xmp></pre>
+
 <p>Die Antwort sollte wie folgt aussehen:</p>
-<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">dataStore</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">name</span>&gt;</span>natural_earth<span class="hljs-tag">&lt;/<span class="hljs-title">name</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">type</span>&gt;</span>PostGIS<span class="hljs-tag">&lt;/<span class="hljs-title">type</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">enabled</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-title">enabled</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">workspace</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">name</span>&gt;</span>fossgis<span class="hljs-tag">&lt;/<span class="hljs-title">name</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">atom:link</span> <span class="hljs-attribute">xmlns:atom</span>=<span class="hljs-value">&quot;http://www.w3.org/2005/Atom&quot;</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">&quot;alternate&quot;</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;@geoserver_url@/rest/workspaces/fossgis.xml&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;application/xml&quot;</span>/&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">workspace</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">connectionParameters</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">entry</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">&quot;port&quot;</span>&gt;</span>5432<span class="hljs-tag">&lt;/<span class="hljs-title">entry</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">entry</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">&quot;passwd&quot;</span>&gt;</span>crypt1:36+tgAgu2EC0mGyPR7MNkQ==<span class="hljs-tag">&lt;/<span class="hljs-title">entry</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">entry</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">&quot;dbtype&quot;</span>&gt;</span>postgis<span class="hljs-tag">&lt;/<span class="hljs-title">entry</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">entry</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">&quot;host&quot;</span>&gt;</span>localhost<span class="hljs-tag">&lt;/<span class="hljs-title">entry</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">entry</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">&quot;user&quot;</span>&gt;</span>user<span class="hljs-tag">&lt;/<span class="hljs-title">entry</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">entry</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">&quot;database&quot;</span>&gt;</span>natural_earth2<span class="hljs-tag">&lt;/<span class="hljs-title">entry</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">entry</span> <span class="hljs-attribute">key</span>=<span class="hljs-value">&quot;namespace&quot;</span>&gt;</span>http://fossgis<span class="hljs-tag">&lt;/<span class="hljs-title">entry</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">connectionParameters</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">__default</span>&gt;</span>false<span class="hljs-tag">&lt;/<span class="hljs-title">__default</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">featureTypes</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">atom:link</span> <span class="hljs-attribute">xmlns:atom</span>=<span class="hljs-value">&quot;http://www.w3.org/2005/Atom&quot;</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">&quot;alternate&quot;</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;@geoserver_url@/rest/workspaces/fossgis/datastores/natural_earth/featuretypes.xml&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;application/xml&quot;</span>/&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">featureTypes</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">dataStore</span>&gt;</span>
-</code></pre>
+<pre><xmp style="margin:0; font-size: .85em;"><datastore>
+  <name>natural_earth</name>
+  <type>PostGIS</type>
+  <enabled>true</enabled>
+  <workspace>
+    <name>fossgis</name>
+    <atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="alternate" href="http://localhost/geoserver/rest/workspaces/fossgis.xml" type="application/xml">
+  </atom:link></workspace>
+  <connectionparameters>
+    <entry key="port">5432</entry>
+    <entry key="passwd">crypt1:36+tgAgu2EC0mGyPR7MNkQ==</entry>
+    <entry key="dbtype">postgis</entry>
+    <entry key="host">localhost</entry>
+    <entry key="user">user</entry>
+    <entry key="database">natural_earth2</entry>
+    <entry key="namespace">http://fossgis</entry>
+  </connectionparameters>
+  <\_\_default>false</\_\_default>
+  <featuretypes>
+    <atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="alternate" href="http://localhost/geoserver/rest/workspaces/fossgis/datastores/natural_earth/featuretypes.xml" type="application/xml">
+  </atom:link></featuretypes>
+</datastore>
+</xmp></pre>
+
 <h2 id="stil-erstellen-und-hochladen">Stil erstellen und hochladen</h2>
 <p>Nachdem Arbeitsbereich und Datenspeicher angelegt wurden, k&#xF6;nnen wir im n&#xE4;chsten
 Schritt einen neuen Stil mit dem Namen <code>states_provinces</code> im Arbeitsbereich <code>fossgis</code>
 anlegen, der die Stildatei (SLD, <em>Styled Layer Descriptor</em>) <code>states_provinces.sld</code>
 assoziiert. F&#xFC;hren Sie dazu zun&#xE4;chst den folgenden Befehl aus:</p>
-<pre><code class="lang-bash">curl \
+<pre><xmp style="margin:0; font-size: .85em;">curl \
   -v \
   -u admin:geoserver \
   -XPOST \
-  -H <span class="hljs-string">&quot;Content-type: text/xml&quot;</span> \
-  <span class="hljs-operator">-d</span> <span class="hljs-string">&quot;&lt;style&gt;
-        &lt;name&gt;states_provinces&lt;/name&gt;
-        &lt;filename&gt;states_provinces.sld&lt;/filename&gt;
-      &lt;/style&gt;&quot;</span> \
-  {{ book.geoServerBaseUrl }}/rest/workspaces/fossgis/styles
-</code></pre>
+  -H "Content-type: text/xml" \
+  -d "<style>
+        <name>states_provinces</name>
+        <filename>states_provinces.sld</filename>
+      </style>" \
+  http://localhost/geoserver/rest/workspaces/fossgis/styles
+</xmp></pre>
+
 <p>Erneut wird uns die erfolgreiche Anlage mit dem Status <code>HTTP/1.1 201 Created</code>
 best&#xE4;tigt und wir pr&#xFC;fen dies wiederum &#xFC;ber die <a href="http://localhost/geoserver" target="_blank">GUI</a></p>
 <p>Nachdem die Ressource im GeoServer publiziert wurde, k&#xF6;nnen wir &#xFC;ber REST den Stil
 selbst (<em>states_provinces.sld</em>) an die Ressource binden. Hierzu k&#xF6;nnen wir die
 HTTP-Operation <code>PUT</code> nutzen, um eine Datei auf den Server zu kopieren:</p>
-<pre><code class="lang-bash">curl \
+<pre><xmp style="margin:0; font-size: .85em;">curl \
   -v \
   -u admin:geoserver \
   -XPUT \
-  -H <span class="hljs-string">&quot;Content-type: application/vnd.ogc.sld+xml&quot;</span> \
-  <span class="hljs-operator">-d</span> @states_provinces.sld \
-  {{ book.geoServerBaseUrl }}/rest/workspaces/fossgis/styles/states_provinces
-</code></pre>
+  -H "Content-type: application/vnd.ogc.sld+xml" \
+  -d @states_provinces.sld \
+  http://localhost/geoserver/rest/workspaces/fossgis/styles/states_provinces
+</xmp></pre>
+
 <p><strong>Wichtig:</strong> Der obige Befehl setzt zwei Dinge voraus:</p>
 <ol>
 <li>Es existiert eine SLD-Datei mit dem Namen <em>states_provinces.sld</em> und einem
- validen SLD Inhalt. Die entsprechende Datei kann hier \&lt;./files/states_provinces.sld&gt;
- heruntergeladen werden.</li>
+validen SLD Inhalt. Die entsprechende Datei kann hier \&lt;./files/states_provinces.sld&gt;
+heruntergeladen werden.</li>
 <li>Der Pfad zur Datei <em>states_provinces.sld</em> ist korrekt. Im obigen Beispiel
- liegt die Datei im gleichen Ordner aus dem cURL aufgerufen wurde. Wechseln Sie
- also ggf. im Terminal zum Ordner der Datei oder passen Sie den cURL-Aufruf an.</li>
+liegt die Datei im gleichen Ordner aus dem cURL aufgerufen wurde. Wechseln Sie
+also ggf. im Terminal zum Ordner der Datei oder passen Sie den cURL-Aufruf an.</li>
 </ol>
-<p>War der Befehl erfolgreich, enth&#xE4;lt die Antwort im Terminal den Teilstring <code>&amp;lt; HTTP/1.1 200 OK</code>.</p>
+<p>War der Befehl erfolgreich, enth&#xE4;lt die Antwort im Terminal den Teilstring <code>&lt; HTTP/1.1 200 OK</code>.</p>
 <h2 id="layer-anlegen">Layer anlegen</h2>
 <p>Der n&#xE4;chste logische Schritt ist das Anlegen eines Layers auf Basis einer Geometrietabelle
 aus unserem neuen Datenspeichers natural_earth. Als Beispiel werden wir die Tabelle
 <em>ne_10m_admin_1_states_provinces_shp</em> mit dem folgenden Befehl im Arbeitsbereich
 fossgis ver&#xF6;ffentlichen:</p>
-<pre><code class="lang-bash">curl \
+<pre><xmp style="margin:0; font-size: .85em;">curl \
   -v \
   -u admin:geoserver \
   -XPOST \
-  -H <span class="hljs-string">&quot;Content-type: text/xml&quot;</span> \
-  <span class="hljs-operator">-d</span> <span class="hljs-string">&quot;&lt;featureType&gt;
-        &lt;name&gt;states_provinces&lt;/name&gt;
-        &lt;nativeName&gt;ne_10m_admin_1_states_provinces_shp&lt;/nativeName&gt;
-        &lt;nativeCRS&gt;EPSG:4326&lt;/nativeCRS&gt;
-        &lt;enabled&gt;true&lt;/enabled&gt;
-      &lt;/featureType&gt;&quot;</span> \
-  {{ book.geoServerBaseUrl }}/rest/workspaces/fossgis/datastores/natural_earth/featuretypes
-</code></pre>
+  -H "Content-type: text/xml" \
+  -d "<featuretype>
+        <name>states_provinces</name>
+        <nativename>ne_10m_admin_1_states_provinces_shp</nativename>
+        <nativecrs>EPSG:4326</nativecrs>
+        <enabled>true</enabled>
+      </featuretype>" \
+  http://localhost/geoserver/rest/workspaces/fossgis/datastores/natural_earth/featuretypes
+</xmp></pre>
+
 <p>Und erneut begr&#xFC;&#xDF;t uns nach erfolgreichem Hinzuf&#xFC;gen der Ressource die Statusmeldung
 <code>HTTP/1.1 201 Created</code> und selbstverst&#xE4;ndlich k&#xF6;nnen wir an dieser Stelle erneut das
 Ergebnis &#xFC;ber die <a href="http://localhost/geoserver" target="_blank">GUI</a> oder die REST-API begutachten:</p>
-<pre><code class="lang-bash">curl \
+<pre><xmp style="margin:0; font-size: .85em;">curl \
   -v \
   -u admin:geoserver \
   -XGET \
-  {{ book.geoServerBaseUrl }}/rest/workspaces/fossgis/datastores/natural_earth/featuretypes/states_provinces.xml
-</code></pre>
+  http://localhost/geoserver/rest/workspaces/fossgis/datastores/natural_earth/featuretypes/states_provinces.xml
+</xmp></pre>
+
 <p>Die XML-Repr&#xE4;sentation des Layers ist demnach wie folgt (gek&#xFC;rzt):</p>
-<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">featureType</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">name</span>&gt;</span>states_provinces<span class="hljs-tag">&lt;/<span class="hljs-title">name</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">nativeName</span>&gt;</span>ne_10m_admin_1_states_provinces_shp<span class="hljs-tag">&lt;/<span class="hljs-title">nativeName</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">namespace</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">name</span>&gt;</span>fossgis<span class="hljs-tag">&lt;/<span class="hljs-title">name</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">atom:link</span> <span class="hljs-attribute">xmlns:atom</span>=<span class="hljs-value">&quot;http://www.w3.org/2005/Atom&quot;</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">&quot;alternate&quot;</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;@geoserver_url@/rest/namespaces/fossgis.xml&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;application/xml&quot;</span>/&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">namespace</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>ne_10m_admin_1_states_provinces_shp<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">keywords</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">string</span>&gt;</span>ne_10m_admin_1_states_provinces_shp<span class="hljs-tag">&lt;/<span class="hljs-title">string</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">string</span>&gt;</span>features<span class="hljs-tag">&lt;/<span class="hljs-title">string</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">keywords</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">nativeCRS</span>&gt;</span>
+<pre><xmp style="margin:0; font-size: .85em;"><featuretype>
+  <name>states_provinces</name>
+  <nativename>ne_10m_admin_1_states_provinces_shp</nativename>
+  <namespace>
+    <name>fossgis</name>
+    <atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="alternate" href="@geoserver_url@/rest/namespaces/fossgis.xml" type="application/xml">
+  </atom:link></namespace>
+  <title>ne_10m_admin_1_states_provinces_shp</title>
+  <keywords>
+    <string>ne_10m_admin_1_states_provinces_shp</string>
+    <string>features</string>
+  </keywords>
+  <nativecrs>
     GEOGCS[&quot;WGS 84&quot;,
        DATUM[&quot;World Geodetic System 1984&quot;,
        SPHEROID[&quot;WGS 84&quot;, 6378137.0, 298.257223563, AUTHORITY[&quot;EPSG&quot;,&quot;7030&quot;]],
@@ -629,59 +635,60 @@ Ergebnis &#xFC;ber die <a href="http://localhost/geoserver" target="_blank">GUI<
      AXIS[&quot;Geodetic longitude&quot;, EAST],
      AXIS[&quot;Geodetic latitude&quot;, NORTH],
      AUTHORITY[&quot;EPSG&quot;,&quot;4326&quot;]]
-  <span class="hljs-tag">&lt;/<span class="hljs-title">nativeCRS</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">srs</span>&gt;</span>EPSG:4326<span class="hljs-tag">&lt;/<span class="hljs-title">srs</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">nativeBoundingBox</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">minx</span>&gt;</span>-181.800003051758<span class="hljs-tag">&lt;/<span class="hljs-title">minx</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">maxx</span>&gt;</span>181.800018310547<span class="hljs-tag">&lt;/<span class="hljs-title">maxx</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">miny</span>&gt;</span>-60.1882858276367<span class="hljs-tag">&lt;/<span class="hljs-title">miny</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">maxy</span>&gt;</span>84.3496398925781<span class="hljs-tag">&lt;/<span class="hljs-title">maxy</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">crs</span>&gt;</span>EPSG:4326<span class="hljs-tag">&lt;/<span class="hljs-title">crs</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">nativeBoundingBox</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">latLonBoundingBox</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">minx</span>&gt;</span>-181.800003051758<span class="hljs-tag">&lt;/<span class="hljs-title">minx</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">maxx</span>&gt;</span>181.800018310547<span class="hljs-tag">&lt;/<span class="hljs-title">maxx</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">miny</span>&gt;</span>-60.1882858276367<span class="hljs-tag">&lt;/<span class="hljs-title">miny</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">maxy</span>&gt;</span>84.3496398925781<span class="hljs-tag">&lt;/<span class="hljs-title">maxy</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">crs</span>&gt;</span>GEOGCS[&amp;quot;WGS84(DD)&amp;quot;,
-   DATUM[&amp;quot;WGS84&amp;quot;,
-     SPHEROID[&amp;quot;WGS84&amp;quot;, 6378137.0, 298.257223563]],
-   PRIMEM[&amp;quot;Greenwich&amp;quot;, 0.0],
-   UNIT[&amp;quot;degree&amp;quot;, 0.017453292519943295],
-   AXIS[&amp;quot;Geodetic longitude&amp;quot;, EAST],
-   AXIS[&amp;quot;Geodetic latitude&amp;quot;, NORTH]]<span class="hljs-tag">&lt;/<span class="hljs-title">crs</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">latLonBoundingBox</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">projectionPolicy</span>&gt;</span>FORCE_DECLARED<span class="hljs-tag">&lt;/<span class="hljs-title">projectionPolicy</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">enabled</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-title">enabled</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">store</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;dataStore&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">name</span>&gt;</span>natural_earth<span class="hljs-tag">&lt;/<span class="hljs-title">name</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">atom:link</span> <span class="hljs-attribute">xmlns:atom</span>=<span class="hljs-value">&quot;http://www.w3.org/2005/Atom&quot;</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">&quot;alternate&quot;</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;@geoserver_url@/rest/workspaces/fossgis/datastores/natural_earth.xml&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;application/xml&quot;</span>/&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">store</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">maxFeatures</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-title">maxFeatures</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">numDecimals</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-title">numDecimals</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">overridingServiceSRS</span>&gt;</span>false<span class="hljs-tag">&lt;/<span class="hljs-title">overridingServiceSRS</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">circularArcPresent</span>&gt;</span>false<span class="hljs-tag">&lt;/<span class="hljs-title">circularArcPresent</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">attributes</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">attribute</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">name</span>&gt;</span>adm1_code<span class="hljs-tag">&lt;/<span class="hljs-title">name</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">minOccurs</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-title">minOccurs</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">maxOccurs</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">maxOccurs</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">nillable</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-title">nillable</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">binding</span>&gt;</span>java.lang.String<span class="hljs-tag">&lt;/<span class="hljs-title">binding</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">attribute</span>&gt;</span>
+  </nativecrs>
+  <srs>EPSG:4326</srs>
+  <nativeboundingbox>
+    <minx>-181.800003051758</minx>
+    <maxx>181.800018310547</maxx>
+    <miny>-60.1882858276367</miny>
+    <maxy>84.3496398925781</maxy>
+    <crs>EPSG:4326</crs>
+  </nativeboundingbox>
+  <latlonboundingbox>
+    <minx>-181.800003051758</minx>
+    <maxx>181.800018310547</maxx>
+    <miny>-60.1882858276367</miny>
+    <maxy>84.3496398925781</maxy>
+    <crs>GEOGCS[&quot;WGS84(DD)&quot;,
+   DATUM[&quot;WGS84&quot;,
+     SPHEROID[&quot;WGS84&quot;, 6378137.0, 298.257223563]],
+   PRIMEM[&quot;Greenwich&quot;, 0.0],
+   UNIT[&quot;degree&quot;, 0.017453292519943295],
+   AXIS[&quot;Geodetic longitude&quot;, EAST],
+   AXIS[&quot;Geodetic latitude&quot;, NORTH]]</crs>
+  </latlonboundingbox>
+  <projectionpolicy>FORCE_DECLARED</projectionpolicy>
+  <enabled>true</enabled>
+  <store class="dataStore">
+    <name>natural_earth</name>
+    <atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="alternate" href="@geoserver_url@/rest/workspaces/fossgis/datastores/natural_earth.xml" type="application/xml">
+  </atom:link></store>
+  <maxfeatures>0</maxfeatures>
+  <numdecimals>0</numdecimals>
+  <overridingservicesrs>false</overridingservicesrs>
+  <circulararcpresent>false</circulararcpresent>
+  <attributes>
+    <attribute>
+      <name>adm1_code</name>
+      <minoccurs>0</minoccurs>
+      <maxoccurs>1</maxoccurs>
+      <nillable>true</nillable>
+      <binding>java.lang.String</binding>
+    </attribute>
 
      (...)
 
-    <span class="hljs-tag">&lt;<span class="hljs-title">attribute</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">name</span>&gt;</span>the_geom<span class="hljs-tag">&lt;/<span class="hljs-title">name</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">minOccurs</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-title">minOccurs</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">maxOccurs</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">maxOccurs</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">nillable</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-title">nillable</span>&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-title">binding</span>&gt;</span>com.vividsolutions.jts.geom.MultiPolygon<span class="hljs-tag">&lt;/<span class="hljs-title">binding</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">attribute</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">attributes</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">featureType</span>&gt;</span>
-</code></pre>
+    <attribute>
+      <name>the_geom</name>
+      <minoccurs>0</minoccurs>
+      <maxoccurs>1</maxoccurs>
+      <nillable>true</nillable>
+      <binding>com.vividsolutions.jts.geom.MultiPolygon</binding>
+    </attribute>
+  </attributes>
+<featuretype>
+</featuretype></featuretype></xmp></pre>
+
 <p>Bereits zu diesem Zeitpunkt k&#xF6;nnen wir den Layer &#xFC;ber die Layervorschau des GeoServers
 oder &#xFC;ber einen beliebigen Client (z.B. QGIS) aufrufen. &#xD6;ffnen Sie hierzu die
 <a href="http://localhost/geoserver" target="_blank">Weboberfl&#xE4;che</a> vom GeoServer und rufen Sie dort die Layervorschau
@@ -692,19 +699,20 @@ Startansicht der Vorschau sollte dabei in etwa der folgenden Abbildung entsprech
 <h2 id="layerstil-zuordnen">Layerstil zuordnen</h2>
 <p>Vergessen wir jedoch nicht unseren Layerstil states_provinces aus den vorherigen
 Kapiteln, den wir im Folgenden dem Layer states_provinces zuweisen wollen:</p>
-<pre><code class="lang-bash">curl \
+<pre><xmp style="margin:0; font-size: .85em;">curl \
   -v \
   -u admin:geoserver \
   -XPUT \
-  -H <span class="hljs-string">&quot;Content-type: text/xml&quot;</span> \
-  <span class="hljs-operator">-d</span> <span class="hljs-string">&quot;&lt;layer&gt;
-        &lt;defaultStyle&gt;
-          &lt;name&gt;states_provinces&lt;/name&gt;
-          &lt;workspace&gt;fossgis&lt;/workspace&gt;
-        &lt;/defaultStyle&gt;
-      &lt;/layer&gt;&quot;</span> \
-  {{ book.geoServerBaseUrl }}/rest/layers/fossgis:states_provinces
-</code></pre>
+  -H "Content-type: text/xml" \
+  -d "<layer>
+        <defaultstyle>
+          <name>states_provinces</name>
+          <workspace>fossgis</workspace>
+        </defaultstyle>
+      </layer>" \
+  http://localhost/geoserver/rest/layers/fossgis:states_provinces
+</xmp></pre>
+
 <p>Best&#xE4;tigt durch den Status <code>HTTP/1.1 200 OK</code> k&#xF6;nnen wir die Layervorschau erneut
 aufrufen und werden sehen, dass der neue Stil (hellgraue Landesfl&#xE4;chen, dunkelgraue
 Landesgrenzen und Beschriftung) dem Layer zugeordnet wurde:</p>
@@ -738,22 +746,6 @@ im GeoServer angelegt!</p>
     
 
     
-    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/ace/ace.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/ace/theme-tomorrow.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/ace/mode-javascript.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/exercises.js"></script>
-    
-
-    
     <script src="../gitbook/plugins/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
     
 
@@ -783,7 +775,7 @@ im GeoServer angelegt!</p>
 
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"edit-link":{"base":"https://github.com/terrestris/geoserver-in-action-ws/edit/master/src","label":"Edit…"},"image-captions":{"caption":"_CAPTION_","variable_name":"_pictures"},"richquotes":{"task":{"alert":"info","picto":"fa-file-code-o"},"exercise":{"alert":"info","picto":"fa-file-code-o"}},"advanced-emoji":{"embedEmojis":false},"exercises-tmp-fixed-6":{},"expandable-chapters":{},"include-codeblock":{},"sectionx":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    var config = {"edit-link":{"base":"https://github.com/terrestris/geoserver-in-action-ws/edit/master/src","label":"Edit…"},"image-captions":{"caption":"_CAPTION_","variable_name":"_pictures"},"richquotes":{"task":{"alert":"info","picto":"fa-file-code-o"},"exercise":{"alert":"info","picto":"fa-file-code-o"}},"advanced-emoji":{"embedEmojis":false},"expandable-chapters":{},"sectionx":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>

@@ -25,10 +25,6 @@
         
     
         
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/exercises.css">
-        
-    
-        
         <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-expandable-chapters/expandable-chapters.css">
         
     
@@ -74,14 +70,14 @@
         
     </head>
     <body>
-        <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+        
         
     <div class="book"
         data-level="4.1"
         data-chapter-title="Protokollierung"
         data-filepath="troubleshooting/logging.md"
         data-basepath=".."
-        data-revision="Tue Jun 21 2016 08:03:55 GMT+0000 (UTC)"
+        data-revision="Wed Jun 29 2016 15:51:27 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -156,10 +152,10 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2" data-path="basics/compilesource.html">
+        <li class="chapter " data-level="2.2" data-path="basics/installextensions.html">
             
                 
-                    <a href="../basics/compilesource.html">
+                    <a href="../basics/installextensions.html">
                 
                         <i class="fa fa-check"></i>
                         
@@ -171,10 +167,10 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3" data-path="basics/installextensions.html">
+        <li class="chapter " data-level="2.3" data-path="basics/compilesource.html">
             
                 
-                    <a href="../basics/installextensions.html">
+                    <a href="../basics/compilesource.html">
                 
                         <i class="fa fa-check"></i>
                         
@@ -405,7 +401,7 @@
 <p>Bei jeglichen Fehlern, die sich auf den GeoServer zur&#xFC;ckf&#xFC;hren lassen (wie z.B.
 keine oder falsche Antwort eines Kartendienstes) ist das Protokoll die erste
 Anlaufstelle. Das GeoServer Protokoll l&#xE4;sst sich dabei entweder direkt &#xFC;ber
-die GUI oder aus dem Dateisystem (@geoserver_path@data_dir/logs) aufrufen.
+die GUI oder aus dem Dateisystem (/usr/local/lib/geoserver-2.8.2/data_dir/logs) aufrufen.
 Rein informativen Protokollmeldungen steht dabei das K&#xFC;rzel INFO vor. Bei
 schwerwiegenden Fehlern findet sich dort jedoch das K&#xFC;rzel ERROR.</p>
 <p>F&#xFC;r die Protokollierung des GeoServers lassen sich verschiedene Profile einstellen.
@@ -421,29 +417,30 @@ verursacht werden, ist diese Einstellung nur f&#xFC;r das Debuggen zu empfehlen.
 <ul>
 <li>DEFAULT_LOGGING: Mittleres Protokolllevel auf fast allen Modulebenen des GeoServers.</li>
 <li>GEOSERVER_DEVELOPER_LOGGING: Ausf&#xFC;hrliche Protokollierung auf Ebene des Moduls
-  GeoServer. Nur sinnvoll, wenn der GeoServer debuggt wird.</li>
+GeoServer. Nur sinnvoll, wenn der GeoServer debuggt wird.</li>
 <li>GEOTOOLS_DEVELOPER_LOGGING: Ausf&#xFC;hrliche Protokollierung auf Ebene des Moduls
-  Geo-Tools. Diese Auswahl kann n&#xFC;tzlich sein, wenn &#xFC;berpr&#xFC;ft werden soll, welche
-  SQL Statements (z.B. bei einer GetFeature Abfrage) an die Datenbank gesendet werden.</li>
+Geo-Tools. Diese Auswahl kann n&#xFC;tzlich sein, wenn &#xFC;berpr&#xFC;ft werden soll, welche
+SQL Statements (z.B. bei einer GetFeature Abfrage) an die Datenbank gesendet werden.</li>
 <li>PRODUCTION_LOGGING: Minimale Protokollierung, nur Fehler werden ausgegeben.
-  Diese Einstellung ist f&#xFC;r den Produktiveinsatz zu w&#xE4;hlen.</li>
+Diese Einstellung ist f&#xFC;r den Produktiveinsatz zu w&#xE4;hlen.</li>
 <li>VERBOSE_LOGGING: Ausf&#xFC;hrliche Protokollierung auf allen Ebenen des GeoServes.
-  Nur sinnvoll, wenn der GeoServer debuggt wird.</li>
+Nur sinnvoll, wenn der GeoServer debuggt wird.</li>
 </ul>
 <p>Wir wollen das Protokoll des GeoServers nun <em>live</em> &#xFC;ber das Dateisystem beobachten.
 Dazu f&#xFC;hren m&#xFC;ssen die folgenden Schritte ausgef&#xFC;hrt werden.</p>
 <ol>
 <li>Stellen Sie das VERBOSE_LOGGING-Profil ein.</li>
 <li>Der GeoServer auf der OSGeoLive ist so konfiguriert, dass nicht automatisch
- in die Protokolldatei, sondern in die Standardausgabe des Java-Prozesses
- geschrieben wird. Wir m&#xFC;ssen also den <strong>Haken bei</strong>
- <em>in die Standardausgabe schreiben</em> <strong>entfernen</strong>, sodass das Protokoll in die
- Datei /usr/local/lib/geoserver-2.8.3//data/logs/geoserver.log geschrieben wird.</li>
+in die Protokolldatei, sondern in die Standardausgabe des Java-Prozesses
+geschrieben wird. Wir m&#xFC;ssen also den <strong>Haken bei</strong>
+<em>in die Standardausgabe schreiben</em> <strong>entfernen</strong>, sodass das Protokoll in die
+Datei /usr/local/lib/geoserver-2.8.2//data/logs/geoserver.log geschrieben wird.</li>
 <li>Speichern Sie die Einstellungen (unten).</li>
 <li>&#xD6;ffnen Sie die Konsole und f&#xFC;hren Sie den folgenden Befehl aus:</li>
 </ol>
-<pre><code class="lang-bash">less +F {{ book.geoServerPhysicalPath }}/data/logs/geoserver.log
-</code></pre>
+<pre><xmp style="margin:0; font-size: .85em;">less +F /usr/local/lib/geoserver-2.8.2//data/logs/geoserver.log
+</xmp></pre>
+
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-4x fa-edit"></strong>
 <p></p>
 <p>Normalerweise w&#xFC;rde man statt less +F den Befehl tail -f verwenden. Dies
@@ -489,22 +486,6 @@ der Ausgabe ver&#xE4;ndert.</p>
     
 
     
-    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/ace/ace.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/ace/theme-tomorrow.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/ace/mode-javascript.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/exercises.js"></script>
-    
-
-    
     <script src="../gitbook/plugins/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
     
 
@@ -534,7 +515,7 @@ der Ausgabe ver&#xE4;ndert.</p>
 
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"edit-link":{"base":"https://github.com/terrestris/geoserver-in-action-ws/edit/master/src","label":"Edit…"},"image-captions":{"caption":"_CAPTION_","variable_name":"_pictures"},"richquotes":{"task":{"alert":"info","picto":"fa-file-code-o"},"exercise":{"alert":"info","picto":"fa-file-code-o"}},"advanced-emoji":{"embedEmojis":false},"exercises-tmp-fixed-6":{},"expandable-chapters":{},"include-codeblock":{},"sectionx":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    var config = {"edit-link":{"base":"https://github.com/terrestris/geoserver-in-action-ws/edit/master/src","label":"Edit…"},"image-captions":{"caption":"_CAPTION_","variable_name":"_pictures"},"richquotes":{"task":{"alert":"info","picto":"fa-file-code-o"},"exercise":{"alert":"info","picto":"fa-file-code-o"}},"advanced-emoji":{"embedEmojis":false},"expandable-chapters":{},"sectionx":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>

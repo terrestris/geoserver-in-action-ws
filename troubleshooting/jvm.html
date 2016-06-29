@@ -25,10 +25,6 @@
         
     
         
-        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/exercises.css">
-        
-    
-        
         <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-expandable-chapters/expandable-chapters.css">
         
     
@@ -72,14 +68,14 @@
         
     </head>
     <body>
-        <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+        
         
     <div class="book"
         data-level="4.5"
         data-chapter-title="Java Virtual Machine (JVM) tunen"
         data-filepath="troubleshooting/jvm.md"
         data-basepath=".."
-        data-revision="Tue Jun 21 2016 08:03:55 GMT+0000 (UTC)"
+        data-revision="Wed Jun 29 2016 15:51:27 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -154,10 +150,10 @@
             
         </li>
     
-        <li class="chapter " data-level="2.2" data-path="basics/compilesource.html">
+        <li class="chapter " data-level="2.2" data-path="basics/installextensions.html">
             
                 
-                    <a href="../basics/compilesource.html">
+                    <a href="../basics/installextensions.html">
                 
                         <i class="fa fa-check"></i>
                         
@@ -169,10 +165,10 @@
             
         </li>
     
-        <li class="chapter " data-level="2.3" data-path="basics/installextensions.html">
+        <li class="chapter " data-level="2.3" data-path="basics/compilesource.html">
             
                 
-                    <a href="../basics/installextensions.html">
+                    <a href="../basics/compilesource.html">
                 
                         <i class="fa fa-check"></i>
                         
@@ -413,6 +409,66 @@ die Parameter an die JAVA_OPTS (global) oder CATALINA_OPTS (Container) &#xFC;ber
 <p>Es wird grunds&#xE4;tzlich empfohlen das <strong>Oracle (Sun) JDK statt OpenJDK</strong> zu verwenden,
 da ersteres die Performance des GeoServers erh&#xF6;ht. Details dazu gibt es
 z.B. <a href="http://boundlessgeo.com/whitepaper/geoserver-production-2/#jdk" target="_blank">hier</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Beschreibung</th>
+<th>Beispiel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-server</td>
+<td>F&#xFC;r Server optimierte JVM.</td>
+<td></td>
+</tr>
+<tr>
+<td>-Xms</td>
+<td>Steuert die Anfangsgr&#xF6;&#xDF;e des Java-Heap-Speichers. F&#xFC;r Produktivsysteme werden Werte im Bereich von 2 bis 4 GB empfohlen.</td>
+<td>-Xms2g</td>
+</tr>
+<tr>
+<td>-Xmx</td>
+<td>Steuert die maximale Gr&#xF6;&#xDF;e des Java-Heap-Speichers. d.h. dieser Wert darf nicht kleiner sein als :file:<code>-Xms</code>. Es gibt unterschiedliche Meinungen dar&#xFC;ber, ob f&#xFC;r :file:<code>-Xms</code> und :file:<code>-Xmx</code> dieselben Werte, d.h. :file:<code>Xms=Xmx</code> verwendet werden sollen oder nicht. Wir verwenden auf unseren Systemen :file:<code>Xms=Xmx</code> und haben damit keine schlechten Erfahrungen gemacht!</td>
+<td>-Xmx2g</td>
+</tr>
+<tr>
+<td>-XX:PermSize</td>
+<td>Definiert die anf&#xE4;nliche Gr&#xF6;&#xDF;e des Speichers, der f&#xFC;r die permanente Objektgenerierung reserviert ist.</td>
+<td>-XX:PermSize=256m</td>
+</tr>
+<tr>
+<td>-XX:MaxPermSize</td>
+<td>Definiert die maximale Gr&#xF6;&#xDF;e des Speichers, der f&#xFC;r die permanente Objektgenerierung reserviert ist. Ein Wert von maximal 256 MB ist hier absolut ausreichend.</td>
+<td>-XX:MaxPermSize=256m</td>
+</tr>
+<tr>
+<td>-Djavax.servlet.request.encoding</td>
+<td>Zeichenkodierung eingehender Anfragen (Standard: ISO 8559-1)</td>
+<td>-Djavax.servlet.request.encoding=UTF-8</td>
+</tr>
+<tr>
+<td>-Djavax.servlet.response.encoding</td>
+<td>Zeichenkodierung ausgehender Antworten (Standard: ISO 8559-1)</td>
+<td>-Djavax.servlet.response.encoding=UTF-8</td>
+</tr>
+<tr>
+<td>-Dfile.encoding</td>
+<td>Zeichenkodierung beim Umgang mit statischen Dateien (Standard: Default des Betriebssystems, daher ggf. wichtig bei Windows-Systemen)</td>
+<td>-Dfile.encoding=UTF-8</td>
+</tr>
+<tr>
+<td>-XX:+UseParallelGC</td>
+<td>Garbage Collection f&#xFC;r Mehrkern-Systeme (siehe <a href="http://boundlessgeo.com/whitepaper/geoserver-production-2/#jvm" target="_blank">hier</a>)</td>
+<td></td>
+</tr>
+<tr>
+<td>-XX:+UseParallelOldGC</td>
+<td>s.o.</td>
+</tr>
+</tbody>
+</table>
 <p>Der Workshop ist an dieser Stelle beendet. Wir hoffen, dass Sie interessante
 Dinge &#xFC;ber den GeoServer gelernt haben und bedanken uns f&#xFC;r Ihre Aufmerksamkeit.</p>
 
@@ -436,22 +492,6 @@ Dinge &#xFC;ber den GeoServer gelernt haben und bedanken uns f&#xFC;r Ihre Aufme
 
     
     <script src="../gitbook/plugins/gitbook-plugin-edit-link/plugin.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/ace/ace.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/ace/theme-tomorrow.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/ace/mode-javascript.js"></script>
-    
-
-    
-    <script src="../gitbook/plugins/gitbook-plugin-exercises-tmp-fixed-6/exercises.js"></script>
     
 
     
@@ -484,7 +524,7 @@ Dinge &#xFC;ber den GeoServer gelernt haben und bedanken uns f&#xFC;r Ihre Aufme
 
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"edit-link":{"base":"https://github.com/terrestris/geoserver-in-action-ws/edit/master/src","label":"Edit…"},"image-captions":{"caption":"_CAPTION_","variable_name":"_pictures"},"richquotes":{"task":{"alert":"info","picto":"fa-file-code-o"},"exercise":{"alert":"info","picto":"fa-file-code-o"}},"advanced-emoji":{"embedEmojis":false},"exercises-tmp-fixed-6":{},"expandable-chapters":{},"include-codeblock":{},"sectionx":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    var config = {"edit-link":{"base":"https://github.com/terrestris/geoserver-in-action-ws/edit/master/src","label":"Edit…"},"image-captions":{"caption":"_CAPTION_","variable_name":"_pictures"},"richquotes":{"task":{"alert":"info","picto":"fa-file-code-o"},"exercise":{"alert":"info","picto":"fa-file-code-o"}},"advanced-emoji":{"embedEmojis":false},"expandable-chapters":{},"sectionx":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>
