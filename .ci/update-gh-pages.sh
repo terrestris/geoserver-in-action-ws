@@ -45,7 +45,7 @@ cd $GH_PAGES_DIR
 SRC_DIR=$TRAVIS_BUILD_DIR/build
 
 # cleanup existing resources
-rm -Rf *.zip *.tar.gz *.pdf *.epub *.html *.json gitbook/
+rm -Rf *.zip *.tar.gz *.pdf *.epub *.html *.json gitbook/ materials/
 
 # copy the src dir from previous build folder
 cp -r $SRC_DIR/geoserver-in-action-ws/* .
