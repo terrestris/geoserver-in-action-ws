@@ -22,5 +22,5 @@ Dabei sind die folgenden Unterordner von besonderer Bedeutung:
 > In anderen Umgebungen (z.B. auf einem Tomcat mit klassischer .war-Datei-Installation)
 > kann die Struktur abweichen.
 
-Im folgenden Abschnitt\<basics.installextensions\> wird erklärt wie sich die
+Im [folgenden Abschnitt](installextensions.md) wird erklärt wie sich die
 Funktionalität des GeoServers durch das Einbinden zusätzlicher Module erweitern lässt.
