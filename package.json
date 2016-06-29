@@ -14,7 +14,7 @@
     "doc:pdf": "gitbook pdf src build/geoserver-in-action-ws.pdf",
     "postinstall": "gitbook install src/",
     "build": "npm run clean && npm run doc:build && npm run doc:pdf && npm run doc:epub && cd build/geoserver-in-action-ws",
-    "archive": "npm run build && cd build && zip -r geoserver-in-action-ws.zip -x geoserver-in-action-ws/materials/* geoserver-in-action-ws geoserver-in-action-ws_*.pdf geoserver-in-action-ws_*.epub"
+    "archive": "npm run build && cd build && zip -x geoserver-in-action-ws/materials/* -r geoserver-in-action-ws.zip geoserver-in-action-ws geoserver-in-action-ws_*.pdf geoserver-in-action-ws_*.epub"
   },
   "repository": {
     "type": "git",
