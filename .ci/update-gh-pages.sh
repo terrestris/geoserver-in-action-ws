@@ -56,7 +56,7 @@ cp $SRC_DIR/*.pdf .
 cp $SRC_DIR/*.epub .
 cp $SRC_DIR/*.zip .
 
-git add .
+git add --all
 git commit -m "$GH_PAGES_COMMIT_MSG"
 git push --quiet $GH_PAGES_REPO_AUTHENTICATED $GH_PAGES_BRANCH
 
