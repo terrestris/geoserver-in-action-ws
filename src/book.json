@@ -11,7 +11,7 @@
     "workshopEpubUrl": "http://terrestris.github.io/geoserver-in-action-ws/geoserver-in-action-ws.epub",
     "workshopMaterialsDownloadUrl": "http://terrestris.github.io/geoserver-in-action-ws/materials.tar.gz",
     "geoServerPhysicalPath": "/usr/local/lib/geoserver-2.8.2/",
-    "geoServerBaseUrl": "http://localhost/geoserver",
+    "geoServerBaseUrl": "http://localhost:8082/geoserver",
     "geoServerUser": "admin",
     "geoServerPassword": "geoserver",
     "geoServerVersion": "2.8.2",
@@ -21,6 +21,9 @@
     }, {
       "name": "Daniel Koch",
       "mail": "koch@terrestris.de"
+    }, {
+      "name": "André Henn",
+      "mail": "henn@terrestris.de"
     }]
   },
   "plugins": [
