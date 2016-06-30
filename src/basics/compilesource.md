@@ -34,24 +34,28 @@ auch der Linux-Kernel verwaltet wird. Den Quellcode des GeoServers finden Sie hi
 [https://github.com/geoserver/geoserver](https://github.com/geoserver/geoserver)
 
 Wenn Sie sich dort in den Ordner `src/extension/inspire` durchklicken, können Sie
-feststellen, dass es in jedem dieser drei Ordner eine Datei pom.xml gibt. *POM*
+feststellen, dass es in jedem dieser drei Ordner eine Datei `pom.xml` gibt. *POM*
 steht für Project Object Model und es handelt sich hier um die Konfigurationsdateien
 für Maven, in denen z.B. Abhängigkeiten zu anderen Bibliotheken definiert sind.
 
-Jede Datei pom.xml repräsentiert dabei ein eigenes Maven-Modul. Die pom.xml im
-Ordner src/ ist die zentrale Maven-Konfigurationsdatei auf höchster Ebene, also
-des GeoServers als Gesamtsystem. Die pom.xml im Ordner src/extension/ definiert
-ein Maven-Submodul *extension*, die pom.xml in src/extension/inspire/ ist wiederum
+Jede `pom.xml` im Ordner `src/` ist die zentrale Maven-Konfigurationsdatei auf höchster Ebene, also
+des GeoServers als Gesamtsystem und repräsentiert dabei ein eingenständiges Maven-Modul.
+Die `pom.xml` im Ordner `src/extension/` definiert ein Maven-Submodul *extension*,
+die `pom.xml` in `src/extension/inspire/` ist wiederum
 ein Submodul von *extension*.
 
 Wenn Sie auf dem Terminal unterwegs sind und in ein Verzeichnis navigieren, dass
-eine pom.xml enthält, können Sie dort Maven-Befehle ausführen. Der Befehl
-mvn package würde z.B. das entsprechende Artefakt bauen und in einen Unterordner
-target/ ablegen.
+eine `pom.xml` enthält, können Sie dort Maven-Befehle ausführen. Der Befehl
+`mvn package` würde z.B. das entsprechende Artefakt bauen und in einen Unterordner
+`target/` ablegen.
 
-Details zur Verwendung von Maven mit dem GeoServer finden Sie unter [<http://docs.geoserver.org/latest/en/developer/maven-guide/index.html>](http://docs.geoserver.org/latest/en/developer/maven-guide/index.html).
+Nähere Details zur Verwendung von Maven beim Kompilieren von GeoServer finden Sie unter [<http://docs.geoserver.org/latest/en/developer/maven-guide/index.html>](http://docs.geoserver.org/latest/en/developer/maven-guide/index.html).
 
 ## Kompilieren der INSPIRE-Erweiterung
+
+> **info**
+> Dieser Abschnitt muss noch überarbeitet werden.
+> Es ist möglich, dass hier nicht alle Schritte erwartungsgemäß funktionieren.
 
 Wir werden nun die INSPIRE-Erweiterung des GeoServers auf Basis des Quellcodes
 selber kompilieren. Anschließend kann die Erweiterung analog zum [vorigen Abschnitt](./installextensions.md)

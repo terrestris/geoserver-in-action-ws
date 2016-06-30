@@ -8,7 +8,7 @@ aus:
 * *Lubuntu ohne Installation ausprobieren* auswählen
 * Benutzer: user; Passwort: user (wird vermutlich nicht benötigt)
 
-![Die Startansicht der OSGeo Live 8.5 auf Ihrem Rechner.](../assets/startview.png)
+![Die Startansicht der OSGeo Live 9.5 auf Ihrem Rechner.](../assets/startview.png)
 
 # Setup-Script ausführen
 
