@@ -3,9 +3,9 @@
 Bei jeglichen Fehlern, die sich auf den GeoServer zurückführen lassen (wie z.B.
 keine oder falsche Antwort eines Kartendienstes) ist das Protokoll die erste
 Anlaufstelle. Das GeoServer Protokoll lässt sich dabei entweder direkt über
-die GUI oder aus dem Dateisystem ({{ book.geoServerPhysicalPath }}data\_dir/logs) aufrufen.
-Rein informativen Protokollmeldungen steht dabei das Kürzel INFO vor. Bei
-schwerwiegenden Fehlern findet sich dort jedoch das Kürzel ERROR.
+die GUI oder aus dem Dateisystem (`/usr/local/lib/geoserver-2.8.2/data_dir/logs/geoserver.log`) aufrufen.
+Bei schwerwiegenden Problemen bzw. Fehlern steht der Logging-Message das Kürzel `ERROR` vor,
+rein informativen Protokollmeldungen das Kürzel `INFO`.
 
 Für die Protokollierung des GeoServers lassen sich verschiedene Profile einstellen.
 Diese unterscheiden sich in der Sensitivität, in der die Prozesse des GeoServers
@@ -21,16 +21,13 @@ verursacht werden, ist diese Einstellung nur für das Debuggen zu empfehlen.
 
 Hier eine kurze Erläuterung einiger Protokoll-Profile:
 
-* DEFAULT\_LOGGING: Mittleres Protokolllevel auf fast allen Modulebenen des GeoServers.
-* GEOSERVER\_DEVELOPER\_LOGGING: Ausführliche Protokollierung auf Ebene des Moduls
-  GeoServer. Nur sinnvoll, wenn der GeoServer debuggt wird.
-* GEOTOOLS\_DEVELOPER\_LOGGING: Ausführliche Protokollierung auf Ebene des Moduls
-  Geo-Tools. Diese Auswahl kann nützlich sein, wenn überprüft werden soll, welche
-  SQL Statements (z.B. bei einer GetFeature Abfrage) an die Datenbank gesendet werden.
-* PRODUCTION\_LOGGING: Minimale Protokollierung, nur Fehler werden ausgegeben.
-  Diese Einstellung ist für den Produktiveinsatz zu wählen.
-* VERBOSE\_LOGGING: Ausführliche Protokollierung auf allen Ebenen des GeoServes.
-  Nur sinnvoll, wenn der GeoServer debuggt wird.
+| Profil | Beschreibung |
+| --------- | ----------- |
+| `DEFAULT_LOGGING` | Mittleres Protokolllevel auf fast allen Modulebenen des GeoServers.|
+| `GEOSERVER_DEVELOPER_LOGGING` | Ausführliche Protokollierung auf Ebene des Moduls GeoServer. Nur sinnvoll, wenn der GeoServer debuggt wird.|
+| `GEOTOOLS_DEVELOPER_LOGGING` | Ausführliche Protokollierung auf Ebene des Moduls Geo-Tools. Diese Auswahl kann nützlich sein, wenn überprüft werden soll, welche SQL Statements (z.B. bei einer GetFeature-Abfrage) an die Datenbank gesendet werden.|
+| `PRODUCTION_LOGGING` | Minimale Protokollierung, nur Fehler werden ausgegeben. Diese Einstellung ist für den *Produktiveinsatz* zu wählen.|
+| `VERBOSE_LOGGING` | Ausführliche Protokollierung auf allen Ebenen des GeoServes. Nur sinnvoll, wenn der GeoServer debuggt wird.|
 
 Wir wollen das Protokoll des GeoServers nun *live* über das Dateisystem beobachten.
 Dazu führen müssen die folgenden Schritte ausgeführt werden.
@@ -40,12 +37,13 @@ Dazu führen müssen die folgenden Schritte ausgeführt werden.
    in die Protokolldatei, sondern in die Standardausgabe des Java-Prozesses
    geschrieben wird. Wir müssen also den **Haken bei**
    *in die Standardausgabe schreiben* **entfernen**, sodass das Protokoll in die
-   Datei {{ book.geoServerPhysicalPath }}/data/logs/geoserver.log geschrieben wird.
+   Datei `/usr/local/lib/geoserver-2.8.2/data_dir/logs/geoserver.log` geschrieben wird.
 3. Speichern Sie die Einstellungen (unten).
 4. Öffnen Sie die Konsole und führen Sie den folgenden Befehl aus:
 
-<pre><xmp style="margin:0; font-size: .85em;">less +F {{ book.geoServerPhysicalPath }}/data/logs/geoserver.log
-</xmp></pre>
+```bash
+less +F /usr/local/lib/geoserver-2.8.2/data_dir/logs/geoserver.log
+```
 
 > **note**
 >
@@ -67,5 +65,9 @@ können das Protokollprofil auch ändern, um zu beobachten wie sich die Sensitiv
 der Ausgabe verändert.
 
 ![Live-Beobachtung der Protokollierung](../assets/live_logging.png)
+
+Das GeoServer-Logging-System basiert auf der Java-Logging-Bibliothek Log4J.
+Somit gibt es zusätzlich die Möglichkeit eigene LOGGING-Profile zu definieren und diese im Geoserver-Datenverzeichnis im Unterordner `logs/` bereitzustellen.
+Näheres hierzu finden Sie [hier](http://docs.geoserver.org/maintain/en/user/advanced/logging.html).
 
 Im folgenden [Abschnitt](gwc.md) geht es mit dem Thema *GeoWebCache (GWC)* weiter.
