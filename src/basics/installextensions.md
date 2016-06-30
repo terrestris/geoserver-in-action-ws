@@ -7,7 +7,7 @@ Daten aus bestimmten SQL-Datenbanken beziehen (z.B. MySQL oder Oracle). Ebenso
 gibt es Erweiterungen, die es ermöglichen *Excel* (und weitere) als Ausgabeformat
 zu unterstützen.
 
-Eine vergleichsweise neues Zusatzmodul ist die [Importer-Extension](http://docs.geoserver.org/maintain/en/user/extensions/importer/using.html).
+Ein vergleichsweise neues Zusatzmodul ist die [Importer-Extension](http://docs.geoserver.org/maintain/en/user/extensions/importer/using.html).
 Hiermit ist es auf einfache Weise möglich, Geodaten (Vektor- und Rasterdaten) über die grafische Oberfläche des GeoServers oder eine REST-Schnittstelle zu importieren.
 Neben dem Import in das GeoServer-Datenverzeichnis kann auch in Datenbanken (u.a. PostGIS un Oracle) importiert und Vorverarbeitungsschritte (Transformationen o.ä.) vorgeschaltet werden.
 

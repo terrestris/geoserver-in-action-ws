@@ -32,7 +32,7 @@ konfigurieren. Wir wollen in diesem Abschnitt kurz auf hilfreiche Optionen hinwe
   im Bereich *Daten -\> Layer -\> Layer hinzufügen* eine Vektor-Datenbankquelle
   auswählen und dort *SQL View konfigurieren* klicken. Nützlich ist insbesondere
   die Möglichkeit die SQL-Views zu parametrisieren, etwa um bestimmte Features
-  durch entsprechende Parameter herauszufilter. Ausführliche Informationen
+  durch entsprechende Parameter herauszufiltern. Ausführliche Informationen
   dazu finden Sie [hier](http://docs.geoserver.org/stable/en/user/data/database/sqlview.html).
 
 Der letzte [Abschnitt](jvm.md) zeigt wie Sie die *Java Virtual Machine (JVM)* für

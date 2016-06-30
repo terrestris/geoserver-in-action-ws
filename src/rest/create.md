@@ -210,7 +210,7 @@ War der Befehl erfolgreich, enthält die Antwort im Terminal den Teilstring `< H
 ## Layer anlegen
 
 Der nächste logische Schritt ist das Anlegen eines Layers auf Basis einer Geometrietabelle
-aus unserem zuvor angelegten Datenspeichers natural\_earth. Als Beispiel werden wir die Tabelle
+aus unserem zuvor angelegten Datenspeicher natural\_earth. Als Beispiel werden wir die Tabelle
 *ne\_10m\_admin\_1\_states\_provinces\_shp* mit dem folgenden Befehl im Arbeitsbereich
 fossgis veröffentlichen:
 

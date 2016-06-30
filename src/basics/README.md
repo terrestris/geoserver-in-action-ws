@@ -24,7 +24,7 @@ lauten.
 in Form einer `.war` - Datei bereitgestellt, welche unter <http://geoserver.org/download/>
 heruntergeladen werden kann. Die `.war` - Datei muss anschließend auf einem
 Servlet-Container (bspw. [Tomcat](http://tomcat.apache.org/) oder
-[Jetty](http://eclipse.org/jetty/)) veröffentlicht werden (häufig auch *deploy* genant). Anschließend
+[Jetty](http://eclipse.org/jetty/)) veröffentlicht werden (häufig auch *deploy* genannt). Anschließend
 kann die Weboberfläche des GeoServers über den Browser aufgerufen werden.
 
 Weitere Details zur klassischen WAR-Installation finden sich
