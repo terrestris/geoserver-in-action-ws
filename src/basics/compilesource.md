@@ -36,7 +36,7 @@ auch der Linux-Kernel verwaltet wird. Den Quellcode des GeoServers finden Sie hi
 Wenn Sie sich dort in den Ordner `src/extension/inspire` durchklicken, können Sie
 feststellen, dass es in jedem dieser drei Ordner eine Datei `pom.xml` gibt. *POM*
 steht für Project Object Model und es handelt sich hier um die Konfigurationsdateien
-für Maven, in denen z.B. Abhängigkeiten zu anderen Bibliotheken definiert sind.
+für Maven (`pom.xml`), in denen z.B. Abhängigkeiten zu anderen Bibliotheken definiert sind.
 
 Jede `pom.xml` im Ordner `src/` ist die zentrale Maven-Konfigurationsdatei auf höchster Ebene, also
 des GeoServers als Gesamtsystem und repräsentiert dabei ein eingenständiges Maven-Modul.
@@ -129,11 +129,13 @@ Verzeichnis `~/src/extension/inspire/target/` das erzeugte Kompilat (gs-inspire-
 welches wie im vorigen [Abschnitt](./installextensions.md) auf dem GeoServer
 installiert werden kann.
 
-```bash
+<pre>
+<xmp style="margin:0; font-size: .85em;">
 sudo cp \
   ~/src/extension/inspire/target/gs-inspire-{{ book.geoServerVersion }}.jar \
   /usr/local/lib/geoserver-{{ book.geoServerVersion }}/webapps/geoserver/WEB-INF/lib
-```
+</xmp>
+</pre>
 
 Sobald dies geschehen ist (GeoServer-Neustart nicht vergessen!), erscheint bei
 der WMS-Konfiguration in der GeoServer-Weboberfläche ein zusätzlicher Bereich
