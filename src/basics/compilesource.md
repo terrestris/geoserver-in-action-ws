@@ -28,7 +28,7 @@ des GeoServers mit Maven kompilieren und auf dem GeoServer installieren.
 ## GeoServer-Quellcode und Maven
 
 Der GeoServer-Quellcode wird mit [git](http://git-scm.com/) verwaltet. *Git* ist
-eine freie Software zur verteilen Versionsverwaltung von Dateien, mit dem z.B.
+eine freie Software zur verteilten Versionsverwaltung von Dateien, mit dem z.B.
 auch der Linux-Kernel verwaltet wird. Den Quellcode des GeoServers finden Sie hier:
 
 [https://github.com/geoserver/geoserver](https://github.com/geoserver/geoserver)

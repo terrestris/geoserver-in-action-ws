@@ -32,7 +32,7 @@ Führen Sie die folgenden Schritte aus, um diese Erweiterung zu installieren:
 
 1. Stoppen Sie den Geoserver durch einen Doppelklick auf **Stop GeoServer** im
    Ordner **Web Services** auf Ihrem Desktop.
-1. Laden Sie die WPS-Erweiterung von hier {{ book.workshopUrl }}materials/geoserver-{{ book.geoServerVersion }}-wps-plugin.zip
+1. Laden Sie die WPS-Erweiterung von hier {{ book.workshopRawSourceBaseUrl }}materials/geoserver-{{ book.geoServerVersion }}-wps-plugin.zip
    (oder der offiziellen Release-Seite) herunter. Wählen Sie bitte *Datei speichern*
    und nicht *Öffnen mit*!
 1. Wechseln Sie im Terminal in das im vorigen [Abschnitt](./folderstructure.md)

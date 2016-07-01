@@ -33,10 +33,11 @@ Das Skript führt die folgenden Aktionen aus:
 > das Terminal machen und dort *Einfügen* wählen.
 
 Um das Skript zu starten, führen Sie bitte den folgenden Befehl auf dem Terminal
-([](../assets/terminal_icon.png) im unteren Systempanel) aus:
+([](../assets/terminal_icon.png) im unteren Systempanel) aus und geben bei Aufforderung
+das Passwort `user` ein:
 
-<pre><code class="bash">curl \
-  {{ book.workshopUrl }}materials/setup_geoserver_workshop.sh | \
+<pre><code class="bash">sudo curl -L \
+  {{ book.workshopRawSourceBaseUrl }}materials/setup_geoserver_workshop.sh | \
   sudo bash
 </code></pre>
 

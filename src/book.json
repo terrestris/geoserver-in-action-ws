@@ -5,7 +5,7 @@
   "language": "de",
   "variables": {
     "workshopName": "GeoServer in action",
-    "workshopUrl": "http://terrestris.github.io/geoserver-in-action-ws/",
+    "workshopRawSourceBaseUrl": "https://rawgit.com/terrestris/geoserver-in-action-ws/master/src/",
     "workshopDownloadUrl": "http://terrestris.github.io/geoserver-in-action-ws/geoserver-in-action-ws.zip",
     "workshopPdfUrl": "http://terrestris.github.io/geoserver-in-action-ws/geoserver-in-action-ws.pdf",
     "workshopEpubUrl": "http://terrestris.github.io/geoserver-in-action-ws/geoserver-in-action-ws.epub",
