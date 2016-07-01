@@ -77,7 +77,7 @@
         data-chapter-title="REST-Schnittstelle"
         data-filepath="rest/README.md"
         data-basepath=".."
-        data-revision="Thu Jun 30 2016 15:50:21 GMT+0000 (UTC)"
+        data-revision="Fri Jul 01 2016 08:08:10 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -308,7 +308,7 @@
                         
                             <b>4.2.</b>
                         
-                        Layer cachen mit GWC
+                        Cachen von Layern mit GWC
                     </a>
             
             
@@ -400,14 +400,14 @@
                         <h1 id="restschnittstelle">REST-Schnittstelle</h1>
 <p>Die REST-API erlaubt das Lesen, Schreiben, Aktualisieren und Entfernen von (fast)
 allen GeoServer Katalogelementen direkt &#xFC;ber das HTTP-Protokoll, d.h. ohne die
-Verwendung der graphsichen GeoServer Benutzeroberl&#xE4;che. Hierzu z&#xE4;hlen z.B.
+Verwendung der grafischen Benutzeroberl&#xE4;che des GeoServers. Hierzu z&#xE4;hlen z.B.
 Arbeitsbereiche, Datenspeicher, Layer, Stile und Gruppenlayer. In diesem Modul
 werden die Grundprinzipien der REST-API vom GeoServer anhand von einfachen
 Beispielen erl&#xE4;utert. Bei der Auswahl der folgenden Beispiele wurde auf eine hohe
 Praxistauglichkeit und Wiederverwendbarkeit geachtet.</p>
-<p>Doch zun&#xE4;chst: Was ist REST?</p>
-<p>REST (oder auch ReST) steht Representational State Transfer und ist ein Architekturstil
-zur Realisierung von Web Services und wir daher auch h&#xE4;ufig im Zusammenhang mit
+<h2 id="was-ist-rest">Was ist REST?</h2>
+<p>REST (oder auch ReST) steht f&#xFC;r <strong>Re</strong>presentational <strong>S</strong>tate <strong>T</strong>ransfer und ist ein Architekturstil
+zur Realisierung von Web Services und wird daher auch h&#xE4;ufig im Zusammenhang mit
 dem Begriffspaar <em>RESTful Webservices</em> genannt. Kernelement des Architekturstils
 sind die sog. Ressourcen. Eine Ressource sollte dabei die folgenden Anforderungen
 erf&#xFC;llen (nach [1]):</p>
@@ -415,7 +415,7 @@ erf&#xFC;llen (nach [1]):</p>
 <li><strong>Adressierbarkeit:</strong> Jede Ressource (z.B. ein GeoServer Layer) muss &#xFC;ber
 eine eindeutige URI (Unique Resource Identifier) erreichbar sein.</li>
 <li><strong>Zustandslosigkeit:</strong> Jede Kommunikation &#xFC;ber REST enth&#xE4;lt alle Informationen,
-die f&#xFC;r Server oder Client zum Verst&#xE4;ndnis notwendig sind, Zustandsinformationen
+die f&#xFC;r Server oder Client zum Verst&#xE4;ndnis notwendig sind. Zustandsinformationen
 (z.B. Sessions) werden nicht von Server oder Client gespeichert. Hieraus ergibt
 sich eine einfache Umsetzung der Skalierbarkeit von Webservices (z.B. f&#xFC;r die
 Lastverteilung).</li>
@@ -436,39 +436,39 @@ und XML-Format) existieren.</li>
 </thead>
 <tbody>
 <tr>
-<td>GET</td>
-<td>fordert die angegebene Ressource vom Server an. GET weist keine Nebeneffekte auf. Der Zustand am Server wird nicht ver&#xE4;ndert, weshalb GET als sicher bezeichnet wird.</td>
+<td><code>GET</code></td>
+<td>fordert die angegebene Ressource vom Server an. Ein Aufruf von <code>GET</code> f&#xFC;hrt zu keinen Nebeneffekten. Der Zustand am Server wird nicht ver&#xE4;ndert, weshalb <code>GET</code> als sicher bezeichnet wird.</td>
 </tr>
 <tr>
-<td>POST</td>
-<td>f&#xFC;gt eine neue (Sub-)Ressource unterhalb der angegebenen Ressource ein. Da die neue Ressource noch keinen URI besitzt, adressiert der URI die &#xFC;bergeordnete Ressource. Als Ergebnis wird der neue Ressourcenlink dem Client zur&#xFC;ckgegeben. POST kann im weiteren Sinne auch dazu verwendet werden, Operationen abzubilden, die von keiner anderen Methode abgedeckt werden.</td>
+<td><code>POST</code></td>
+<td>f&#xFC;gt eine neue (Sub-)Ressource unterhalb der angegebenen Ressource ein. Da die neue Ressource noch keinen URI besitzt, adressiert der URI die &#xFC;bergeordnete Ressource. Als Ergebnis wird der neue Ressourcenlink dem Client zur&#xFC;ckgegeben. <code>POST</code> kann im weiteren Sinne auch dazu verwendet werden, Operationen abzubilden, die von keiner anderen Methode abgedeckt werden.</td>
 </tr>
 <tr>
-<td>PUT</td>
+<td><code>PUT</code></td>
 <td>die angegebene Ressource wird angelegt. Wenn die Ressource bereits existiert, wird sie ge&#xE4;ndert.</td>
 </tr>
 <tr>
-<td>PATCH</td>
+<td><code>PATCH</code></td>
 <td>ein Teil der angegebenen Ressource wird ge&#xE4;ndert. Hierbei sind Nebeneffekte erlaubt.</td>
 </tr>
 <tr>
-<td>DELETE</td>
+<td><code>DELETE</code></td>
 <td>l&#xF6;scht die angegebene Ressource.</td>
 </tr>
 <tr>
-<td>HEAD</td>
+<td><code>HEAD</code></td>
 <td>fordert Metadaten zu einer Ressource an.</td>
 </tr>
 <tr>
-<td>OPTIONS</td>
+<td><code>OPTIONS</code></td>
 <td>pr&#xFC;ft, welche Methoden auf einer Ressource zur Verf&#xFC;gung stehen.</td>
 </tr>
 <tr>
-<td>CONNECT</td>
+<td><code>CONNECT</code></td>
 <td>Dient dazu, die Anfrage durch einen TCP-Tunnel zu leiten. Wird meist eingesetzt, um eine HTTPS-Verbindung &#xFC;ber einen HTTP-Proxy herzustellen.</td>
 </tr>
 <tr>
-<td>TRACE</td>
+<td><code>TRACE</code></td>
 <td>Gibt die Anfrage zur&#xFC;ck, wie sie der Zielserver erh&#xE4;lt. Dient etwa dazu, um &#xC4;nderungen der Anfrage durch Proxyserver zu ermitteln.</td>
 </tr>
 </tbody>

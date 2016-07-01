@@ -77,7 +77,7 @@
         data-chapter-title="Protokollierung"
         data-filepath="troubleshooting/logging.md"
         data-basepath=".."
-        data-revision="Thu Jun 30 2016 15:50:21 GMT+0000 (UTC)"
+        data-revision="Fri Jul 01 2016 08:08:10 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -308,7 +308,7 @@
                         
                             <b>4.2.</b>
                         
-                        Layer cachen mit GWC
+                        Cachen von Layern mit GWC
                     </a>
             
             
@@ -401,9 +401,9 @@
 <p>Bei jeglichen Fehlern, die sich auf den GeoServer zur&#xFC;ckf&#xFC;hren lassen (wie z.B.
 keine oder falsche Antwort eines Kartendienstes) ist das Protokoll die erste
 Anlaufstelle. Das GeoServer Protokoll l&#xE4;sst sich dabei entweder direkt &#xFC;ber
-die GUI oder aus dem Dateisystem (/usr/local/lib/geoserver-2.8.2/data_dir/logs) aufrufen.
-Rein informativen Protokollmeldungen steht dabei das K&#xFC;rzel INFO vor. Bei
-schwerwiegenden Fehlern findet sich dort jedoch das K&#xFC;rzel ERROR.</p>
+die GUI oder aus dem Dateisystem (<code>/usr/local/lib/geoserver-2.8.2/data_dir/logs/geoserver.log</code>) aufrufen.
+Bei schwerwiegenden Problemen bzw. Fehlern steht der Logging-Message das K&#xFC;rzel <code>ERROR</code> vor,
+rein informativen Protokollmeldungen das K&#xFC;rzel <code>INFO</code>.</p>
 <p>F&#xFC;r die Protokollierung des GeoServers lassen sich verschiedene Profile einstellen.
 Diese unterscheiden sich in der Sensitivit&#xE4;t, in der die Prozesse des GeoServers
 protokolliert werden. Das zu verwendende Protokoll kann &#xFC;ber die GeoServer-Weboberfl&#xE4;che
@@ -414,18 +414,36 @@ wirkt sich sofort aus, d.h. der GeoServer muss <em>nicht</em> neu gestartet werd
 Java-Stacktrace in die Log-Datei geschrieben. Da hierdurch gr&#xF6;&#xDF;ere Log-Dateien
 verursacht werden, ist diese Einstellung nur f&#xFC;r das Debuggen zu empfehlen.</p>
 <p>Hier eine kurze Erl&#xE4;uterung einiger Protokoll-Profile:</p>
-<ul>
-<li>DEFAULT_LOGGING: Mittleres Protokolllevel auf fast allen Modulebenen des GeoServers.</li>
-<li>GEOSERVER_DEVELOPER_LOGGING: Ausf&#xFC;hrliche Protokollierung auf Ebene des Moduls
-GeoServer. Nur sinnvoll, wenn der GeoServer debuggt wird.</li>
-<li>GEOTOOLS_DEVELOPER_LOGGING: Ausf&#xFC;hrliche Protokollierung auf Ebene des Moduls
-Geo-Tools. Diese Auswahl kann n&#xFC;tzlich sein, wenn &#xFC;berpr&#xFC;ft werden soll, welche
-SQL Statements (z.B. bei einer GetFeature Abfrage) an die Datenbank gesendet werden.</li>
-<li>PRODUCTION_LOGGING: Minimale Protokollierung, nur Fehler werden ausgegeben.
-Diese Einstellung ist f&#xFC;r den Produktiveinsatz zu w&#xE4;hlen.</li>
-<li>VERBOSE_LOGGING: Ausf&#xFC;hrliche Protokollierung auf allen Ebenen des GeoServes.
-Nur sinnvoll, wenn der GeoServer debuggt wird.</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Profil</th>
+<th>Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DEFAULT_LOGGING</code></td>
+<td>Mittleres Protokolllevel auf fast allen Modulebenen des GeoServers.</td>
+</tr>
+<tr>
+<td><code>GEOSERVER_DEVELOPER_LOGGING</code></td>
+<td>Ausf&#xFC;hrliche Protokollierung auf Ebene des Moduls GeoServer. Nur sinnvoll, wenn der GeoServer debuggt wird.</td>
+</tr>
+<tr>
+<td><code>GEOTOOLS_DEVELOPER_LOGGING</code></td>
+<td>Ausf&#xFC;hrliche Protokollierung auf Ebene des Moduls Geo-Tools. Diese Auswahl kann n&#xFC;tzlich sein, wenn &#xFC;berpr&#xFC;ft werden soll, welche SQL Statements (z.B. bei einer GetFeature-Abfrage) an die Datenbank gesendet werden.</td>
+</tr>
+<tr>
+<td><code>PRODUCTION_LOGGING</code></td>
+<td>Minimale Protokollierung, nur Fehler werden ausgegeben. Diese Einstellung ist f&#xFC;r den <em>Produktiveinsatz</em> zu w&#xE4;hlen.</td>
+</tr>
+<tr>
+<td><code>VERBOSE_LOGGING</code></td>
+<td>Ausf&#xFC;hrliche Protokollierung auf allen Ebenen des GeoServes. Nur sinnvoll, wenn der GeoServer debuggt wird.</td>
+</tr>
+</tbody>
+</table>
 <p>Wir wollen das Protokoll des GeoServers nun <em>live</em> &#xFC;ber das Dateisystem beobachten.
 Dazu f&#xFC;hren m&#xFC;ssen die folgenden Schritte ausgef&#xFC;hrt werden.</p>
 <ol>
@@ -434,13 +452,12 @@ Dazu f&#xFC;hren m&#xFC;ssen die folgenden Schritte ausgef&#xFC;hrt werden.</p>
 in die Protokolldatei, sondern in die Standardausgabe des Java-Prozesses
 geschrieben wird. Wir m&#xFC;ssen also den <strong>Haken bei</strong>
 <em>in die Standardausgabe schreiben</em> <strong>entfernen</strong>, sodass das Protokoll in die
-Datei /usr/local/lib/geoserver-2.8.2//data/logs/geoserver.log geschrieben wird.</li>
+Datei <code>/usr/local/lib/geoserver-2.8.2/data_dir/logs/geoserver.log</code> geschrieben wird.</li>
 <li>Speichern Sie die Einstellungen (unten).</li>
 <li>&#xD6;ffnen Sie die Konsole und f&#xFC;hren Sie den folgenden Befehl aus:</li>
 </ol>
-<pre><xmp style="margin:0; font-size: .85em;">less +F /usr/local/lib/geoserver-2.8.2//data/logs/geoserver.log
-</xmp></pre>
-
+<pre><code class="lang-bash">less +F /usr/<span class="hljs-built_in">local</span>/lib/geoserver-<span class="hljs-number">2.8</span>.<span class="hljs-number">2</span>/data_dir/logs/geoserver.log
+</code></pre>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-4x fa-edit"></strong>
 <p></p>
 <p>Normalerweise w&#xFC;rde man statt less +F den Befehl tail -f verwenden. Dies
@@ -459,6 +476,9 @@ Layers (z.B. Zoomen oder Klicken) kann nun im Protokoll nachvollzogen werden. Si
 k&#xF6;nnen das Protokollprofil auch &#xE4;ndern, um zu beobachten wie sich die Sensitivit&#xE4;t
 der Ausgabe ver&#xE4;ndert.</p>
 <figure id="fig4.1.3"><img src="../assets/live_logging.png" alt="Live-Beobachtung der Protokollierung"><figcaption>Live-Beobachtung der Protokollierung</figcaption></figure>
+<p>Das GeoServer-Logging-System basiert auf der Java-Logging-Bibliothek Log4J.
+Somit gibt es zus&#xE4;tzlich die M&#xF6;glichkeit eigene LOGGING-Profile zu definieren und diese im Geoserver-Datenverzeichnis im Unterordner <code>logs/</code> bereitzustellen.
+N&#xE4;heres hierzu finden Sie <a href="http://docs.geoserver.org/maintain/en/user/advanced/logging.html" target="_blank">hier</a>.</p>
 <p>Im folgenden <a href="gwc.html">Abschnitt</a> geht es mit dem Thema <em>GeoWebCache (GWC)</em> weiter.</p>
 
                     
@@ -473,7 +493,7 @@ der Ausgabe ver&#xE4;ndert.</p>
         <a href="../troubleshooting/index.html" class="navigation navigation-prev " aria-label="Previous page: Tipps, Tricks &amp; Troubleshooting"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../troubleshooting/gwc.html" class="navigation navigation-next " aria-label="Next page: Layer cachen mit GWC"><i class="fa fa-angle-right"></i></a>
+        <a href="../troubleshooting/gwc.html" class="navigation navigation-next " aria-label="Next page: Cachen von Layern mit GWC"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

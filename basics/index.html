@@ -77,7 +77,7 @@
         data-chapter-title="Basiswissen GeoServer"
         data-filepath="basics/README.md"
         data-basepath=".."
-        data-revision="Thu Jun 30 2016 15:50:21 GMT+0000 (UTC)"
+        data-revision="Fri Jul 01 2016 08:08:10 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -308,7 +308,7 @@
                         
                             <b>4.2.</b>
                         
-                        Layer cachen mit GWC
+                        Cachen von Layern mit GWC
                     </a>
             
             
@@ -402,7 +402,7 @@
 der es erm&#xF6;glicht Geodaten auf Basis der Standards des <a href="http://www.opengeospatial.org/" target="_blank">Open Geospatial Consortium (OGC)</a>
 (insb. WMS und WFS) anzuzeigen und zu editieren. Eine besondere St&#xE4;rke des GeoServers
 ist die Flexibilit&#xE4;t, mit der er sich um zus&#xE4;tzliche Funktionalit&#xE4;t erweitern l&#xE4;sst.</p>
-<p>Der GeoServer ist gut dokumentiert. Die Dokumentation unterteilt sich dabei
+<p>GeoServer ist gut dokumentiert. Die Dokumentation unterteilt sich dabei
 in eine Benutzer- und eine Entwicklerdokumentation:</p>
 <ul>
 <li>Benutzerdokumentation: <a href="http://docs.geoserver.org/stable/user/" target="_blank">http://docs.geoserver.org/stable/user/</a></li>
@@ -412,20 +412,21 @@ in eine Benutzer- und eine Entwicklerdokumentation:</p>
 Das <em>stable</em> in der URL kann auch durch eine Versionsnummer ersetzt werden, falls
 man die Dokumentation einer bestimmten GeoServer-Version aufrufen m&#xF6;chte. Im Rahmen
 dieses Workshops wird die <strong>Version 2.8.2</strong>, die resultierende
-URL w&#xFC;rde also <a href="http://docs.geoserver.org/2.8.2/user/" target="_blank">http://docs.geoserver.org/2.8.2/user/</a> lauten.</p>
+URL der Benutzerdokumentation w&#xFC;rde also <a href="http://docs.geoserver.org/2.8.2/user/" target="_blank">http://docs.geoserver.org/2.8.2/user/</a>
+lauten.</p>
 <figure id="fig2.1"><img src="../assets/geoserver_login_gui.png" alt="GeoServer-Weboberfl&#xE4;che nach erfolgreichem Login"><figcaption>GeoServer-Weboberfl&#xE4;che nach erfolgreichem Login</figcaption></figure>
 <p>&#xDC;blicherweise wird der GeoServer f&#xFC;r einen Produktivbetrieb als (Java-)Standalone-Servlet
-in Form einer .war-Datei bereitgestellt, welche unter <a href="http://geoserver.org/download/" target="_blank">http://geoserver.org/download/</a>
-heruntergeladen werden kann. Die .war-Datei muss anschlie&#xDF;end auf einem
-Servlet-Container, z.B. <a href="http://tomcat.apache.org/" target="_blank">Tomcat</a> oder
-<a href="http://eclipse.org/jetty/" target="_blank">Jetty</a> ver&#xF6;ffentlicht, d.h. <em>deployed</em> werden. Anschlie&#xDF;end
+in Form einer <code>.war</code> - Datei bereitgestellt, welche unter <a href="http://geoserver.org/download/" target="_blank">http://geoserver.org/download/</a>
+heruntergeladen werden kann. Die <code>.war</code> - Datei muss anschlie&#xDF;end auf einem
+Servlet-Container (bspw. <a href="http://tomcat.apache.org/" target="_blank">Tomcat</a> oder
+<a href="http://eclipse.org/jetty/" target="_blank">Jetty</a>) ver&#xF6;ffentlicht werden (h&#xE4;ufig auch <em>deploy</em> genannt). Anschlie&#xDF;end
 kann die Weboberfl&#xE4;che des GeoServers &#xFC;ber den Browser aufgerufen werden.</p>
 <p>Weitere Details zur klassischen WAR-Installation finden sich
 <a href="http://docs.geoserver.org/stable/en/user/installation/war.html" target="_blank">hier</a>.</p>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-4x fa-edit"></strong>
 <p></p>
 <p>Der GeoServer ist auf dem OSGeoLive-System bereits vorinstalliert und kann im
-Rahmen des Workshops unter <a href="http://localhost/geoserver" target="_blank">http://localhost/geoserver</a> aufgerufen werden
+Rahmen des Workshops unter <a href="http://localhost:8082/geoserver" target="_blank">http://localhost:8082/geoserver</a> aufgerufen werden
 (siehe <a href="../environment/index.html">hier</a>. Diese Variante unterscheidet sich von
 dem klassischen <em>Deployment</em> als .war-Datei, da hier ein Java-Programm
 (start.jar) ausgef&#xFC;hrt wird, welches programmatisch einen Jetty-Server mit dem

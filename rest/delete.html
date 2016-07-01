@@ -77,7 +77,7 @@
         data-chapter-title="Katalogeinträge entfernen"
         data-filepath="rest/delete.md"
         data-basepath=".."
-        data-revision="Thu Jun 30 2016 15:50:21 GMT+0000 (UTC)"
+        data-revision="Fri Jul 01 2016 08:08:10 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -308,7 +308,7 @@
                         
                             <b>4.2.</b>
                         
-                        Layer cachen mit GWC
+                        Cachen von Layern mit GWC
                     </a>
             
             
@@ -398,7 +398,7 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="katalogeintr&#xE4;ge-entfernen">Katalogeintr&#xE4;ge entfernen</h1>
-<p>Um eine Ressource &#xFC;ber die REST-API zu entfernen, k&#xF6;nnen wir die Operation
+<p>Um eine Ressource &#xFC;ber die REST-API zu entfernen, k&#xF6;nnen wir die HTTP-Operation
 <code>DELETE</code> nutzen. Das folgende Beispiel zeigt den (zweischrittigen) cURL Aufruf
 zum Entfernen eines Layers (<strong>Hinweis</strong>: Durch den Befehl wird der oben erzeugte
     Layer states_provinces aus dem Arbeitsbereich fossgis gel&#xF6;scht!):</p>
@@ -407,7 +407,7 @@ zum Entfernen eines Layers (<strong>Hinweis</strong>: Durch den Befehl wird der 
   -v \
   -u admin:geoserver \
   -XDELETE \
-  http://localhost/geoserver/rest/layers/fossgis:states_provinces
+  http://localhost:8082/geoserver/rest/layers/fossgis:states_provinces
 </xmp></pre>
 
 <p>Und anschlie&#xDF;end den FeatureType des Datenspeichers:</p>
@@ -415,7 +415,7 @@ zum Entfernen eines Layers (<strong>Hinweis</strong>: Durch den Befehl wird der 
   -v \
   -u admin:geoserver \
   -XDELETE \
-  http://localhost/geoserver/rest/workspaces/fossgis/datastores/natural_earth/featuretypes/states_provinces
+  http://localhost:8082/geoserver/rest/workspaces/fossgis/datastores/natural_earth/featuretypes/states_provinces
 </xmp></pre>
 
 <p>In dem obigen Beispiel wird der FeatureType states_provinces durch den gleichnamigen
@@ -427,7 +427,7 @@ referenced by layer(s)</em> provozieren. Um automatisch alle referenzierten Obje
   -v \
   -u admin:geoserver \
   -XDELETE \
-  http://localhost/geoserver/rest/workspaces/fossgis/datastores/natural_earth/featuretypes/states_provinces?recurse=true
+  http://localhost:8082/geoserver/rest/workspaces/fossgis/datastores/natural_earth/featuretypes/states_provinces?recurse=true
 </xmp></pre>
 
 <p>Wurden die Ressourcen erfolgreich entfernt, wird der Status <code>HTTP/1.1 200 OK</code> ausgegeben.</p>

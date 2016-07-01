@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Layer cachen mit GWC | GeoServer in action</title>
+        <title>Cachen von Layern mit GWC | GeoServer in action</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.7">
@@ -74,10 +74,10 @@
         
     <div class="book"
         data-level="4.2"
-        data-chapter-title="Layer cachen mit GWC"
+        data-chapter-title="Cachen von Layern mit GWC"
         data-filepath="troubleshooting/gwc.md"
         data-basepath=".."
-        data-revision="Thu Jun 30 2016 15:50:21 GMT+0000 (UTC)"
+        data-revision="Fri Jul 01 2016 08:08:10 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -308,7 +308,7 @@
                         
                             <b>4.2.</b>
                         
-                        Layer cachen mit GWC
+                        Cachen von Layern mit GWC
                     </a>
             
             
@@ -397,7 +397,7 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="layer-cachen-mit-gwc">Layer cachen mit GWC</h1>
+                        <h1 id="cachen-von-layern-mit-gwc">Cachen von Layern mit GWC</h1>
 <p>Die h&#xE4;ufigste Anforderung an einen GeoServer ist das Bereitstellen einer
 OGC-konformen WMS Schnittstelle und damit das Ausgeben von Kartenmaterial im
 Rasterformat. Aus diesem Grund kann das Cachen dieser Anfragen einen entschiedenen
@@ -406,7 +406,7 @@ jedem (produktiven) System vorgenommen werden. F&#xFC;r das Cachen von Kartenkac
 existieren eine Vielzahl guter OpenSource Caching-Engines, wir werden an dieser
 Stelle jedoch den standardm&#xE4;&#xDF;ig im GeoServer integrierten GeoWebCache (GWC) nutzen,
 der als Proxy zwischen Client und GeoServer fungiert (siehe Abbildung).</p>
-<figure id="fig4.2.1"><img src="../assets/gwc.png" alt="Funktions&#xFC;bersicht des GWC als Proxy, &lt;http://geowebcache.org/docs/current/_images/how_it_works.png&gt;"><figcaption>Funktions&#xFC;bersicht des GWC als Proxy, <http: geowebcache.org="" docs="" current="" _images="" how_it_works.png=""></http:></figcaption></figure>
+<figure id="fig4.2.1"><img src="../assets/gwc.png" alt="Funktions&#xFC;bersicht des GWC als Proxy, Quelle: &lt;a href=&quot;http://geowebcache.org/docs/current/introduction/whatis.html&quot;&gt;What Is GeoWebCache?&lt;/a&gt; (zuletzt zugegriffen am 30.06.2016)"><figcaption>Funktions&#xFC;bersicht des GWC als Proxy, Quelle: <a href="http://geowebcache.org/docs/current/introduction/whatis.html">What Is GeoWebCache?</a> (zuletzt zugegriffen am 30.06.2016)</figcaption></figure>
 <p>Prinzipiell bietet der GWC zwei Methoden zum Anlegen der Kartenkacheln:</p>
 <ol>
 <li><strong>On-The-Fly-Prozessierung</strong>: Wird ein GWC-Layer erstmalig von einem Client
@@ -427,15 +427,15 @@ Beispiel der On-The-Fly-Prozessierung beschr&#xE4;nken und beispielhaft einen Ca
 f&#xFC;r den Layer topp:states vorbereiten.</p>
 <p>Auf der OSGeoLive werden die vorgerechneten Kartenkacheln im Verzeichnis</p>
 <p><pre>/usr/local/lib/geoserver-2.8.2/data_dir/gwc/</pre> abgelegt. Navigieren Sie zun&#xE4;chst
-im Terminal (<a href="../assets/terminal_icon.png"></a>) zu diesem Verzeichnis und lassen
+im Terminal <img src="../assets/terminal_icon.png" alt="terminal_icon"> zu diesem Verzeichnis und lassen
 Sie sich den Inhalt mit dem Befehl <code>ls -lh</code> (oder einer vergleichbaren Operation)
 anzeigen. Die Ausgabe sollte dabei in etwa wie folgt aussehen und aktuell nur
-die globale Konfigurationsdatei geowebcache.xml f&#xFC;r den GWC sowie ein leeres
+die globale Konfigurationsdatei <code>geowebcache.xml</code> f&#xFC;r den GWC sowie ein leeres
 tempor&#xE4;res Verzeichnis enthalten.</p>
 <pre><code class="lang-bash">-rw-rw-r-- <span class="hljs-number">1</span> root users <span class="hljs-number">4</span>,<span class="hljs-number">8</span>K Jan <span class="hljs-number">14</span> <span class="hljs-number">19</span>:<span class="hljs-number">58</span> geowebcache.xml
 drwxrwxr-x <span class="hljs-number">2</span> root users    <span class="hljs-number">3</span> Jan <span class="hljs-number">14</span> <span class="hljs-number">19</span>:<span class="hljs-number">58</span> tmp/
 </code></pre>
-<blockquote class="clearfix alert alert-info"><strong class="fa fa-4x fa-edit"></strong>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-4x fa-info"></strong>
 <p></p>
 <p>Das Verzeichnis <code>gwc/</code> wird per default auf root-Ebene im GeoServer Datenverzeichnis
 angelegt. Soll dieses ge&#xE4;ndert werden, sollte der folgende Eintrag in die web.xml
@@ -451,10 +451,10 @@ Ordners beachten!):</p>
 Zeitpunkt noch kein Verzeichnis mit vorberechneten Kartenkacheln, weshalb wir im
 Folgenden die notwendigen Schritte zum Anlegen eines GWC-Layers vollziehen werden:</p>
 <ol>
-<li>&#xD6;ffnen Sie in der <a href="http://localhost/geoserver" target="_blank">GeoServer GUI</a> unter |gui1| die Konfiguration
-f&#xFC;r den Layer states und w&#xE4;hlen Sie dort den Reiter Kartenkachel-Cache.</li>
-<li>Um einen gecachten Layer zu erzeugen, muss die erste Checkbox Erzeuge einen
-gecachten Layer f&#xFC;r diesen Layer aktiviert sein (F&#xFC;r den ausgew&#xE4;hlten Layer
+<li>&#xD6;ffnen Sie in der <a href="http://localhost:8082/geoserver" target="_blank">GeoServer GUI</a> unter <img src="../assets/gui3.png" alt="layer\__icon"> die Konfiguration
+f&#xFC;r den Layer <em>&quot;states&quot;</em> und w&#xE4;hlen Sie dort den Reiter Kartenkachel-Cache.</li>
+<li>Um einen gecachten Layer zu erzeugen, muss die erste Checkbox <em>&quot;Erzeuge einen
+gecachten Layer f&#xFC;r diesen Layer&quot;</em> aktiviert sein (F&#xFC;r den ausgew&#xE4;hlten Layer
 bereits eingestellt).</li>
 <li><p>&#xDC;berpr&#xFC;fen Sie nun die weiteren Einstellungen und passen Sie diese ggf. an
 Ihre Bed&#xFC;rfnisse an:</p>
@@ -468,11 +468,10 @@ eine Kachelgr&#xF6;&#xDF;e von 256px eine Metatile-Kachelgr&#xF6;&#xDF;e von 768
 <p>Metatiles werden in erster Linie ben&#xF6;tigt, um doppelte Kartenbeschriftungen
 (z.B. von Stra&#xDF;enlayern) in zwei aneinanderliegenden Kacheln zu vermeiden.</p>
 </li>
-<li><p><strong>Kachel-Umrandung</strong>: Zus&#xE4;tzlicher Rahmen (in px), der um eine Kachel
+<li><strong>Kachel-Umrandung</strong>: Zus&#xE4;tzlicher Rahmen (in px), der um eine Kachel
 angefordert werden soll. Nur sinnvoll, wenn in Verbindung mit der Vernwendung
 von Metatiles Problemen bei der Darstellung von Labels und/oder Features
-am Kachelrand auftreten.</p>
-</li>
+am Kachelrand auftreten.</li>
 <li><strong>Bildformat f&#xFC;r Kacheln</strong>: Das Standard Bildformat f&#xFC;r die Kacheln. Dieses
 Format sollte unbedingt in Abh&#xE4;ngigkeit Ihrer Clients bzw. des dort definierten
 Anfrage-Bildformats f&#xFC;r die gecachten Layer gew&#xE4;hlt werden, andernfalls
@@ -495,9 +494,9 @@ unter dem Men&#xFC;eintrag |gui2| anpassen.</p>
 </li>
 </ul>
 </li>
-<li><p>Im n&#xE4;chsten Schritt werden wir pr&#xFC;fen, ob der Layer korrekt gecacht wird und
-die HTTP-Response Header eines GWC-Layers analysieren. &#xD6;ffnen Sie hierzu die
-GWC Layervorschau unter |gui3| und w&#xE4;hlen Sie dort unter dem Layereintrag topp:states
+<li><p>Im n&#xE4;chsten Schritt werden wir pr&#xFC;fen, ob der Layer korrekt gecacht wird. Hierzu analysieren wir
+die HTTP-Response-Headers eines GWC-Layers bspw. der einer der gelieferten Kacheln.
+&#xD6;ffnen Sie hierzu die GWC Layervorschau und w&#xE4;hlen Sie dort unter dem Layereintrag <code>topp:states</code>
 in der Combobox Vorschau den Wert EPSG:900913/png. Nachdem die Vorschau in einem
 neuen Tab/Fenster ge&#xF6;ffnet wurde, &#xF6;ffnen wir &#xFC;ber <code>F12</code> die Entwicklerkonsole
 des Browsers und navigieren in dieser zum Reiter Netzwerkanalyse (siehe Abbildung).
@@ -505,7 +504,7 @@ des Browsers und navigieren in dieser zum Reiter Netzwerkanalyse (siehe Abbildun
  aktuelle Seite ggf. neu geladen werden!</p>
 <p> <img src="../assets/developer_tools.png" alt=""></p>
 </li>
-<li><p>Leeren Sie die Netzwerk-&#xDC;bersicht (|empty_network_tab| unten rechts in der
+<li><p>Leeren Sie die Netzwerk-&#xDC;bersicht (<img src="../assets/empty_network_tab.png" alt="empty\_network\_tab"> unten rechts in der
 Entwicklerkonsole) und zoomen Sie (einmalig!) zu einem beliebigen Kartenausschnitt.</p>
 </li>
 <li><p>Im Reiter Netzwerkanalyse erscheinen alle Requests des Kartenclients an den
@@ -559,9 +558,9 @@ im Browser zu analysieren. Fahren Sie nun mit dem <a href="datadir.html">n&#xE4;
 <p>In der Praxis wird es in aller Regel unter gegebenen Ressourcen notwendig sein,
 den Layercache f&#xFC;r h&#xE4;ufig angeforderte Layer im Voraus zu berechnen. Die folgende
 Liste f&#xFC;hrt die notwendingen Schritte am Beispiel des Layers topp:states in
-Kurzform auf. Weiterf&#xFC;hrende Informationen finden Sie in der <a href="http://geowebcache.org/docs/current/webinterface/index.html" target="_blank">GWC Dokumentation</a>.</p>
+Kurzform auf. Weiterf&#xFC;hrende Informationen finden Sie in der <a href="http://geowebcache.org/docs/stable/webinterface/index.html" target="_blank">GWC Dokumentation</a>.</p>
 <ol>
-<li>&#xD6;ffnen Sie die die GWC Administrationsoberfl&#xE4;che &#xFC;ber <a href="http://localhost/geoserver/gwc&gt;" target="_blank">http://localhost/geoserver/gwc&gt;</a>
+<li>&#xD6;ffnen Sie die die GWC Administrationsoberfl&#xE4;che &#xFC;ber <a href="http://localhost:8082/geoserver/gwc" target="_blank">http://localhost:8082/geoserver/gwc</a>
 und w&#xE4;hlen Sie unter A list of all the layers and automatic demos den Eintrag
 Seed this Layer unterhalb von Layer topp:states aus. In diesem Dialog kann
 &#xFC;ber die oberen beiden Auswahlboxen gepr&#xFC;ft werden, ob f&#xFC;r den aktuell

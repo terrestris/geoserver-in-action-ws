@@ -77,7 +77,7 @@
         data-chapter-title="Kompilieren des Quellcodes mit maven"
         data-filepath="basics/compilesource.md"
         data-basepath=".."
-        data-revision="Thu Jun 30 2016 15:50:21 GMT+0000 (UTC)"
+        data-revision="Fri Jul 01 2016 08:08:10 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -308,7 +308,7 @@
                         
                             <b>4.2.</b>
                         
-                        Layer cachen mit GWC
+                        Cachen von Layern mit GWC
                     </a>
             
             
@@ -426,20 +426,25 @@ eine freie Software zur verteilen Versionsverwaltung von Dateien, mit dem z.B.
 auch der Linux-Kernel verwaltet wird. Den Quellcode des GeoServers finden Sie hier:</p>
 <p><a href="https://github.com/geoserver/geoserver" target="_blank">https://github.com/geoserver/geoserver</a></p>
 <p>Wenn Sie sich dort in den Ordner <code>src/extension/inspire</code> durchklicken, k&#xF6;nnen Sie
-feststellen, dass es in jedem dieser drei Ordner eine Datei pom.xml gibt. <em>POM</em>
+feststellen, dass es in jedem dieser drei Ordner eine Datei <code>pom.xml</code> gibt. <em>POM</em>
 steht f&#xFC;r Project Object Model und es handelt sich hier um die Konfigurationsdateien
-f&#xFC;r Maven, in denen z.B. Abh&#xE4;ngigkeiten zu anderen Bibliotheken definiert sind.</p>
-<p>Jede Datei pom.xml repr&#xE4;sentiert dabei ein eigenes Maven-Modul. Die pom.xml im
-Ordner src/ ist die zentrale Maven-Konfigurationsdatei auf h&#xF6;chster Ebene, also
-des GeoServers als Gesamtsystem. Die pom.xml im Ordner src/extension/ definiert
-ein Maven-Submodul <em>extension</em>, die pom.xml in src/extension/inspire/ ist wiederum
+f&#xFC;r Maven (<code>pom.xml</code>), in denen z.B. Abh&#xE4;ngigkeiten zu anderen Bibliotheken definiert sind.</p>
+<p>Jede <code>pom.xml</code> im Ordner <code>src/</code> ist die zentrale Maven-Konfigurationsdatei auf h&#xF6;chster Ebene, also
+des GeoServers als Gesamtsystem und repr&#xE4;sentiert dabei ein eingenst&#xE4;ndiges Maven-Modul.
+Die <code>pom.xml</code> im Ordner <code>src/extension/</code> definiert ein Maven-Submodul <em>extension</em>,
+die <code>pom.xml</code> in <code>src/extension/inspire/</code> ist wiederum
 ein Submodul von <em>extension</em>.</p>
 <p>Wenn Sie auf dem Terminal unterwegs sind und in ein Verzeichnis navigieren, dass
-eine pom.xml enth&#xE4;lt, k&#xF6;nnen Sie dort Maven-Befehle ausf&#xFC;hren. Der Befehl
-mvn package w&#xFC;rde z.B. das entsprechende Artefakt bauen und in einen Unterordner
-target/ ablegen.</p>
-<p>Details zur Verwendung von Maven mit dem GeoServer finden Sie unter <a href="http://docs.geoserver.org/latest/en/developer/maven-guide/index.html" target="_blank"><a href="http://docs.geoserver.org/latest/en/developer/maven-guide/index.html" target="_blank">http://docs.geoserver.org/latest/en/developer/maven-guide/index.html</a></a>.</p>
+eine <code>pom.xml</code> enth&#xE4;lt, k&#xF6;nnen Sie dort Maven-Befehle ausf&#xFC;hren. Der Befehl
+<code>mvn package</code> w&#xFC;rde z.B. das entsprechende Artefakt bauen und in einen Unterordner
+<code>target/</code> ablegen.</p>
+<p>N&#xE4;here Details zur Verwendung von Maven beim Kompilieren von GeoServer finden Sie unter <a href="http://docs.geoserver.org/latest/en/developer/maven-guide/index.html" target="_blank"><a href="http://docs.geoserver.org/latest/en/developer/maven-guide/index.html" target="_blank">http://docs.geoserver.org/latest/en/developer/maven-guide/index.html</a></a>.</p>
 <h2 id="kompilieren-der-inspireerweiterung">Kompilieren der INSPIRE-Erweiterung</h2>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-4x fa-info"></strong>
+<p>
+Dieser Abschnitt muss noch &#xFC;berarbeitet werden.
+Es ist m&#xF6;glich, dass hier nicht alle Schritte erwartungsgem&#xE4;&#xDF; funktionieren.</p>
+</blockquote>
 <p>Wir werden nun die INSPIRE-Erweiterung des GeoServers auf Basis des Quellcodes
 selber kompilieren. Anschlie&#xDF;end kann die Erweiterung analog zum <a href="installextensions.html">vorigen Abschnitt</a>
 im GeoServer installiert werden.</p>
@@ -491,10 +496,14 @@ verwenden:</p>
 Verzeichnis <code>~/src/extension/inspire/target/</code> das erzeugte Kompilat (gs-inspire-2.8.2.jar),
 welches wie im vorigen <a href="installextensions.html">Abschnitt</a> auf dem GeoServer
 installiert werden kann.</p>
-<pre><code class="lang-bash">sudo cp \
-  ~/src/extension/inspire/target/gs-inspire-{{ book.geoServerVersion }}.jar \
-  /usr/<span class="hljs-built_in">local</span>/lib/geoserver-{{ book.geoServerVersion }}/webapps/geoserver/WEB-INF/lib
-</code></pre>
+<pre>
+<xmp style="margin:0; font-size: .85em;">
+sudo cp \
+  ~/src/extension/inspire/target/gs-inspire-2.8.2.jar \
+  /usr/local/lib/geoserver-2.8.2/webapps/geoserver/WEB-INF/lib
+</xmp>
+</pre>
+
 <p>Sobald dies geschehen ist (GeoServer-Neustart nicht vergessen!), erscheint bei
 der WMS-Konfiguration in der GeoServer-Weboberfl&#xE4;che ein zus&#xE4;tzlicher Bereich
 <em>INSPIRE</em> (unten).</p>

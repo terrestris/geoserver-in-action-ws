@@ -77,7 +77,7 @@
         data-chapter-title="Katalog auslesen"
         data-filepath="rest/read.md"
         data-basepath=".."
-        data-revision="Thu Jun 30 2016 15:50:21 GMT+0000 (UTC)"
+        data-revision="Fri Jul 01 2016 08:08:10 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -308,7 +308,7 @@
                         
                             <b>4.2.</b>
                         
-                        Layer cachen mit GWC
+                        Cachen von Layern mit GWC
                     </a>
             
             
@@ -418,7 +418,7 @@ direkte Kommunikation aus dem Programmcode heraus erlauben, verf&#xFC;gbar und z
 <p>&#xD6;ffnen Sie ein Browserfenster und geben Sie dort die folgende Adresse ein (Die Ressource
 ben&#xF6;tigt eine Authentifizierung mit einem g&#xFC;ltigen GeoServer Nutzer, geben Sie
 hier <strong>admin:geoserver</strong> ein):</p>
-<pre><code class="bash">http://localhost/geoserver/rest
+<pre><code class="bash">http://localhost:8082/geoserver/rest
 </code></pre>
 
 <p>Nach Aufruf der Adresse erscheint im Browser eine einfache Liste, die eine &#xDC;bersicht
@@ -426,7 +426,7 @@ der aktuellen GeoServer Configuration API bietet (siehe Abbildung).</p>
 <figure id="fig3.1.1"><img src="../assets/read1.png" alt="Startansicht der GeoServer Configuration API."><figcaption>Startansicht der GeoServer Configuration API.</figcaption></figure>
 <p>Die Listenansicht ist voll navigierbar und eindeutig zuordenbar. Eine Auswahl im
 Browser (z.B. des Eintrags <em>workspaces</em>) navigiert den Browser zur eindeutigen
-URL <a href="http://localhost/geoserver/rest/workspaces" target="_blank">http://localhost/geoserver/rest/workspaces</a>. Der Aufbau der Liste (bei Auswahl eines
+URL <a href="http://localhost:8082/geoserver/rest/workspaces" target="_blank">http://localhost:8082/geoserver/rest/workspaces</a>. Der Aufbau der Liste (bei Auswahl eines
 Arbeitsbereichs) folgt dabei der logischen Struktur des GeoServer-Katalogs:</p>
 <pre><code>workspace
   |
@@ -439,26 +439,34 @@ auf. Der GeoServer unterst&#xFC;tzt dar&#xFC;berhinaus die Formate <em>JSON</em>
 Notation) und <em>XML</em> (Extensible Markup Language), die insbesondere bei der
 Manipulation einer Ressource relevant sind. Vergleichen Sie die folgenden
 Ausgaben im Browser:</p>
-<pre><code class="bash">http://localhost/geoserver/rest/workspaces
+<pre><code class="bash">http://localhost:8082/geoserver/rest/workspaces
 </code></pre>
 
-<pre><code class="bash">http://localhost/geoserver/rest/workspaces.json
+<pre><code class="bash">http://localhost:8082/geoserver/rest/workspaces.json
 </code></pre>
 
-<pre><code class="bash">http://localhost/geoserver/rest/workspaces.xml
+<pre><code class="bash">http://localhost:8082/geoserver/rest/workspaces.xml
 </code></pre>
 
 <p>sowie</p>
-<pre><code class="bash">http://localhost/geoserver/rest/workspaces/topp/datastores/states_shapefile/featuretypes/states
+<pre><code class="bash">http://localhost:8082/geoserver/rest/workspaces/topp/datastores/states_shapefile/featuretypes/states
 </code></pre>
 
-<pre><code class="bash">http://localhost/geoserver/rest/workspaces/topp/datastores/states_shapefile/featuretypes/states.json
+<pre><code class="bash">http://localhost:8082/geoserver/rest/workspaces/topp/datastores/states_shapefile/featuretypes/states.json
 </code></pre>
 
-<pre><code class="bash">http://localhost/geoserver/rest/workspaces/topp/datastores/states_shapefile/featuretypes/states.xml
+<pre><code class="bash">http://localhost:8082/geoserver/rest/workspaces/topp/datastores/states_shapefile/featuretypes/states.xml
 </code></pre>
 
-<p>Die obigen Befehle k&#xF6;nnen ebenfalls direkt &#xFC;ber cURL aufgerufen werden. &#xD6;ffnen Sie
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-4x fa-info"></strong>
+<p>
+Je nach Konfiguration des Browsers erhalten Sie bei der R&#xFC;ckgabe eines JSON eine einzeilige Zeichnenkette.
+Um die Zeichnenkette in eine leichter lesbare Darstellung umzuwandeln, empfehlen wir die Nutzung von JSON-Formatierungswerkzeugen.
+Diese stehen in Form von Browser-Plugins (bspw. <a href="https://github.com/callumlocke/json-formatter" target="_blank">JSON Formatter f&#xFC;r Chrome</a> oder <a href="https://jsonview.com/" target="_blank">JSONView f&#xFC;r FireFox</a>) bzw. <a href="https://jsonformatter.curiousconcept.com/" target="_blank">Online Werkzeugen</a>
+bereit.</p>
+</blockquote>
+<hr>
+<p>Die obigen Aufrufe k&#xF6;nnen ebenfalls direkt &#xFC;ber cURL ausgef&#xFC;hrt werden. &#xD6;ffnen Sie
 hierzu das Terminal (&#xFC;ber den Button <img src="../assets/terminal_icon.png" alt="">) im unteren
 Systempanel) und f&#xFC;gen Sie dort den folgenden Befehl ein. Der aktuelle Pfad im
 Terminal ist dabei irrelevant.</p>
@@ -467,13 +475,13 @@ Terminal ist dabei irrelevant.</p>
   -u admin:geoserver \
   -XGET \
   -H &quot;Accept: text/html&quot; \
-  http://localhost/geoserver/rest/workspaces
+  http://localhost:8082/geoserver/rest/workspaces
 </code></pre>
 
-<p>Der obige Request ist analog zu dem ersten hier aufgef&#xFC;hrten Beispiel <a href="http://localhost/geoserver/rest/workspaces" target="_blank">http://localhost/geoserver/rest/workspaces</a>
+<p>Der obige Request ist analog zu dem ersten hier aufgef&#xFC;hrten Beispiel <a href="http://localhost:8082/geoserver/rest/workspaces" target="_blank">http://localhost:8082/geoserver/rest/workspaces</a>
 und wird entsprechend die selbe Antwort im HTML-Format liefern (siehe Output aller
 vorhandenen Arbeitsbereiche im HTML-Format). Das Format der Response ist jedoch
-auch &#xFC;ber cURL steuerbar. Hierzu muss lediglich der <em>Accept</em> Header des Requests
+auch &#xFC;ber cURL steuerbar. Hierzu muss lediglich der <em>Accept</em> - Header des Requests
 von <em>text/html</em> auf <em>text/json</em> bzw. <em>text/xml</em> gesetzt werden.</p>
 <pre><xmp style="margin:0; font-size: .85em;"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -484,14 +492,14 @@ von <em>text/html</em> auf <em>text/json</em> bzw. <em>text/xml</em> gesetzt wer
 <body>
 Workspaces
 <ul>
-  <li><a href=" http://localhost/geoserver/rest/workspaces/it.geosolutions.html" target="_blank">it.geosolutions</a></li>
-  <li><a href=" http://localhost/geoserver/rest/workspaces/cite.html" target="_blank">cite</a> [default] </li>
-  <li><a href=" http://localhost/geoserver/rest/workspaces/tiger.html" target="_blank">tiger</a></li>
-  <li><a href=" http://localhost/geoserver/rest/workspaces/sde.html" target="_blank">sde</a></li>
-  <li><a href=" http://localhost/geoserver/rest/workspaces/topp.html" target="_blank">topp</a></li>
-  <li><a href=" http://localhost/geoserver/rest/workspaces/sf.html" target="_blank">sf</a></li>
-  <li><a href=" http://localhost/geoserver/rest/workspaces/nurc.html" target="_blank">nurc</a></li>
-  <li><a href=" http://localhost/geoserver/rest/workspaces/cartaro.html" target="_blank">cartaro</a></li>
+  <li><a href=" http://localhost:8082/geoserver/rest/workspaces/it.geosolutions.html" target="_blank">it.geosolutions</a></li>
+  <li><a href=" http://localhost:8082/geoserver/rest/workspaces/cite.html" target="_blank">cite</a> [default] </li>
+  <li><a href=" http://localhost:8082/geoserver/rest/workspaces/tiger.html" target="_blank">tiger</a></li>
+  <li><a href=" http://localhost:8082/geoserver/rest/workspaces/sde.html" target="_blank">sde</a></li>
+  <li><a href=" http://localhost:8082/geoserver/rest/workspaces/topp.html" target="_blank">topp</a></li>
+  <li><a href=" http://localhost:8082/geoserver/rest/workspaces/sf.html" target="_blank">sf</a></li>
+  <li><a href=" http://localhost:8082/geoserver/rest/workspaces/nurc.html" target="_blank">nurc</a></li>
+  <li><a href=" http://localhost:8082/geoserver/rest/workspaces/cartaro.html" target="_blank">cartaro</a></li>
 </ul>
 </body>
 </html>

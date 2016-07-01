@@ -77,7 +77,7 @@
         data-chapter-title="Installieren von Erweiterungen"
         data-filepath="basics/installextensions.md"
         data-basepath=".."
-        data-revision="Thu Jun 30 2016 15:50:21 GMT+0000 (UTC)"
+        data-revision="Fri Jul 01 2016 08:08:10 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -308,7 +308,7 @@
                         
                             <b>4.2.</b>
                         
-                        Layer cachen mit GWC
+                        Cachen von Layern mit GWC
                     </a>
             
             
@@ -404,18 +404,21 @@ Erweiterungen, die es erm&#xF6;glichen Vektor-Datenquellen zu verwenden, die ihr
 Daten aus bestimmten SQL-Datenbanken beziehen (z.B. MySQL oder Oracle). Ebenso
 gibt es Erweiterungen, die es erm&#xF6;glichen <em>Excel</em> (und weitere) als Ausgabeformat
 zu unterst&#xFC;tzen.</p>
+<p>Ein vergleichsweise neues Zusatzmodul ist die <a href="http://docs.geoserver.org/maintain/en/user/extensions/importer/using.html" target="_blank">Importer-Extension</a>.
+Hiermit ist es auf einfache Weise m&#xF6;glich, Geodaten (Vektor- und Rasterdaten) &#xFC;ber die grafische Oberfl&#xE4;che des GeoServers oder eine REST-Schnittstelle zu importieren.
+Neben dem Import in das GeoServer-Datenverzeichnis kann auch in Datenbanken (u.a. PostGIS un Oracle) importiert und Vorverarbeitungsschritte (Transformationen o.&#xE4;.) vorgeschaltet werden.</p>
 <h2 id="&#xFC;bersicht-&#xFC;ber-verf&#xFC;gbare-erweiterungen">&#xDC;bersicht &#xFC;ber verf&#xFC;gbare Erweiterungen</h2>
 <p>Auf <a href="http://geoserver.org/release/2.8.2/" target="_blank">http://geoserver.org/release/2.8.2/</a> finden Sie im Bereich
 <em>Extensions</em> eine Auflistung zahlreicher Erweiterungen, die als stabile betrachtet
 werden und im Rahmen eines Release-Prozesses bereitgestellt werden. Dar&#xFC;berhinaus
 gibt es noch <em>Community-Extensions</em>, die einen experimentellen oder instabilen
 Status haben und kein Teil des offiziellen <em>Release</em>-Prozesses sind.</p>
-<p>Im Rahmen des Workshops werden wir (exemplarisch) das WPS-Modul installieren.
+<p>Im Rahmen des Workshops werden wir exemplarisch das WPS-Modul installieren.
 <a href="http://www.opengeospatial.org/standards/wps" target="_blank">WPS</a> steht f&#xFC;r <em>Web Processing Service</em>
-und ist (wie WMS und WFS) ein Standard des OGC, in dem Regeln f&#xFC;r das Anfragen
+und ist (wie WMS und WFS) ein <a href="http://www.opengeospatial.org/standards/wps" target="_blank">Standard des OGC</a>, in dem Regeln f&#xFC;r das Anfragen
 und Antworten von (r&#xE4;umlichen) Prozessen, definiert sind.</p>
-<figure id="fig2.2.1"><img src="../assets/gs_extensions.png" alt="GeoServer-Erweiterungen. Rot markiert ist die WPS-Erweiterung."><figcaption>GeoServer-Erweiterungen. Rot markiert ist die WPS-Erweiterung.</figcaption></figure>
 <h2 id="installieren-der-wpserweiterung">Installieren der WPS-Erweiterung</h2>
+<figure id="fig2.2.1"><img src="../assets/gs_extensions.png" alt="GeoServer-Erweiterungen. Rot markiert ist die WPS-Erweiterung."><figcaption>GeoServer-Erweiterungen. Rot markiert ist die WPS-Erweiterung.</figcaption></figure>
 <p>F&#xFC;hren Sie die folgenden Schritte aus, um diese Erweiterung zu installieren:</p>
 <ol>
 <li>Stoppen Sie den Geoserver durch einen Doppelklick auf <strong>Stop GeoServer</strong> im
@@ -424,19 +427,11 @@ Ordner <strong>Web Services</strong> auf Ihrem Desktop.</li>
 (oder der offiziellen Release-Seite) herunter. W&#xE4;hlen Sie bitte <em>Datei speichern</em>
 und nicht <em>&#xD6;ffnen mit</em>!</li>
 <li>Wechseln Sie im Terminal in das im vorigen <a href="folderstructure.html">Abschnitt</a>
-erl&#xE4;uterte Verzeichnis zur Installation von Erweiterungen:</li>
-</ol>
-<pre><xmp style="margin:0; font-size: .85em;">cd /usr/local/lib/geoserver-2.8.2/webapps/geoserver/WEB-INF/lib/
-</xmp></pre>
-
-<ol>
+erl&#xE4;uterte Verzeichnis zur Installation von Erweiterungen:<pre><xmp style="margin:0; font-size: .85em;">cd /usr/local/lib/geoserver-2.8.2/webapps/geoserver/WEB-INF/lib/
+</xmp></pre></li>
 <li>Da Sie root-Rechte ben&#xF6;tigen, um in das lib-Verzeichnis schreiben zu k&#xF6;nnen,
-muss der folgende Befehl zum Entpacken des Archivs mit sudo ausgef&#xFC;hrt werden:</li>
-</ol>
-<pre><xmp style="margin:0; font-size: .85em;">sudo unzip /home/user/Downloads/geoserver-2.8.2-wps-plugin.zip
-</xmp></pre>
-
-<ol>
+muss der folgende Befehl zum Entpacken des Archivs mit sudo ausgef&#xFC;hrt werden:<pre><xmp style="margin:0; font-size: .85em;">sudo unzip /home/user/Downloads/geoserver-2.8.2-wps-plugin.zip
+</xmp></pre></li>
 <li>Wenn die jar-Dateien erfolgreich in das lib-Verzeichnis entpackt wurden, muss
 der GeoServer wieder gestartet werden. Dazu klicken Sie auf <strong>Start GeoServer</strong>
 im Ordner <strong>Web Services</strong> auf dem Desktop.</li>
@@ -445,7 +440,7 @@ im Ordner <strong>Web Services</strong> auf dem Desktop.</li>
 ob die Installation der WPS-Erweiterung erfolgreich war. Dazu loggen wir uns
 zun&#xE4;chst mit den Zugangsdaten admin:geoserver ein. Anschlie&#xDF;end muss in dem Men&#xFC;
 auf der linken Seite (im unteren Bereich) auf Demos geklickt werden. Hier findet
-sich nun ein Eintrag WPS Request-Builder, den es an dieser Stelle zuvor nicht
+sich nun ein Eintrag <em>WPS Request-Builder</em>, den es an dieser Stelle zuvor nicht
 gegeben hat.</p>
 <figure id="fig2.2.2"><img src="../assets/wps_vorher_nachher.png" alt="GeoServer-Weboberfl&#xE4;che (Bereich *Demo*) vor und nach der WPS-Installation"><figcaption>GeoServer-Weboberfl&#xE4;che (Bereich *Demo*) vor und nach der WPS-Installation</figcaption></figure>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-4x fa-edit"></strong>

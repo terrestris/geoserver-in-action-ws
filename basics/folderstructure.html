@@ -77,7 +77,7 @@
         data-chapter-title="Ordnerstruktur des GeoServers"
         data-filepath="basics/folderstructure.md"
         data-basepath=".."
-        data-revision="Thu Jun 30 2016 15:50:21 GMT+0000 (UTC)"
+        data-revision="Fri Jul 01 2016 08:08:10 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -308,7 +308,7 @@
                         
                             <b>4.2.</b>
                         
-                        Layer cachen mit GWC
+                        Cachen von Layern mit GWC
                     </a>
             
             
@@ -418,7 +418,7 @@ ist das GeoServer-Verzeichnis:</p>
 </tr>
 <tr>
 <td>data_dir/</td>
-<td>Konfiguration der GeoServer-Daten (z.B. <em>Arbeitsbereiche, Datenquellen, Layer oder Stile</em>). F&#xFC;r Produktivsysteme wird (durch Konfiguration des GeoServers) grunds&#xE4;tzlich empfohlen ein <em>DATA_DIR</em> au&#xDF;erhalb der Webapplikation zu verwenden, da sich der GeoServer auf diese Weise zu neueren Versionen updaten l&#xE4;sst ohne dass die Konfigurationsdaten verloren gehen. Details gibt es <a href="http://docs.geoserver.org/latest/en/user/datadirectory/index.html" target="_blank">hier</a>.</td>
+<td>Konfiguration der GeoServer-Daten (z.B. <em>Arbeitsbereiche, Datenquellen, Layer oder Stile</em>).</td>
 </tr>
 <tr>
 <td>data_dir/logs/</td>
@@ -435,6 +435,14 @@ ist das GeoServer-Verzeichnis:</p>
 <p>Die hier erl&#xE4;uterte Struktur bezieht sich auf die Jetty-Umgebung im OSGeoLive-System.
 In anderen Umgebungen (z.B. auf einem Tomcat mit klassischer .war-Datei-Installation)
 kann die Struktur abweichen.</p>
+</blockquote>
+<hr>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-4x fa-info"></strong>
+<p>
+F&#xFC;r Produktivsysteme wird (durch Konfiguration des GeoServers) grunds&#xE4;tzlich empfohlen
+ein <em>DATA_DIR</em> au&#xDF;erhalb der Webapplikation zu verwenden, da sich der GeoServer auf diese Weise
+zu neueren Versionen updaten l&#xE4;sst ohne dass die Konfigurationsdaten verloren gehen.
+Details gibt es <a href="http://docs.geoserver.org/latest/en/user/datadirectory/index.html" target="_blank">hier</a>.</p>
 </blockquote>
 <p>Im <a href="installextensions.html">folgenden Abschnitt</a> wird erkl&#xE4;rt wie sich die
 Funktionalit&#xE4;t des GeoServers durch das Einbinden zus&#xE4;tzlicher Module erweitern l&#xE4;sst.</p>

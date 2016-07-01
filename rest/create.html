@@ -77,7 +77,7 @@
         data-chapter-title="Katalogeinträge erzeugen"
         data-filepath="rest/create.md"
         data-basepath=".."
-        data-revision="Thu Jun 30 2016 15:50:21 GMT+0000 (UTC)"
+        data-revision="Fri Jul 01 2016 08:08:10 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -308,7 +308,7 @@
                         
                             <b>4.2.</b>
                         
-                        Layer cachen mit GWC
+                        Cachen von Layern mit GWC
                     </a>
             
             
@@ -413,12 +413,12 @@ Befehl zum Erstellen eines neuen Workspaces namens <code>fossgis</code> ein:</p>
   -d "<workspace>
         <name>fossgis</name>
       </workspace>" \
-   http://localhost/geoserver/rest/workspaces
+   http://localhost:8082/geoserver/rest/workspaces
 </xmp></pre>
 
 <p>Der obige Aufruf unterscheidet sich in zwei wesentlichen Punkten von den bisherigen
 Read-Operationen: Wir nutzen f&#xFC;r das Erstellen einer neuen Ressource im Gegensatz
-zur HTTP-Operation <code>GET</code> die Operation <code>POST</code> und schicken einen <code>XML</code> Content
+zur HTTP-Operation <code>GET</code> die Operation <code>POST</code> und schicken den <code>XML</code> - Content
 <code>&lt;workspace&gt;...&lt;/workspace&gt;</code> an eine eindeutige URL der
 REST-API. Die Adresse haben wir durch die bisherigen Schritte identifizieren
 k&#xF6;nnen. Nach Aufruf des Befehls sollte im Terminal folgende Ausgabe erscheinen:</p>
@@ -437,7 +437,7 @@ k&#xF6;nnen. Nach Aufruf des Befehls sollte im Terminal folgende Ausgabe erschei
 * upload completely sent off: 69 out of 69 bytes
 &lt; HTTP/1.1 201 Created
 &lt; Date: Tue, 24 Feb 2015 10:03:56 GMT
-&lt; Location: http://localhost/geoserver/rest/workspaces/fossgis
+&lt; Location: http://localhost:8082/geoserver/rest/workspaces/fossgis
 * Server Noelios-Restlet-Engine/1.0..8 is not blacklisted
 &lt; Server: Noelios-Restlet-Engine/1.0..8
 &lt; Transfer-Encoding: chunked
@@ -449,12 +449,12 @@ k&#xF6;nnen. Nach Aufruf des Befehls sollte im Terminal folgende Ausgabe erschei
 <ol>
 <li><code>HTTP/1.1 201 Created</code>: Der Aufruf wurde erfolgreich bearbeitet und die
 Ressource erstellt.</li>
-<li><code>http://localhost/geoserver/rest/workspaces/fossgis</code>: Die (eindeutige) URL
+<li><code>http://localhost:8082/geoserver/rest/workspaces/fossgis</code>: Die (eindeutige) URL
 unseres neuen Arbeitsbereichs.</li>
 </ol>
 <p>Wir k&#xF6;nnen nun &#xFC;berpr&#xFC;fen, ob der Arbeitsbereich tats&#xE4;chlich angelegt wurde, indem wir</p>
 <ul>
-<li><em>klassisch</em> die <a href="http://localhost/geoserver" target="_blank">GeoServer GUI</a> &#xF6;ffnen und dort &#xFC;ber den
+<li><em>klassisch</em> die <a href="http://localhost:8082/geoserver" target="_blank">GeoServer GUI</a> &#xF6;ffnen und dort &#xFC;ber den
 Men&#xFC;eintrag <code>Arbeitsbereiche</code> alle vorhandenen Arbeitsbereiche auflisten oder</li>
 <li><em>&#xFC;ber die REST-API</em> eine Auflistung aller Arbeitsbereiche anfordern (im <code>XML</code>-Format):</li>
 </ul>
@@ -463,15 +463,15 @@ Men&#xFC;eintrag <code>Arbeitsbereiche</code> alle vorhandenen Arbeitsbereiche a
   -u admin:geoserver \
   -XGET \
   -H "Accept: text/xml" \
-   http://localhost/geoserver/rest/workspaces
+   http://localhost:8082/geoserver/rest/workspaces
 </xmp></pre>
 
 <p>In beiden F&#xE4;llen werden wir erkennen, dass ein neuer Arbeitsbereich namens
-fossgis vorhanden ist.</p>
+<em>fossgis</em> vorhanden ist.</p>
 <h2 id="datenspeicher-erstellen">Datenspeicher erstellen</h2>
 <p>Nachdem wir einen neuen Arbeitsbereich erstellt haben, werden wir diesem einen neuen
-Datenspeicher hinzuf&#xFC;gen. Der folgende Befehl erzeugt (Operation <code>POST</code>!) einen
-neuen PostGIS Datenspeicher (<code>dbtype</code>) mit den Namen natural_earth und den
+Datenspeicher hinzuf&#xFC;gen. Der folgende Befehl erzeugt (Operation <code>POST</code> !) einen
+neuen PostGIS Datenspeicher (<code>dbtype</code>) mit den Namen <em>natural_earth</em> und den
 folgenden DB-Verbindungsparametern:</p>
 <ul>
 <li><strong>Hostadresse</strong>: localhost (<code>host</code>)</li>
@@ -480,25 +480,24 @@ folgenden DB-Verbindungsparametern:</p>
 <li><strong>Benutzer</strong>: user (<code>user</code>)</li>
 <li><strong>Passwort</strong>: user (<code>passwd</code>)</li>
 </ul>
-<pre><xmp style="margin:0; font-size: .85em;">curl \
+<pre><code class="lang-bash">curl \
   -v \
   -u admin:geoserver \
   -XPOST \
-  -H "Content-type: text/xml" \
-  -d "<datastore>
-      <name>natural_earth</name>
-      <connectionparameters>
-        <host>localhost</host>
-        <port>5432</port>
-        <database>natural_earth2</database>
-        <user>user</user>
-        <passwd>user</passwd>
-        <dbtype>postgis</dbtype>
-      </connectionparameters>
-      </datastore>" \
-   http://localhost/geoserver/rest/workspaces/fossgis/datastores
-</xmp></pre>
-
+  -H <span class="hljs-string">&quot;Content-type: text/xml&quot;</span> \
+  <span class="hljs-operator">-d</span> <span class="hljs-string">&quot;&lt;dataStore&gt;
+      &lt;name&gt;natural_earth&lt;/name&gt;
+      &lt;connectionParameters&gt;
+        &lt;host&gt;localhost&lt;/host&gt;
+        &lt;port&gt;5432&lt;/port&gt;
+        &lt;database&gt;natural_earth2&lt;/database&gt;
+        &lt;user&gt;user&lt;/user&gt;
+        &lt;passwd&gt;user&lt;/passwd&gt;
+        &lt;dbtype&gt;postgis&lt;/dbtype&gt;
+      &lt;/connectionParameters&gt;
+      &lt;/dataStore&gt;&quot;</span> \
+   http://localhost:<span class="hljs-number">8082</span>/geoserver/rest/workspaces/fossgis/datastores
+</code></pre>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-4x fa-edit"></strong>
 <p></p>
 <p>Die hier genutzte Datenbank <em>natural_earth2</em> ist auf der OSGeoLive vorinstalliert
@@ -506,14 +505,14 @@ und entstammt dem Natural Earth Projekt. Weiterf&#xFC;hrende Informationen zum D
 sowie die Daten selbst finden Sie unter <a href="http://www.naturalearthdata.com/" target="_blank"><a href="http://www.naturalearthdata.com/" target="_blank">http://www.naturalearthdata.com/</a></a>.</p>
 </blockquote>
 <p>Die erfolgreiche Anlage des Datenspeichers wird uns erneut &#xFC;ber den Statuscode
-<code>HTTP/1.1 201 Created</code> best&#xE4;tigt und kann wiederum &#xFC;ber die <a href="http://localhost/geoserver" target="_blank">GUI</a>
+<code>HTTP/1.1 201 Created</code> best&#xE4;tigt und kann wiederum &#xFC;ber die <a href="http://localhost:8082/geoserver" target="_blank">GUI</a>
 oder das Auslesen &#xFC;ber die API kontrolliert werden:</p>
 <pre><xmp style="margin:0; font-size: .85em;">curl \
   -v \
   -u admin:geoserver \
   -XGET \
   -H "Accept: text/xml" \
-  http://localhost/geoserver/rest/workspaces/fossgis/datastores/natural_earth.xml
+  http://localhost:8082/geoserver/rest/workspaces/fossgis/datastores/natural_earth.xml
 </xmp></pre>
 
 <p>Die Antwort sollte wie folgt aussehen:</p>
@@ -523,7 +522,7 @@ oder das Auslesen &#xFC;ber die API kontrolliert werden:</p>
   <enabled>true</enabled>
   <workspace>
     <name>fossgis</name>
-    <atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="alternate" href="http://localhost/geoserver/rest/workspaces/fossgis.xml" type="application/xml">
+    <atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="alternate" href="http://localhost:8082/geoserver/rest/workspaces/fossgis.xml" type="application/xml">
   </atom:link></workspace>
   <connectionparameters>
     <entry key="port">5432</entry>
@@ -536,7 +535,7 @@ oder das Auslesen &#xFC;ber die API kontrolliert werden:</p>
   </connectionparameters>
   <\_\_default>false</\_\_default>
   <featuretypes>
-    <atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="alternate" href="http://localhost/geoserver/rest/workspaces/fossgis/datastores/natural_earth/featuretypes.xml" type="application/xml">
+    <atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="alternate" href="http://localhost:8082/geoserver/rest/workspaces/fossgis/datastores/natural_earth/featuretypes.xml" type="application/xml">
   </atom:link></featuretypes>
 </datastore>
 </xmp></pre>
@@ -544,8 +543,8 @@ oder das Auslesen &#xFC;ber die API kontrolliert werden:</p>
 <h2 id="stil-erstellen-und-hochladen">Stil erstellen und hochladen</h2>
 <p>Nachdem Arbeitsbereich und Datenspeicher angelegt wurden, k&#xF6;nnen wir im n&#xE4;chsten
 Schritt einen neuen Stil mit dem Namen <code>states_provinces</code> im Arbeitsbereich <code>fossgis</code>
-anlegen, der die Stildatei (SLD, <em>Styled Layer Descriptor</em>) <code>states_provinces.sld</code>
-assoziiert. F&#xFC;hren Sie dazu zun&#xE4;chst den folgenden Befehl aus:</p>
+anlegen, der die Stildatei (SLD, <em>Styled Layer Descriptor</em>) <code>states_provinces.sld</code> assoziiert.</p>
+<p>Die Bereitstellung der SLD-Datei erfolgt &#xFC;ber den folgenden Befehl:</p>
 <pre><xmp style="margin:0; font-size: .85em;">curl \
   -v \
   -u admin:geoserver \
@@ -555,27 +554,33 @@ assoziiert. F&#xFC;hren Sie dazu zun&#xE4;chst den folgenden Befehl aus:</p>
         <name>states_provinces</name>
         <filename>states_provinces.sld</filename>
       </style>" \
-  http://localhost/geoserver/rest/workspaces/fossgis/styles
+  http://localhost:8082/geoserver/rest/workspaces/fossgis/styles
 </xmp></pre>
 
 <p>Erneut wird uns die erfolgreiche Anlage mit dem Status <code>HTTP/1.1 201 Created</code>
-best&#xE4;tigt und wir pr&#xFC;fen dies wiederum &#xFC;ber die <a href="http://localhost/geoserver" target="_blank">GUI</a></p>
+best&#xE4;tigt und wir pr&#xFC;fen dies wiederum &#xFC;ber die <a href="http://localhost:8082/geoserver" target="_blank">GUI</a></p>
 <p>Nachdem die Ressource im GeoServer publiziert wurde, k&#xF6;nnen wir &#xFC;ber REST den Stil
-selbst (<em>states_provinces.sld</em>) an die Ressource binden. Hierzu k&#xF6;nnen wir die
-HTTP-Operation <code>PUT</code> nutzen, um eine Datei auf den Server zu kopieren:</p>
+selbst (<em>states_provinces.sld</em>) an die Ressource binden. Hierf&#xFC;r wird die Datei
+<code>states_provinces.xml</code> aus den Workshop-Materials ben&#xF6;tigt.
+Sofern diese noch nicht heruntergeladen wurde, kann dies im Terminal &#xFC;ber</p>
+<pre><code class="lang-bash">wget https://terrestris.github.io/geoserver-in-action-ws/materials/states_provinces.sld
+</code></pre>
+<p>erfolgen, wobei die SLD-Datei in das aktuelle Verzeichnis abgelegt wird.</p>
+<p>Mit Hilfe der HTTP-Operation <code>PUT</code> kann anschlie&#xDF;end diese SLD-Datei auf den Server
+kopiert werden:</p>
 <pre><xmp style="margin:0; font-size: .85em;">curl \
   -v \
   -u admin:geoserver \
   -XPUT \
   -H "Content-type: application/vnd.ogc.sld+xml" \
   -d @states_provinces.sld \
-  http://localhost/geoserver/rest/workspaces/fossgis/styles/states_provinces
+  http://localhost:8082/geoserver/rest/workspaces/fossgis/styles/states_provinces
 </xmp></pre>
 
 <p><strong>Wichtig:</strong> Der obige Befehl setzt zwei Dinge voraus:</p>
 <ol>
 <li>Es existiert eine SLD-Datei mit dem Namen <em>states_provinces.sld</em> und einem
-validen SLD Inhalt. Die entsprechende Datei kann hier \&lt;./files/states_provinces.sld&gt;
+validen SLD Inhalt. Die entsprechende Datei kann <a href="https://terrestris.github.io/geoserver-in-action-ws/materials/states_provinces.sld" target="_blank">hier</a>
 heruntergeladen werden.</li>
 <li>Der Pfad zur Datei <em>states_provinces.sld</em> ist korrekt. Im obigen Beispiel
 liegt die Datei im gleichen Ordner aus dem cURL aufgerufen wurde. Wechseln Sie
@@ -584,31 +589,30 @@ also ggf. im Terminal zum Ordner der Datei oder passen Sie den cURL-Aufruf an.</
 <p>War der Befehl erfolgreich, enth&#xE4;lt die Antwort im Terminal den Teilstring <code>&lt; HTTP/1.1 200 OK</code>.</p>
 <h2 id="layer-anlegen">Layer anlegen</h2>
 <p>Der n&#xE4;chste logische Schritt ist das Anlegen eines Layers auf Basis einer Geometrietabelle
-aus unserem neuen Datenspeichers natural_earth. Als Beispiel werden wir die Tabelle
+aus unserem zuvor angelegten Datenspeicher natural_earth. Als Beispiel werden wir die Tabelle
 <em>ne_10m_admin_1_states_provinces_shp</em> mit dem folgenden Befehl im Arbeitsbereich
 fossgis ver&#xF6;ffentlichen:</p>
-<pre><xmp style="margin:0; font-size: .85em;">curl \
+<pre><code class="lang-bash">curl \
   -v \
   -u admin:geoserver \
   -XPOST \
-  -H "Content-type: text/xml" \
-  -d "<featuretype>
-        <name>states_provinces</name>
-        <nativename>ne_10m_admin_1_states_provinces_shp</nativename>
-        <nativecrs>EPSG:4326</nativecrs>
-        <enabled>true</enabled>
-      </featuretype>" \
-  http://localhost/geoserver/rest/workspaces/fossgis/datastores/natural_earth/featuretypes
-</xmp></pre>
-
+  -H <span class="hljs-string">&quot;Content-type: text/xml&quot;</span> \
+  <span class="hljs-operator">-d</span> <span class="hljs-string">&quot;&lt;featureType&gt;
+        &lt;name&gt;states_provinces&lt;/name&gt;
+        &lt;nativeName&gt;ne_10m_admin_1_states_provinces_shp&lt;/nativeName&gt;
+        &lt;nativeCRS&gt;EPSG:4326&lt;/nativeCRS&gt;
+        &lt;enabled&gt;true&lt;/enabled&gt;
+      &lt;/featureType&gt;&quot;</span> \
+  http://localhost:<span class="hljs-number">8082</span>/geoserver/rest/workspaces/fossgis/datastores/natural_earth/featuretypes
+</code></pre>
 <p>Und erneut begr&#xFC;&#xDF;t uns nach erfolgreichem Hinzuf&#xFC;gen der Ressource die Statusmeldung
 <code>HTTP/1.1 201 Created</code> und selbstverst&#xE4;ndlich k&#xF6;nnen wir an dieser Stelle erneut das
-Ergebnis &#xFC;ber die <a href="http://localhost/geoserver" target="_blank">GUI</a> oder die REST-API begutachten:</p>
+Ergebnis &#xFC;ber die <a href="http://localhost:8082/geoserver" target="_blank">GUI</a> oder die REST-API begutachten:</p>
 <pre><xmp style="margin:0; font-size: .85em;">curl \
   -v \
   -u admin:geoserver \
   -XGET \
-  http://localhost/geoserver/rest/workspaces/fossgis/datastores/natural_earth/featuretypes/states_provinces.xml
+  http://localhost:8082/geoserver/rest/workspaces/fossgis/datastores/natural_earth/featuretypes/states_provinces.xml
 </xmp></pre>
 
 <p>Die XML-Repr&#xE4;sentation des Layers ist demnach wie folgt (gek&#xFC;rzt):</p>
@@ -691,7 +695,7 @@ Ergebnis &#xFC;ber die <a href="http://localhost/geoserver" target="_blank">GUI<
 
 <p>Bereits zu diesem Zeitpunkt k&#xF6;nnen wir den Layer &#xFC;ber die Layervorschau des GeoServers
 oder &#xFC;ber einen beliebigen Client (z.B. QGIS) aufrufen. &#xD6;ffnen Sie hierzu die
-<a href="http://localhost/geoserver" target="_blank">Weboberfl&#xE4;che</a> vom GeoServer und rufen Sie dort die Layervorschau
+<a href="http://localhost:8082/geoserver" target="_blank">Weboberfl&#xE4;che</a> vom GeoServer und rufen Sie dort die Layervorschau
 (<img src="../assets/gui1.png" alt="layer\_preview\_icon">) auf. &#xD6;ffnen Sie dort den Layer in der interaktiven
 Vorschau durch einen Klick auf OpenLayers (<img src="../assets/gui2.png" alt="openlayers\_icon">). Die
 Startansicht der Vorschau sollte dabei in etwa der folgenden Abbildung entsprechen.</p>
@@ -699,24 +703,23 @@ Startansicht der Vorschau sollte dabei in etwa der folgenden Abbildung entsprech
 <h2 id="layerstil-zuordnen">Layerstil zuordnen</h2>
 <p>Vergessen wir jedoch nicht unseren Layerstil states_provinces aus den vorherigen
 Kapiteln, den wir im Folgenden dem Layer states_provinces zuweisen wollen:</p>
-<pre><xmp style="margin:0; font-size: .85em;">curl \
+<pre><code class="lang-bash">curl \
   -v \
   -u admin:geoserver \
   -XPUT \
-  -H "Content-type: text/xml" \
-  -d "<layer>
-        <defaultstyle>
-          <name>states_provinces</name>
-          <workspace>fossgis</workspace>
-        </defaultstyle>
-      </layer>" \
-  http://localhost/geoserver/rest/layers/fossgis:states_provinces
-</xmp></pre>
-
+  -H <span class="hljs-string">&quot;Content-type: text/xml&quot;</span> \
+  <span class="hljs-operator">-d</span> <span class="hljs-string">&quot;&lt;layer&gt;
+        &lt;defaultStyle&gt;
+          &lt;name&gt;states_provinces&lt;/name&gt;
+          &lt;workspace&gt;fossgis&lt;/workspace&gt;
+        &lt;/defaultStyle&gt;
+      &lt;/layer&gt;&quot;</span> \
+  http://localhost:<span class="hljs-number">8082</span>/geoserver/rest/layers/fossgis:states_provinces
+</code></pre>
 <p>Best&#xE4;tigt durch den Status <code>HTTP/1.1 200 OK</code> k&#xF6;nnen wir die Layervorschau erneut
 aufrufen und werden sehen, dass der neue Stil (hellgraue Landesfl&#xE4;chen, dunkelgraue
 Landesgrenzen und Beschriftung) dem Layer zugeordnet wurde:</p>
-<figure id="fig3.2.2"><img src="../assets/create2.png" alt="Layer states\_provinces mit zugeh&#xF6;rigem Stil und zentriert auf Nordrhein-Westfalen"><figcaption>Layer states\_provinces mit zugeh&#xF6;rigem Stil und zentriert auf Nordrhein-Westfalen</figcaption></figure>
+<figure id="fig3.2.2"><img src="../assets/create2.png" alt="Layer states_provinces mit zugeh&#xF6;rigem Stil und zentriert auf Nordrhein-Westfalen"><figcaption>Layer states_provinces mit zugeh&#xF6;rigem Stil und zentriert auf Nordrhein-Westfalen</figcaption></figure>
 <p>Herzlichen Gl&#xFC;ckwunsch! Sie haben mit nur wenigen Befehlen im Terminal einen Layer
 im GeoServer angelegt!</p>
 <p>Lernen wir nun im <a href="edit.html">n&#xE4;chsten Kapitel</a> das Editieren von Katalogkonfigurationen.</p>

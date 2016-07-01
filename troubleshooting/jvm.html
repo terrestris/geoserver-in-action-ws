@@ -75,7 +75,7 @@
         data-chapter-title="Java Virtual Machine (JVM) tunen"
         data-filepath="troubleshooting/jvm.md"
         data-basepath=".."
-        data-revision="Thu Jun 30 2016 15:50:21 GMT+0000 (UTC)"
+        data-revision="Fri Jul 01 2016 08:08:10 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -306,7 +306,7 @@
                         
                             <b>4.2.</b>
                         
-                        Layer cachen mit GWC
+                        Cachen von Layern mit GWC
                     </a>
             
             
@@ -397,15 +397,15 @@
                     
                         <h1 id="java-virtual-machine-jvm-tunen">Java Virtual Machine (JVM) tunen</h1>
 <p>Der GeoServer l&#xE4;uft, wie bereits in Kapitel <a href="../basics/index.html">Basiswissen GeoServer</a>
-beschrieben, innerhalb eines JAVA Servlet Containers wie z.B. <em>Apache Tomcat</em>
-oder <em>Jetty</em>. Ein JAVA Container kann dabei mit gezielten Startup-Parametern
+beschrieben, innerhalb eines Java Servlet Containers wie z.B. <em>Apache Tomcat</em>
+oder <em>Jetty</em>. Ein Java Container kann dabei mit gezielten Startup-Parametern
 gestartet werden, die das Laufzeitverhalten der in ihm deployten Servlets massiv
 beeinflussen k&#xF6;nnen. Die folgende Tabelle f&#xFC;hrt einige Parameter auf, die in
 produktiven GeoServer Instanzen bedacht werden sollten. Die Inhalte stellen
 dabei keinen Anspruch an Vollst&#xE4;ndigkeit und bed&#xFC;rfen einer kritischen &#xDC;berpr&#xFC;fung
 f&#xFC;r jede Installation (u.a. in Abh&#xE4;ngigkeit der verf&#xFC;gbaren Hardwareressourcen,
 erwartbaren Zugriffszahlen, Einsatzzweck des GeoServers). Im Tomcat werden
-die Parameter an die JAVA_OPTS (global) oder CATALINA_OPTS (Container) &#xFC;bergeben.</p>
+die Parameter an die <code>JAVA_OPTS</code> (global) oder <code>CATALINA_OPTS</code> (Container) &#xFC;bergeben.</p>
 <p>Es wird grunds&#xE4;tzlich empfohlen das <strong>Oracle (Sun) JDK statt OpenJDK</strong> zu verwenden,
 da ersteres die Performance des GeoServers erh&#xF6;ht. Details dazu gibt es
 z.B. <a href="http://boundlessgeo.com/whitepaper/geoserver-production-2/#jdk" target="_blank">hier</a>.</p>
@@ -466,6 +466,7 @@ z.B. <a href="http://boundlessgeo.com/whitepaper/geoserver-production-2/#jdk" ta
 <tr>
 <td>-XX:+UseParallelOldGC</td>
 <td>s.o.</td>
+<td>-</td>
 </tr>
 </tbody>
 </table>
