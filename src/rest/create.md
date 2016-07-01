@@ -180,7 +180,7 @@ selbst (*states\_provinces.sld*) an die Ressource binden. Hierfür wird die Date
 Sofern diese noch nicht heruntergeladen wurde, kann dies im Terminal über
 
 ```bash
-wget https://terrestris.github.io/geoserver-in-action-ws/materials/states_provinces.sld
+wget https://rawgit.com/terrestris/geoserver-in-action-ws/master/src/materials/states_provinces.sld
 ```
 
 erfolgen, wobei die SLD-Datei in das aktuelle Verzeichnis abgelegt wird.
@@ -199,7 +199,7 @@ kopiert werden:
 
 **Wichtig:** Der obige Befehl setzt zwei Dinge voraus:
 1. Es existiert eine SLD-Datei mit dem Namen *states\_provinces.sld* und einem
-   validen SLD Inhalt. Die entsprechende Datei kann [hier](https://terrestris.github.io/geoserver-in-action-ws/materials/states_provinces.sld)
+   validen SLD Inhalt. Die entsprechende Datei kann [hier]({{ book.workshopRawSourceBaseUrl }}materials/states_provinces.sld)
    heruntergeladen werden.
 2. Der Pfad zur Datei *states\_provinces.sld* ist korrekt. Im obigen Beispiel
    liegt die Datei im gleichen Ordner aus dem cURL aufgerufen wurde. Wechseln Sie
