@@ -18,7 +18,7 @@ Um das Datenverzeichnis auszulagern, führen Sie die folgenden Schritte durch:
 
 2. Das Datenverzeichnis des GeoServers wird über die Umgebungsvariable (GEOSERVER\_DATA\_DIR)
   gesteuert. Bei einer klassischen WAR-Installation, etwa auf einem Tomcat, kann
-  dieser Wert in der Datei (web.xml) gesetzt werden. Im Falle der OSGeoLive müssen
+  dieser Wert in der Datei (`web.xml`) gesetzt werden. Im Falle der OSGeoLive müssen
   wir diese Variable jedoch im Startup-Skript des GeoServers setzen. Führen Sie
   bitte den folgenden Befehl aus, um das Skript startup.sh mit dem Texteditor
   *medit* und den benötigten root-Rechten zu öffnen:
@@ -44,5 +44,5 @@ GEOSERVER_DATA_DIR=/home/user/gs_data_dir
 > Analog zur obigen Konfiguration kann auch das Verzeichnis für den GeoWebCache
 > (GWC) gesteuert werden. In diesem Fall muss die Variable GEOWEBCACHE\_CACHE\_DIR gesetzt werden.
 
-Der folgende [Abschnitt](gui.png) liefert wertvolle Hinweise zur
+Der folgende [Abschnitt](gui.md) liefert wertvolle Hinweise zur
 Problemlösung und Performanceoptimierung für den GeoServer im Produktivbetrieb.

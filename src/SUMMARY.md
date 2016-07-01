@@ -12,7 +12,7 @@
     * [Katalogeinträge entfernen](rest/delete.md)
 * [Tipps, Tricks & Troubleshooting](troubleshooting/README.md)
     * [Protokollierung](troubleshooting/logging.md)
-    * [Layer cachen mit GWC](troubleshooting/gwc.md)
+    * [Cachen von Layern mit GWC](troubleshooting/gwc.md)
     * [GeoServer-Datenverzeichnis auslagern](troubleshooting/datadir.md)
     * [Einstellungen in der GeoServer GUI](troubleshooting/gui.md)
     * [Java Virtual Machine (JVM) tunen](troubleshooting/jvm.md)

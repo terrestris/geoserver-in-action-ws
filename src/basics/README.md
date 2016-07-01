@@ -5,7 +5,7 @@ der es ermöglicht Geodaten auf Basis der Standards des [Open Geospatial Consort
 (insb. WMS und WFS) anzuzeigen und zu editieren. Eine besondere Stärke des GeoServers
 ist die Flexibilität, mit der er sich um zusätzliche Funktionalität erweitern lässt.
 
-Der GeoServer ist gut dokumentiert. Die Dokumentation unterteilt sich dabei
+GeoServer ist gut dokumentiert. Die Dokumentation unterteilt sich dabei
 in eine Benutzer- und eine Entwicklerdokumentation:
 
 * Benutzerdokumentation: <http://docs.geoserver.org/stable/user/>
@@ -15,15 +15,16 @@ Die beiden Links verweisen auf die Dokumentationen der letzten stabilen Version.
 Das *stable* in der URL kann auch durch eine Versionsnummer ersetzt werden, falls
 man die Dokumentation einer bestimmten GeoServer-Version aufrufen möchte. Im Rahmen
 dieses Workshops wird die **Version {{ book.geoServerVersion }}**, die resultierende
-URL würde also <http://docs.geoserver.org/{{ book.geoServerVersion }}/user/> lauten.
+URL der Benutzerdokumentation würde also <http://docs.geoserver.org/{{ book.geoServerVersion }}/user/>
+lauten.
 
 ![GeoServer-Weboberfläche nach erfolgreichem Login](../assets/geoserver_login_gui.png)
 
 Üblicherweise wird der GeoServer für einen Produktivbetrieb als (Java-)Standalone-Servlet
-in Form einer .war-Datei bereitgestellt, welche unter <http://geoserver.org/download/>
-heruntergeladen werden kann. Die .war-Datei muss anschließend auf einem
-Servlet-Container, z.B. [Tomcat](http://tomcat.apache.org/) oder
-[Jetty](http://eclipse.org/jetty/) veröffentlicht, d.h. *deployed* werden. Anschließend
+in Form einer `.war` - Datei bereitgestellt, welche unter <http://geoserver.org/download/>
+heruntergeladen werden kann. Die `.war` - Datei muss anschließend auf einem
+Servlet-Container (bspw. [Tomcat](http://tomcat.apache.org/) oder
+[Jetty](http://eclipse.org/jetty/)) veröffentlicht werden (häufig auch *deploy* genannt). Anschließend
 kann die Weboberfläche des GeoServers über den Browser aufgerufen werden.
 
 Weitere Details zur klassischen WAR-Installation finden sich

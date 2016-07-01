@@ -23,7 +23,7 @@ Befehl zum Erstellen eines neuen Workspaces namens `fossgis` ein:
 
 Der obige Aufruf unterscheidet sich in zwei wesentlichen Punkten von den bisherigen
 Read-Operationen: Wir nutzen für das Erstellen einer neuen Ressource im Gegensatz
-zur HTTP-Operation `GET` die Operation `POST` und schicken einen `XML` Content
+zur HTTP-Operation `GET` die Operation `POST` und schicken den `XML` - Content
 <code>&lt;workspace&gt;...&lt;/workspace&gt;</code> an eine eindeutige URL der
 REST-API. Die Adresse haben wir durch die bisherigen Schritte identifizieren
 können. Nach Aufruf des Befehls sollte im Terminal folgende Ausgabe erscheinen:
@@ -72,13 +72,13 @@ Wir können nun überprüfen, ob der Arbeitsbereich tatsächlich angelegt wurde,
 </xmp></pre>
 
 In beiden Fällen werden wir erkennen, dass ein neuer Arbeitsbereich namens
-fossgis vorhanden ist.
+*fossgis* vorhanden ist.
 
 ## Datenspeicher erstellen
 
 Nachdem wir einen neuen Arbeitsbereich erstellt haben, werden wir diesem einen neuen
-Datenspeicher hinzufügen. Der folgende Befehl erzeugt (Operation `POST`!) einen
-neuen PostGIS Datenspeicher (`dbtype`) mit den Namen natural\_earth und den
+Datenspeicher hinzufügen. Der folgende Befehl erzeugt (Operation `POST` !) einen
+neuen PostGIS Datenspeicher (`dbtype`) mit den Namen *natural\_earth* und den
 folgenden DB-Verbindungsparametern:
 
 - **Hostadresse**: localhost (`host`)
@@ -87,7 +87,8 @@ folgenden DB-Verbindungsparametern:
 - **Benutzer**: user (`user`)
 - **Passwort**: user (`passwd`)
 
-<pre><xmp style="margin:0; font-size: .85em;">curl \
+```bash
+curl \
   -v \
   -u admin:geoserver \
   -XPOST \
@@ -103,8 +104,8 @@ folgenden DB-Verbindungsparametern:
         <dbtype>postgis</dbtype>
       </connectionParameters>
       </dataStore>" \
-   {{ book.geoServerBaseUrl }}/rest/workspaces/fossgis/datastores
-</xmp></pre>
+   http://localhost:8082/geoserver/rest/workspaces/fossgis/datastores
+```
 
 > **note**
 >
@@ -154,8 +155,9 @@ Die Antwort sollte wie folgt aussehen:
 
 Nachdem Arbeitsbereich und Datenspeicher angelegt wurden, können wir im nächsten
 Schritt einen neuen Stil mit dem Namen `states_provinces` im Arbeitsbereich `fossgis`
-anlegen, der die Stildatei (SLD, *Styled Layer Descriptor*) `states_provinces.sld`
-assoziiert. Führen Sie dazu zunächst den folgenden Befehl aus:
+anlegen, der die Stildatei (SLD, *Styled Layer Descriptor*) `states_provinces.sld` assoziiert.
+
+Die Bereitstellung der SLD-Datei erfolgt über den folgenden Befehl:
 
 <pre><xmp style="margin:0; font-size: .85em;">curl \
   -v \
@@ -173,8 +175,18 @@ Erneut wird uns die erfolgreiche Anlage mit dem Status `HTTP/1.1 201 Created`
 bestätigt und wir prüfen dies wiederum über die [GUI]({{ book.geoServerBaseUrl }})
 
 Nachdem die Ressource im GeoServer publiziert wurde, können wir über REST den Stil
-selbst (*states\_provinces.sld*) an die Ressource binden. Hierzu können wir die
-HTTP-Operation `PUT` nutzen, um eine Datei auf den Server zu kopieren:
+selbst (*states\_provinces.sld*) an die Ressource binden. Hierfür wird die Datei
+`states_provinces.xml` aus den Workshop-Materials benötigt.
+Sofern diese noch nicht heruntergeladen wurde, kann dies im Terminal über
+
+```bash
+wget https://terrestris.github.io/geoserver-in-action-ws/materials/states_provinces.sld
+```
+
+erfolgen, wobei die SLD-Datei in das aktuelle Verzeichnis abgelegt wird.
+
+Mit Hilfe der HTTP-Operation `PUT` kann anschließend diese SLD-Datei auf den Server
+kopiert werden:
 
 <pre><xmp style="margin:0; font-size: .85em;">curl \
   -v \
@@ -187,7 +199,7 @@ HTTP-Operation `PUT` nutzen, um eine Datei auf den Server zu kopieren:
 
 **Wichtig:** Der obige Befehl setzt zwei Dinge voraus:
 1. Es existiert eine SLD-Datei mit dem Namen *states\_provinces.sld* und einem
-   validen SLD Inhalt. Die entsprechende Datei kann hier \<./files/states\_provinces.sld\>
+   validen SLD Inhalt. Die entsprechende Datei kann [hier](https://terrestris.github.io/geoserver-in-action-ws/materials/states_provinces.sld)
    heruntergeladen werden.
 2. Der Pfad zur Datei *states\_provinces.sld* ist korrekt. Im obigen Beispiel
    liegt die Datei im gleichen Ordner aus dem cURL aufgerufen wurde. Wechseln Sie
@@ -198,11 +210,12 @@ War der Befehl erfolgreich, enthält die Antwort im Terminal den Teilstring `< H
 ## Layer anlegen
 
 Der nächste logische Schritt ist das Anlegen eines Layers auf Basis einer Geometrietabelle
-aus unserem neuen Datenspeichers natural\_earth. Als Beispiel werden wir die Tabelle
+aus unserem zuvor angelegten Datenspeicher natural\_earth. Als Beispiel werden wir die Tabelle
 *ne\_10m\_admin\_1\_states\_provinces\_shp* mit dem folgenden Befehl im Arbeitsbereich
 fossgis veröffentlichen:
 
-<pre><xmp style="margin:0; font-size: .85em;">curl \
+```bash
+curl \
   -v \
   -u admin:geoserver \
   -XPOST \
@@ -213,8 +226,8 @@ fossgis veröffentlichen:
         <nativeCRS>EPSG:4326</nativeCRS>
         <enabled>true</enabled>
       </featureType>" \
-  {{ book.geoServerBaseUrl }}/rest/workspaces/fossgis/datastores/natural_earth/featuretypes
-</xmp></pre>
+  http://localhost:8082/geoserver/rest/workspaces/fossgis/datastores/natural_earth/featuretypes
+```
 
 Und erneut begrüßt uns nach erfolgreichem Hinzufügen der Ressource die Statusmeldung
 `HTTP/1.1 201 Created` und selbstverständlich können wir an dieser Stelle erneut das
@@ -320,7 +333,8 @@ Startansicht der Vorschau sollte dabei in etwa der folgenden Abbildung entsprech
 Vergessen wir jedoch nicht unseren Layerstil states\_provinces aus den vorherigen
 Kapiteln, den wir im Folgenden dem Layer states\_provinces zuweisen wollen:
 
-<pre><xmp style="margin:0; font-size: .85em;">curl \
+```bash
+curl \
   -v \
   -u admin:geoserver \
   -XPUT \
@@ -331,14 +345,14 @@ Kapiteln, den wir im Folgenden dem Layer states\_provinces zuweisen wollen:
           <workspace>fossgis</workspace>
         </defaultStyle>
       </layer>" \
-  {{ book.geoServerBaseUrl }}/rest/layers/fossgis:states_provinces
-</xmp></pre>
+  http://localhost:8082/geoserver/rest/layers/fossgis:states_provinces
+```
 
 Bestätigt durch den Status `HTTP/1.1 200 OK` können wir die Layervorschau erneut
 aufrufen und werden sehen, dass der neue Stil (hellgraue Landesflächen, dunkelgraue
 Landesgrenzen und Beschriftung) dem Layer zugeordnet wurde:
 
-![Layer states\_provinces mit zugehörigem Stil und zentriert auf Nordrhein-Westfalen](../assets/create2.png)
+![Layer states_provinces mit zugehörigem Stil und zentriert auf Nordrhein-Westfalen](../assets/create2.png)
 
 Herzlichen Glückwunsch! Sie haben mit nur wenigen Befehlen im Terminal einen Layer
 im GeoServer angelegt!

@@ -1,4 +1,4 @@
-# Layer cachen mit GWC
+# Cachen von Layern mit GWC
 
 Die häufigste Anforderung an einen GeoServer ist das Bereitstellen einer
 OGC-konformen WMS Schnittstelle und damit das Ausgeben von Kartenmaterial im
@@ -9,7 +9,7 @@ existieren eine Vielzahl guter OpenSource Caching-Engines, wir werden an dieser
 Stelle jedoch den standardmäßig im GeoServer integrierten GeoWebCache (GWC) nutzen,
 der als Proxy zwischen Client und GeoServer fungiert (siehe Abbildung).
 
-![Funktionsübersicht des GWC als Proxy, <http://geowebcache.org/docs/current/_images/how_it_works.png>](../assets/gwc.png)
+![Funktionsübersicht des GWC als Proxy, Quelle: <a href="http://geowebcache.org/docs/current/introduction/whatis.html">What Is GeoWebCache?</a> (zuletzt zugegriffen am 30.06.2016)](../assets/gwc.png)
 
 Prinzipiell bietet der GWC zwei Methoden zum Anlegen der Kartenkacheln:
 
@@ -32,10 +32,10 @@ für den Layer topp:states vorbereiten.
 
 Auf der OSGeoLive werden die vorgerechneten Kartenkacheln im Verzeichnis
 <pre>{{ book.geoServerPhysicalPath }}data_dir/gwc/</pre> abgelegt. Navigieren Sie zunächst
-im Terminal ([](../assets/terminal_icon.png)) zu diesem Verzeichnis und lassen
+im Terminal ![terminal_icon](../assets/terminal_icon.png) zu diesem Verzeichnis und lassen
 Sie sich den Inhalt mit dem Befehl `ls -lh` (oder einer vergleichbaren Operation)
 anzeigen. Die Ausgabe sollte dabei in etwa wie folgt aussehen und aktuell nur
-die globale Konfigurationsdatei geowebcache.xml für den GWC sowie ein leeres
+die globale Konfigurationsdatei `geowebcache.xml` für den GWC sowie ein leeres
 temporäres Verzeichnis enthalten.
 
 ```bash
@@ -43,7 +43,7 @@ temporäres Verzeichnis enthalten.
 drwxrwxr-x 2 root users    3 Jan 14 19:58 tmp/
 ```
 
-> **note**
+> **info**
 >
 > Das Verzeichnis `gwc/` wird per default auf root-Ebene im GeoServer Datenverzeichnis
 > angelegt. Soll dieses geändert werden, sollte der folgende Eintrag in die web.xml
@@ -61,10 +61,10 @@ Wie wir aus dem obigen Ordnerliste entnehmen können, existiert zum aktuellen
 Zeitpunkt noch kein Verzeichnis mit vorberechneten Kartenkacheln, weshalb wir im
 Folgenden die notwendigen Schritte zum Anlegen eines GWC-Layers vollziehen werden:
 
-1. Öffnen Sie in der [GeoServer GUI]({{ book.geoServerBaseUrl }}) unter |gui1| die Konfiguration
-   für den Layer states und wählen Sie dort den Reiter Kartenkachel-Cache.
-2. Um einen gecachten Layer zu erzeugen, muss die erste Checkbox Erzeuge einen
-   gecachten Layer für diesen Layer aktiviert sein (Für den ausgewählten Layer
+1. Öffnen Sie in der [GeoServer GUI]({{ book.geoServerBaseUrl }}) unter ![layer\__icon](../assets/gui3.png) die Konfiguration
+   für den Layer *"states"* und wählen Sie dort den Reiter Kartenkachel-Cache.
+2. Um einen gecachten Layer zu erzeugen, muss die erste Checkbox *"Erzeuge einen
+   gecachten Layer für diesen Layer"* aktiviert sein (Für den ausgewählten Layer
    bereits eingestellt).
 3. Überprüfen Sie nun die weiteren Einstellungen und passen Sie diese ggf. an
    Ihre Bedürfnisse an:
@@ -79,7 +79,6 @@ Folgenden die notwendigen Schritte zum Anlegen eines GWC-Layers vollziehen werde
 
       Metatiles werden in erster Linie benötigt, um doppelte Kartenbeschriftungen
       (z.B. von Straßenlayern) in zwei aneinanderliegenden Kacheln zu vermeiden.
-
     * **Kachel-Umrandung**: Zusätzlicher Rahmen (in px), der um eine Kachel
       angefordert werden soll. Nur sinnvoll, wenn in Verbindung mit der Vernwendung
       von Metatiles Problemen bei der Darstellung von Labels und/oder Features
@@ -106,9 +105,9 @@ Folgenden die notwendigen Schritte zum Anlegen eines GWC-Layers vollziehen werde
     **Hinweis**: Die Standardeinstellungen für einen neuen gecachten Layer können Sie
     unter dem Menüeintrag |gui2| anpassen.
 
-4. Im nächsten Schritt werden wir prüfen, ob der Layer korrekt gecacht wird und
-   die HTTP-Response Header eines GWC-Layers analysieren. Öffnen Sie hierzu die
-   GWC Layervorschau unter |gui3| und wählen Sie dort unter dem Layereintrag topp:states
+4. Im nächsten Schritt werden wir prüfen, ob der Layer korrekt gecacht wird. Hierzu analysieren wir
+   die HTTP-Response-Headers eines GWC-Layers bspw. der einer der gelieferten Kacheln.
+   Öffnen Sie hierzu die GWC Layervorschau und wählen Sie dort unter dem Layereintrag `topp:states`
    in der Combobox Vorschau den Wert EPSG:900913/png. Nachdem die Vorschau in einem
    neuen Tab/Fenster geöffnet wurde, öffnen wir über `F12` die Entwicklerkonsole
    des Browsers und navigieren in dieser zum Reiter Netzwerkanalyse (siehe Abbildung).
@@ -117,7 +116,7 @@ Folgenden die notwendigen Schritte zum Anlegen eines GWC-Layers vollziehen werde
 
     ![](../assets/developer_tools.png)
 
-5. Leeren Sie die Netzwerk-Übersicht (|empty\_network\_tab| unten rechts in der
+5. Leeren Sie die Netzwerk-Übersicht (![empty\_network\_tab](../assets/empty_network_tab.png) unten rechts in der
    Entwicklerkonsole) und zoomen Sie (einmalig!) zu einem beliebigen Kartenausschnitt.
 6. Im Reiter Netzwerkanalyse erscheinen alle Requests des Kartenclients an den
    GeoServer. Wählen Sie aus dieser Liste einen beliebigen WMS-Request aus und
@@ -175,9 +174,9 @@ im Browser zu analysieren. Fahren Sie nun mit dem [nächsten Kapitel](datadir.md
 In der Praxis wird es in aller Regel unter gegebenen Ressourcen notwendig sein,
 den Layercache für häufig angeforderte Layer im Voraus zu berechnen. Die folgende
 Liste führt die notwendingen Schritte am Beispiel des Layers topp:states in
-Kurzform auf. Weiterführende Informationen finden Sie in der [GWC Dokumentation](http://geowebcache.org/docs/current/webinterface/index.html).
+Kurzform auf. Weiterführende Informationen finden Sie in der [GWC Dokumentation](http://geowebcache.org/docs/stable/webinterface/index.html).
 
-1. Öffnen Sie die die GWC Administrationsoberfläche über {{ book.geoServerBaseUrl }}/gwc>
+1. Öffnen Sie die die GWC Administrationsoberfläche über {{ book.geoServerBaseUrl }}/gwc
    und wählen Sie unter A list of all the layers and automatic demos den Eintrag
    Seed this Layer unterhalb von Layer topp:states aus. In diesem Dialog kann
    über die oberen beiden Auswahlboxen geprüft werden, ob für den aktuell

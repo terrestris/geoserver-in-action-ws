@@ -72,7 +72,15 @@ sowie
 <pre><code class="bash">{{ book.geoServerBaseUrl }}/rest/workspaces/topp/datastores/states_shapefile/featuretypes/states.xml
 </code></pre>
 
-Die obigen Befehle können ebenfalls direkt über cURL aufgerufen werden. Öffnen Sie
+> **info**
+> Je nach Konfiguration des Browsers erhalten Sie bei der Rückgabe eines JSON eine einzeilige Zeichnenkette.
+> Um die Zeichnenkette in eine leichter lesbare Darstellung umzuwandeln, empfehlen wir die Nutzung von JSON-Formatierungswerkzeugen.
+> Diese stehen in Form von Browser-Plugins (bspw. [JSON Formatter für Chrome](https://github.com/callumlocke/json-formatter) oder [JSONView für FireFox](https://jsonview.com/)) bzw. [Online Werkzeugen](https://jsonformatter.curiousconcept.com/)
+> bereit.
+
+----
+
+Die obigen Aufrufe können ebenfalls direkt über cURL ausgeführt werden. Öffnen Sie
 hierzu das Terminal (über den Button ![](../assets/terminal_icon.png)) im unteren
 Systempanel) und fügen Sie dort den folgenden Befehl ein. Der aktuelle Pfad im
 Terminal ist dabei irrelevant.
@@ -88,7 +96,7 @@ Terminal ist dabei irrelevant.
 Der obige Request ist analog zu dem ersten hier aufgeführten Beispiel {{ book.geoServerBaseUrl }}/rest/workspaces
 und wird entsprechend die selbe Antwort im HTML-Format liefern (siehe Output aller
 vorhandenen Arbeitsbereiche im HTML-Format). Das Format der Response ist jedoch
-auch über cURL steuerbar. Hierzu muss lediglich der *Accept* Header des Requests
+auch über cURL steuerbar. Hierzu muss lediglich der *Accept* - Header des Requests
 von *text/html* auf *text/json* bzw. *text/xml* gesetzt werden.
 
 <pre><xmp style="margin:0; font-size: .85em;"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

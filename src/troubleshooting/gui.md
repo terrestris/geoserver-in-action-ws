@@ -14,7 +14,7 @@ konfigurieren. Wir wollen in diesem Abschnitt kurz auf hilfreiche Optionen hinwe
 * Der GeoServer verwendet die **Java Advanced Imaging (JAI)**-Bibliothek zur
   Bildmanipulation (z.B. zum Erzeugen der Kacheln, die ausgeliefert werden). Im
   Bereich *JAI* der Weboberfläche können verschiedene Parameter eingestellt werden,
-  die [hier](http://docs.geoserver.org/stable/en/user/webadmin/server/JAI.html)
+  die [hier](http://docs.geoserver.org/maintain/en/user/webadmin/server/JAI.html)
   dokumentiert sind.
 * Wenn Sie über den GeoServer **sehr viele** verschiedene (Vektor-)Layer bereitstellen,
   sollte der Wert **Größe des Feature Type Caches** mindestens so groß sein wie
@@ -32,8 +32,8 @@ konfigurieren. Wir wollen in diesem Abschnitt kurz auf hilfreiche Optionen hinwe
   im Bereich *Daten -\> Layer -\> Layer hinzufügen* eine Vektor-Datenbankquelle
   auswählen und dort *SQL View konfigurieren* klicken. Nützlich ist insbesondere
   die Möglichkeit die SQL-Views zu parametrisieren, etwa um bestimmte Features
-   durch entsprechende Parameter herauszufilter. Ausführliche Informationen
-   dazu finden Sie [hier](http://docs.geoserver.org/stable/en/user/data/database/sqlview.html).
+  durch entsprechende Parameter herauszufiltern. Ausführliche Informationen
+  dazu finden Sie [hier](http://docs.geoserver.org/stable/en/user/data/database/sqlview.html).
 
 Der letzte [Abschnitt](jvm.md) zeigt wie Sie die *Java Virtual Machine (JVM)* für
 den GeoServer tunen können.
