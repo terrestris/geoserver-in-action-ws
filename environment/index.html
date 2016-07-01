@@ -77,7 +77,7 @@
         data-chapter-title="Vorarbeiten und generelle Informationen"
         data-filepath="environment/README.md"
         data-basepath=".."
-        data-revision="Fri Jul 01 2016 08:08:10 GMT+0000 (UTC)"
+        data-revision="Fri Jul 01 2016 15:32:39 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -428,9 +428,10 @@ STRG + UMSCHALT + V einf&#xFC;gen! Alternativ k&#xF6;nnen Sie auch einen Rechtsk
 das Terminal machen und dort <em>Einf&#xFC;gen</em> w&#xE4;hlen.</p>
 </blockquote>
 <p>Um das Skript zu starten, f&#xFC;hren Sie bitte den folgenden Befehl auf dem Terminal
-(<a href="../assets/terminal_icon.png"></a> im unteren Systempanel) aus:</p>
-<pre><code class="bash">curl \
-  http://terrestris.github.io/geoserver-in-action-ws/materials/setup_geoserver_workshop.sh | \
+(<a href="../assets/terminal_icon.png"></a> im unteren Systempanel) aus und geben bei Aufforderung
+das Passwort <code>user</code> ein:</p>
+<pre><code class="bash">sudo curl -L \
+  https://rawgit.com/terrestris/geoserver-in-action-ws/master/src/materials/setup_geoserver_workshop.sh | \
   sudo bash
 </code></pre>
 
