@@ -103,7 +103,7 @@ Folgenden die notwendigen Schritte zum Anlegen eines GWC-Layers vollziehen werde
         ![Gridset eines Tile-Layers, <http://3.bp.blogspot.com/_0_xIiXP5xuY/S5pEpCjenaI/AAAAAAAAAKY/PDKTGZ6vzGI/s1600-h/Image_Pyramid.gif>](../assets/gwc_image_pyramid.png)
 
     **Hinweis**: Die Standardeinstellungen für einen neuen gecachten Layer können Sie
-    unter dem Menüeintrag |gui2| anpassen.
+    unter dem Menüeintrag *Caching Standards* anpassen.
 
 4. Im nächsten Schritt werden wir prüfen, ob der Layer korrekt gecacht wird. Hierzu analysieren wir
    die HTTP-Response-Headers eines GWC-Layers bspw. der einer der gelieferten Kacheln.
@@ -173,32 +173,32 @@ im Browser zu analysieren. Fahren Sie nun mit dem [nächsten Kapitel](datadir.md
 
 In der Praxis wird es in aller Regel unter gegebenen Ressourcen notwendig sein,
 den Layercache für häufig angeforderte Layer im Voraus zu berechnen. Die folgende
-Liste führt die notwendingen Schritte am Beispiel des Layers topp:states in
-Kurzform auf. Weiterführende Informationen finden Sie in der [GWC Dokumentation](http://geowebcache.org/docs/stable/webinterface/index.html).
+Liste führt die notwendingen Schritte am Beispiel des Layers `topp:states` in
+Kurzform auf. Weiterführende Informationen finden Sie in der [GWC Dokumentation](http://geowebcache.org/docs/latest/webinterface/index.html).
 
 1. Öffnen Sie die die GWC Administrationsoberfläche über {{ book.geoServerBaseUrl }}/gwc
-   und wählen Sie unter A list of all the layers and automatic demos den Eintrag
-   Seed this Layer unterhalb von Layer topp:states aus. In diesem Dialog kann
+   und wählen Sie unter `A list of all the layers and automatic demos` den Eintrag
+   `Seed this Layer` unterhalb von Layer `topp:states` aus. In diesem Dialog kann
    über die oberen beiden Auswahlboxen geprüft werden, ob für den aktuell
    ausgewählten Layer bereits ein Task läuft oder geplant ist. Falls gewünscht,
    kann dieser abgebrochen werden.
-2. Um einen neuen Task zu starten, sind folgende Einstellungen notwendig:
+1. Um einen neuen Task zu starten, sind folgende Einstellungen notwendig:
 
-* **Number of tasks to use:** Anzahl der Threads für diesen Seed. Um den
+  * **Number of tasks to use:** Anzahl der Threads für diesen Seed. Um den
   Server (und damit die Reaktionsgeschwindigkeit des GeoServers) in einer
   produktiven Umgebung nicht zu sehr mit dem Rechenvorgang zu belasten, sollte
   hier der minimale Wert (01) gewählt werden. Ist der GeoServer (noch) nicht
   produktiv kann ein höherer Wert gewählt werden.
-* **Type of operation:** Auswahl der Seed-Operation. Reseed generiert alle Kacheln
+  * **Type of operation:** Auswahl der Seed-Operation. Reseed generiert alle Kacheln
   neu, Seed nur die fehlenden und Truncate löscht alle existierenden Kacheln.
   Für die obigen Layer empfiehlt sich die Operation Reseed.
-* **Grid Set:** Auswahl des Projektionssystems bzw. des Gridsets.
-* **Format:** Auswahl des Bildformats.
-* **Zoom start:** Auswahl der kleinsten Zoomstufe (kleiner Maßstab).
-* **Zoom stop:** Auswahl der höchsten Zoomstufe (großer Maßstab). Eine höhere
+  * **Grid Set:** Auswahl des Projektionssystems bzw. des Gridsets.
+  * **Format:** Auswahl des Bildformats.
+  * **Zoom start:** Auswahl der kleinsten Zoomstufe (kleiner Maßstab).
+  * **Zoom stop:** Auswahl der höchsten Zoomstufe (großer Maßstab). Eine höhere
   Zahl repräsentiert eine detailliertere Kartenansicht. Je höher der Wert, desto
   höher auch der Rechenaufwand und der belegte Speicher!
-* **Bounding box:** Optionaler Parameter zur Angabe des BoundingBox. Falls keine
+  * **Bounding box:** Optionaler Parameter zur Angabe des BoundingBox. Falls keine
   Werte angegeben werden, werden die Angaben des Layers selbst genutzt. Diese
   sollten in aller Regel korrekt sein, sodass hier keine Angabe erforderlich ist.
   Ausnahme: Nur ein begrenztes Gebiet soll gecacht werden.
@@ -206,6 +206,6 @@ Kurzform auf. Weiterführende Informationen finden Sie in der [GWC Dokumentation
 3. Nachdem alle Einstellungen vorgenommen wurden, wird der (Re-)Seed über den
 Button "Submit" gestartet.
 
-> **note**
+> **hint**
 >
 > Die obigen Schritte zum Anlegen eines Layercache sind auch über eine REST-API möglich. Informationen und gute Beispiele zu dieser API finden Sie unter [<http://docs.geoserver.org/stable/en/user/geowebcache/rest/index.html>](http://docs.geoserver.org/stable/en/user/geowebcache/rest/index.html)
