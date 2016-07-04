@@ -27,6 +27,12 @@ Das Skript führt die folgenden Aktionen aus:
 
 > **note**
 >
+> Sie können die Ausführung des Skriptes überspringen, wenn Sie den Abschnitt [Kompilieren auf Basis des Quellcodes](../basics/compilesource.md) **nicht** bearbeiten möchten!
+
+----
+
+> **hint**
+>
 > Sie können Inhalte aus der Zwischenablage, die sie etwa zuvor mit der
 > Tastenkombination STRG + C kopiert haben im Terminal mit der Tastenkombination
 > STRG + UMSCHALT + V einfügen! Alternativ können Sie auch einen Rechtsklick in
@@ -49,8 +55,10 @@ vertraut:
 ## Pfade, URLs und Zugangsdaten
 
 * GeoServer: {{ book.geoServerBaseUrl }} (muss zunächst gestartet werden, siehe unten)
-* Zugangsdaten GeoServer: {{ book.geoServerUser }}:{{ book.geoServerPassword }}
-* GeoServer (Dateisystem): {{ book.geoServerPhysicalPath }}
+* Zugangsdaten GeoServer:
+  * Benutzer: <code>{{ book.geoServerUser }}</code>
+  * Passwort: <code>{{ book.geoServerPassword }}</code>
+* GeoServer (Dateisystem): <code>{{ book.geoServerPhysicalPath }}</code>
 
 ## Überprüfung der Maven-Installation
 

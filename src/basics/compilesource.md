@@ -1,5 +1,11 @@
 # Kompilieren auf Basis des Quellcodes
 
+> **caution**
+>
+> Die Inhalte aus diesem Abschnitt werden nur dann funktionieren, wenn Sie zuvor das Skript aus dem Abschnitt
+>  [Vorarbeiten und generelle Informationen](../environment/readme.md)
+> erfolgreich ausgeführt haben!
+
 In diesem Abschnitt wird gezeigt wie sich der Quellcode des GeoServers bzw.
 einzelner Module mit dem *Build-Management-Tool* [Maven](http://maven.apache.org/)
 kompilieren lässt. Maven wird von der GeoServer-Community für die Erstellung und

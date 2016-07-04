@@ -24,7 +24,7 @@ Dabei sind die folgenden Unterordner von besonderer Bedeutung:
 
 ----
 
-> **info**
+> **hint**
 > Für Produktivsysteme wird (durch Konfiguration des GeoServers) grundsätzlich empfohlen
 > ein *DATA\_DIR* außerhalb der Webapplikation zu verwenden, da sich der GeoServer auf diese Weise
 > zu neueren Versionen updaten lässt ohne dass die Konfigurationsdaten verloren gehen.
