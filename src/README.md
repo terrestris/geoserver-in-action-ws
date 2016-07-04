@@ -5,12 +5,14 @@
 Herzlich Willkommen beim **GeoServer in action** Workshop auf der FOSSGIS 2016
 in Salzburg.
 
-Dieser Workshop soll Ihnen einen umfassenden Überblick über den GeoServer als
-Web-Mapping-Lösung geben. Bitte stellen Sie sicher, dass Sie die Schritte der
+Dieser Workshop wurde für die Verwendung auf der [OSGeo-Live {{ book.osGeoLiveVersion }} DVD](https://live.osgeo.org) entwickelt und soll Ihnen einen umfassenden Überblick über den GeoServer als
+Web-Mapping-Lösung geben.
+
+Bitte stellen Sie sicher, dass Sie die Schritte der
 [Vorarbeiten und generelle Informationen](environment/README.md)-Seite ausgeführt
 haben, um einen reibungslosen Ablauf zu gewährleisten.
 
-Dieser Workshop ist aus einer Reihe von Modulen zusammengestellt. In jedem Modul
+Der Workshop ist aus einer Reihe von Modulen zusammengestellt. In jedem Modul
 werden Sie eine Reihe von Aufgaben lösen, um ein bestimmtes Ziel zu erreichen.
 Jedes Modul baut iterativ Ihre Wissensbasis auf.
 
