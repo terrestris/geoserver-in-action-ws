@@ -20,11 +20,11 @@
       "name": "Nils Bühner",
       "mail": "buehner@terrestris.de"
     }, {
-      "name": "Daniel Koch",
-      "mail": "koch@terrestris.de"
-    }, {
       "name": "André Henn",
       "mail": "henn@terrestris.de"
+    }, {
+      "name": "Daniel Koch",
+      "mail": "koch@terrestris.de"
     }]
   },
   "plugins": [
