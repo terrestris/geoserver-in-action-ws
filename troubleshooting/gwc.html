@@ -77,7 +77,7 @@
         data-chapter-title="Cachen von Layern mit GWC"
         data-filepath="troubleshooting/gwc.md"
         data-basepath=".."
-        data-revision="Mon Jul 04 2016 09:46:58 GMT+0000 (UTC)"
+        data-revision="Mon Jul 04 2016 16:49:37 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -490,7 +490,7 @@ Koordinatensystem g&#xFC;ltig. W&#xE4;hlen Sie hier die Projektion bzw. das Grid
 in dem der Layer gecacht werden soll.</p>
 <p>  <img src="../assets/gwc_image_pyramid.png" alt="Gridset eines Tile-Layers, &lt;http://3.bp.blogspot.com/_0_xIiXP5xuY/S5pEpCjenaI/AAAAAAAAAKY/PDKTGZ6vzGI/s1600-h/Image_Pyramid.gif&gt;"></p>
 <p><strong>Hinweis</strong>: Die Standardeinstellungen f&#xFC;r einen neuen gecachten Layer k&#xF6;nnen Sie
-unter dem Men&#xFC;eintrag |gui2| anpassen.</p>
+unter dem Men&#xFC;eintrag <em>Caching Standards</em> anpassen.</p>
 </li>
 </ul>
 </li>
@@ -557,23 +557,22 @@ im Browser zu analysieren. Fahren Sie nun mit dem <a href="datadir.html">n&#xE4;
 <p><strong>Zusatzinformation: Vorrechnen der Kartenkacheln</strong></p>
 <p>In der Praxis wird es in aller Regel unter gegebenen Ressourcen notwendig sein,
 den Layercache f&#xFC;r h&#xE4;ufig angeforderte Layer im Voraus zu berechnen. Die folgende
-Liste f&#xFC;hrt die notwendingen Schritte am Beispiel des Layers topp:states in
-Kurzform auf. Weiterf&#xFC;hrende Informationen finden Sie in der <a href="http://geowebcache.org/docs/stable/webinterface/index.html" target="_blank">GWC Dokumentation</a>.</p>
+Liste f&#xFC;hrt die notwendingen Schritte am Beispiel des Layers <code>topp:states</code> in
+Kurzform auf. Weiterf&#xFC;hrende Informationen finden Sie in der <a href="http://geowebcache.org/docs/latest/webinterface/index.html" target="_blank">GWC Dokumentation</a>.</p>
 <ol>
 <li>&#xD6;ffnen Sie die die GWC Administrationsoberfl&#xE4;che &#xFC;ber <a href="http://localhost:8082/geoserver/gwc" target="_blank">http://localhost:8082/geoserver/gwc</a>
-und w&#xE4;hlen Sie unter A list of all the layers and automatic demos den Eintrag
-Seed this Layer unterhalb von Layer topp:states aus. In diesem Dialog kann
+und w&#xE4;hlen Sie unter <code>A list of all the layers and automatic demos</code> den Eintrag
+<code>Seed this Layer</code> unterhalb von Layer <code>topp:states</code> aus. In diesem Dialog kann
 &#xFC;ber die oberen beiden Auswahlboxen gepr&#xFC;ft werden, ob f&#xFC;r den aktuell
 ausgew&#xE4;hlten Layer bereits ein Task l&#xE4;uft oder geplant ist. Falls gew&#xFC;nscht,
 kann dieser abgebrochen werden.</li>
 <li><p>Um einen neuen Task zu starten, sind folgende Einstellungen notwendig:</p>
-</li>
-<li><p><strong>Number of tasks to use:</strong> Anzahl der Threads f&#xFC;r diesen Seed. Um den
+<ul>
+<li><strong>Number of tasks to use:</strong> Anzahl der Threads f&#xFC;r diesen Seed. Um den
 Server (und damit die Reaktionsgeschwindigkeit des GeoServers) in einer
 produktiven Umgebung nicht zu sehr mit dem Rechenvorgang zu belasten, sollte
 hier der minimale Wert (01) gew&#xE4;hlt werden. Ist der GeoServer (noch) nicht
-produktiv kann ein h&#xF6;herer Wert gew&#xE4;hlt werden.</p>
-</li>
+produktiv kann ein h&#xF6;herer Wert gew&#xE4;hlt werden.</li>
 <li><strong>Type of operation:</strong> Auswahl der Seed-Operation. Reseed generiert alle Kacheln
 neu, Seed nur die fehlenden und Truncate l&#xF6;scht alle existierenden Kacheln.
 F&#xFC;r die obigen Layer empfiehlt sich die Operation Reseed.</li>
@@ -583,16 +582,17 @@ F&#xFC;r die obigen Layer empfiehlt sich die Operation Reseed.</li>
 <li><strong>Zoom stop:</strong> Auswahl der h&#xF6;chsten Zoomstufe (gro&#xDF;er Ma&#xDF;stab). Eine h&#xF6;here
 Zahl repr&#xE4;sentiert eine detailliertere Kartenansicht. Je h&#xF6;her der Wert, desto
 h&#xF6;her auch der Rechenaufwand und der belegte Speicher!</li>
-<li><p><strong>Bounding box:</strong> Optionaler Parameter zur Angabe des BoundingBox. Falls keine
+<li><strong>Bounding box:</strong> Optionaler Parameter zur Angabe des BoundingBox. Falls keine
 Werte angegeben werden, werden die Angaben des Layers selbst genutzt. Diese
 sollten in aller Regel korrekt sein, sodass hier keine Angabe erforderlich ist.
-Ausnahme: Nur ein begrenztes Gebiet soll gecacht werden.</p>
+Ausnahme: Nur ein begrenztes Gebiet soll gecacht werden.</li>
+</ul>
 </li>
 <li><p>Nachdem alle Einstellungen vorgenommen wurden, wird der (Re-)Seed &#xFC;ber den
 Button &quot;Submit&quot; gestartet.</p>
 </li>
 </ol>
-<blockquote class="clearfix alert alert-info"><strong class="fa fa-4x fa-edit"></strong>
+<blockquote class="clearfix alert alert-success"><strong class="fa fa-4x fa-lightbulb-o"></strong>
 <p></p>
 <p>Die obigen Schritte zum Anlegen eines Layercache sind auch &#xFC;ber eine REST-API m&#xF6;glich. Informationen und gute Beispiele zu dieser API finden Sie unter <a href="http://docs.geoserver.org/stable/en/user/geowebcache/rest/index.html" target="_blank"><a href="http://docs.geoserver.org/stable/en/user/geowebcache/rest/index.html" target="_blank">http://docs.geoserver.org/stable/en/user/geowebcache/rest/index.html</a></a></p>
 </blockquote>
