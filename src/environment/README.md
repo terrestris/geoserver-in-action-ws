@@ -36,7 +36,7 @@ Um das Skript zu starten, führen Sie bitte den folgenden Befehl auf dem Termina
 ([](../assets/terminal_icon.png) im unteren Systempanel) aus und geben bei Aufforderung
 das Passwort `user` ein:
 
-<pre><code class="bash">sudo curl -L \
+<pre><code class="bash">wget -q -O - \
   {{ book.workshopRawSourceBaseUrl }}materials/setup_geoserver_workshop.sh | \
   sudo bash
 </code></pre>
