@@ -3,7 +3,7 @@
 Bei jeglichen Fehlern, die sich auf den GeoServer zurückführen lassen (wie z.B.
 keine oder falsche Antwort eines Kartendienstes) ist das Protokoll die erste
 Anlaufstelle. Das GeoServer Protokoll lässt sich dabei entweder direkt über
-die GUI oder aus dem Dateisystem (`/usr/local/lib/geoserver-2.8.2/data_dir/logs/geoserver.log`) aufrufen.
+die GUI oder aus dem Dateisystem (<code>/usr/local/lib/geoserver-{{ book.geoServerVersion }}/data_dir/logs/geoserver.log</code>) aufrufen.
 Bei schwerwiegenden Problemen bzw. Fehlern steht der Logging-Message das Kürzel `ERROR` vor,
 rein informativen Protokollmeldungen das Kürzel `INFO`.
 
@@ -37,13 +37,11 @@ Dazu führen müssen die folgenden Schritte ausgeführt werden.
    in die Protokolldatei, sondern in die Standardausgabe des Java-Prozesses
    geschrieben wird. Wir müssen also den **Haken bei**
    *in die Standardausgabe schreiben* **entfernen**, sodass das Protokoll in die
-   Datei `/usr/local/lib/geoserver-2.8.2/data_dir/logs/geoserver.log` geschrieben wird.
+   Datei <code>/usr/local/lib/geoserver-{{ book.geoServerVersion }}/data_dir/logs/geoserver.log</code> geschrieben wird.
 3. Speichern Sie die Einstellungen (unten).
 4. Öffnen Sie die Konsole und führen Sie den folgenden Befehl aus:
 
-```bash
-less +F /usr/local/lib/geoserver-2.8.2/data_dir/logs/geoserver.log
-```
+<pre><code>less +F /usr/local/lib/geoserver-{{ book.geoServerVersion }}/data_dir/logs/geoserver.log</code></pre>
 
 > **note**
 >
