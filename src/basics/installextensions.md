@@ -9,12 +9,12 @@ zu unterstützen.
 
 Ein vergleichsweise neues Zusatzmodul ist die [Importer-Extension](http://docs.geoserver.org/maintain/en/user/extensions/importer/using.html).
 Hiermit ist es auf einfache Weise möglich, Geodaten (Vektor- und Rasterdaten) über die grafische Oberfläche des GeoServers oder eine REST-Schnittstelle zu importieren.
-Neben dem Import in das GeoServer-Datenverzeichnis kann auch in Datenbanken (u.a. PostGIS un Oracle) importiert und Vorverarbeitungsschritte (Transformationen o.ä.) vorgeschaltet werden.
+Neben dem Import in das GeoServer-Datenverzeichnis kann auch in Datenbanken (u.a. PostGIS und Oracle) importiert und Vorverarbeitungsschritte (Transformationen o.ä.) vorgeschaltet werden.
 
 ## Übersicht über verfügbare Erweiterungen
 
 Auf <http://geoserver.org/release/{{ book.geoServerVersion }}/> finden Sie im Bereich
-*Extensions* eine Auflistung zahlreicher Erweiterungen, die als stabile betrachtet
+*Extensions* eine Auflistung zahlreicher Erweiterungen, die als stabil betrachtet
 werden und im Rahmen eines Release-Prozesses bereitgestellt werden. Darüberhinaus
 gibt es noch *Community-Extensions*, die einen experimentellen oder instabilen
 Status haben und kein Teil des offiziellen *Release*-Prozesses sind.

@@ -59,10 +59,6 @@ Nähere Details zur Verwendung von Maven beim Kompilieren von GeoServer finden S
 
 ## Kompilieren der INSPIRE-Erweiterung
 
-> **info**
-> Dieser Abschnitt muss noch überarbeitet werden.
-> Es ist möglich, dass hier nicht alle Schritte erwartungsgemäß funktionieren.
-
 Wir werden nun die INSPIRE-Erweiterung des GeoServers auf Basis des Quellcodes
 selber kompilieren. Anschließend kann die Erweiterung analog zum [vorigen Abschnitt](./installextensions.md)
 im GeoServer installiert werden.
