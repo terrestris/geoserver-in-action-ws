@@ -8,6 +8,10 @@ in Salzburg.
 Dieser Workshop wurde für die Verwendung auf der [OSGeo-Live {{ book.osGeoLiveVersion }} DVD](https://live.osgeo.org) entwickelt und soll Ihnen einen umfassenden Überblick über den GeoServer als
 Web-Mapping-Lösung geben.
 
+> **info**
+>
+> Der Workshop kann [hier als PDF-Version](https://terrestris.github.io/geoserver-in-action-ws/geoserver-in-action-ws.pdf) heruntergeladen werden.
+
 Bitte stellen Sie sicher, dass Sie die Schritte der
 [Vorarbeiten und generelle Informationen](environment/README.md)-Seite ausgeführt
 haben, um einen reibungslosen Ablauf zu gewährleisten.
