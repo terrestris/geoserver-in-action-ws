@@ -10,7 +10,7 @@ Web-Mapping-Lösung geben.
 
 > **info**
 >
-> Der Workshop kann [hier als PDF-Version](https://terrestris.github.io/geoserver-in-action-ws/geoserver-in-action-ws.pdf) heruntergeladen werden.
+> Der Workshop kann [hier als PDF-Version]({{ book.workshopPdfUrl }}) heruntergeladen werden.
 
 Bitte stellen Sie sicher, dass Sie die Schritte der
 [Vorarbeiten und generelle Informationen](environment/README.md)-Seite ausgeführt
