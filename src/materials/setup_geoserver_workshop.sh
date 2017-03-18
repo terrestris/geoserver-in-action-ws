@@ -1,6 +1,8 @@
 #!/bin/bash
 
 HOME_DIR=~
+USER_NAME=user
+USER_GROUP=user
 WORKSHOP_DOWNLOAD_BASE_URL=https://raw.githubusercontent.com/terrestris/geoserver-in-action-ws/master/src/materials
 GEOSERVER_VERSION=2.8.3
 M2_FILES_URL=$WORKSHOP_DOWNLOAD_BASE_URL/local_maven_repo.tar.gz
@@ -17,9 +19,15 @@ rm $GEOSERVER_LIB_DIR/$INSPIRE_JAR
 echo -e "\nDownloading needed Maven repository files and unpacking them to $HOME_DIR/.m2\n"
 curl $M2_FILES_URL | tar xz -C $HOME_DIR
 
+# Set the owner
+chown $USER_NAME:$USER_GROUP -R $HOME_DIR/.m2/
+
 # Download and unpack the inspire src files
 echo -e "\nDownloading needed sources of the GeoServer INSPIRE extension and unpacking them to $HOME_DIR/inspire_extension_source\n"
 curl $INSPIRE_SRC_URL | tar xz -C $HOME_DIR
+
+# Set the owner
+chown $USER_NAME:$USER_GROUP -R $HOME_DIR/src/
 
 # Update package list
 echo -e "\nUpdating package lists...\n"
