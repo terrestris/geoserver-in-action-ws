@@ -81,7 +81,7 @@ sowie
 ----
 
 Die obigen Aufrufe können ebenfalls direkt über cURL ausgeführt werden. Öffnen Sie
-hierzu das Terminal (über den Button ![](../assets/terminal_icon.png)) im unteren
+hierzu das Terminal (über den Button ![](../assets/terminal_icon.png) im unteren
 Systempanel) und fügen Sie dort den folgenden Befehl ein. Der aktuelle Pfad im
 Terminal ist dabei irrelevant.
 
@@ -97,7 +97,7 @@ Der obige Request ist analog zu dem ersten hier aufgeführten Beispiel {{ book.g
 und wird entsprechend die selbe Antwort im HTML-Format liefern (siehe Output aller
 vorhandenen Arbeitsbereiche im HTML-Format). Das Format der Response ist jedoch
 auch über cURL steuerbar. Hierzu muss lediglich der *Accept* - Header des Requests
-von *text/html* auf *text/json* bzw. *text/xml* gesetzt werden.
+von *text/html* auf *application/json* bzw. *application/xml* gesetzt werden.
 
 <pre><xmp style="margin:0; font-size: .85em;"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">

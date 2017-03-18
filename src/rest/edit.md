@@ -3,7 +3,7 @@ Katalogeinträge editieren
 
 Neben dem Hinzufügen von Katalogressourcen ist das Editieren bestehender Ressourcen
 der häufigste Anwendungsfall in der Administration des GeoServers. Selbstverständlich
-kann uns auch hier die REST-API in wiederkehrenden Prozeduren zur Seite stehen.
+kann uns auch hier die REST-API bei wiederkehrenden Prozeduren zur Seite stehen.
 Als Beispiel werden wir mit dem folgenden cURL das standardmäßige Ausgabeprojektionssystem
 des Layers `states_provinces` zu EPSG:900913 ändern:
 
@@ -12,7 +12,7 @@ curl \
   -v \
   -u admin:geoserver \
   -XPUT \
-  -H "Content-type: text/xml" \
+  -H "Content-type: application/xml" \
   -d "<featureType>
         <enabled>true</enabled>
         <srs>EPSG:900913</srs>
@@ -30,7 +30,7 @@ curl \
   -v \
   -u admin:geoserver \
   -XPUT \
-  -H "Content-type: text/xml" \
+  -H "Content-type: application/xml" \
   -d "<featureType>
         <enabled>true</enabled>
       </featureType>" \

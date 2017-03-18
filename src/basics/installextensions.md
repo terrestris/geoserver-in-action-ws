@@ -43,18 +43,21 @@ Führen Sie die folgenden Schritte aus, um diese Erweiterung zu installieren:
    muss der folgende Befehl zum Entpacken des Archivs mit sudo ausgeführt werden:
 <pre><xmp style="margin:0; font-size: .85em;">sudo unzip /home/user/Downloads/geoserver-{{ book.geoServerVersion }}-wps-plugin.zip
 </xmp></pre>
+   Der hier angegebene Pfad bezieht sich auf das Downloads-Verzeichnis, das beim
+   Download automatisch angewählt wird. Haben Sie zuvor einen anderen Pfad angegeben,
+   muss dieser hier angepasst werden.
 1. Wenn die jar-Dateien erfolgreich in das lib-Verzeichnis entpackt wurden, muss
    der GeoServer wieder gestartet werden. Dazu klicken Sie auf **Start GeoServer**
    im Ordner **Web Services** auf dem Desktop.
 
 Sobald der GeoServer hochgefahren ist, können wir in seiner Weboberfläche überprüfen,
 ob die Installation der WPS-Erweiterung erfolgreich war. Dazu loggen wir uns
-zunächst mit den Zugangsdaten admin:geoserver ein. Anschließend muss in dem Menü
+zunächst mit den Zugangsdaten {{ book.geoServerUser }}:{{ book.geoServerPassword }} ein. Anschließend muss in dem Menü
 auf der linken Seite (im unteren Bereich) auf Demos geklickt werden. Hier findet
 sich nun ein Eintrag *WPS Request-Builder*, den es an dieser Stelle zuvor nicht
 gegeben hat.
 
-![GeoServer-Weboberfläche (Bereich *Demo*) vor und nach der WPS-Installation](../assets/wps_vorher_nachher.png)
+![GeoServer-Weboberfläche (Bereich Demo) vor und nach der WPS-Installation](../assets/wps_vorher_nachher.png)
 
 > **note**
 >

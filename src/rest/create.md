@@ -14,7 +14,7 @@ Befehl zum Erstellen eines neuen Workspaces namens `fossgis` ein:
   -v \
   -u admin:geoserver \
   -XPOST \
-  -H "Content-type: text/xml" \
+  -H "Content-type: application/xml" \
   -d "<workspace>
         <name>fossgis</name>
       </workspace>" \
@@ -24,7 +24,7 @@ Befehl zum Erstellen eines neuen Workspaces namens `fossgis` ein:
 Der obige Aufruf unterscheidet sich in zwei wesentlichen Punkten von den bisherigen
 Read-Operationen: Wir nutzen für das Erstellen einer neuen Ressource im Gegensatz
 zur HTTP-Operation `GET` die Operation `POST` und schicken den `XML` - Content
-<code>&lt;workspace&gt;...&lt;/workspace&gt;</code> an eine eindeutige URL der
+<code>&lt;workspace&gt;...&lt;/workspace&gt;</code> an eine URL der
 REST-API. Die Adresse haben wir durch die bisherigen Schritte identifizieren
 können. Nach Aufruf des Befehls sollte im Terminal folgende Ausgabe erscheinen:
 
@@ -37,7 +37,7 @@ können. Nach Aufruf des Befehls sollte im Terminal folgende Ausgabe erscheinen:
 > User-Agent: curl/7.35.0
 > Host: localhost:8082
 > Accept: */*
-> Content-type: text/xml
+> Content-type: application/xml
 > Content-Length: 69
 >
 * upload completely sent off: 69 out of 69 bytes
@@ -54,7 +54,7 @@ können. Nach Aufruf des Befehls sollte im Terminal folgende Ausgabe erscheinen:
 An dieser Stelle sind zwei Informationen für uns entscheidend:  
 1. `HTTP/1.1 201 Created`: Der Aufruf wurde erfolgreich bearbeitet und die
    Ressource erstellt.
-2. `{{ book.geoServerBaseUrl }}/rest/workspaces/fossgis`: Die (eindeutige) URL
+2. `{{ book.geoServerBaseUrl }}/rest/workspaces/fossgis`: Die URL
    unseres neuen Arbeitsbereichs.
 
 Wir können nun überprüfen, ob der Arbeitsbereich tatsächlich angelegt wurde, indem wir
@@ -67,7 +67,7 @@ Wir können nun überprüfen, ob der Arbeitsbereich tatsächlich angelegt wurde,
   -v \
   -u admin:geoserver \
   -XGET \
-  -H "Accept: text/xml" \
+  -H "Accept: application/xml" \
    {{ book.geoServerBaseUrl }}/rest/workspaces
 </xmp></pre>
 
@@ -92,7 +92,7 @@ curl \
   -v \
   -u admin:geoserver \
   -XPOST \
-  -H "Content-type: text/xml" \
+  -H "Content-type: application/xml" \
   -d "<dataStore>
       <name>natural_earth</name>
       <connectionParameters>
@@ -121,7 +121,7 @@ oder das Auslesen über die API kontrolliert werden:
   -v \
   -u admin:geoserver \
   -XGET \
-  -H "Accept: text/xml" \
+  -H "Accept: application/xml" \
   {{ book.geoServerBaseUrl }}/rest/workspaces/fossgis/datastores/natural_earth.xml
 </xmp></pre>
 
@@ -163,7 +163,7 @@ Die Bereitstellung der SLD-Datei erfolgt über den folgenden Befehl:
   -v \
   -u admin:geoserver \
   -XPOST \
-  -H "Content-type: text/xml" \
+  -H "Content-type: application/xml" \
   -d "<style>
         <name>states_provinces</name>
         <filename>states_provinces.sld</filename>
@@ -172,7 +172,7 @@ Die Bereitstellung der SLD-Datei erfolgt über den folgenden Befehl:
 </xmp></pre>
 
 Erneut wird uns die erfolgreiche Anlage mit dem Status `HTTP/1.1 201 Created`
-bestätigt und wir prüfen dies wiederum über die [GUI]({{ book.geoServerBaseUrl }})
+bestätigt und wir prüfen dies wiederum über die [GUI]({{ book.geoServerBaseUrl }}).
 
 Nachdem die Ressource im GeoServer publiziert wurde, können wir über REST den Stil
 selbst (*states\_provinces.sld*) an die Ressource binden. Hierfür wird die Datei
@@ -210,7 +210,7 @@ War der Befehl erfolgreich, enthält die Antwort im Terminal den Teilstring `< H
 ## Layer anlegen
 
 Der nächste logische Schritt ist das Anlegen eines Layers auf Basis einer Geometrietabelle
-aus unserem zuvor angelegten Datenspeicher natural\_earth. Als Beispiel werden wir die Tabelle
+aus unserem zuvor angelegten Datenspeicher *natural\_earth*. Als Beispiel werden wir die Tabelle
 *ne\_10m\_admin\_1\_states\_provinces\_shp* mit dem folgenden Befehl im Arbeitsbereich
 fossgis veröffentlichen:
 
@@ -219,7 +219,7 @@ curl \
   -v \
   -u admin:geoserver \
   -XPOST \
-  -H "Content-type: text/xml" \
+  -H "Content-type: application/xml" \
   -d "<featureType>
         <name>states_provinces</name>
         <nativeName>ne_10m_admin_1_states_provinces_shp</nativeName>
@@ -330,15 +330,15 @@ Startansicht der Vorschau sollte dabei in etwa der folgenden Abbildung entsprech
 
 ## Layerstil zuordnen
 
-Vergessen wir jedoch nicht unseren Layerstil states\_provinces aus den vorherigen
-Kapiteln, den wir im Folgenden dem Layer states\_provinces zuweisen wollen:
+Vergessen wir jedoch nicht unseren Layerstil *states\_provinces* aus den vorherigen
+Kapiteln, den wir im Folgenden dem Layer *states\_provinces* zuweisen wollen:
 
 ```bash
 curl \
   -v \
   -u admin:geoserver \
   -XPUT \
-  -H "Content-type: text/xml" \
+  -H "Content-type: application/xml" \
   -d "<layer>
         <defaultStyle>
           <name>states_provinces</name>
