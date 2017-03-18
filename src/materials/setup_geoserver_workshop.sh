@@ -2,7 +2,7 @@
 
 HOME_DIR=~
 WORKSHOP_DOWNLOAD_BASE_URL=https://raw.githubusercontent.com/terrestris/geoserver-in-action-ws/master/src/materials
-GEOSERVER_VERSION=2.8.2
+GEOSERVER_VERSION=2.8.3
 M2_FILES_URL=$WORKSHOP_DOWNLOAD_BASE_URL/local_maven_repo.tar.gz
 INSPIRE_SRC_URL=$WORKSHOP_DOWNLOAD_BASE_URL/inspire_extension_source.tar.gz
 GEOSERVER_LIB_DIR=/usr/local/lib/geoserver-$GEOSERVER_VERSION/webapps/geoserver/WEB-INF/lib
@@ -20,6 +20,10 @@ curl $M2_FILES_URL | tar xz -C $HOME_DIR
 # Download and unpack the inspire src files
 echo -e "\nDownloading needed sources of the GeoServer INSPIRE extension and unpacking them to $HOME_DIR/inspire_extension_source\n"
 curl $INSPIRE_SRC_URL | tar xz -C $HOME_DIR
+
+# Update package list
+echo -e "\nUpdating package lists...\n"
+apt-get update
 
 # Install Maven
 echo -e "\nInstalling maven now...\n"
