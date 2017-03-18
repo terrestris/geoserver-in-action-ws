@@ -15,13 +15,13 @@ aus:
 Es gibt ein Skript, welches ihr OSGeoLive-System für diesen Workshop einrichtet.
 Das Skript führt die folgenden Aktionen aus:
 
-* Installation des *Build-Management-Tools* Maven
+* Installation des *Build-Management-Tools* Maven (~20MB)
 * Deinstallation der INSPIRE-Erweiterung vom GeoServer (wir werden diese Erweiterung
-  später mit maven selbst kompilieren und auf dem GeoServer installieren)
-* Download des Quellcodes der INSPIRE-Erweiterung für den GeoServer
+  später mit Maven selbst kompilieren und auf dem GeoServer installieren)
+* Download des Quellcodes der INSPIRE-Erweiterung für den GeoServer (~0.03MB)
 * Initialisierung eines lokalen Maven-Repositories (dieser Schritt ist nicht
   zwingend nötig, beschleunigt aber die späteren Aufrufe von Maven-Befehlen von
-  vielen Minuten auf wenige Sekunden)
+  vielen Minuten auf wenige Sekunden) (~60MB)
 
 **Sollten Sie die OSGeoLive zwischenzeitlich neu starten, müssen Sie das Skript erneut ausführen!**
 

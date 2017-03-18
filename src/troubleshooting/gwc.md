@@ -9,7 +9,7 @@ existieren eine Vielzahl guter OpenSource Caching-Engines, wir werden an dieser
 Stelle jedoch den standardmäßig im GeoServer integrierten GeoWebCache (GWC) nutzen,
 der als Proxy zwischen Client und GeoServer fungiert (siehe Abbildung).
 
-![Funktionsübersicht des GWC als Proxy, Quelle: <a href="http://geowebcache.org/docs/current/introduction/whatis.html">What Is GeoWebCache?</a> (zuletzt zugegriffen am 30.06.2016)](../assets/gwc.png)
+![Funktionsübersicht des GWC als Proxy, Quelle: <a href="http://geowebcache.org/docs/current/introduction/whatis.html">What Is GeoWebCache?</a>](../assets/gwc.png)
 
 Prinzipiell bietet der GWC zwei Methoden zum Anlegen der Kartenkacheln:
 
@@ -28,7 +28,7 @@ Prinzipiell bietet der GWC zwei Methoden zum Anlegen der Kartenkacheln:
 Wir werden im Folgenden nicht alle Konfigurationsmöglichkeiten des GWC kennenlernen
 können und aus diesem Grund werden wir uns auf die grundlegende Konfiguration am
 Beispiel der On-The-Fly-Prozessierung beschränken und beispielhaft einen Cache
-für den Layer topp:states vorbereiten.
+für den Layer *topp:states* vorbereiten.
 
 Auf der OSGeoLive werden die vorgerechneten Kartenkacheln im Verzeichnis
 <pre>{{ book.geoServerPhysicalPath }}data_dir/gwc/</pre> abgelegt. Navigieren Sie zunächst
@@ -62,9 +62,9 @@ Zeitpunkt noch kein Verzeichnis mit vorberechneten Kartenkacheln, weshalb wir im
 Folgenden die notwendigen Schritte zum Anlegen eines GWC-Layers vollziehen werden:
 
 1. Öffnen Sie in der [GeoServer GUI]({{ book.geoServerBaseUrl }}) unter ![layer\__icon](../assets/gui3.png) die Konfiguration
-   für den Layer *"states"* und wählen Sie dort den Reiter Kartenkachel-Cache.
-2. Um einen gecachten Layer zu erzeugen, muss die erste Checkbox *"Erzeuge einen
-   gecachten Layer für diesen Layer"* aktiviert sein (Für den ausgewählten Layer
+   für den Layer *states* und wählen Sie dort den Reiter *Kartenkachel-Cache*.
+2. Um einen gecachten Layer zu erzeugen, muss die erste Checkbox *Erzeuge einen
+   gecachten Layer für diesen Layer* aktiviert sein (Für den ausgewählten Layer
    bereits eingestellt).
 3. Überprüfen Sie nun die weiteren Einstellungen und passen Sie diese ggf. an
    Ihre Bedürfnisse an:
@@ -108,7 +108,7 @@ Folgenden die notwendigen Schritte zum Anlegen eines GWC-Layers vollziehen werde
 4. Im nächsten Schritt werden wir prüfen, ob der Layer korrekt gecacht wird. Hierzu analysieren wir
    die HTTP-Response-Headers eines GWC-Layers bspw. der einer der gelieferten Kacheln.
    Öffnen Sie hierzu die GWC Layervorschau und wählen Sie dort unter dem Layereintrag `topp:states`
-   in der Combobox Vorschau den Wert EPSG:900913/png. Nachdem die Vorschau in einem
+   in der Combobox Vorschau den Wert *EPSG:900913/png*. Nachdem die Vorschau in einem
    neuen Tab/Fenster geöffnet wurde, öffnen wir über `F12` die Entwicklerkonsole
    des Browsers und navigieren in dieser zum Reiter Netzwerkanalyse (siehe Abbildung).
     **Wichtig:** Nach Aktivieren der Konsole bzw. der Netzwerkanalyse muss die

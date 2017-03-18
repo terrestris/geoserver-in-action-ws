@@ -3,8 +3,8 @@ Katalogeinträge entfernen
 
 Um eine Ressource über die REST-API zu entfernen, können wir die HTTP-Operation
 `DELETE` nutzen. Das folgende Beispiel zeigt den (zweischrittigen) cURL Aufruf
-zum Entfernen eines Layers (**Hinweis**: Durch den Befehl wird der oben erzeugte
-    Layer states\_provinces aus dem Arbeitsbereich fossgis gelöscht!):
+zum Entfernen eines Layers (**Hinweis**: Durch den Befehl wird der zuvor erzeugte
+    Layer *states\_provinces* aus dem Arbeitsbereich fossgis gelöscht!):
 
 Zunächst entfernen wir den Layer:
 

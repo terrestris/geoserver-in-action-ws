@@ -34,15 +34,15 @@ erfüllen (nach [1]):
 
 | Operation | Beschreibung |
 | --------- | ----------- |
-| `GET` | fordert die angegebene Ressource vom Server an. Ein Aufruf von `GET` führt zu keinen Nebeneffekten. Der Zustand am Server wird nicht verändert, weshalb `GET` als sicher bezeichnet wird. |
-| `POST` | fügt eine neue (Sub-)Ressource unterhalb der angegebenen Ressource ein. Da die neue Ressource noch keinen URI besitzt, adressiert der URI die übergeordnete Ressource. Als Ergebnis wird der neue Ressourcenlink dem Client zurückgegeben. `POST` kann im weiteren Sinne auch dazu verwendet werden, Operationen abzubilden, die von keiner anderen Methode abgedeckt werden. |
-| `PUT` | die angegebene Ressource wird angelegt. Wenn die Ressource bereits existiert, wird sie geändert. |
-| `PATCH` | ein Teil der angegebenen Ressource wird geändert. Hierbei sind Nebeneffekte erlaubt. |
-| `DELETE` | löscht die angegebene Ressource. |
-| `HEAD` | fordert Metadaten zu einer Ressource an. |
-| `OPTIONS` | prüft, welche Methoden auf einer Ressource zur Verfügung stehen. |
+| `GET` | Fordert die angegebene Ressource vom Server an. Ein Aufruf von `GET` führt zu keinen Nebeneffekten. Der Zustand am Server wird nicht verändert, weshalb `GET` als sicher bezeichnet wird. |
+| `POST` | Fügt eine neue (Sub-)Ressource unterhalb der angegebenen Ressource ein. Da die neue Ressource noch keinen URI besitzt, adressiert der URI die übergeordnete Ressource. Als Ergebnis wird der neue Ressourcenlink dem Client zurückgegeben. `POST` kann im weiteren Sinne auch dazu verwendet werden, Operationen abzubilden, die von keiner anderen Methode abgedeckt werden. |
+| `PUT` | Die angegebene Ressource wird angelegt. Wenn die Ressource bereits existiert, wird sie geändert. |
+| `PATCH` | Ein Teil der angegebenen Ressource wird geändert. Hierbei sind Nebeneffekte erlaubt. |
+| `DELETE` | Löscht die angegebene Ressource. |
+| `HEAD` | Fordert Metadaten zu einer Ressource an. |
+| `OPTIONS` | Prüft, welche Methoden auf einer Ressource zur Verfügung stehen. |
 | `CONNECT` | Dient dazu, die Anfrage durch einen TCP-Tunnel zu leiten. Wird meist eingesetzt, um eine HTTPS-Verbindung über einen HTTP-Proxy herzustellen. |
-| `TRACE` | 	Gibt die Anfrage zurück, wie sie der Zielserver erhält. Dient etwa dazu, um Änderungen der Anfrage durch Proxyserver zu ermitteln. |
+| `TRACE` | Gibt die Anfrage zurück, wie sie der Zielserver erhält. Dient etwa dazu, um Änderungen der Anfrage durch Proxyserver zu ermitteln. |
 
 Üblicherweise wird zur Realisierung von REST-Diensten das HTTP-Protokoll genutzt,
 deren Operationen in der o.g. Tabelle aufgezeigt sind. Jede Anfrage an einen

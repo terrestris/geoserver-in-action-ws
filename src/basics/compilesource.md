@@ -3,7 +3,7 @@
 > **caution**
 >
 > Die Inhalte aus diesem Abschnitt werden nur dann funktionieren, wenn Sie zuvor das Skript aus dem Abschnitt
->  [Vorarbeiten und generelle Informationen](../environment/readme.md)
+>  [Vorarbeiten und generelle Informationen](../environment/README.md)
 > erfolgreich ausgeführt haben!
 
 In diesem Abschnitt wird gezeigt wie sich der Quellcode des GeoServers bzw.
