@@ -77,7 +77,7 @@
         data-chapter-title="Installieren von Erweiterungen"
         data-filepath="basics/installextensions.md"
         data-basepath=".."
-        data-revision="Tue Jul 05 2016 12:05:59 GMT+0000 (UTC)"
+        data-revision="Sat Mar 18 2017 16:06:10 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -408,7 +408,7 @@ zu unterst&#xFC;tzen.</p>
 Hiermit ist es auf einfache Weise m&#xF6;glich, Geodaten (Vektor- und Rasterdaten) &#xFC;ber die grafische Oberfl&#xE4;che des GeoServers oder eine REST-Schnittstelle zu importieren.
 Neben dem Import in das GeoServer-Datenverzeichnis kann auch in Datenbanken (u.a. PostGIS und Oracle) importiert und Vorverarbeitungsschritte (Transformationen o.&#xE4;.) vorgeschaltet werden.</p>
 <h2 id="&#xFC;bersicht-&#xFC;ber-verf&#xFC;gbare-erweiterungen">&#xDC;bersicht &#xFC;ber verf&#xFC;gbare Erweiterungen</h2>
-<p>Auf <a href="http://geoserver.org/release/2.8.2/" target="_blank">http://geoserver.org/release/2.8.2/</a> finden Sie im Bereich
+<p>Auf <a href="http://geoserver.org/release/2.8.3/" target="_blank">http://geoserver.org/release/2.8.3/</a> finden Sie im Bereich
 <em>Extensions</em> eine Auflistung zahlreicher Erweiterungen, die als stabil betrachtet
 werden und im Rahmen eines Release-Prozesses bereitgestellt werden. Dar&#xFC;berhinaus
 gibt es noch <em>Community-Extensions</em>, die einen experimentellen oder instabilen
@@ -423,15 +423,19 @@ und Antworten von (r&#xE4;umlichen) Prozessen, definiert sind.</p>
 <ol>
 <li>Stoppen Sie den Geoserver durch einen Doppelklick auf <strong>Stop GeoServer</strong> im
 Ordner <strong>Web Services</strong> auf Ihrem Desktop.</li>
-<li>Laden Sie die WPS-Erweiterung von hier <a href="https://rawgit.com/terrestris/geoserver-in-action-ws/master/src/materials/geoserver-2.8.2-wps-plugin.zip" target="_blank">https://rawgit.com/terrestris/geoserver-in-action-ws/master/src/materials/geoserver-2.8.2-wps-plugin.zip</a>
+<li>Laden Sie die WPS-Erweiterung von hier <a href="https://rawgit.com/terrestris/geoserver-in-action-ws/master/src/materials/geoserver-2.8.3-wps-plugin.zip" target="_blank">https://rawgit.com/terrestris/geoserver-in-action-ws/master/src/materials/geoserver-2.8.3-wps-plugin.zip</a>
 (oder der offiziellen Release-Seite) herunter. W&#xE4;hlen Sie bitte <em>Datei speichern</em>
 und nicht <em>&#xD6;ffnen mit</em>!</li>
 <li>Wechseln Sie im Terminal in das im vorigen <a href="folderstructure.html">Abschnitt</a>
-erl&#xE4;uterte Verzeichnis zur Installation von Erweiterungen:<pre><xmp style="margin:0; font-size: .85em;">cd /usr/local/lib/geoserver-2.8.2/webapps/geoserver/WEB-INF/lib/
+erl&#xE4;uterte Verzeichnis zur Installation von Erweiterungen:<pre><xmp style="margin:0; font-size: .85em;">cd /usr/local/lib/geoserver-2.8.3/webapps/geoserver/WEB-INF/lib/
 </xmp></pre></li>
 <li>Da Sie root-Rechte ben&#xF6;tigen, um in das lib-Verzeichnis schreiben zu k&#xF6;nnen,
-muss der folgende Befehl zum Entpacken des Archivs mit sudo ausgef&#xFC;hrt werden:<pre><xmp style="margin:0; font-size: .85em;">sudo unzip /home/user/Downloads/geoserver-2.8.2-wps-plugin.zip
-</xmp></pre></li>
+muss der folgende Befehl zum Entpacken des Archivs mit sudo ausgef&#xFC;hrt werden:
+<pre><xmp style="margin:0; font-size: .85em;">sudo unzip /home/user/Downloads/geoserver-2.8.3-wps-plugin.zip
+</xmp></pre>
+Der hier angegebene Pfad bezieht sich auf das Downloads-Verzeichnis, das beim
+Download automatisch angew&#xE4;hlt wird. Haben Sie zuvor einen anderen Pfad angegeben,
+muss dieser hier angepasst werden.</li>
 <li>Wenn die jar-Dateien erfolgreich in das lib-Verzeichnis entpackt wurden, muss
 der GeoServer wieder gestartet werden. Dazu klicken Sie auf <strong>Start GeoServer</strong>
 im Ordner <strong>Web Services</strong> auf dem Desktop.</li>
@@ -442,8 +446,8 @@ zun&#xE4;chst mit den Zugangsdaten admin:geoserver ein. Anschlie&#xDF;end muss i
 auf der linken Seite (im unteren Bereich) auf Demos geklickt werden. Hier findet
 sich nun ein Eintrag <em>WPS Request-Builder</em>, den es an dieser Stelle zuvor nicht
 gegeben hat.</p>
-<figure id="fig2.2.2"><img src="../assets/wps_vorher_nachher.png" alt="GeoServer-Weboberfl&#xE4;che (Bereich *Demo*) vor und nach der WPS-Installation"><figcaption>GeoServer-Weboberfl&#xE4;che (Bereich *Demo*) vor und nach der WPS-Installation</figcaption></figure>
-<blockquote class="clearfix alert alert-info"><strong class="fa fa-4x fa-edit"></strong>
+<figure id="fig2.2.2"><img src="../assets/wps_vorher_nachher.png" alt="GeoServer-Weboberfl&#xE4;che (Bereich Demo) vor und nach der WPS-Installation"><figcaption>GeoServer-Weboberfl&#xE4;che (Bereich Demo) vor und nach der WPS-Installation</figcaption></figure>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p></p>
 <p>Wenn Sie auf WPS Request-Builder klicken und dort den ersten verf&#xFC;gbaren
 WPS-Prozess <em>JTS:area</em> w&#xE4;hlen, im Bereich &quot;Process inputs&quot; <em>TEXT</em> und

@@ -77,7 +77,7 @@
         data-chapter-title="Katalogeinträge editieren"
         data-filepath="rest/edit.md"
         data-basepath=".."
-        data-revision="Tue Jul 05 2016 12:05:59 GMT+0000 (UTC)"
+        data-revision="Sat Mar 18 2017 16:06:10 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -400,14 +400,14 @@
                         <h1 id="katalogeintr&#xE4;ge-editieren">Katalogeintr&#xE4;ge editieren</h1>
 <p>Neben dem Hinzuf&#xFC;gen von Katalogressourcen ist das Editieren bestehender Ressourcen
 der h&#xE4;ufigste Anwendungsfall in der Administration des GeoServers. Selbstverst&#xE4;ndlich
-kann uns auch hier die REST-API in wiederkehrenden Prozeduren zur Seite stehen.
+kann uns auch hier die REST-API bei wiederkehrenden Prozeduren zur Seite stehen.
 Als Beispiel werden wir mit dem folgenden cURL das standardm&#xE4;&#xDF;ige Ausgabeprojektionssystem
 des Layers <code>states_provinces</code> zu EPSG:900913 &#xE4;ndern:</p>
 <pre><code class="lang-bash">curl \
   -v \
   -u admin:geoserver \
   -XPUT \
-  -H <span class="hljs-string">&quot;Content-type: text/xml&quot;</span> \
+  -H <span class="hljs-string">&quot;Content-type: application/xml&quot;</span> \
   <span class="hljs-operator">-d</span> <span class="hljs-string">&quot;&lt;featureType&gt;
         &lt;enabled&gt;true&lt;/enabled&gt;
         &lt;srs&gt;EPSG:900913&lt;/srs&gt;
@@ -422,7 +422,7 @@ automatisch &#xFC;ber REST die neue native Bounding Box des Layers mit dem Param
   -v \
   -u admin:geoserver \
   -XPUT \
-  -H <span class="hljs-string">&quot;Content-type: text/xml&quot;</span> \
+  -H <span class="hljs-string">&quot;Content-type: application/xml&quot;</span> \
   <span class="hljs-operator">-d</span> <span class="hljs-string">&quot;&lt;featureType&gt;
         &lt;enabled&gt;true&lt;/enabled&gt;
       &lt;/featureType&gt;&quot;</span> \

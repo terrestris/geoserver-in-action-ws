@@ -77,7 +77,7 @@
         data-chapter-title="Vorarbeiten und generelle Informationen"
         data-filepath="environment/README.md"
         data-basepath=".."
-        data-revision="Tue Jul 05 2016 12:05:59 GMT+0000 (UTC)"
+        data-revision="Sat Mar 18 2017 16:06:10 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -406,26 +406,26 @@ aus:</p>
 <li><em>Lubuntu ohne Installation ausprobieren</em> ausw&#xE4;hlen</li>
 <li>Benutzer: user; Passwort: user (wird vermutlich nicht ben&#xF6;tigt)</li>
 </ul>
-<figure id="fig1.1"><img src="../assets/startview.png" alt="Die Startansicht der OSGeo Live 9.5 auf Ihrem Rechner."><figcaption>Die Startansicht der OSGeo Live 9.5 auf Ihrem Rechner.</figcaption></figure>
+<figure id="fig1.1"><img src="../assets/startview.png" alt="Die Startansicht der OSGeo Live 10.0 auf Ihrem Rechner."><figcaption>Die Startansicht der OSGeo Live 10.0 auf Ihrem Rechner.</figcaption></figure>
 <h1 id="setupscript-ausf&#xFC;hren">Setup-Script ausf&#xFC;hren</h1>
 <p>Es gibt ein Skript, welches ihr OSGeoLive-System f&#xFC;r diesen Workshop einrichtet.
 Das Skript f&#xFC;hrt die folgenden Aktionen aus:</p>
 <ul>
-<li>Installation des <em>Build-Management-Tools</em> Maven</li>
+<li>Installation des <em>Build-Management-Tools</em> Maven (~20MB)</li>
 <li>Deinstallation der INSPIRE-Erweiterung vom GeoServer (wir werden diese Erweiterung
-sp&#xE4;ter mit maven selbst kompilieren und auf dem GeoServer installieren)</li>
-<li>Download des Quellcodes der INSPIRE-Erweiterung f&#xFC;r den GeoServer</li>
+sp&#xE4;ter mit Maven selbst kompilieren und auf dem GeoServer installieren)</li>
+<li>Download des Quellcodes der INSPIRE-Erweiterung f&#xFC;r den GeoServer (~0.03MB)</li>
 <li>Initialisierung eines lokalen Maven-Repositories (dieser Schritt ist nicht
 zwingend n&#xF6;tig, beschleunigt aber die sp&#xE4;teren Aufrufe von Maven-Befehlen von
-vielen Minuten auf wenige Sekunden)</li>
+vielen Minuten auf wenige Sekunden) (~60MB)</li>
 </ul>
 <p><strong>Sollten Sie die OSGeoLive zwischenzeitlich neu starten, m&#xFC;ssen Sie das Skript erneut ausf&#xFC;hren!</strong></p>
-<blockquote class="clearfix alert alert-info"><strong class="fa fa-4x fa-edit"></strong>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p></p>
 <p>Sie k&#xF6;nnen die Ausf&#xFC;hrung des Skriptes &#xFC;berspringen, wenn Sie den Abschnitt <a href="../basics/compilesource.html">Kompilieren auf Basis des Quellcodes</a> <strong>nicht</strong> bearbeiten m&#xF6;chten!</p>
 </blockquote>
 <hr>
-<blockquote class="clearfix alert alert-success"><strong class="fa fa-4x fa-lightbulb-o"></strong>
+<blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-lightbulb-o"></strong>
 <p></p>
 <p>Sie k&#xF6;nnen Inhalte aus der Zwischenablage, die sie etwa zuvor mit der
 Tastenkombination STRG + C kopiert haben im Terminal mit der Tastenkombination
@@ -451,7 +451,7 @@ vertraut:</p>
 <li>Passwort: <code>geoserver</code></li>
 </ul>
 </li>
-<li>GeoServer (Dateisystem): <code>/usr/local/lib/geoserver-2.8.2/</code></li>
+<li>GeoServer (Dateisystem): <code>/usr/local/lib/geoserver-2.8.3/</code></li>
 </ul>
 <h2 id="&#xFC;berpr&#xFC;fung-der-maveninstallation">&#xDC;berpr&#xFC;fung der Maven-Installation</h2>
 <p>Sobald das Skript durchgelaufen ist, sollten Sie &#xFC;berpr&#xFC;fen, ob die Maven-Installation

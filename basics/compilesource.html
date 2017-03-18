@@ -77,7 +77,7 @@
         data-chapter-title="Kompilieren des Quellcodes mit maven"
         data-filepath="basics/compilesource.md"
         data-basepath=".."
-        data-revision="Tue Jul 05 2016 12:05:59 GMT+0000 (UTC)"
+        data-revision="Sat Mar 18 2017 16:06:10 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -398,10 +398,10 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="kompilieren-auf-basis-des-quellcodes">Kompilieren auf Basis des Quellcodes</h1>
-<blockquote class="clearfix alert alert-warning"><strong class="fa fa-4x fa-exclamation-triangle"></strong>
+<blockquote class="clearfix alert alert-warning"><strong class="fa fa-2x fa-exclamation-triangle"></strong>
 <p></p>
 <p>Die Inhalte aus diesem Abschnitt werden nur dann funktionieren, wenn Sie zuvor das Skript aus dem Abschnitt
- <a href="../environment/readme.md">Vorarbeiten und generelle Informationen</a>
+ <a href="../environment/index.html">Vorarbeiten und generelle Informationen</a>
 erfolgreich ausgef&#xFC;hrt haben!</p>
 </blockquote>
 <p>In diesem Abschnitt wird gezeigt wie sich der Quellcode des GeoServers bzw.
@@ -410,7 +410,7 @@ kompilieren l&#xE4;sst. Maven wird von der GeoServer-Community f&#xFC;r die Erst
 Verwaltung der Software eingesetzt. Anschlie&#xDF;end k&#xF6;nnten Sie z.B. den Original-Code
 f&#xFC;r spezielle Anwendungsf&#xE4;lle anpassen (oder erweitern) und eine derart
 modifizierte GeoServer-Version einsetzen.</p>
-<blockquote class="clearfix alert alert-info"><strong class="fa fa-4x fa-edit"></strong>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p></p>
 <p>Maven ist eine auf Java basierende OpenSource-Software zur standardisierten
 Erstellung und Verwaltung von (Java-)Programmen. Ausgehend von einer Validierung
@@ -449,7 +449,7 @@ eine <code>pom.xml</code> enth&#xE4;lt, k&#xF6;nnen Sie dort Maven-Befehle ausf&
 <p>Wir werden nun die INSPIRE-Erweiterung des GeoServers auf Basis des Quellcodes
 selber kompilieren. Anschlie&#xDF;end kann die Erweiterung analog zum <a href="installextensions.html">vorigen Abschnitt</a>
 im GeoServer installiert werden.</p>
-<blockquote class="clearfix alert alert-info"><strong class="fa fa-4x fa-edit"></strong>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p></p>
 <p>Das Herunterladen des (gesamten) GeoServer-Quellcodes und insbesondere das
 (erstmalige) Ausf&#xFC;hren bestimmter Maven-Befehle kann u.U. sehr lange dauern.
@@ -466,7 +466,7 @@ der erstmaligen Ausf&#xFC;hrung der Maven-Befehle nur wenige Sekunden statt viel
 Minuten dauert.</p>
 <p>Sie sollten in Ihrem Home-Verzeichnis <code>/home/user</code> ein Verzeichnis <code>src/</code> vorfinden,
 in welchem sich <strong>ausschlie&#xDF;lich</strong> der Quellcode der INSPIRE-Erweiterung (in
-Version 2.8.2) befindet. Das Skript hat dar&#xFC;berhinaus alle
+Version 2.8.3) befindet. Das Skript hat dar&#xFC;berhinaus alle
 (im n&#xE4;chsten Schritt) ben&#xF6;tigten Abh&#xE4;ngigkeiten in ihr lokales Maven-Repository
 <code>~/.m2</code> vorinstalliert, welche Maven ansonsten selbst installieren (und was
 entsprechend l&#xE4;nger dauern) w&#xFC;rde.</p>
@@ -494,14 +494,14 @@ verwenden:</p>
 <pre><code class="lang-bash">mvn package -P inspire -DskipTests
 </code></pre>
 <p>Wenn einer der mvn package-Befehle erfolgreich durchgelaufen ist, finden Sie im
-Verzeichnis <code>~/src/extension/inspire/target/</code> das erzeugte Kompilat (gs-inspire-2.8.2.jar),
+Verzeichnis <code>~/src/extension/inspire/target/</code> das erzeugte Kompilat (gs-inspire-2.8.3.jar),
 welches wie im vorigen <a href="installextensions.html">Abschnitt</a> auf dem GeoServer
 installiert werden kann.</p>
 <pre>
 <xmp style="margin:0; font-size: .85em;">
 sudo cp \
-  ~/src/extension/inspire/target/gs-inspire-2.8.2.jar \
-  /usr/local/lib/geoserver-2.8.2/webapps/geoserver/WEB-INF/lib
+  ~/src/extension/inspire/target/gs-inspire-2.8.3.jar \
+  /usr/local/lib/geoserver-2.8.3/webapps/geoserver/WEB-INF/lib
 </xmp>
 </pre>
 

@@ -77,7 +77,7 @@
         data-chapter-title="Katalogeinträge entfernen"
         data-filepath="rest/delete.md"
         data-basepath=".."
-        data-revision="Tue Jul 05 2016 12:05:59 GMT+0000 (UTC)"
+        data-revision="Sat Mar 18 2017 16:06:10 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -400,8 +400,8 @@
                         <h1 id="katalogeintr&#xE4;ge-entfernen">Katalogeintr&#xE4;ge entfernen</h1>
 <p>Um eine Ressource &#xFC;ber die REST-API zu entfernen, k&#xF6;nnen wir die HTTP-Operation
 <code>DELETE</code> nutzen. Das folgende Beispiel zeigt den (zweischrittigen) cURL Aufruf
-zum Entfernen eines Layers (<strong>Hinweis</strong>: Durch den Befehl wird der oben erzeugte
-    Layer states_provinces aus dem Arbeitsbereich fossgis gel&#xF6;scht!):</p>
+zum Entfernen eines Layers (<strong>Hinweis</strong>: Durch den Befehl wird der zuvor erzeugte
+    Layer <em>states_provinces</em> aus dem Arbeitsbereich fossgis gel&#xF6;scht!):</p>
 <p>Zun&#xE4;chst entfernen wir den Layer:</p>
 <pre><xmp style="margin:0; font-size: .85em;">curl \
   -v \
@@ -431,7 +431,7 @@ referenced by layer(s)</em> provozieren. Um automatisch alle referenzierten Obje
 </xmp></pre>
 
 <p>Wurden die Ressourcen erfolgreich entfernt, wird der Status <code>HTTP/1.1 200 OK</code> ausgegeben.</p>
-<blockquote class="clearfix alert alert-info"><strong class="fa fa-4x fa-edit"></strong>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p></p>
 <p>M&#xF6;chten Sie sich - auf Grundlage der Beispiele dieses Workshops oder Ihrer eigenen Daten - weiter mit der REST-API besch&#xE4;ftigen, finden Sie in der offiziellen Dokumentation viele Hinweise und gute Beispiele:</p>
 <p><a href="http://docs.geoserver.org/stable/en/user/rest/" target="_blank"><a href="http://docs.geoserver.org/stable/en/user/rest/" target="_blank">http://docs.geoserver.org/stable/en/user/rest/</a></a></p>

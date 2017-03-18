@@ -77,7 +77,7 @@
         data-chapter-title="Katalog auslesen"
         data-filepath="rest/read.md"
         data-basepath=".."
-        data-revision="Tue Jul 05 2016 12:05:59 GMT+0000 (UTC)"
+        data-revision="Sat Mar 18 2017 16:06:10 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -405,7 +405,7 @@ unterscheidet, aber die Voraussetzung f&#xFC;r die sp&#xE4;teren Manipulations-O
 notwendig ist, muss es eine M&#xF6;glichkeit geben, diese Ressourcen abzubilden. Das
 Auslesen des existierenden Katalogs und der entsprechenden eindeutigen REST URLs
 ist direkt &#xFC;ber den Browser m&#xF6;glich und dabei interaktiv, d.h. navigierbar aufgebaut.</p>
-<blockquote class="clearfix alert alert-info"><strong class="fa fa-4x fa-edit"></strong>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p></p>
 <p>Wir werden in diesem Workshop die REST-Schnittstelle &#xFC;ber das Kommandozeilentool
 <em>cURL</em> ansprechen. <em>cURL</em> ist ein Programm zur Client-Server Kommunikation und
@@ -458,7 +458,7 @@ Ausgaben im Browser:</p>
 <pre><code class="bash">http://localhost:8082/geoserver/rest/workspaces/topp/datastores/states_shapefile/featuretypes/states.xml
 </code></pre>
 
-<blockquote class="clearfix alert alert-info"><strong class="fa fa-4x fa-info"></strong>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-info"></strong>
 <p>
 Je nach Konfiguration des Browsers erhalten Sie bei der R&#xFC;ckgabe eines JSON eine einzeilige Zeichnenkette.
 Um die Zeichnenkette in eine leichter lesbare Darstellung umzuwandeln, empfehlen wir die Nutzung von JSON-Formatierungswerkzeugen.
@@ -467,7 +467,7 @@ bereit.</p>
 </blockquote>
 <hr>
 <p>Die obigen Aufrufe k&#xF6;nnen ebenfalls direkt &#xFC;ber cURL ausgef&#xFC;hrt werden. &#xD6;ffnen Sie
-hierzu das Terminal (&#xFC;ber den Button <img src="../assets/terminal_icon.png" alt="">) im unteren
+hierzu das Terminal (&#xFC;ber den Button <img src="../assets/terminal_icon.png" alt=""> im unteren
 Systempanel) und f&#xFC;gen Sie dort den folgenden Befehl ein. Der aktuelle Pfad im
 Terminal ist dabei irrelevant.</p>
 <pre><code class="bash">curl \
@@ -482,7 +482,7 @@ Terminal ist dabei irrelevant.</p>
 und wird entsprechend die selbe Antwort im HTML-Format liefern (siehe Output aller
 vorhandenen Arbeitsbereiche im HTML-Format). Das Format der Response ist jedoch
 auch &#xFC;ber cURL steuerbar. Hierzu muss lediglich der <em>Accept</em> - Header des Requests
-von <em>text/html</em> auf <em>text/json</em> bzw. <em>text/xml</em> gesetzt werden.</p>
+von <em>text/html</em> auf <em>application/json</em> bzw. <em>application/xml</em> gesetzt werden.</p>
 <pre><xmp style="margin:0; font-size: .85em;"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>

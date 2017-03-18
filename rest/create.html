@@ -77,7 +77,7 @@
         data-chapter-title="Katalogeinträge erzeugen"
         data-filepath="rest/create.md"
         data-basepath=".."
-        data-revision="Tue Jul 05 2016 12:05:59 GMT+0000 (UTC)"
+        data-revision="Sat Mar 18 2017 16:06:10 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -409,7 +409,7 @@ Befehl zum Erstellen eines neuen Workspaces namens <code>fossgis</code> ein:</p>
   -v \
   -u admin:geoserver \
   -XPOST \
-  -H "Content-type: text/xml" \
+  -H "Content-type: application/xml" \
   -d "<workspace>
         <name>fossgis</name>
       </workspace>" \
@@ -419,7 +419,7 @@ Befehl zum Erstellen eines neuen Workspaces namens <code>fossgis</code> ein:</p>
 <p>Der obige Aufruf unterscheidet sich in zwei wesentlichen Punkten von den bisherigen
 Read-Operationen: Wir nutzen f&#xFC;r das Erstellen einer neuen Ressource im Gegensatz
 zur HTTP-Operation <code>GET</code> die Operation <code>POST</code> und schicken den <code>XML</code> - Content
-<code>&lt;workspace&gt;...&lt;/workspace&gt;</code> an eine eindeutige URL der
+<code>&lt;workspace&gt;...&lt;/workspace&gt;</code> an eine URL der
 REST-API. Die Adresse haben wir durch die bisherigen Schritte identifizieren
 k&#xF6;nnen. Nach Aufruf des Befehls sollte im Terminal folgende Ausgabe erscheinen:</p>
 <pre><code>* Hostname was NOT found in DNS cache
@@ -431,7 +431,7 @@ k&#xF6;nnen. Nach Aufruf des Befehls sollte im Terminal folgende Ausgabe erschei
 &gt; User-Agent: curl/7.35.0
 &gt; Host: localhost:8082
 &gt; Accept: */*
-&gt; Content-type: text/xml
+&gt; Content-type: application/xml
 &gt; Content-Length: 69
 &gt;
 * upload completely sent off: 69 out of 69 bytes
@@ -449,7 +449,7 @@ k&#xF6;nnen. Nach Aufruf des Befehls sollte im Terminal folgende Ausgabe erschei
 <ol>
 <li><code>HTTP/1.1 201 Created</code>: Der Aufruf wurde erfolgreich bearbeitet und die
 Ressource erstellt.</li>
-<li><code>http://localhost:8082/geoserver/rest/workspaces/fossgis</code>: Die (eindeutige) URL
+<li><code>http://localhost:8082/geoserver/rest/workspaces/fossgis</code>: Die URL
 unseres neuen Arbeitsbereichs.</li>
 </ol>
 <p>Wir k&#xF6;nnen nun &#xFC;berpr&#xFC;fen, ob der Arbeitsbereich tats&#xE4;chlich angelegt wurde, indem wir</p>
@@ -462,7 +462,7 @@ Men&#xFC;eintrag <code>Arbeitsbereiche</code> alle vorhandenen Arbeitsbereiche a
   -v \
   -u admin:geoserver \
   -XGET \
-  -H "Accept: text/xml" \
+  -H "Accept: application/xml" \
    http://localhost:8082/geoserver/rest/workspaces
 </xmp></pre>
 
@@ -484,7 +484,7 @@ folgenden DB-Verbindungsparametern:</p>
   -v \
   -u admin:geoserver \
   -XPOST \
-  -H <span class="hljs-string">&quot;Content-type: text/xml&quot;</span> \
+  -H <span class="hljs-string">&quot;Content-type: application/xml&quot;</span> \
   <span class="hljs-operator">-d</span> <span class="hljs-string">&quot;&lt;dataStore&gt;
       &lt;name&gt;natural_earth&lt;/name&gt;
       &lt;connectionParameters&gt;
@@ -498,7 +498,7 @@ folgenden DB-Verbindungsparametern:</p>
       &lt;/dataStore&gt;&quot;</span> \
    http://localhost:<span class="hljs-number">8082</span>/geoserver/rest/workspaces/fossgis/datastores
 </code></pre>
-<blockquote class="clearfix alert alert-info"><strong class="fa fa-4x fa-edit"></strong>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p></p>
 <p>Die hier genutzte Datenbank <em>natural_earth2</em> ist auf der OSGeoLive vorinstalliert
 und entstammt dem Natural Earth Projekt. Weiterf&#xFC;hrende Informationen zum Datensatz
@@ -511,7 +511,7 @@ oder das Auslesen &#xFC;ber die API kontrolliert werden:</p>
   -v \
   -u admin:geoserver \
   -XGET \
-  -H "Accept: text/xml" \
+  -H "Accept: application/xml" \
   http://localhost:8082/geoserver/rest/workspaces/fossgis/datastores/natural_earth.xml
 </xmp></pre>
 
@@ -549,7 +549,7 @@ anlegen, der die Stildatei (SLD, <em>Styled Layer Descriptor</em>) <code>states_
   -v \
   -u admin:geoserver \
   -XPOST \
-  -H "Content-type: text/xml" \
+  -H "Content-type: application/xml" \
   -d "<style>
         <name>states_provinces</name>
         <filename>states_provinces.sld</filename>
@@ -558,7 +558,7 @@ anlegen, der die Stildatei (SLD, <em>Styled Layer Descriptor</em>) <code>states_
 </xmp></pre>
 
 <p>Erneut wird uns die erfolgreiche Anlage mit dem Status <code>HTTP/1.1 201 Created</code>
-best&#xE4;tigt und wir pr&#xFC;fen dies wiederum &#xFC;ber die <a href="http://localhost:8082/geoserver" target="_blank">GUI</a></p>
+best&#xE4;tigt und wir pr&#xFC;fen dies wiederum &#xFC;ber die <a href="http://localhost:8082/geoserver" target="_blank">GUI</a>.</p>
 <p>Nachdem die Ressource im GeoServer publiziert wurde, k&#xF6;nnen wir &#xFC;ber REST den Stil
 selbst (<em>states_provinces.sld</em>) an die Ressource binden. Hierf&#xFC;r wird die Datei
 <code>states_provinces.xml</code> aus den Workshop-Materials ben&#xF6;tigt.
@@ -589,14 +589,14 @@ also ggf. im Terminal zum Ordner der Datei oder passen Sie den cURL-Aufruf an.</
 <p>War der Befehl erfolgreich, enth&#xE4;lt die Antwort im Terminal den Teilstring <code>&lt; HTTP/1.1 200 OK</code>.</p>
 <h2 id="layer-anlegen">Layer anlegen</h2>
 <p>Der n&#xE4;chste logische Schritt ist das Anlegen eines Layers auf Basis einer Geometrietabelle
-aus unserem zuvor angelegten Datenspeicher natural_earth. Als Beispiel werden wir die Tabelle
+aus unserem zuvor angelegten Datenspeicher <em>natural_earth</em>. Als Beispiel werden wir die Tabelle
 <em>ne_10m_admin_1_states_provinces_shp</em> mit dem folgenden Befehl im Arbeitsbereich
 fossgis ver&#xF6;ffentlichen:</p>
 <pre><code class="lang-bash">curl \
   -v \
   -u admin:geoserver \
   -XPOST \
-  -H <span class="hljs-string">&quot;Content-type: text/xml&quot;</span> \
+  -H <span class="hljs-string">&quot;Content-type: application/xml&quot;</span> \
   <span class="hljs-operator">-d</span> <span class="hljs-string">&quot;&lt;featureType&gt;
         &lt;name&gt;states_provinces&lt;/name&gt;
         &lt;nativeName&gt;ne_10m_admin_1_states_provinces_shp&lt;/nativeName&gt;
@@ -701,13 +701,13 @@ Vorschau durch einen Klick auf OpenLayers (<img src="../assets/gui2.png" alt="op
 Startansicht der Vorschau sollte dabei in etwa der folgenden Abbildung entsprechen.</p>
 <figure id="fig3.2.1"><img src="../assets/create1.png" alt="Hallo Welt!"><figcaption>Hallo Welt!</figcaption></figure>
 <h2 id="layerstil-zuordnen">Layerstil zuordnen</h2>
-<p>Vergessen wir jedoch nicht unseren Layerstil states_provinces aus den vorherigen
-Kapiteln, den wir im Folgenden dem Layer states_provinces zuweisen wollen:</p>
+<p>Vergessen wir jedoch nicht unseren Layerstil <em>states_provinces</em> aus den vorherigen
+Kapiteln, den wir im Folgenden dem Layer <em>states_provinces</em> zuweisen wollen:</p>
 <pre><code class="lang-bash">curl \
   -v \
   -u admin:geoserver \
   -XPUT \
-  -H <span class="hljs-string">&quot;Content-type: text/xml&quot;</span> \
+  -H <span class="hljs-string">&quot;Content-type: application/xml&quot;</span> \
   <span class="hljs-operator">-d</span> <span class="hljs-string">&quot;&lt;layer&gt;
         &lt;defaultStyle&gt;
           &lt;name&gt;states_provinces&lt;/name&gt;
