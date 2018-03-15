@@ -10,12 +10,12 @@
     "workshopPdfUrl": "https://terrestris.github.io/geoserver-in-action-ws/geoserver-in-action-ws.pdf",
     "workshopEpubUrl": "https://terrestris.github.io/geoserver-in-action-ws/geoserver-in-action-ws.epub",
     "workshopMaterialsDownloadUrl": "https://terrestris.github.io/geoserver-in-action-ws/materials.tar.gz",
-    "geoServerPhysicalPath": "/usr/local/lib/geoserver-2.8.3/",
+    "geoServerPhysicalPath": "/usr/local/lib/geoserver-2.10.4/",
     "geoServerBaseUrl": "http://localhost:8082/geoserver",
     "geoServerUser": "admin",
     "geoServerPassword": "geoserver",
-    "geoServerVersion": "2.8.3",
-    "osGeoLiveVersion": "10.0",
+    "geoServerVersion": "2.10.4",
+    "osGeoLiveVersion": "11.0",
     "authors": [{
       "name": "Nils Bühner",
       "mail": "buehner@terrestris.de"
