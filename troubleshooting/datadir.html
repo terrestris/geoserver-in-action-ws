@@ -77,7 +77,7 @@
         data-chapter-title="GeoServer-Datenverzeichnis auslagern"
         data-filepath="troubleshooting/datadir.md"
         data-basepath=".."
-        data-revision="Sat Mar 18 2017 16:53:52 GMT+0000 (UTC)"
+        data-revision="Thu Mar 15 2018 10:41:52 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -407,14 +407,14 @@ separat gesichert werden m&#xFC;ssen.</p>
 <ol>
 <li>Wir kopieren das bestehende Datenverzeichnis aus der GeoServer-Installation
 (data_dir/) in ein neues Verzeichnis (gs_data_dir/) in unserem Home-Verzeichnis,
-welches anschlie&#xDF;end als Datenverzeichnis des GeoServers verwendet werden soll:<pre><xmp style="margin:0; font-size: .85em;">cp -r /usr/local/lib/geoserver-2.8.3/data_dir/ /home/user/gs_data_dir
+welches anschlie&#xDF;end als Datenverzeichnis des GeoServers verwendet werden soll:<pre><xmp style="margin:0; font-size: .85em;">cp -r /usr/local/lib/geoserver-2.10.4/data_dir/ /home/user/gs_data_dir
 </xmp></pre></li>
 <li>Das Datenverzeichnis des GeoServers wird &#xFC;ber die Umgebungsvariable (GEOSERVER_DATA_DIR)
 gesteuert. Bei einer klassischen WAR-Installation, etwa auf einem Tomcat, kann
 dieser Wert in der Datei (<code>web.xml</code>) gesetzt werden. Im Falle der OSGeoLive m&#xFC;ssen
 wir diese Variable jedoch im Startup-Skript des GeoServers setzen. F&#xFC;hren Sie
 bitte den folgenden Befehl aus, um das Skript startup.sh mit dem Texteditor
-<em>leafpad</em> und den ben&#xF6;tigten root-Rechten zu &#xF6;ffnen:<pre><xmp style="margin:0; font-size: .85em;">sudo leafpad /usr/local/lib/geoserver-2.8.3/bin/startup.sh
+<em>leafpad</em> und den ben&#xF6;tigten root-Rechten zu &#xF6;ffnen:<pre><xmp style="margin:0; font-size: .85em;">sudo leafpad /usr/local/lib/geoserver-2.10.4/bin/startup.sh
 </xmp></pre></li>
 <li>F&#xFC;gen Sie an den Anfang der Datei folgende Zuweisung ein, um das in Schritt 1
 erstellte Verzeichnis als GeoServer-Datenverzeichnis zu verwenden (und
