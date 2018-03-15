@@ -24,13 +24,13 @@
     "workshop",
     "geoserver"
   ],
-  "author": "terrestris GmbH & Co.KG",
+  "author": "terrestris GmbH & Co. KG",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/terrestris/geoserver-in-action-ws/issues"
   },
   "homepage": "https://github.com/terrestris/geoserver-in-action-ws#readme",
   "dependencies": {
-    "gitbook-cli": "2.3.0"
+    "gitbook-cli": "2.3.2"
   }
 }
