@@ -75,7 +75,7 @@
         data-chapter-title="Java Virtual Machine (JVM) tunen"
         data-filepath="troubleshooting/jvm.md"
         data-basepath=".."
-        data-revision="Fri Mar 08 2019 15:33:17 GMT+0000 (UTC)"
+        data-revision="Fri Mar 08 2019 16:28:53 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -406,9 +406,6 @@ dabei keinen Anspruch an Vollst&#xE4;ndigkeit und bed&#xFC;rfen einer kritischen
 f&#xFC;r jede Installation (u.a. in Abh&#xE4;ngigkeit der verf&#xFC;gbaren Hardwareressourcen,
 erwartbaren Zugriffszahlen, Einsatzzweck des GeoServers). Im Tomcat werden
 die Parameter an die <code>JAVA_OPTS</code> (global) oder <code>CATALINA_OPTS</code> (Container) &#xFC;bergeben.</p>
-<p>Es wird grunds&#xE4;tzlich empfohlen das <strong>Oracle (Sun) JDK statt OpenJDK</strong> zu verwenden,
-da ersteres die Performance des GeoServers erh&#xF6;ht. Details dazu gibt es
-z.B. <a href="http://boundlessgeo.com/whitepaper/geoserver-production-2/#jdk" target="_blank">hier</a>.</p>
 <table>
 <thead>
 <tr>
@@ -418,11 +415,6 @@ z.B. <a href="http://boundlessgeo.com/whitepaper/geoserver-production-2/#jdk" ta
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>-server</td>
-<td>F&#xFC;r Server optimierte JVM.</td>
-<td></td>
-</tr>
 <tr>
 <td>-Xms</td>
 <td>Steuert die Anfangsgr&#xF6;&#xDF;e des Java-Heap-Speichers. F&#xFC;r Produktivsysteme werden Werte im Bereich von 2 bis 4 GB empfohlen.</td>

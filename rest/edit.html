@@ -77,7 +77,7 @@
         data-chapter-title="Katalogeinträge editieren"
         data-filepath="rest/edit.md"
         data-basepath=".."
-        data-revision="Fri Mar 08 2019 15:33:17 GMT+0000 (UTC)"
+        data-revision="Fri Mar 08 2019 16:28:53 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -402,7 +402,7 @@
 der h&#xE4;ufigste Anwendungsfall in der Administration des GeoServers. Selbstverst&#xE4;ndlich
 kann uns auch hier die REST-API bei wiederkehrenden Prozeduren zur Seite stehen.
 Als Beispiel werden wir mit dem folgenden cURL das standardm&#xE4;&#xDF;ige Ausgabeprojektionssystem
-des Layers <code>states_provinces</code> zu EPSG:900913 &#xE4;ndern:</p>
+des Layers <code>states_provinces</code> zu EPSG:54029 &#xE4;ndern:</p>
 <pre><code class="lang-bash">curl \
   -v \
   -u admin:geoserver \
@@ -410,7 +410,7 @@ des Layers <code>states_provinces</code> zu EPSG:900913 &#xE4;ndern:</p>
   -H <span class="hljs-string">&quot;Content-type: application/xml&quot;</span> \
   <span class="hljs-operator">-d</span> <span class="hljs-string">&quot;&lt;featureType&gt;
         &lt;enabled&gt;true&lt;/enabled&gt;
-        &lt;srs&gt;EPSG:900913&lt;/srs&gt;
+        &lt;srs&gt;EPSG:54029&lt;/srs&gt;
         &lt;projectionPolicy&gt;REPROJECT_TO_DECLARED&lt;/projectionPolicy&gt;
       &lt;/featureType&gt;&quot;</span> \
   http://localhost:<span class="hljs-number">8082</span>/geoserver/rest/workspaces/fossgis/datastores/natural_earth/featuretypes/states_provinces
@@ -430,11 +430,11 @@ automatisch &#xFC;ber REST die neue native Bounding Box des Layers mit dem Param
 </code></pre>
 <p>Betrachten wir nun den Layer in der Layer&#xFC;bersicht des GeoServers (<img src="../assets/gui3.png" alt="layer\_icon">)
 sehen wir, dass der Layer - wie zu erwarten - mit dem angegebenen Koordinatensystem
-EPSG:900913 und einer Bounding Box im entsprechenden Koordinatensystem konfiguriert
+EPSG:54029 und einer Bounding Box im entsprechenden Koordinatensystem konfiguriert
 ist:</p>
-<figure id="fig3.3.1"><img src="../assets/edit1.png" alt="Ausschnitt der Layerkonfiguration states_provinces im nativen Koordinatensystem EPSG:900913"><figcaption>Ausschnitt der Layerkonfiguration states_provinces im nativen Koordinatensystem EPSG:900913</figcaption></figure>
+<figure id="fig3.3.1"><img src="../assets/edit1.png" alt="Ausschnitt der Layerkonfiguration states_provinces im nativen Koordinatensystem EPSG:54029"><figcaption>Ausschnitt der Layerkonfiguration states_provinces im nativen Koordinatensystem EPSG:54029</figcaption></figure>
 <p>Das Ergebnis unserer &#xC4;nderung k&#xF6;nnen wir uns abschlie&#xDF;end &#xFC;ber die GeoServer Layervorschau (<img src="../assets/gui1.png" alt="layer\_preview\_icon">) anschaulich illustrieren lassen:</p>
-<figure id="fig3.3.2"><img src="../assets/edit2.png" alt="Layer states_provinces mit zugeh&#xF6;rigem Stil in EPSG:900913"><figcaption>Layer states_provinces mit zugeh&#xF6;rigem Stil in EPSG:900913</figcaption></figure>
+<figure id="fig3.3.2"><img src="../assets/edit2.png" alt="Layer states_provinces mit zugeh&#xF6;rigem Stil in EPSG:54029"><figcaption>Layer states_provinces mit zugeh&#xF6;rigem Stil in EPSG:54029</figcaption></figure>
 <p><strong>Wichtiger Hinweis</strong>: Das REST-Paradigma beschreibt, dass Repr&#xE4;sentationen (hier
     in den Formaten <code>XML</code> und <code>JSON</code>) sowohl gelesen als auch geschrieben werden
     k&#xF6;nnen. Dies bedeutet, dass jede XML-Antwort (siehe z.B. <a href="create.html">Layer anlegen</a>)
