@@ -8,7 +8,7 @@
         <title>Vorarbeiten und generelle Informationen | GeoServer in action</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.6.7">
+        <meta name="generator" content="GitBook 2.6.9">
         
         
         <meta name="HandheldFriendly" content="true"/>
@@ -77,7 +77,7 @@
         data-chapter-title="Vorarbeiten und generelle Informationen"
         data-filepath="environment/README.md"
         data-basepath=".."
-        data-revision="Thu Mar 15 2018 11:12:42 GMT+0000 (UTC)"
+        data-revision="Fri Mar 08 2019 15:33:17 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -406,7 +406,7 @@ aus:</p>
 <li><em>Lubuntu ohne Installation ausprobieren</em> ausw&#xE4;hlen</li>
 <li>Benutzer: user; Passwort: user (wird vermutlich nicht ben&#xF6;tigt)</li>
 </ul>
-<figure id="fig1.1"><img src="../assets/startview.png" alt="Die Startansicht der OSGeo Live 11.0 auf Ihrem Rechner."><figcaption>Die Startansicht der OSGeo Live 11.0 auf Ihrem Rechner.</figcaption></figure>
+<figure id="fig1.1"><img src="../assets/startview.png" alt="Die Startansicht der OSGeo Live 12.0 auf Ihrem Rechner."><figcaption>Die Startansicht der OSGeo Live 12.0 auf Ihrem Rechner.</figcaption></figure>
 <h1 id="setupscript-ausf&#xFC;hren">Setup-Script ausf&#xFC;hren</h1>
 <p>Es gibt ein Skript, welches ihr OSGeoLive-System f&#xFC;r diesen Workshop einrichtet.
 Das Skript f&#xFC;hrt die folgenden Aktionen aus:</p>
@@ -433,7 +433,7 @@ STRG + UMSCHALT + V einf&#xFC;gen! Alternativ k&#xF6;nnen Sie auch einen Rechtsk
 das Terminal machen und dort <em>Einf&#xFC;gen</em> w&#xE4;hlen.</p>
 </blockquote>
 <p>Um das Skript zu starten, f&#xFC;hren Sie bitte den folgenden Befehl auf dem Terminal
-(<img src="../assets/terminal_icon.png" alt=""> im unteren Systempanel) aus und geben bei Aufforderung
+(<img src="../assets/terminal_icon.png" alt> im unteren Systempanel) aus und geben bei Aufforderung
 das Passwort <code>user</code> ein:</p>
 <pre><code class="bash">wget -q -O - \
   https://rawgit.com/terrestris/geoserver-in-action-ws/master/src/materials/setup_geoserver_workshop.sh | \
@@ -451,7 +451,7 @@ vertraut:</p>
 <li>Passwort: <code>geoserver</code></li>
 </ul>
 </li>
-<li>GeoServer (Dateisystem): <code>/usr/local/lib/geoserver-2.10.4/</code></li>
+<li>GeoServer (Dateisystem): <code>/usr/local/lib/geoserver-2.13.2/</code></li>
 </ul>
 <h2 id="&#xFC;berpr&#xFC;fung-der-maveninstallation">&#xDC;berpr&#xFC;fung der Maven-Installation</h2>
 <p>Sobald das Skript durchgelaufen ist, sollten Sie &#xFC;berpr&#xFC;fen, ob die Maven-Installation
@@ -463,6 +463,13 @@ erfolgreich war, indem Sie folgenden Befehl auf dem Terminal ausf&#xFC;hren:</p>
 <h1 id="starten-des-geoservers">Starten des GeoServers</h1>
 <p>Der GeoServer kann durch einen Doppelklick auf <strong>Start GeoServer</strong> im Ordner
 <strong>Web Services</strong> auf dem Desktop der OSGeoLive gestartet werden:</p>
+<blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
+<p></p>
+<p>Kann der GeoServer <strong>nicht</strong> &#xFC;ber den o.g. Weg gestart werden, kann er auch
+&#xFC;ber den folgenden Befehl im Terminal gestartet werden:</p>
+<pre><code>sudo /usr/local/lib/geoserver/bin/startup.sh
+</code></pre><p>Das Terminal bzw. der Prozess muss dabei w&#xE4;hrend des Workshops ge&#xF6;ffnet bleiben!</p>
+</blockquote>
 <figure id="fig1.3"><img src="../assets/start_geoserver.png" alt="GeoServer starten."><figcaption>GeoServer starten.</figcaption></figure>
 <figure id="fig1.4"><img src="../assets/geoserver_gui.png" alt="GeoServer-Weboberfl&#xE4;che nach erfolgreichem Start"><figcaption>GeoServer-Weboberfl&#xE4;che nach erfolgreichem Start</figcaption></figure>
 <p>Im <a href="../basics/index.html">folgenden Abschnitt</a> werden wir mit GeoServer-Basiswissen fortfahren.</p>

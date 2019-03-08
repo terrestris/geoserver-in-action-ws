@@ -8,7 +8,7 @@
         <title>Cachen von Layern mit GWC | GeoServer in action</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.6.7">
+        <meta name="generator" content="GitBook 2.6.9">
         
         
         <meta name="HandheldFriendly" content="true"/>
@@ -77,7 +77,7 @@
         data-chapter-title="Cachen von Layern mit GWC"
         data-filepath="troubleshooting/gwc.md"
         data-basepath=".."
-        data-revision="Thu Mar 15 2018 11:12:42 GMT+0000 (UTC)"
+        data-revision="Fri Mar 08 2019 15:33:17 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -426,7 +426,7 @@ k&#xF6;nnen und aus diesem Grund werden wir uns auf die grundlegende Konfigurati
 Beispiel der On-The-Fly-Prozessierung beschr&#xE4;nken und beispielhaft einen Cache
 f&#xFC;r den Layer <em>topp:states</em> vorbereiten.</p>
 <p>Auf der OSGeoLive werden die vorgerechneten Kartenkacheln im Verzeichnis</p>
-<p><pre>/usr/local/lib/geoserver-2.10.4/data_dir/gwc/</pre> abgelegt. Navigieren Sie zun&#xE4;chst
+<p><pre>/usr/local/lib/geoserver-2.13.2/data_dir/gwc/</pre> abgelegt. Navigieren Sie zun&#xE4;chst
 im Terminal <img src="../assets/terminal_icon.png" alt="terminal_icon"> zu diesem Verzeichnis und lassen
 Sie sich den Inhalt mit dem Befehl <code>ls -lh</code> (oder einer vergleichbaren Operation)
 anzeigen. Die Ausgabe sollte dabei in etwa wie folgt aussehen und aktuell nur
@@ -502,7 +502,7 @@ neuen Tab/Fenster ge&#xF6;ffnet wurde, &#xF6;ffnen wir &#xFC;ber <code>F12</code
 des Browsers und navigieren in dieser zum Reiter Netzwerkanalyse (siehe Abbildung).
  <strong>Wichtig:</strong> Nach Aktivieren der Konsole bzw. der Netzwerkanalyse muss die
  aktuelle Seite ggf. neu geladen werden!</p>
-<p> <img src="../assets/developer_tools.png" alt=""></p>
+<p> <img src="../assets/developer_tools.png" alt></p>
 </li>
 <li><p>Leeren Sie die Netzwerk-&#xDC;bersicht (<img src="../assets/empty_network_tab.png" alt="empty\_network\_tab"> unten rechts in der
 Entwicklerkonsole) und zoomen Sie (einmalig!) zu einem beliebigen Kartenausschnitt.</p>
@@ -510,7 +510,7 @@ Entwicklerkonsole) und zoomen Sie (einmalig!) zu einem beliebigen Kartenausschni
 <li><p>Im Reiter Netzwerkanalyse erscheinen alle Requests des Kartenclients an den
 GeoServer. W&#xE4;hlen Sie aus dieser Liste einen beliebigen WMS-Request aus und
 &#xF6;ffnen Sie im rechten Bereich den Reiter Kopfzeilen (siehe Abbildung):</p>
-<p> <img src="../assets/gwc_response_headers.png" alt=""></p>
+<p> <img src="../assets/gwc_response_headers.png" alt></p>
 <p> Die Ansicht zeigt neben den Anfragekopfzeilen des Clients auch die
  Antwortkopfzeilen des Servers. F&#xFC;r uns sind die Folgenden Headerinformationen
  von Relevanz:</p>
@@ -529,14 +529,14 @@ diese Kachel im Cache ablegen und k&#xFC;nftige Requests werden die Antwort aus
 selbigem erhalten. Um dies zu &#xFC;berpr&#xFC;fen werden wir nun die o.g. Kachel neu
 laden, indem wir in der Entwicklerkonsole das Kontextmen&#xFC; aufrufen und In
 neuem Tab &#xF6;ffnen ausw&#xE4;hlen (siehe Abbildung).</p>
-<p> <img src="../assets/open_in_new_tab.png" alt=""></p>
+<p> <img src="../assets/open_in_new_tab.png" alt></p>
 </li>
 <li><p>&#xD6;ffnen Sie in dem neuen Fenster/Tab erneut die Entwicklerkonsole &#xFC;ber <code>F12</code>
 und aktivieren Sie den Reiter Netzwerkanalyse. Betrachten Sie nun den
 Response-Header <code>geowebcache-cache-result</code>. Was f&#xE4;llt Ihnen auf?</p>
 </li>
 <li><p>Navigieren Sie abschlie&#xDF;end - falls nicht mehr ge&#xF6;ffnet - im Terminal zum
-GWC-Verzeichnis (<code>/usr/local/lib/geoserver-2.10.4/data_dir/gwc/</code>) und pr&#xFC;fen
+GWC-Verzeichnis (<code>/usr/local/lib/geoserver-2.13.2/data_dir/gwc/</code>) und pr&#xFC;fen
 Sie dort den (neuen) Ordner <code>topp_states</code>, in dem der GWC die Kacheln aus selbigem
 Layer abgelegt hat. Die obige Kachel l&#xE4;sst sich dabei anhand der
 Header-Informationen <code>geowebcache-gridset</code> und <code>geowebcache-tile-index</code>

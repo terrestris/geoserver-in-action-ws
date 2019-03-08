@@ -8,7 +8,7 @@
         <title>GeoServer-Datenverzeichnis auslagern | GeoServer in action</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.6.7">
+        <meta name="generator" content="GitBook 2.6.9">
         
         
         <meta name="HandheldFriendly" content="true"/>
@@ -77,7 +77,7 @@
         data-chapter-title="GeoServer-Datenverzeichnis auslagern"
         data-filepath="troubleshooting/datadir.md"
         data-basepath=".."
-        data-revision="Thu Mar 15 2018 11:12:42 GMT+0000 (UTC)"
+        data-revision="Fri Mar 08 2019 15:33:17 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -407,14 +407,14 @@ separat gesichert werden m&#xFC;ssen.</p>
 <ol>
 <li>Wir kopieren das bestehende Datenverzeichnis aus der GeoServer-Installation
 (data_dir/) in ein neues Verzeichnis (gs_data_dir/) in unserem Home-Verzeichnis,
-welches anschlie&#xDF;end als Datenverzeichnis des GeoServers verwendet werden soll:<pre><xmp style="margin:0; font-size: .85em;">cp -r /usr/local/lib/geoserver-2.10.4/data_dir/ /home/user/gs_data_dir
+welches anschlie&#xDF;end als Datenverzeichnis des GeoServers verwendet werden soll:<pre><xmp style="margin:0; font-size: .85em;">cp -r /usr/local/lib/geoserver-2.13.2/data_dir/ /home/user/gs_data_dir
 </xmp></pre></li>
 <li>Das Datenverzeichnis des GeoServers wird &#xFC;ber die Umgebungsvariable (GEOSERVER_DATA_DIR)
 gesteuert. Bei einer klassischen WAR-Installation, etwa auf einem Tomcat, kann
 dieser Wert in der Datei (<code>web.xml</code>) gesetzt werden. Im Falle der OSGeoLive m&#xFC;ssen
 wir diese Variable jedoch im Startup-Skript des GeoServers setzen. F&#xFC;hren Sie
 bitte den folgenden Befehl aus, um das Skript startup.sh mit dem Texteditor
-<em>leafpad</em> und den ben&#xF6;tigten root-Rechten zu &#xF6;ffnen:<pre><xmp style="margin:0; font-size: .85em;">sudo leafpad /usr/local/lib/geoserver-2.10.4/bin/startup.sh
+<em>leafpad</em> und den ben&#xF6;tigten root-Rechten zu &#xF6;ffnen:<pre><xmp style="margin:0; font-size: .85em;">sudo leafpad /usr/local/lib/geoserver-2.13.2/bin/startup.sh
 </xmp></pre></li>
 <li>F&#xFC;gen Sie an den Anfang der Datei folgende Zuweisung ein, um das in Schritt 1
 erstellte Verzeichnis als GeoServer-Datenverzeichnis zu verwenden (und
@@ -422,7 +422,7 @@ speichern Sie anschlie&#xDF;end die Datei):<pre><code>GEOSERVER_DATA_DIR=/home/u
 </code></pre></li>
 <li>Starten Sie den GeoServer neu und beobachten Sie anschlie&#xDF;end im Abschnitt
 <em>Serverstatus</em>, wie sich der Pfad des Datenverzeichnisses ver&#xE4;ndert hat.
-<img src="../assets/data_dir.png" alt=""></li>
+<img src="../assets/data_dir.png" alt></li>
 </ol>
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p></p>
