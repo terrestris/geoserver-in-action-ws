@@ -21,7 +21,7 @@ Das Skript führt die folgenden Aktionen aus:
 * Download des Quellcodes der INSPIRE-Erweiterung für den GeoServer (~0.03MB)
 * Initialisierung eines lokalen Maven-Repositories (dieser Schritt ist nicht
   zwingend nötig, beschleunigt aber die späteren Aufrufe von Maven-Befehlen von
-  vielen Minuten auf wenige Sekunden) (~80MB)
+  vielen Minuten auf wenige Sekunden) (~100MB)
 
 **Sollten Sie die OSGeoLive zwischenzeitlich neu starten, müssen Sie das Skript erneut ausführen!**
 
