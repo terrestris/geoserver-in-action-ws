@@ -12,13 +12,8 @@ für jede Installation (u.a. in Abhängigkeit der verfügbaren Hardwareressource
 erwartbaren Zugriffszahlen, Einsatzzweck des GeoServers). Im Tomcat werden
 die Parameter an die `JAVA_OPTS` (global) oder `CATALINA_OPTS` (Container) übergeben.
 
-Es wird grundsätzlich empfohlen das **Oracle (Sun) JDK statt OpenJDK** zu verwenden,
-da ersteres die Performance des GeoServers erhöht. Details dazu gibt es
-z.B. [hier](http://boundlessgeo.com/whitepaper/geoserver-production-2/#jdk).
-
 | Parameter | Beschreibung | Beispiel |
 | --------- | ------------ | -------- |
-| -server | Für Server optimierte JVM. |  |
 | -Xms | Steuert die Anfangsgröße des Java-Heap-Speichers. Für Produktivsysteme werden Werte im Bereich von 2 bis 4 GB empfohlen. | -Xms2g |
 | -Xmx | Steuert die maximale Größe des Java-Heap-Speichers. d.h. dieser Wert darf nicht kleiner sein als :file:`-Xms`. Es gibt unterschiedliche Meinungen darüber, ob für :file:`-Xms` und :file:`-Xmx` dieselben Werte, d.h. :file:`Xms=Xmx` verwendet werden sollen oder nicht. Wir verwenden auf unseren Systemen :file:`Xms=Xmx` und haben damit keine schlechten Erfahrungen gemacht! | -Xmx2g |
 | -XX:PermSize | Definiert die anfänliche Größe des Speichers, der für die permanente Objektgenerierung reserviert ist. | -XX:PermSize=256m |
