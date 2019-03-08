@@ -78,6 +78,15 @@ Sie sollten folgende Ausgabe erhalten:
 Der GeoServer kann durch einen Doppelklick auf **Start GeoServer** im Ordner
 **Web Services** auf dem Desktop der OSGeoLive gestartet werden:
 
+> **note**
+>
+> Kann der GeoServer **nicht** über den o.g. Weg gestart werden, kann er auch
+> über den folgenden Befehl im Terminal gestartet werden:
+> ```
+> sudo /usr/local/lib/geoserver/bin/startup.sh
+> ```
+> Das Terminal bzw. der Prozess muss dabei während des Workshops geöffnet bleiben!
+
 ![GeoServer starten.](../assets/start_geoserver.png)
 
 ![GeoServer-Weboberfläche nach erfolgreichem Start](../assets/geoserver_gui.png)
