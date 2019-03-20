@@ -7,7 +7,7 @@ Daten aus bestimmten SQL-Datenbanken beziehen (z.B. MySQL oder Oracle). Ebenso
 gibt es Erweiterungen, die es ermöglichen *Excel* (und weitere) als Ausgabeformat
 zu unterstützen.
 
-Ein vergleichsweise neues Zusatzmodul ist die [Importer-Extension](http://docs.geoserver.org/maintain/en/user/extensions/importer/using.html).
+Ein vergleichsweise neues Zusatzmodul ist die [Importer-Extension](https://docs.geoserver.org/stable/en/user/extensions/importer/using.html).
 Hiermit ist es auf einfache Weise möglich, Geodaten (Vektor- und Rasterdaten) über die grafische Oberfläche des GeoServers oder eine REST-Schnittstelle zu importieren.
 Neben dem Import in das GeoServer-Datenverzeichnis kann auch in Datenbanken (u.a. PostGIS und Oracle) importiert und Vorverarbeitungsschritte (Transformationen o.ä.) vorgeschaltet werden.
 
@@ -20,8 +20,8 @@ gibt es noch *Community-Extensions*, die einen experimentellen oder instabilen
 Status haben und kein Teil des offiziellen *Release*-Prozesses sind.
 
 Im Rahmen des Workshops werden wir exemplarisch das WPS-Modul installieren.
-[WPS](http://www.opengeospatial.org/standards/wps) steht für *Web Processing Service*
-und ist (wie WMS und WFS) ein [Standard des OGC](http://www.opengeospatial.org/standards/wps), in dem Regeln für das Anfragen
+[WPS](https://www.opengeospatial.org/standards/wps) steht für *Web Processing Service*
+und ist (wie WMS und WFS) ein [Standard des OGC](https://www.opengeospatial.org/standards/wps), in dem Regeln für das Anfragen
 und Antworten von (räumlichen) Prozessen, definiert sind.
 
 ## Installieren der WPS-Erweiterung

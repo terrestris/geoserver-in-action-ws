@@ -65,4 +65,4 @@ bestehenden Layer zu editieren und abschließend einen bestehenden Layer zu entf
 
 **Footnotes**
 
-[1] Fielding, R.T. (2000): Architectural Styles and the Design of Network-based Software Architectures. Abrufbar unter: <http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm>
+[1] Fielding, R.T. (2000): Architectural Styles and the Design of Network-based Software Architectures. Abrufbar unter: <https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm>

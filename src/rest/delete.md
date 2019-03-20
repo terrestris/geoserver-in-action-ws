@@ -43,7 +43,7 @@ Wurden die Ressourcen erfolgreich entfernt, wird der Status `HTTP/1.1 200 OK` au
 >
 > Möchten Sie sich - auf Grundlage der Beispiele dieses Workshops oder Ihrer eigenen Daten - weiter mit der REST-API beschäftigen, finden Sie in der offiziellen Dokumentation viele Hinweise und gute Beispiele:
 >
-> [<http://docs.geoserver.org/stable/en/user/rest/>](http://docs.geoserver.org/stable/en/user/rest/)
+> [<https://docs.geoserver.org/stable/en/user/rest/>](https://docs.geoserver.org/stable/en/user/rest/)
 
 Sie haben das Modul REST-Schnittstelle erfolgreich beendet, Sie können
 nun mit [Modul Tipps, Tricks & Troubleshooting](../troubleshooting/README.md) fortfahren.

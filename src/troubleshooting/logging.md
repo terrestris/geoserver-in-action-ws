@@ -66,6 +66,6 @@ der Ausgabe verändert.
 
 Das GeoServer-Logging-System basiert auf der Java-Logging-Bibliothek Log4J.
 Somit gibt es zusätzlich die Möglichkeit eigene LOGGING-Profile zu definieren und diese im Geoserver-Datenverzeichnis im Unterordner `logs/` bereitzustellen.
-Näheres hierzu finden Sie [hier](http://docs.geoserver.org/latest/en/user/configuration/logging.html).
+Näheres hierzu finden Sie [hier](https://docs.geoserver.org/stable/en/user/configuration/logging.html).
 
 Im folgenden [Abschnitt](gwc.md) geht es mit dem Thema *GeoWebCache (GWC)* weiter.

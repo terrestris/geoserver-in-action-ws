@@ -21,7 +21,7 @@ die Parameter an die `JAVA_OPTS` (global) oder `CATALINA_OPTS` (Container) über
 | -Djavax.servlet.request.encoding | Zeichenkodierung eingehender Anfragen (Standard: ISO 8559-1) | -Djavax.servlet.request.encoding=UTF-8 |
 | -Djavax.servlet.response.encoding | Zeichenkodierung ausgehender Antworten (Standard: ISO 8559-1) | -Djavax.servlet.response.encoding=UTF-8 |
 | -Dfile.encoding | Zeichenkodierung beim Umgang mit statischen Dateien (Standard: Default des Betriebssystems, daher ggf. wichtig bei Windows-Systemen) | -Dfile.encoding=UTF-8 |
-| -XX:+UseParallelGC | Garbage Collection für Mehrkern-Systeme (siehe [hier](http://boundlessgeo.com/whitepaper/geoserver-production-2/#jvm)) |  |
+| -XX:+UseParallelGC | Garbage Collection für Mehrkern-Systeme |  |
 | -XX:+UseParallelOldGC |  s.o. | - |
 
 

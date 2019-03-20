@@ -9,7 +9,7 @@ existieren eine Vielzahl guter OpenSource Caching-Engines, wir werden an dieser
 Stelle jedoch den standardmäßig im GeoServer integrierten GeoWebCache (GWC) nutzen,
 der als Proxy zwischen Client und GeoServer fungiert (siehe Abbildung).
 
-![Funktionsübersicht des GWC als Proxy, Quelle: <a href="http://geowebcache.org/docs/current/introduction/whatis.html">What Is GeoWebCache?</a>](../assets/gwc.png)
+![Funktionsübersicht des GWC als Proxy, Quelle: <a href="https://www.geowebcache.org/docs/current/introduction/whatis.html">What Is GeoWebCache?</a>](../assets/gwc.png)
 
 Prinzipiell bietet der GWC zwei Methoden zum Anlegen der Kartenkacheln:
 
@@ -75,7 +75,7 @@ Folgenden die notwendigen Schritte zum Anlegen eines GWC-Layers vollziehen werde
       Bildbreite der Zielkachel um den Faktor drei erhöht wird und sich damit für
       eine Kachelgröße von 256px eine Metatile-Kachelgröße von 768px ergibt (siehe Abbildung).
 
-        ![Mit Metatiles wird die Zielkachel (TILE) aus einer größeren Kachel (METATILE) herausgeschnitten, <http://geowebcache.org/docs/current/_images/metatile.png>](../assets/gwc_metatile.png)
+        ![Mit Metatiles wird die Zielkachel (TILE) aus einer größeren Kachel (METATILE) herausgeschnitten, <https://geowebcache.org/docs/current/_images/metatile.png>](../assets/gwc_metatile.png)
 
       Metatiles werden in erster Linie benötigt, um doppelte Kartenbeschriftungen
       (z.B. von Straßenlayern) in zwei aneinanderliegenden Kacheln zu vermeiden.
@@ -100,7 +100,7 @@ Folgenden die notwendigen Schritte zum Anlegen eines GWC-Layers vollziehen werde
       Koordinatensystem gültig. Wählen Sie hier die Projektion bzw. das Grid,
       in dem der Layer gecacht werden soll.
 
-        ![Gridset eines Tile-Layers, <http://3.bp.blogspot.com/_0_xIiXP5xuY/S5pEpCjenaI/AAAAAAAAAKY/PDKTGZ6vzGI/s1600-h/Image_Pyramid.gif>](../assets/gwc_image_pyramid.png)
+        ![Gridset eines Tile-Layers, <https://3.bp.blogspot.com/_0_xIiXP5xuY/S5pEpCjenaI/AAAAAAAAAKY/PDKTGZ6vzGI/s1600-h/Image_Pyramid.gif>](../assets/gwc_image_pyramid.png)
 
     **Hinweis**: Die Standardeinstellungen für einen neuen gecachten Layer können Sie
     unter dem Menüeintrag *Caching Standards* anpassen.
@@ -174,7 +174,7 @@ im Browser zu analysieren. Fahren Sie nun mit dem [nächsten Kapitel](datadir.md
 In der Praxis wird es in aller Regel unter gegebenen Ressourcen notwendig sein,
 den Layercache für häufig angeforderte Layer im Voraus zu berechnen. Die folgende
 Liste führt die notwendingen Schritte am Beispiel des Layers `topp:states` in
-Kurzform auf. Weiterführende Informationen finden Sie in der [GWC Dokumentation](http://geowebcache.org/docs/latest/webinterface/index.html).
+Kurzform auf. Weiterführende Informationen finden Sie in der [GWC Dokumentation](https://www.geowebcache.org/docs/current/webinterface/index.html).
 
 1. Öffnen Sie die die GWC Administrationsoberfläche über {{ book.geoServerBaseUrl }}/gwc
    und wählen Sie unter `A list of all the layers and automatic demos` den Eintrag
@@ -208,4 +208,4 @@ Button "Submit" gestartet.
 
 > **hint**
 >
-> Die obigen Schritte zum Anlegen eines Layercache sind auch über eine REST-API möglich. Informationen und gute Beispiele zu dieser API finden Sie unter [<http://docs.geoserver.org/stable/en/user/geowebcache/rest/index.html>](http://docs.geoserver.org/stable/en/user/geowebcache/rest/index.html)
+> Die obigen Schritte zum Anlegen eines Layercache sind auch über eine REST-API möglich. Informationen und gute Beispiele zu dieser API finden Sie unter [<https://docs.geoserver.org/stable/en/user/geowebcache/rest/index.html>](https://docs.geoserver.org/stable/en/user/geowebcache/rest/index.html)
