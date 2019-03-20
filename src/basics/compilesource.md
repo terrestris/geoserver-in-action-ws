@@ -7,7 +7,7 @@
 > erfolgreich ausgeführt haben!
 
 In diesem Abschnitt wird gezeigt wie sich der Quellcode des GeoServers bzw.
-einzelner Module mit dem *Build-Management-Tool* [Maven](http://maven.apache.org/)
+einzelner Module mit dem *Build-Management-Tool* [Maven](https://maven.apache.org/)
 kompilieren lässt. Maven wird von der GeoServer-Community für die Erstellung und
 Verwaltung der Software eingesetzt. Anschließend könnten Sie z.B. den Original-Code
 für spezielle Anwendungsfälle anpassen (oder erweitern) und eine derart
@@ -21,19 +21,19 @@ modifizierte GeoServer-Version einsetzen.
 > der Software bietet Maven Unterstützung für den gesamten Lebenszyklus einer
 > Software. Leider können wir an dieser Stelle nicht näher auf Maven eingehen,
 > da dies den Rahmen des Workshops sprengen würde. Einen Einstieg in die Maven-Welt
-> finden Sie z.B. unter [<http://maven.apache.org/guides/>](http://maven.apache.org/guides/).
+> finden Sie z.B. unter [<https://maven.apache.org/guides/>](https://maven.apache.org/guides/).
 
 Bevor wir konkrete Maven-Befehle aufrufen, um sogenannte *Maven-Artefakte* zu
 erzeugen (welche in unserem Falle Java-Kompilaten, also .jar-Dateien, entsprechen)
 wollen wir zunächst aufzeigen wie Sie grundsätzlich mit dem GeoServer-Quellcode
 und Maven arbeiten können.
 
-Anschließend werden wir exemplarisch den Quellcode der [INSPIRE](http://inspire.ec.europa.eu/)-Erweiterung
+Anschließend werden wir exemplarisch den Quellcode der [INSPIRE](https://inspire.ec.europa.eu/)-Erweiterung
 des GeoServers mit Maven kompilieren und auf dem GeoServer installieren.
 
 ## GeoServer-Quellcode und Maven
 
-Der GeoServer-Quellcode wird mit [git](http://git-scm.com/) verwaltet. *Git* ist
+Der GeoServer-Quellcode wird mit [git](https://git-scm.com/) verwaltet. *Git* ist
 eine freie Software zur verteilten Versionsverwaltung von Dateien, mit dem z.B.
 auch der Linux-Kernel verwaltet wird. Den Quellcode des GeoServers finden Sie hier:
 
@@ -55,7 +55,7 @@ eine `pom.xml` enthält, können Sie dort Maven-Befehle ausführen. Der Befehl
 `mvn package` würde z.B. das entsprechende Artefakt bauen und in einen Unterordner
 `target/` ablegen.
 
-Nähere Details zur Verwendung von Maven beim Kompilieren von GeoServer finden Sie unter [<http://docs.geoserver.org/latest/en/developer/maven-guide/index.html>](http://docs.geoserver.org/latest/en/developer/maven-guide/index.html).
+Nähere Details zur Verwendung von Maven beim Kompilieren von GeoServer finden Sie unter [<https://docs.geoserver.org/stable/en/developer/maven-guide/index.html>](https://docs.geoserver.org/stable/en/developer/maven-guide/index.html).
 
 ## Kompilieren der INSPIRE-Erweiterung
 

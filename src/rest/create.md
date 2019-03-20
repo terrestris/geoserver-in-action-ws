@@ -51,7 +51,7 @@ können. Nach Aufruf des Befehls sollte im Terminal folgende Ausgabe erscheinen:
 * Connection #0 to host localhost left intact
 </code></pre>
 
-An dieser Stelle sind zwei Informationen für uns entscheidend:  
+An dieser Stelle sind zwei Informationen für uns entscheidend:
 1. `HTTP/1.1 201 Created`: Der Aufruf wurde erfolgreich bearbeitet und die
    Ressource erstellt.
 2. `{{ book.geoServerBaseUrl }}/rest/workspaces/fossgis`: Die URL
@@ -111,7 +111,7 @@ curl \
 >
 > Die hier genutzte Datenbank *natural\_earth2* ist auf der OSGeoLive vorinstalliert
 > und entstammt dem Natural Earth Projekt. Weiterführende Informationen zum Datensatz
-> sowie die Daten selbst finden Sie unter [<http://www.naturalearthdata.com/>](http://www.naturalearthdata.com/).
+> sowie die Daten selbst finden Sie unter [<https://www.naturalearthdata.com/>](https://www.naturalearthdata.com/).
 
 Die erfolgreiche Anlage des Datenspeichers wird uns erneut über den Statuscode
 `HTTP/1.1 201 Created` bestätigt und kann wiederum über die [GUI]({{ book.geoServerBaseUrl }})
