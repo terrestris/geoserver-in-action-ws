@@ -77,7 +77,7 @@
         data-chapter-title="Cachen von Layern mit GWC"
         data-filepath="troubleshooting/gwc.md"
         data-basepath=".."
-        data-revision="Fri Mar 08 2019 16:28:53 GMT+0000 (UTC)"
+        data-revision="Wed Mar 20 2019 11:03:55 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -406,7 +406,7 @@ jedem (produktiven) System vorgenommen werden. F&#xFC;r das Cachen von Kartenkac
 existieren eine Vielzahl guter OpenSource Caching-Engines, wir werden an dieser
 Stelle jedoch den standardm&#xE4;&#xDF;ig im GeoServer integrierten GeoWebCache (GWC) nutzen,
 der als Proxy zwischen Client und GeoServer fungiert (siehe Abbildung).</p>
-<figure id="fig4.2.1"><img src="../assets/gwc.png" alt="Funktions&#xFC;bersicht des GWC als Proxy, Quelle: &lt;a href=&quot;http://geowebcache.org/docs/current/introduction/whatis.html&quot;&gt;What Is GeoWebCache?&lt;/a&gt;"><figcaption>Funktions&#xFC;bersicht des GWC als Proxy, Quelle: <a href="http://geowebcache.org/docs/current/introduction/whatis.html">What Is GeoWebCache?</a></figcaption></figure>
+<figure id="fig4.2.1"><img src="../assets/gwc.png" alt="Funktions&#xFC;bersicht des GWC als Proxy, Quelle: &lt;a href=&quot;https://www.geowebcache.org/docs/current/introduction/whatis.html&quot;&gt;What Is GeoWebCache?&lt;/a&gt;"><figcaption>Funktions&#xFC;bersicht des GWC als Proxy, Quelle: <a href="https://www.geowebcache.org/docs/current/introduction/whatis.html">What Is GeoWebCache?</a></figcaption></figure>
 <p>Prinzipiell bietet der GWC zwei Methoden zum Anlegen der Kartenkacheln:</p>
 <ol>
 <li><strong>On-The-Fly-Prozessierung</strong>: Wird ein GWC-Layer erstmalig von einem Client
@@ -464,7 +464,7 @@ denen die zu speichernden Kacheln herausgeschnitten werden. Der Faktor gibt
 hierbei die Gr&#xF6;&#xDF;e der Metatiles an, ein Faktor von 3x3 bedeutet, dass die
 Bildbreite der Zielkachel um den Faktor drei erh&#xF6;ht wird und sich damit f&#xFC;r
 eine Kachelgr&#xF6;&#xDF;e von 256px eine Metatile-Kachelgr&#xF6;&#xDF;e von 768px ergibt (siehe Abbildung).</p>
-<p>  <img src="../assets/gwc_metatile.png" alt="Mit Metatiles wird die Zielkachel (TILE) aus einer gr&#xF6;&#xDF;eren Kachel (METATILE) herausgeschnitten, &lt;http://geowebcache.org/docs/current/_images/metatile.png&gt;"></p>
+<p>  <img src="../assets/gwc_metatile.png" alt="Mit Metatiles wird die Zielkachel (TILE) aus einer gr&#xF6;&#xDF;eren Kachel (METATILE) herausgeschnitten, &lt;https://geowebcache.org/docs/current/_images/metatile.png&gt;"></p>
 <p>Metatiles werden in erster Linie ben&#xF6;tigt, um doppelte Kartenbeschriftungen
 (z.B. von Stra&#xDF;enlayern) in zwei aneinanderliegenden Kacheln zu vermeiden.</p>
 </li>
@@ -488,7 +488,7 @@ Die x,y Koordinaten bestimmen die horizontale/vertikale Position, die
 z-Koordinate das Zoomlevel. Ein Grid ist dabei stets f&#xFC;r genau ein
 Koordinatensystem g&#xFC;ltig. W&#xE4;hlen Sie hier die Projektion bzw. das Grid,
 in dem der Layer gecacht werden soll.</p>
-<p>  <img src="../assets/gwc_image_pyramid.png" alt="Gridset eines Tile-Layers, &lt;http://3.bp.blogspot.com/_0_xIiXP5xuY/S5pEpCjenaI/AAAAAAAAAKY/PDKTGZ6vzGI/s1600-h/Image_Pyramid.gif&gt;"></p>
+<p>  <img src="../assets/gwc_image_pyramid.png" alt="Gridset eines Tile-Layers, &lt;https://3.bp.blogspot.com/_0_xIiXP5xuY/S5pEpCjenaI/AAAAAAAAAKY/PDKTGZ6vzGI/s1600-h/Image_Pyramid.gif&gt;"></p>
 <p><strong>Hinweis</strong>: Die Standardeinstellungen f&#xFC;r einen neuen gecachten Layer k&#xF6;nnen Sie
 unter dem Men&#xFC;eintrag <em>Caching Standards</em> anpassen.</p>
 </li>
@@ -558,7 +558,7 @@ im Browser zu analysieren. Fahren Sie nun mit dem <a href="datadir.html">n&#xE4;
 <p>In der Praxis wird es in aller Regel unter gegebenen Ressourcen notwendig sein,
 den Layercache f&#xFC;r h&#xE4;ufig angeforderte Layer im Voraus zu berechnen. Die folgende
 Liste f&#xFC;hrt die notwendingen Schritte am Beispiel des Layers <code>topp:states</code> in
-Kurzform auf. Weiterf&#xFC;hrende Informationen finden Sie in der <a href="http://geowebcache.org/docs/latest/webinterface/index.html" target="_blank">GWC Dokumentation</a>.</p>
+Kurzform auf. Weiterf&#xFC;hrende Informationen finden Sie in der <a href="https://www.geowebcache.org/docs/current/webinterface/index.html" target="_blank">GWC Dokumentation</a>.</p>
 <ol>
 <li>&#xD6;ffnen Sie die die GWC Administrationsoberfl&#xE4;che &#xFC;ber <a href="http://localhost:8082/geoserver/gwc" target="_blank">http://localhost:8082/geoserver/gwc</a>
 und w&#xE4;hlen Sie unter <code>A list of all the layers and automatic demos</code> den Eintrag
@@ -594,7 +594,7 @@ Button &quot;Submit&quot; gestartet.</p>
 </ol>
 <blockquote class="clearfix alert alert-success"><strong class="fa fa-2x fa-lightbulb-o"></strong>
 <p></p>
-<p>Die obigen Schritte zum Anlegen eines Layercache sind auch &#xFC;ber eine REST-API m&#xF6;glich. Informationen und gute Beispiele zu dieser API finden Sie unter <a href="http://docs.geoserver.org/stable/en/user/geowebcache/rest/index.html" target="_blank"><a href="http://docs.geoserver.org/stable/en/user/geowebcache/rest/index.html" target="_blank">http://docs.geoserver.org/stable/en/user/geowebcache/rest/index.html</a></a></p>
+<p>Die obigen Schritte zum Anlegen eines Layercache sind auch &#xFC;ber eine REST-API m&#xF6;glich. Informationen und gute Beispiele zu dieser API finden Sie unter <a href="https://docs.geoserver.org/stable/en/user/geowebcache/rest/index.html" target="_blank"><a href="https://docs.geoserver.org/stable/en/user/geowebcache/rest/index.html" target="_blank">https://docs.geoserver.org/stable/en/user/geowebcache/rest/index.html</a></a></p>
 </blockquote>
 
                     

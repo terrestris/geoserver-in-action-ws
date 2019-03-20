@@ -77,7 +77,7 @@
         data-chapter-title="Kompilieren des Quellcodes mit maven"
         data-filepath="basics/compilesource.md"
         data-basepath=".."
-        data-revision="Fri Mar 08 2019 16:28:53 GMT+0000 (UTC)"
+        data-revision="Wed Mar 20 2019 11:03:55 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -405,7 +405,7 @@
 erfolgreich ausgef&#xFC;hrt haben!</p>
 </blockquote>
 <p>In diesem Abschnitt wird gezeigt wie sich der Quellcode des GeoServers bzw.
-einzelner Module mit dem <em>Build-Management-Tool</em> <a href="http://maven.apache.org/" target="_blank">Maven</a>
+einzelner Module mit dem <em>Build-Management-Tool</em> <a href="https://maven.apache.org/" target="_blank">Maven</a>
 kompilieren l&#xE4;sst. Maven wird von der GeoServer-Community f&#xFC;r die Erstellung und
 Verwaltung der Software eingesetzt. Anschlie&#xDF;end k&#xF6;nnten Sie z.B. den Original-Code
 f&#xFC;r spezielle Anwendungsf&#xE4;lle anpassen (oder erweitern) und eine derart
@@ -418,16 +418,16 @@ der Quelldateien, &#xFC;ber das Kompilieren, Testen, Verpacken bis hin zum Insta
 der Software bietet Maven Unterst&#xFC;tzung f&#xFC;r den gesamten Lebenszyklus einer
 Software. Leider k&#xF6;nnen wir an dieser Stelle nicht n&#xE4;her auf Maven eingehen,
 da dies den Rahmen des Workshops sprengen w&#xFC;rde. Einen Einstieg in die Maven-Welt
-finden Sie z.B. unter <a href="http://maven.apache.org/guides/" target="_blank"><a href="http://maven.apache.org/guides/" target="_blank">http://maven.apache.org/guides/</a></a>.</p>
+finden Sie z.B. unter <a href="https://maven.apache.org/guides/" target="_blank"><a href="https://maven.apache.org/guides/" target="_blank">https://maven.apache.org/guides/</a></a>.</p>
 </blockquote>
 <p>Bevor wir konkrete Maven-Befehle aufrufen, um sogenannte <em>Maven-Artefakte</em> zu
 erzeugen (welche in unserem Falle Java-Kompilaten, also .jar-Dateien, entsprechen)
 wollen wir zun&#xE4;chst aufzeigen wie Sie grunds&#xE4;tzlich mit dem GeoServer-Quellcode
 und Maven arbeiten k&#xF6;nnen.</p>
-<p>Anschlie&#xDF;end werden wir exemplarisch den Quellcode der <a href="http://inspire.ec.europa.eu/" target="_blank">INSPIRE</a>-Erweiterung
+<p>Anschlie&#xDF;end werden wir exemplarisch den Quellcode der <a href="https://inspire.ec.europa.eu/" target="_blank">INSPIRE</a>-Erweiterung
 des GeoServers mit Maven kompilieren und auf dem GeoServer installieren.</p>
 <h2 id="geoserverquellcode-und-maven">GeoServer-Quellcode und Maven</h2>
-<p>Der GeoServer-Quellcode wird mit <a href="http://git-scm.com/" target="_blank">git</a> verwaltet. <em>Git</em> ist
+<p>Der GeoServer-Quellcode wird mit <a href="https://git-scm.com/" target="_blank">git</a> verwaltet. <em>Git</em> ist
 eine freie Software zur verteilten Versionsverwaltung von Dateien, mit dem z.B.
 auch der Linux-Kernel verwaltet wird. Den Quellcode des GeoServers finden Sie hier:</p>
 <p><a href="https://github.com/geoserver/geoserver" target="_blank">https://github.com/geoserver/geoserver</a></p>
@@ -444,7 +444,7 @@ ein Submodul von <em>extension</em>.</p>
 eine <code>pom.xml</code> enth&#xE4;lt, k&#xF6;nnen Sie dort Maven-Befehle ausf&#xFC;hren. Der Befehl
 <code>mvn package</code> w&#xFC;rde z.B. das entsprechende Artefakt bauen und in einen Unterordner
 <code>target/</code> ablegen.</p>
-<p>N&#xE4;here Details zur Verwendung von Maven beim Kompilieren von GeoServer finden Sie unter <a href="http://docs.geoserver.org/latest/en/developer/maven-guide/index.html" target="_blank"><a href="http://docs.geoserver.org/latest/en/developer/maven-guide/index.html" target="_blank">http://docs.geoserver.org/latest/en/developer/maven-guide/index.html</a></a>.</p>
+<p>N&#xE4;here Details zur Verwendung von Maven beim Kompilieren von GeoServer finden Sie unter <a href="https://docs.geoserver.org/stable/en/developer/maven-guide/index.html" target="_blank"><a href="https://docs.geoserver.org/stable/en/developer/maven-guide/index.html" target="_blank">https://docs.geoserver.org/stable/en/developer/maven-guide/index.html</a></a>.</p>
 <h2 id="kompilieren-der-inspireerweiterung">Kompilieren der INSPIRE-Erweiterung</h2>
 <p>Wir werden nun die INSPIRE-Erweiterung des GeoServers auf Basis des Quellcodes
 selber kompilieren. Anschlie&#xDF;end kann die Erweiterung analog zum <a href="installextensions.html">vorigen Abschnitt</a>
