@@ -34,7 +34,7 @@ Weitere Details zur klassischen WAR-Installation finden sich
 >
 > Der GeoServer ist auf dem OSGeoLive-System bereits vorinstalliert und kann im
 > Rahmen des Workshops unter {{ book.geoServerBaseUrl }} aufgerufen werden
-> (siehe [hier](../environment/README.md). Diese Variante unterscheidet sich von
+> (siehe [hier](../environment/README.md)). Diese Variante unterscheidet sich von
 > dem klassischen *Deployment* als .war-Datei, da hier ein Java-Programm
 > (start.jar) ausgeführt wird, welches programmatisch einen Jetty-Server mit dem
 > Geoserver startet. Für die Inhalte des Workshops ist dies aber nicht von Bedeutung.

@@ -15,7 +15,7 @@
     "geoServerUser": "admin",
     "geoServerPassword": "geoserver",
     "geoServerVersion": "2.13.2",
-    "osGeoLiveVersion": "12.0",
+    "osGeoLiveVersion": "13.0",
     "authors": [{
       "name": "Nils Bühner",
       "mail": "buehner@terrestris.de"

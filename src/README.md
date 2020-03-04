@@ -2,8 +2,8 @@
 
 # GeoServer in action
 
-Herzlich Willkommen beim **GeoServer in action** Workshop auf der FOSSGIS 2019
-in Dresden.
+Herzlich Willkommen beim **GeoServer in action** Workshop auf der FOSSGIS 2020
+in Freiburg.
 
 Dieser Workshop wurde für die Verwendung auf der [OSGeo-Live {{ book.osGeoLiveVersion }} DVD](https://live.osgeo.org) entwickelt und soll Ihnen einen umfassenden Überblick über den GeoServer als
 Web-Mapping-Lösung geben.
