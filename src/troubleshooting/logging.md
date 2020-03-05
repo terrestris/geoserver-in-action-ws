@@ -30,7 +30,7 @@ Hier eine kurze Erläuterung einiger Protokoll-Profile:
 | `VERBOSE_LOGGING` | Ausführliche Protokollierung auf allen Ebenen des GeoServes. Nur sinnvoll, wenn der GeoServer debuggt wird.|
 
 Wir wollen das Protokoll des GeoServers nun *live* über das Dateisystem beobachten.
-Dazu führen müssen die folgenden Schritte ausgeführt werden.
+Dazu müssen die folgenden Schritte ausgeführt werden.
 
 1. Stellen Sie das VERBOSE\_LOGGING-Profil ein.
 2. Der GeoServer auf der OSGeoLive ist so konfiguriert, dass nicht automatisch
