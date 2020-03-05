@@ -57,7 +57,7 @@ drwxrwxr-x 2 root users    3 Jan 14 19:58 tmp/
 > </context-param>
 > ```
 
-Wie wir aus dem obigen Ordnerliste entnehmen können, existiert zum aktuellen
+Wie wir aus der obigen Ordnerliste entnehmen können, existiert zum aktuellen
 Zeitpunkt noch kein Verzeichnis mit vorberechneten Kartenkacheln, weshalb wir im
 Folgenden die notwendigen Schritte zum Anlegen eines GWC-Layers vollziehen werden:
 
