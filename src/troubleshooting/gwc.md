@@ -80,7 +80,7 @@ Folgenden die notwendigen Schritte zum Anlegen eines GWC-Layers vollziehen werde
       Metatiles werden in erster Linie benötigt, um doppelte Kartenbeschriftungen
       (z.B. von Straßenlayern) in zwei aneinanderliegenden Kacheln zu vermeiden.
     * **Kachel-Umrandung**: Zusätzlicher Rahmen (in px), der um eine Kachel
-      angefordert werden soll. Nur sinnvoll, wenn in Verbindung mit der Vernwendung
+      angefordert werden soll. Nur sinnvoll, wenn in Verbindung mit der Verwendung
       von Metatiles Problemen bei der Darstellung von Labels und/oder Features
       am Kachelrand auftreten.
     * **Bildformat für Kacheln**: Das Standard Bildformat für die Kacheln. Dieses
