@@ -15,7 +15,7 @@ Die beiden Links verweisen auf die Dokumentationen der letzten stabilen Version.
 Das *stable* in der URL kann auch durch eine Versionsnummer ersetzt werden, falls
 man die Dokumentation einer bestimmten GeoServer-Version aufrufen möchte. Im Rahmen
 dieses Workshops wird die **Version {{ book.geoServerVersion }}** behandelt, die resultierende
-URL der Benutzerdokumentation würde also <https://docs.geoserver.org/{{ book.geoServerVersion }}/user/>
+URL der Benutzerdokumentation würde also <https://docs.geoserver.org/stable/en/user/>
 lauten.
 
 ![GeoServer-Weboberfläche nach erfolgreichem Login](../assets/geoserver_login_gui.png)
