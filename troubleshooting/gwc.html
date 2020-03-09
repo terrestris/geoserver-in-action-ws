@@ -77,7 +77,7 @@
         data-chapter-title="Cachen von Layern mit GWC"
         data-filepath="troubleshooting/gwc.md"
         data-basepath=".."
-        data-revision="Wed Mar 20 2019 11:03:55 GMT+0000 (UTC)"
+        data-revision="Mon Mar 09 2020 15:27:17 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -426,7 +426,7 @@ k&#xF6;nnen und aus diesem Grund werden wir uns auf die grundlegende Konfigurati
 Beispiel der On-The-Fly-Prozessierung beschr&#xE4;nken und beispielhaft einen Cache
 f&#xFC;r den Layer <em>topp:states</em> vorbereiten.</p>
 <p>Auf der OSGeoLive werden die vorgerechneten Kartenkacheln im Verzeichnis</p>
-<p><pre>/usr/local/lib/geoserver-2.13.2/data_dir/gwc/</pre> abgelegt. Navigieren Sie zun&#xE4;chst
+<p><pre>/usr/local/lib/geoserver-2.15.1/data_dir/gwc/</pre> abgelegt. Navigieren Sie zun&#xE4;chst
 im Terminal <img src="../assets/terminal_icon.png" alt="terminal_icon"> zu diesem Verzeichnis und lassen
 Sie sich den Inhalt mit dem Befehl <code>ls -lh</code> (oder einer vergleichbaren Operation)
 anzeigen. Die Ausgabe sollte dabei in etwa wie folgt aussehen und aktuell nur
@@ -447,7 +447,7 @@ Ordners beachten!):</p>
 <span class="hljs-tag">&lt;/<span class="hljs-title">context-param</span>&gt;</span>
 </code></pre>
 </blockquote>
-<p>Wie wir aus dem obigen Ordnerliste entnehmen k&#xF6;nnen, existiert zum aktuellen
+<p>Wie wir aus der obigen Ordnerliste entnehmen k&#xF6;nnen, existiert zum aktuellen
 Zeitpunkt noch kein Verzeichnis mit vorberechneten Kartenkacheln, weshalb wir im
 Folgenden die notwendigen Schritte zum Anlegen eines GWC-Layers vollziehen werden:</p>
 <ol>
@@ -469,7 +469,7 @@ eine Kachelgr&#xF6;&#xDF;e von 256px eine Metatile-Kachelgr&#xF6;&#xDF;e von 768
 (z.B. von Stra&#xDF;enlayern) in zwei aneinanderliegenden Kacheln zu vermeiden.</p>
 </li>
 <li><strong>Kachel-Umrandung</strong>: Zus&#xE4;tzlicher Rahmen (in px), der um eine Kachel
-angefordert werden soll. Nur sinnvoll, wenn in Verbindung mit der Vernwendung
+angefordert werden soll. Nur sinnvoll, wenn in Verbindung mit der Verwendung
 von Metatiles Problemen bei der Darstellung von Labels und/oder Features
 am Kachelrand auftreten.</li>
 <li><strong>Bildformat f&#xFC;r Kacheln</strong>: Das Standard Bildformat f&#xFC;r die Kacheln. Dieses
@@ -536,7 +536,7 @@ und aktivieren Sie den Reiter Netzwerkanalyse. Betrachten Sie nun den
 Response-Header <code>geowebcache-cache-result</code>. Was f&#xE4;llt Ihnen auf?</p>
 </li>
 <li><p>Navigieren Sie abschlie&#xDF;end - falls nicht mehr ge&#xF6;ffnet - im Terminal zum
-GWC-Verzeichnis (<code>/usr/local/lib/geoserver-2.13.2/data_dir/gwc/</code>) und pr&#xFC;fen
+GWC-Verzeichnis (<code>/usr/local/lib/geoserver-2.15.1/data_dir/gwc/</code>) und pr&#xFC;fen
 Sie dort den (neuen) Ordner <code>topp_states</code>, in dem der GWC die Kacheln aus selbigem
 Layer abgelegt hat. Die obige Kachel l&#xE4;sst sich dabei anhand der
 Header-Informationen <code>geowebcache-gridset</code> und <code>geowebcache-tile-index</code>

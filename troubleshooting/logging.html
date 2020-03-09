@@ -77,7 +77,7 @@
         data-chapter-title="Protokollierung"
         data-filepath="troubleshooting/logging.md"
         data-basepath=".."
-        data-revision="Wed Mar 20 2019 11:03:55 GMT+0000 (UTC)"
+        data-revision="Mon Mar 09 2020 15:27:17 GMT+0000 (UTC)"
         data-innerlanguage="">
     
 
@@ -401,7 +401,7 @@
 <p>Bei jeglichen Fehlern, die sich auf den GeoServer zur&#xFC;ckf&#xFC;hren lassen (wie z.B.
 keine oder falsche Antwort eines Kartendienstes) ist das Protokoll die erste
 Anlaufstelle. Das GeoServer Protokoll l&#xE4;sst sich dabei entweder direkt &#xFC;ber
-die GUI oder aus dem Dateisystem (<code>/usr/local/lib/geoserver-2.13.2/data_dir/logs/geoserver.log</code>) aufrufen.
+die GUI oder aus dem Dateisystem (<code>/usr/local/lib/geoserver-2.15.1/data_dir/logs/geoserver.log</code>) aufrufen.
 Bei schwerwiegenden Problemen bzw. Fehlern steht der Logging-Message das K&#xFC;rzel <code>ERROR</code> vor,
 rein informativen Protokollmeldungen das K&#xFC;rzel <code>INFO</code>.</p>
 <p>F&#xFC;r die Protokollierung des GeoServers lassen sich verschiedene Profile einstellen.
@@ -445,18 +445,18 @@ verursacht werden, ist diese Einstellung nur f&#xFC;r das Debuggen zu empfehlen.
 </tbody>
 </table>
 <p>Wir wollen das Protokoll des GeoServers nun <em>live</em> &#xFC;ber das Dateisystem beobachten.
-Dazu f&#xFC;hren m&#xFC;ssen die folgenden Schritte ausgef&#xFC;hrt werden.</p>
+Dazu m&#xFC;ssen die folgenden Schritte ausgef&#xFC;hrt werden.</p>
 <ol>
 <li>Stellen Sie das VERBOSE_LOGGING-Profil ein.</li>
 <li>Der GeoServer auf der OSGeoLive ist so konfiguriert, dass nicht automatisch
 in die Protokolldatei, sondern in die Standardausgabe des Java-Prozesses
 geschrieben wird. Wir m&#xFC;ssen also den <strong>Haken bei</strong>
 <em>in die Standardausgabe schreiben</em> <strong>entfernen</strong>, sodass das Protokoll in die
-Datei <code>/usr/local/lib/geoserver-2.13.2/data_dir/logs/geoserver.log</code> geschrieben wird.</li>
+Datei <code>/usr/local/lib/geoserver-2.15.1/data_dir/logs/geoserver.log</code> geschrieben wird.</li>
 <li>Speichern Sie die Einstellungen (unten).</li>
 <li>&#xD6;ffnen Sie die Konsole und f&#xFC;hren Sie den folgenden Befehl aus:</li>
 </ol>
-<pre><code>less +F /usr/local/lib/geoserver-2.13.2/data_dir/logs/geoserver.log</code></pre>
+<pre><code>less +F /usr/local/lib/geoserver-2.15.1/data_dir/logs/geoserver.log</code></pre>
 
 <blockquote class="clearfix alert alert-info"><strong class="fa fa-2x fa-edit"></strong>
 <p></p>
