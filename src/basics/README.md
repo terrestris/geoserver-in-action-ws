@@ -15,7 +15,7 @@ Die beiden Links verweisen auf die Dokumentationen der letzten stabilen Version.
 Das *stable* in der URL kann auch durch eine Versionsnummer ersetzt werden, falls
 man die Dokumentation einer bestimmten GeoServer-Version aufrufen möchte. Im Rahmen
 dieses Workshops wird die **Version {{ book.geoServerVersion }}** behandelt, die resultierende
-URL der Benutzerdokumentation würde also <https://docs.geoserver.org/{{ book.geoServerVersion }}/user/>
+URL der Benutzerdokumentation würde also <https://docs.geoserver.org/stable/en/user/>
 lauten.
 
 ![GeoServer-Weboberfläche nach erfolgreichem Login](../assets/geoserver_login_gui.png)
@@ -34,7 +34,7 @@ Weitere Details zur klassischen WAR-Installation finden sich
 >
 > Der GeoServer ist auf dem OSGeoLive-System bereits vorinstalliert und kann im
 > Rahmen des Workshops unter {{ book.geoServerBaseUrl }} aufgerufen werden
-> (siehe [hier](../environment/README.md). Diese Variante unterscheidet sich von
+> (siehe [hier](../environment/README.md)). Diese Variante unterscheidet sich von
 > dem klassischen *Deployment* als .war-Datei, da hier ein Java-Programm
 > (start.jar) ausgeführt wird, welches programmatisch einen Jetty-Server mit dem
 > Geoserver startet. Für die Inhalte des Workshops ist dies aber nicht von Bedeutung.

@@ -57,7 +57,7 @@ drwxrwxr-x 2 root users    3 Jan 14 19:58 tmp/
 > </context-param>
 > ```
 
-Wie wir aus dem obigen Ordnerliste entnehmen können, existiert zum aktuellen
+Wie wir aus der obigen Ordnerliste entnehmen können, existiert zum aktuellen
 Zeitpunkt noch kein Verzeichnis mit vorberechneten Kartenkacheln, weshalb wir im
 Folgenden die notwendigen Schritte zum Anlegen eines GWC-Layers vollziehen werden:
 
@@ -80,7 +80,7 @@ Folgenden die notwendigen Schritte zum Anlegen eines GWC-Layers vollziehen werde
       Metatiles werden in erster Linie benötigt, um doppelte Kartenbeschriftungen
       (z.B. von Straßenlayern) in zwei aneinanderliegenden Kacheln zu vermeiden.
     * **Kachel-Umrandung**: Zusätzlicher Rahmen (in px), der um eine Kachel
-      angefordert werden soll. Nur sinnvoll, wenn in Verbindung mit der Vernwendung
+      angefordert werden soll. Nur sinnvoll, wenn in Verbindung mit der Verwendung
       von Metatiles Problemen bei der Darstellung von Labels und/oder Features
       am Kachelrand auftreten.
     * **Bildformat für Kacheln**: Das Standard Bildformat für die Kacheln. Dieses
